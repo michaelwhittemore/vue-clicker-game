@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import HelloWorld from './components/HelloWorld.vue'
 import ClickButton from './components/ClickButton.vue';
 import DisplayProps from './components/DisplayProps.vue';
-
+import { stateStorage } from './typescript/stateStorage';
 
 const greeting = ref('Hello from parent')
 </script>
@@ -14,6 +14,7 @@ const greeting = ref('Hello from parent')
       <HelloWorld />
       <ClickButton />
       <DisplayProps :msg="greeting"/>
+      <DisplayProps :msg2="stateStorage.count"/>
     </div>
   </header>
 

@@ -5,8 +5,9 @@
 // const anotherBadArray: Array<number> = [1,2, 'as'] 
 
 const gameLoop = {
-    init: (interval: number = 1000) => {
+    init: (stateStorage, interval: number = 1000) => {
         console.log('gameLoop init called with interval = ', interval)
+        console.log('stateStorage is', stateStorage)
     }
 }
 
