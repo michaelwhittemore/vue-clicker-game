@@ -7,7 +7,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <p>{{ resourceName + 's: ' + resourceAmount}}</p>
+    <div>{{ resourceName + 's: ' + resourceAmount}}</div>
 </template>
 
-<style></style>
+<style scoped></style>
