@@ -7,6 +7,7 @@ import GenericResourceDisplay from './GenericResourceDisplay.vue';
 </script>
 
 <template>
+    <div>Current Resources</div>
     <div id="resourceDisplay">
         <!-- // might need to add a key, see the dos?? -->
         <GenericResourceDisplay v-for="(value, key) in stateStorage.resources" :resource-name="key" :resource-amount="value" />

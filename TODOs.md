@@ -15,11 +15,17 @@
 # Things to work on immediately 
 * here! 
     1.  ~~Let's make the resource display use data from the storageState~~
-    2. **HERE!** Let's implement the ability to buy auto-clickers
-        - Once this is done let's create a `mine` section and a `roboticsLab` section. Need to add flavor as well - probably create it's own area
-        - Oh we need to actually display how many current miners we have
+    2. ~~Let's implement the ability to buy auto-clickers~~
+        - Oh we need to actually display how many current miners we have - in the lab
     3. ~~Let's remove `DisplayProps` and `ClickButton`~~
-    4. Refine ore to steel button - should this be different from generate resource button?
+    4. **HERE!**  Need to add the area (as in locations). Mine, refinery, lab
+        - lab will display miners total
+        - https://stackoverflow.com/questions/42872002/in-vue-js-component-how-to-use-props-in-css, https://stackoverflow.com/questions/69102748/vue-3-get-props-in-style
+        - slotting is great!
+        - Still need to style locations
+    5. Refine ore to steel button - should this be different from generate resource button?
+    6. Add the error when clicking on an invalid (also maybe add a style )
+    7. Add an auto-refiner 
 
 # General Notes
 * Will need to mention this was to learn vue and to refresh my typescript knowledge 
@@ -31,6 +37,8 @@
 * I should read more about the virtual DOM https://vuejs.org/guide/extras/rendering-mechanism 
 * Looks like maybe .d.ts is only for JS files?? 
 * Should we have a generic for buttons? (both buy and generate)
+// const badArray: Array<string> = ['a', 'b', 1]
+// const anotherBadArray: Array<number> = [1,2, 'as'] 
 
 # Useful Vue doc links
 * https://vuejs.org/guide/introduction.html
@@ -44,3 +52,5 @@
 * saving
 * consider https://pinia.vuejs.org/ pinia for state management
 * Add some flavor! Maybe some intro text at the very least?
+* Eventually locations will need to be generated with Vue components
+* basic pickaxe system (affects your basic clicker)
