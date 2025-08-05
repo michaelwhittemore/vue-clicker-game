@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// Will need props (name and number)
 const props = defineProps({
     resourceName: String,
     resourceAmount: Number,
@@ -7,7 +6,14 @@ const props = defineProps({
 </script>
 
 <template>
-    <div>{{ resourceName + 's: ' + resourceAmount}}</div>
+    <!-- Will need to change color based on the numeric value -->
+    <div class="resourceDisplayContainer">{{ resourceName + ': ' + resourceAmount}}</div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.resourceDisplayContainer{
+    border-style: solid;
+    margin: .2em;
+    padding: .1em .2em .1em .2em
+}
+</style>

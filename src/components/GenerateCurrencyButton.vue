@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import { stateStorage } from '@/typescript/stateStorage';
+// This should probably have some props (like resource type)
 const onClickHandler = () => {
-   stateStorage.currency++
+   stateStorage.resources.ore++
 }
 </script>
 
 <template>
-    <p>Make some money!</p>
-    <button @click="onClickHandler">  💵 </button>
+    <div>Make some money!</div>
+    <button @click="onClickHandler"> Mine ore </button>
 </template>
 
 <style>

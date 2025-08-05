@@ -4,7 +4,6 @@ import { stateStorage } from '@/typescript/stateStorage';
 import GenericResourceDisplay from './GenericResourceDisplay.vue';
 // Might make sense to have reusable display for each kind 
 // Also do something when they're zero? Maybe change color based on scale?
-const testArrRef = ref([1, 2, 3, 4])
 const testArrRef2 = ref([{
         resourceName: 'a',
         resourceAmount: 1
@@ -13,19 +12,25 @@ const testArrRef2 = ref([{
         resourceName: 'b',
         resourceAmount: 1
     },
+    {
+        resourceName: 'c',
+        resourceAmount: 3
+    },
 ])
-const resourceName = ref('Dollar')
-const resourceAmount = ref(12)
+
 </script>
 
 <template>
     <p> I'm the resource display, this will need to be dynamically generated</p>
-    <div class="resourceDisplay">
+    <div id="resourceDisplay">
+        <!-- // might need to add a key, see the dos?? -->
+        <GenericResourceDisplay v-for="(value, key) in stateStorage.resources" :resource-name="key" :resource-amount="value" />
     </div>
-    <!-- <div v-for="item in testArrRef"> This should be a generic item {{ item }}</div> -->
-    <GenericResourceDisplay v-for="item in testArrRef2" :resource-name="item.resourceName" :resource-amount="item.resourceAmount" />
-
-    <GenericResourceDisplay :resource-name="resourceName" :resource-amount="resourceAmount" />
 </template>
 
-<style></style>
+<style scoped>
+/* if I use this a lot it may be worth making global utility class*/
+#resourceDisplay{
+    display: flex;
+}
+</style>

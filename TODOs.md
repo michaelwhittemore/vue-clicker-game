@@ -5,6 +5,7 @@
     - let's go scifi - space traders, starting off in some backwoods planet. Cliche? yes, but it's a learning project, not a work of art
 * display the 'currency' amount and also the number of clickers you own. 
     - Need a display section and a generic kind agnostic component 
+    - Now I need to format them (presumably flex)
     - https://vuejs.org/guide/essentials/list 
 * differentiate between a clicker buy button and the currency on click 
 * then we can create a larger game board and UI
@@ -12,15 +13,10 @@
     - Yep! `setup` fixes it!
 
 # Things to work on immediately 
-* I think there are two options to start with 
-    - Either the state/game loop 
-        - We will need to pass the state into the gameLoop function/object
-            - should we separate the game tick and the interval? I think probably not
-    - Or the button
-        - Need to bind some function to the button's onclick
-* I guess we start with a game tick 
-* A 'click' button
-* https://vuejs.org/guide/scaling-up/state-management - we will need a reactive state object to track our state - I think we will need a separate `gameTick` function from the state
+* here! 
+    1. **HERE!** Let's make the resource display use data from the storageState
+    2. Let's implement the ability to buy auto-clickers
+    3. Let's remove `DisplayProps` and `ClickButton`
 
 # General Notes
 * Will need to mention this was to learn vue and to refresh my typescript knowledge 
@@ -30,7 +26,8 @@
 * look into a typescript guide, feel like I'm missing some stuff
 * typescript eslint
 * I should read more about the virtual DOM https://vuejs.org/guide/extras/rendering-mechanism 
-
+* Looks like maybe .d.ts is only for JS files?? 
+* Should we have a generic for buttons? (both buy and generate)
 
 # Useful Vue doc links
 * https://vuejs.org/guide/introduction.html
@@ -43,3 +40,4 @@
 * achievements
 * saving
 * consider https://pinia.vuejs.org/ pinia for state management
+* Add some flavor! Maybe some intro text at the very least?

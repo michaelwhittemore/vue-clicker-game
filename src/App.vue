@@ -2,7 +2,6 @@
 import { ref } from 'vue';
 import { stateStorage } from './typescript/stateStorage';
 // -------- Component Imports
-import ClickButton from './components/ClickButton.vue';
 import DisplayProps from './components/DisplayProps.vue';
 import GenerateCurrencyButton from './components/GenerateCurrencyButton.vue';
 import ResourceDisplay from './components/ResourceDisplay.vue';
@@ -18,8 +17,7 @@ const greeting = ref('Hello from parent')
   <div class="wrapper">
     <ResourceDisplay />
     <ClickButton />
-    <DisplayProps :msg="greeting" />
-    <DisplayProps :msg2="stateStorage.count" />
+    <!-- <DisplayProps :msg="greeting" /> -->
     <GenerateCurrencyButton />
   </div>
 
