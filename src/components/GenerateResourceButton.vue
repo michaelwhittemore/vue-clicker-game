@@ -7,7 +7,6 @@ const onClickHandler = () => {
 </script>
 
 <template>
-    <div>Make some money!</div>
     <button @click="onClickHandler"> Mine ore </button>
 </template>
 

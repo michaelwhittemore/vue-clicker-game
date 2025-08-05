@@ -4,7 +4,7 @@
     - oooh maybe some kind of economic theme? Like first you create goods and then sell them??
     - let's go scifi - space traders, starting off in some backwoods planet. Cliche? yes, but it's a learning project, not a work of art
 * display the 'currency' amount and also the number of clickers you own. 
-    - Need a display section and a generic kind agnostic component 
+    - Need a display section and a generic kind-agnostic component 
     - Now I need to format them (presumably flex)
     - https://vuejs.org/guide/essentials/list 
 * differentiate between a clicker buy button and the currency on click 
@@ -14,9 +14,12 @@
 
 # Things to work on immediately 
 * here! 
-    1. **HERE!** Let's make the resource display use data from the storageState
-    2. Let's implement the ability to buy auto-clickers
-    3. Let's remove `DisplayProps` and `ClickButton`
+    1.  ~~Let's make the resource display use data from the storageState~~
+    2. **HERE!** Let's implement the ability to buy auto-clickers
+        - Once this is done let's create a `mine` section and a `roboticsLab` section. Need to add flavor as well - probably create it's own area
+        - Oh we need to actually display how many current miners we have
+    3. ~~Let's remove `DisplayProps` and `ClickButton`~~
+    4. Refine ore to steel button - should this be different from generate resource button?
 
 # General Notes
 * Will need to mention this was to learn vue and to refresh my typescript knowledge 
