@@ -19,7 +19,7 @@ const computedNonZeroAutomatons = computed(() => {
 </script>
 
 <template>
-    <div id="displayWrapper">
+    <div id="displayWrapper" v-if="computedNonZeroAutomatons.length > 0">
         <div>Your Automatons</div>
         <div id="resourceDisplay">
             <!-- // might need to add a key, see the dos?? -->
