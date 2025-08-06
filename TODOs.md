@@ -23,9 +23,12 @@
         - https://stackoverflow.com/questions/42872002/in-vue-js-component-how-to-use-props-in-css, https://stackoverflow.com/questions/69102748/vue-3-get-props-in-style
         - slotting is great!
         - Still need to style locations
+        - Need to use binding for colors
+        - Maybe we can have global list of color scheme class? And we can bind the class?
     5. Refine ore to steel button - should this be different from generate resource button?
     6. Add the error when clicking on an invalid (also maybe add a style )
     7. Add an auto-refiner 
+    8. Need to make the miners slower (need to have some kind of counter in the game loop so that it only fires every few game ticks)
 
 # General Notes
 * Will need to mention this was to learn vue and to refresh my typescript knowledge 

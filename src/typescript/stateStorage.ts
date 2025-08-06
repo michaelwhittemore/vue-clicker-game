@@ -3,7 +3,8 @@ import { reactive } from 'vue'
 
 export interface StateStorageObject {
     automatons: {
-        autoClickers: number,
+        autoMiners: number,
+        autoRefiners: number,
     },
     resources: {
         ore: number,
@@ -15,7 +16,8 @@ export interface StateStorageObject {
 
 const stateStorageObject: StateStorageObject = {
     automatons: { 
-        autoClickers: 0, 
+        autoMiners: 1,
+        autoRefiners: 0,
     },
     resources: {
         ore: 0,

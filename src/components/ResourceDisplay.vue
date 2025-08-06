@@ -7,16 +7,29 @@ import GenericResourceDisplay from './GenericResourceDisplay.vue';
 </script>
 
 <template>
-    <div>Current Resources</div>
-    <div id="resourceDisplay">
-        <!-- // might need to add a key, see the dos?? -->
-        <GenericResourceDisplay v-for="(value, key) in stateStorage.resources" :resource-name="key" :resource-amount="value" />
+    <div id="displayWrapper">
+        <div>Current Resources</div>
+        <div id="resourceDisplay">
+            <!-- // might need to add a key, see the dos?? -->
+            <GenericResourceDisplay v-for="(value, key) in stateStorage.resources" :resource-name="key"
+                :resource-amount="value" />
+        </div>
     </div>
+
 </template>
 
 <style scoped>
 /* if I use this a lot it may be worth making global utility class*/
-#resourceDisplay{
+#resourceDisplay {
     display: flex;
+}
+
+#displayWrapper {
+    /* This should probably be global and also look nicer */
+    display: block;
+    /* border-style: solid; */
+    padding: .1em;
+    margin: .1em;
+
 }
 </style>

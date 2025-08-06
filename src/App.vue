@@ -4,6 +4,7 @@ import { stateStorage } from './typescript/stateStorage';
 // -------- Component Imports
 import GenerateResourceButton from './components/GenerateResourceButton.vue';
 import ResourceDisplay from './components/ResourceDisplay.vue';
+import AutomatonDisplay from './components/AutomatonDisplay.vue';
 import BuyAutoHelper from './components/BuyAutoHelper.vue';
 import LocationComponent from './components/LocationComponent.vue';
 
@@ -23,8 +24,11 @@ import LocationComponent from './components/LocationComponent.vue';
     You ready your pickaxe.
   </p>
   <div class="wrapper">
-    <ResourceDisplay />
-    <div id="locationsHolder">
+    <div id="displayArea" class="flexUtility"> 
+      <ResourceDisplay />
+      <AutomatonDisplay />
+    </div>
+    <div id="locationsHolder" class="flexUtility">
       <LocationComponent :location-name="'Mine'">
         <GenerateResourceButton />
       </LocationComponent>

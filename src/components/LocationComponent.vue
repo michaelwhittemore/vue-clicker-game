@@ -21,6 +21,7 @@ const props = defineProps({
 .locationWrapper{
     height: 10em;
     width: 10em;
+    padding: .2em;
     background-color: aqua;
     border-style: dashed;
     margin: .5em;
