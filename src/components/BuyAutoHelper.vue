@@ -8,7 +8,7 @@ const onClickHandler = () => {
         console.warn('This should be a warning somewhere')
 
     }
-   stateStorage.automatons.autoClickers++
+   stateStorage.automatons.autoMiners++
 }
 </script>
 
