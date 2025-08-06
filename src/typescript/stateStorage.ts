@@ -16,7 +16,7 @@ export interface StateStorageObject {
 
 const stateStorageObject: StateStorageObject = {
     automatons: { 
-        autoMiners: 1,
+        autoMiners: 0,
         autoRefiners: 0,
     },
     resources: {
