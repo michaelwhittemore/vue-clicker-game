@@ -7,6 +7,7 @@ import ResourceDisplay from './components/ResourceDisplay.vue';
 import AutomatonDisplay from './components/AutomatonDisplay.vue';
 import BuyAutoHelper from './components/BuyAutoHelper.vue';
 import LocationComponent from './components/LocationComponent.vue';
+import RefineButton from './components/RefineButton.vue';
 
 </script>
 
@@ -34,7 +35,7 @@ import LocationComponent from './components/LocationComponent.vue';
       </LocationComponent>
 
       <LocationComponent :location-name="'Refinery'">
-        // add a refine button here!!!
+        <RefineButton />
       </LocationComponent>
   
       <LocationComponent :location-name="'Robotics Fabricator'">

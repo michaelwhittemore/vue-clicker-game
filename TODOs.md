@@ -1,34 +1,23 @@
 # Todos
-* typescript definition for stateStorage
-* lets create a more clear game play flow (even if I haven't themed/skinned it yet)
-    - oooh maybe some kind of economic theme? Like first you create goods and then sell them??
-    - let's go scifi - space traders, starting off in some backwoods planet. Cliche? yes, but it's a learning project, not a work of art
-* display the 'currency' amount and also the number of clickers you own. 
-    - Need a display section and a generic kind-agnostic component 
-    - Now I need to format them (presumably flex)
-    - https://vuejs.org/guide/essentials/list 
-* differentiate between a clicker buy button and the currency on click 
-* then we can create a larger game board and UI
-* Issue with `has no default export.` seems like possibly due to script missing the `setup` tag?
-    - Yep! `setup` fixes it!
 
 # Things to work on immediately 
 * here! 
     1.  ~~Let's make the resource display use data from the storageState~~
     2. ~~Let's implement the ability to buy auto-clickers~~
-        - Oh we need to actually display how many current miners we have - in the lab
     3. ~~Let's remove `DisplayProps` and `ClickButton`~~
-    4. **HERE!**  Need to add the area (as in locations). Mine, refinery, lab
-        - lab will display miners total
+    4. Need to add the area (as in locations). Mine, refinery, lab
         - https://stackoverflow.com/questions/42872002/in-vue-js-component-how-to-use-props-in-css, https://stackoverflow.com/questions/69102748/vue-3-get-props-in-style
-        - slotting is great!
         - Still need to style locations
         - Need to use binding for colors
         - Maybe we can have global list of color scheme class? And we can bind the class?
-    5. Refine ore to steel button - should this be different from generate resource button?
+    5. **HERE!** Refine ore to steel button - should this be different from generate resource button?
+        - Then will need to switch the price to steel
     6. Add the error when clicking on an invalid (also maybe add a style )
     7. Add an auto-refiner 
     8. Need to make the miners slower (need to have some kind of counter in the game loop so that it only fires every few game ticks)
+
+# Style Todos
+* Need a more distnitcive font 
 
 # General Notes
 * Will need to mention this was to learn vue and to refresh my typescript knowledge 
@@ -40,6 +29,9 @@
 * I should read more about the virtual DOM https://vuejs.org/guide/extras/rendering-mechanism 
 * Looks like maybe .d.ts is only for JS files?? 
 * Should we have a generic for buttons? (both buy and generate)
+* Issue with `has no default export.` seems like possibly due to script missing the `setup` tag?
+    - Yep! `setup` fixes it!
+
 // const badArray: Array<string> = ['a', 'b', 1]
 // const anotherBadArray: Array<number> = [1,2, 'as'] 
 

@@ -22,7 +22,7 @@ const props = defineProps({
     height: 10em;
     width: 10em;
     padding: .2em;
-    background-color: aqua;
+    background-color: #a26769;
     border-style: dashed;
     margin: .5em;
 }

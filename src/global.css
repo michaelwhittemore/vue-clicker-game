@@ -3,3 +3,14 @@
     display: flex;
 }
 /* ------------------- Color Schemes ----------------- */
+body{
+    background-color: #eae0cc;
+}
+
+.color1 {
+    background-color: #e9e3e6
+}
+
+.color2 {
+    background-color: #ece2d0
+}

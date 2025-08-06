@@ -7,7 +7,7 @@ const props = defineProps({
 
 <template>
     <!-- Will need to change color based on the numeric value -->
-    <div class="resourceDisplayContainer">{{ resourceName + ': ' + resourceAmount}}</div>
+    <div class="resourceDisplayContainer color1">{{ resourceName + ': ' + resourceAmount}}</div>
 </template>
 
 <style scoped>
