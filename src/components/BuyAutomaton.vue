@@ -27,9 +27,8 @@ const computedHasEnoughResources = computed(() => {
     return stateStorage.resources[costResource] < costQuantity
 })
 const onClickHandler = () => {
-    // need to check if we have enough resources
-    stateStorage.automatons.autoMiners++;
-    stateStorage.resources.steel -= 10;
+    stateStorage.automatons[props.automatonType]++;
+    stateStorage.resources[costResource] -= costQuantity;
 }
 </script>
 

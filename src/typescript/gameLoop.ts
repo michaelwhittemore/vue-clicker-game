@@ -8,17 +8,17 @@ const initGameLoop = (stateStorage: StateStorageObject, interval: number = 1000)
         // Assignments make it easier to write without access three deep props - remember these
         // are read-only this way
         const { ore, steel } = stateStorage.resources;
-        const { autoMiners, autoRefiners } = stateStorage.automatons;
+        const { autoMiner, autoRefiner } = stateStorage.automatons;
         // Auto miners
         {
-            stateStorage.resources.ore += autoMiners;
+            stateStorage.resources.ore += autoMiner;
         }
         // Auto refiners
         {
             // The maxRefineFromOre should always be zero or a positive integer
             let maxRefineFromOre = Math.floor(ore / 10)
             maxRefineFromOre = maxRefineFromOre > 0 ? maxRefineFromOre : 0;
-            const amountOfSteelToRefine = Math.min(maxRefineFromOre, autoRefiners);
+            const amountOfSteelToRefine = Math.min(maxRefineFromOre, autoRefiner);
             stateStorage.resources.ore -= 10 * amountOfSteelToRefine;
             stateStorage.resources.steel += amountOfSteelToRefine;
         }

@@ -7,8 +7,8 @@ export interface Skill {
 };
 export interface StateStorageObject {
     automatons: {
-        autoMiners: number,
-        autoRefiners: number,
+        autoMiner: number,
+        autoRefiner: number,
     },
     resources: {
         ore: number,
@@ -24,12 +24,12 @@ export interface StateStorageObject {
 
 const stateStorageObject: StateStorageObject = {
     automatons: {
-        autoMiners: 0,
-        autoRefiners: 0,
+        autoMiner: 0,
+        autoRefiner: 0,
     },
     resources: {
         ore: 0,
-        steel: 0,
+        steel: 30,
     },
     skills: {
         mining: {
