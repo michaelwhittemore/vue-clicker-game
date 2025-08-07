@@ -1,15 +1,28 @@
 <script setup lang="ts">
 import { stateStorage } from '@/typescript/stateStorage';
-import type { validAutomatons } from '@/typescript/gameTypes';
-// Maybe we don't need to pass in anything other than the type?
-// Can do the logic here
+import type { ValidAutomatons, ValidResources } from '@/typescript/gameTypes';
+
 // Conditionally render (I need to figure out when we can display them)
 const props = defineProps<{
-    automatonType: validAutomatons,
+    automatonType: ValidAutomatons,
 }>()
+let costResource: ValidResources;
+let costQuantity: Number;
+switch (props.automatonType){
+    case 'autominer':
+        costResource = 'steel';
+        costQuantity = 10;
+        break;
+    case 'autorefiner':
+        costResource = 'steel';
+        costQuantity = 20;
+        break;
+    default:
+        console.error('Unknown automatonType')
+        break;
+}
 const onClickHandler = () => {
     // need to check if we have enough resources
-    // Eventually we will have some object with data on prices are requirements
     if (stateStorage.resources.steel < 10) {
         console.warn('This should be a warning somewhere')
 
@@ -20,7 +33,7 @@ const onClickHandler = () => {
 </script>
 
 <template>
-    <button @click="onClickHandler"> Build an autominer (10 steel) {{ automatonType }}</button>
+    <button @click="onClickHandler"> Build an {{ automatonType }} ({{ costQuantity }} {{ costResource }})</button>
     
 </template>
 

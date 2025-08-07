@@ -9,7 +9,7 @@
     5. ~~Refine ore to steel button - should this be different from generate resource button?~~
     6. **HERE!** Add the error when clicking on an invalid button (also maybe add a style)
     7. Add an auto-refiner 
-        - In general we need a type declarition for valid resource types
+        - In general we need a type declaration for valid resource types
     8. Need to make the miners slower (need to have some kind of counter in the game loop so that it only fires every few game ticks)
     9. Pickaxe upgrade
     10. Shop - will need to have some kind of good to sell (maybe you mine gold??)
