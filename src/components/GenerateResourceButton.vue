@@ -3,6 +3,7 @@ import { stateStorage } from '@/typescript/stateStorage';
 // This should probably have some props (like resource type)
 const onClickHandler = () => {
    stateStorage.resources.ore++
+   
 }
 </script>
 

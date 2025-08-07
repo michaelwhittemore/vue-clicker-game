@@ -22,16 +22,19 @@ export interface StateStorageObject {
 }
 
 const stateStorageObject: StateStorageObject = {
-    automatons: { 
+    automatons: {
         autoMiners: 0,
-        autoRefiners: 1,
+        autoRefiners: 0,
     },
     resources: {
-        ore: 105,
-        steel: 100,
+        ore: 0,
+        steel: 0,
     },
     skills: {
-
+        mining: {
+            level: 0,
+            experience: 0,
+        }
     },
     goods: {},
     technologies: {},

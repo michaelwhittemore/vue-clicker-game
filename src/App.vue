@@ -8,6 +8,7 @@ import AutomatonDisplay from './components/AutomatonDisplay.vue';
 import BuyAutomaton from './components/BuyAutomaton.vue';
 import LocationComponent from './components/LocationComponent.vue';
 import RefineButton from './components/RefineButton.vue';
+import ExperienceBar from './components/ExperienceBar.vue';
 
 </script>
 
@@ -26,6 +27,7 @@ import RefineButton from './components/RefineButton.vue';
       <ResourceDisplay />
       <AutomatonDisplay />
     </div>
+    <ExperienceBar :skill-name="'mining'"/>
     <div id="locationsHolder" class="flexUtility">
       <LocationComponent :location-name="'Mine'">
         <GenerateResourceButton />
@@ -36,8 +38,8 @@ import RefineButton from './components/RefineButton.vue';
       </LocationComponent>
   
       <LocationComponent :location-name="'Robotics Fabricator'">
-        <BuyAutomaton :automaton-type="'autominer'"/>
-        <BuyAutomaton :automaton-type="'autorefiner'"/>
+        <BuyAutomaton :automaton-type="'autoMiner'"/>
+        <BuyAutomaton :automaton-type="'autoRefiner'"/>
       </LocationComponent>
     </div>
 

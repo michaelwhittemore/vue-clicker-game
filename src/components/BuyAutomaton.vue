@@ -3,18 +3,19 @@ import { computed } from 'vue';
 import { stateStorage } from '@/typescript/stateStorage';
 import type { ValidAutomatons, ValidResources } from '@/typescript/gameTypes';
 
-// Conditionally render (I need to figure out when we can display them)
+// Conditionally render (I need to figure out when we can display them) - 
+// i.e. you can't build refiners until you level up enough
 const props = defineProps<{
     automatonType: ValidAutomatons,
 }>()
 let costResource: ValidResources;
 let costQuantity: number;
 switch (props.automatonType){
-    case 'autominer':
+    case 'autoMiner':
         costResource = 'steel';
         costQuantity = 10;
         break;
-    case 'autorefiner':
+    case 'autoRefiner':
         costResource = 'steel';
         costQuantity = 20;
         break;
