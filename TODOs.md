@@ -7,11 +7,15 @@
     3. ~~Let's remove `DisplayProps` and `ClickButton`~~
     4. ~~Need to add the area (as in locations). Mine, refinery, lab~~
     5. ~~Refine ore to steel button - should this be different from generate resource button?~~
-    6. **HERE!** Add the error when clicking on an invalid button (also maybe add a style)
-    7. Add an auto-refiner 
-        - In general we need a type declaration for valid resource types
+    6.  Add the error when clicking on an invalid button (also maybe add a style)
+    7. **HERE!** Add an auto-refiner 
+        ~~- In general we need a type declaration for valid resource types~~
     8. Need to make the miners slower (need to have some kind of counter in the game loop so that it only fires every few game ticks)
+        - Need to do something about inconsistent `autoMiner` vs `autominer` casing
     9. Pickaxe upgrade
+    10. Add an experience bar (robotics skill allows you to build an autorefiner)
+        - mining makes clicks better
+        - add a section with a bar
     10. Shop - will need to have some kind of good to sell (maybe you mine gold??)
     11. Eventually we will need travel. This will probably take the form of grouping locations into another container/wrapper that gets replaced
 
@@ -30,7 +34,7 @@
 * Should we have a generic for buttons? (both buy and generate)
 * Issue with `has no default export.` seems like possibly due to script missing the `setup` tag?
     - Yep! `setup` fixes it!
-
+* `String` & `string` are NOT the same, see https://stackoverflow.com/questions/47484525/operator-cannot-be-applied-to-types-number-and-1
 // const badArray: Array<string> = ['a', 'b', 1]
 // const anotherBadArray: Array<number> = [1,2, 'as'] 
 

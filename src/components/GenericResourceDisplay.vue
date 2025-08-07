@@ -1,8 +1,8 @@
 <script setup lang="ts">
-const props = defineProps({
-    resourceName: String,
-    resourceAmount: Number,
-})
+const props = defineProps<{
+    resourceName: string,
+    resourceAmount: number,
+}>()
 </script>
 
 <template>

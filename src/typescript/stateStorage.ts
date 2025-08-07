@@ -1,6 +1,9 @@
 import { reactive } from 'vue'
 
-
+export interface Skill {
+    level: number,
+    experience: number
+};
 export interface StateStorageObject {
     automatons: {
         autoMiners: number,
@@ -10,6 +13,10 @@ export interface StateStorageObject {
         ore: number,
         steel: number,
     },
+    skills: {
+        mining?: Skill,
+        electronics?: Skill,
+    }
     goods?: object,
     technologies?: object,
 }
@@ -17,11 +24,14 @@ export interface StateStorageObject {
 const stateStorageObject: StateStorageObject = {
     automatons: { 
         autoMiners: 0,
-        autoRefiners: 0,
+        autoRefiners: 1,
     },
     resources: {
-        ore: 0,
-        steel: 0,
+        ore: 105,
+        steel: 100,
+    },
+    skills: {
+
     },
     goods: {},
     technologies: {},

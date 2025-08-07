@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-const props = defineProps({
-    locationName: String,
-    // colorScheme: String,
-})
+const props = defineProps<{
+    locationName: string,
+    // colorScheme: string,
+}>()
 </script>
 
 <template>

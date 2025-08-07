@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from 'vue';
 import { stateStorage } from '@/typescript/stateStorage';
 import type { ValidAutomatons, ValidResources } from '@/typescript/gameTypes';
 
@@ -7,7 +8,7 @@ const props = defineProps<{
     automatonType: ValidAutomatons,
 }>()
 let costResource: ValidResources;
-let costQuantity: Number;
+let costQuantity: number;
 switch (props.automatonType){
     case 'autominer':
         costResource = 'steel';
@@ -21,19 +22,19 @@ switch (props.automatonType){
         console.error('Unknown automatonType')
         break;
 }
+const computedHasEnoughResources = computed(() => {
+    return stateStorage.resources[costResource] < costQuantity
+})
 const onClickHandler = () => {
     // need to check if we have enough resources
-    if (stateStorage.resources.steel < 10) {
-        console.warn('This should be a warning somewhere')
-
-    }
     stateStorage.automatons.autoMiners++;
     stateStorage.resources.steel -= 10;
 }
 </script>
 
 <template>
-    <button @click="onClickHandler"> Build an {{ automatonType }} ({{ costQuantity }} {{ costResource }})</button>
+    <button @click="onClickHandler" :disabled="computedHasEnoughResources"> 
+        Build an {{ automatonType }} ({{ costQuantity }} {{ costResource }})</button>
     
 </template>
 
