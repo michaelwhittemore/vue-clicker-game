@@ -5,19 +5,18 @@
     1.  ~~Let's make the resource display use data from the storageState~~
     2. ~~Let's implement the ability to buy auto-clickers~~
     3. ~~Let's remove `DisplayProps` and `ClickButton`~~
-    4. Need to add the area (as in locations). Mine, refinery, lab
-        - https://stackoverflow.com/questions/42872002/in-vue-js-component-how-to-use-props-in-css, https://stackoverflow.com/questions/69102748/vue-3-get-props-in-style
-        - Still need to style locations
-        - Need to use binding for colors
-        - Maybe we can have global list of color scheme class? And we can bind the class?
-    5. **HERE!** Refine ore to steel button - should this be different from generate resource button?
-        - Then will need to switch the price to steel
-    6. Add the error when clicking on an invalid (also maybe add a style )
+    4. ~~Need to add the area (as in locations). Mine, refinery, lab~~
+    5. ~~Refine ore to steel button - should this be different from generate resource button?~~
+    6. **HERE!** Add the error when clicking on an invalid button (also maybe add a style)
     7. Add an auto-refiner 
+        - In general we need a type declarition for valid resource types
     8. Need to make the miners slower (need to have some kind of counter in the game loop so that it only fires every few game ticks)
+    9. Pickaxe upgrade
+    10. Shop - will need to have some kind of good to sell (maybe you mine gold??)
+    11. Eventually we will need travel. This will probably take the form of grouping locations into another container/wrapper that gets replaced
 
 # Style Todos
-* Need a more distnitcive font 
+* Need a more distinctive font 
 
 # General Notes
 * Will need to mention this was to learn vue and to refresh my typescript knowledge 
@@ -41,6 +40,10 @@
 * https://vuejs.org/tutorial/#step-1https://vuejs.org/tutorial/#step-1
 * https://vuejs.org/guide/scaling-up/state-management
 * https://vuejs.org/guide/essentials/list 
+* https://stackoverflow.com/questions/42872002/in-vue-js-component-how-to-use-props-in-css, https://stackoverflow.com/questions/69102748/vue-3-get-props-in-style
+* https://vuejs.org/guide/typescript/composition-api.html#typing-component-props
+* https://vuejs.org/guide/typescript/overview
+
 
 # Stretch Goals
 * achievements

@@ -5,16 +5,13 @@ import { stateStorage } from './typescript/stateStorage';
 import GenerateResourceButton from './components/GenerateResourceButton.vue';
 import ResourceDisplay from './components/ResourceDisplay.vue';
 import AutomatonDisplay from './components/AutomatonDisplay.vue';
-import BuyAutoHelper from './components/BuyAutoHelper.vue';
+import BuyAutomaton from './components/BuyAutomaton.vue';
 import LocationComponent from './components/LocationComponent.vue';
 import RefineButton from './components/RefineButton.vue';
 
 </script>
 
 <template>
-  <header>
-    Vue clicker
-  </header>
   <p>
     <!-- This could probably have a flavor text component - we will need it to change over time -->
     You find yourself in a backwater mining settlement. The husks of abandoned buildings loom over
@@ -39,7 +36,8 @@ import RefineButton from './components/RefineButton.vue';
       </LocationComponent>
   
       <LocationComponent :location-name="'Robotics Fabricator'">
-        <BuyAutoHelper />
+        <BuyAutomaton :automaton-type="'autominer'"/>
+        <BuyAutomaton :automaton-type="'autorefiner'"/>
       </LocationComponent>
     </div>
 
