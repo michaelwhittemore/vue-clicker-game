@@ -30,7 +30,7 @@ import ExperienceBar from './components/ExperienceBar.vue';
     <ExperienceBar :skill-name="'mining'"/>
     <div id="locationsHolder" class="flexUtility">
       <LocationComponent :location-name="'Mine'">
-        <GenerateResourceButton />
+        <GenerateResourceButton :resource-type="'ore'"/>
       </LocationComponent>
 
       <LocationComponent :location-name="'Refinery'">
