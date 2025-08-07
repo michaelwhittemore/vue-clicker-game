@@ -16,6 +16,8 @@
     10. **HERE!** Add an experience bar (robotics skill allows you to build an autoRefiner)
         - mining makes clicks better
         - add a section with a bar
+        - possibly create helper function for calculating percent
+        - need to center the percentage
     10. Shop - will need to have some kind of good to sell (maybe you mine gold??)
     11. Eventually we will need travel. This will probably take the form of grouping locations into another container/wrapper that gets replaced
 

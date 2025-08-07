@@ -2,6 +2,9 @@
 .flexUtility{
     display: flex;
 }
+.centeredText{
+    text-align: center;
+}
 /* ------------------- Color Schemes ----------------- */
 body{
     background-color: #eae0cc;
