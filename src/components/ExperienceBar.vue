@@ -1,26 +1,36 @@
 <script setup lang="ts">
 import { stateStorage } from '@/typescript/stateStorage';
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 import type { ValidSkills } from '@/typescript/gameTypes';
 const props = defineProps<{
     skillName: ValidSkills,
 }>()
-const computedPercentage = computed(() => 45)
+const { skillName } = props;
+const computedPercentage = computed(() => {
+    // truncates to two decimals (first 100 creates the percent, second for truncating)
+    return Math.trunc((stateStorage.skills[skillName].experience / 
+    stateStorage.skills[skillName].targetExperience) * 100 * 100) /100
+    
+})
+
+// HERE! - want to create a method for generating required exp
+
 </script>
 <template>
     <!-- might want to make skill name uppercase -->
     <div class="outerBar">
         <div class="barText">
-            {{ skillName }} level: {{ stateStorage.skills[skillName]?.level }}
-            
+            {{ skillName }} level: {{ stateStorage.skills[skillName].level }}
+
         </div>
-        <div class="barText centeredText"> {{ computedPercentage + '%' }}  </div>
+        <div class="barText centeredText"> {{ stateStorage.skills[skillName].experience +
+            '/' + stateStorage.skills[skillName].targetExperience }} ({{ computedPercentage + '%' }}) </div>
         <div class="innerBar" :style="{ width: computedPercentage + '%' }"> </div>
     </div>
 </template>
 <style>
 .barText {
-    width:100%;
+    width: 100%;
     position: absolute;
     top: 0px;
     z-index: 1;
