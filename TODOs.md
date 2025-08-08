@@ -14,6 +14,7 @@
         - Hide the auto refinery behind level
         - currently bugged, the skillName appears to be stuck as `trading`
             - Hmmm maybe it's only bugged when starting with the skill hard coded? That still seems like a problem
+            - Looks like it *was* related to destructuring a prop - see https://vuejs.org/guide/components/props#reactive-props-destructure
     12. Move the flavor text to its own component. Have some kind of map for events to text?
     9. Pickaxe upgrade - maybe add a shop? - updates will require a new resource, maybe gold? - traveling merchant
     10. Shop - will need to have some kind of good to sell (maybe you mine gold??)

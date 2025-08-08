@@ -30,6 +30,7 @@ const onClickHandler = () => {
     stateStorage.automatons[props.automatonType]++;
     stateStorage.resources[costResource] -= costQuantity;
     // here! - adding exp for testing
+    // Maybe this should reward more?
     stateStorage.skills.electronics.experience++
 }
 </script>

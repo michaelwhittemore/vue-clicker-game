@@ -25,7 +25,7 @@ export interface StateStorageObject {
 
 const stateStorageObject: StateStorageObject = {
     automatons: {
-        autoMiner: 0,
+        autoMiner: 1,
         autoRefiner: 0,
     },
     resources: {
@@ -45,12 +45,14 @@ const stateStorageObject: StateStorageObject = {
         },
         trading: {
             level: 0,
-            experience: 1,
+            experience: 0,
             targetExperience: 20,
         }
     },
     goods: {},
     technologies: {},
 }
+
+window.stateStorageObject = stateStorageObject;
 
 export const stateStorage = reactive(stateStorageObject)

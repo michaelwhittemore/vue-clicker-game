@@ -5,12 +5,11 @@ import type { ValidSkills } from '@/typescript/gameTypes';
 const props = defineProps<{
     skillName: ValidSkills,
 }>()
-const { skillName } = props;
-// HERE! this may be the bug??
+
 const computedPercentage = computed(() => {
     // truncates to two decimals (first 100 creates the percent, second for truncating)
-    return Math.trunc((stateStorage.skills[skillName].experience / 
-    stateStorage.skills[skillName].targetExperience) * 100 * 100) /100
+    return Math.trunc((stateStorage.skills[props.skillName].experience / 
+    stateStorage.skills[props.skillName].targetExperience) * 100 * 100) /100
     
 })
 

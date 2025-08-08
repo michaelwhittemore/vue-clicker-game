@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { stateStorage } from '@/typescript/stateStorage';
-// here! 
-// Will need to have the invalid button class
+
 const onClickHandler = () => {
     if (stateStorage.resources.ore < 10){
         console.warn('whoops, need more ore')

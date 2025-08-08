@@ -4,7 +4,8 @@ import ExperienceBar from './ExperienceBar.vue';
 import type { ValidSkills } from '@/typescript/gameTypes';
 import { stateStorage } from '@/typescript/stateStorage';
 
-// What triggers each skill? Maybe when it has a non zero value? Either xp or level > 0
+// We only want to display skills that have non zero value for either xp or level
+// maybe we can map these to an array of refs??
 const computedActiveSkills = computed(() => {
     return (Object.keys(stateStorage.skills) as Array<keyof typeof stateStorage.skills>).filter(
         skillName => {
