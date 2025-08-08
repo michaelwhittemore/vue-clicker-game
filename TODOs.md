@@ -8,16 +8,19 @@
     4. ~~Need to add the area (as in locations). Mine, refinery, lab~~
     5. ~~Refine ore to steel button - should this be different from generate resource button?~~
     7.  ~~AutoRefiner buy button doesn't do anything right now ~~
-
     10.  ~~Add an experience bar (robotics skill allows you to build an autoRefiner)~~
-    11. *HERE!* Need to programmatically generate the exp components (You shouldn't show robotics/electronics until we've already built a robot)
+    11. ~~Need to programmatically generate the exp components (You shouldn't show robotics/electronics until we've already built a robot)~~
         - Hide the auto refinery behind level
-        - currently bugged, the skillName appears to be stuck as `trading`
-            - Hmmm maybe it's only bugged when starting with the skill hard coded? That still seems like a problem
-            - Looks like it *was* related to destructuring a prop - see https://vuejs.org/guide/components/props#reactive-props-destructure
-    12. Move the flavor text to its own component. Have some kind of map for events to text?
-    9. Pickaxe upgrade - maybe add a shop? - updates will require a new resource, maybe gold? - traveling merchant
+
+    ------ Need to host this on a subdomain via cloudflare ----- use wrangler and update my portfolio
+
+    12. **HERE!** Move the narrative text to its own component. Have some kind of map for events to text?
+        - Ok now what? How about some text when you first get an auto miner? When you first build something. Maybe stateStorage should have an accomplishment map?
+        - I'd also like to give this some affects to make it look like you're reading a page?
+    13. Maybe you have a random chance to get gold? Should scale with mining level?
+    13. Pickaxe upgrade - maybe add a shop? - updates will require a new resource, maybe gold? - traveling merchant
     10. Shop - will need to have some kind of good to sell (maybe you mine gold??)
+
     11. Eventually we will need travel. This will probably take the form of grouping locations into another container/wrapper that gets replaced
     12. Make things like exp collapsible 
     8. Need to make the miners slower (need to have some kind of counter in the game loop so that it only fires every few game ticks)
@@ -39,7 +42,8 @@
 * Should we have a generic for buttons? (both buy and generate)
 * Issue with `has no default export.` seems like possibly due to script missing the `setup` tag?
     - Yep! `setup` fixes it!
-* `String` & `string` are NOT the same, see https://stackoverflow.com/questions/47484525/operator-cannot-be-applied-to-types-number-and-1
+* `String` & `string` are NOT the same, see https://stackoverflow.com/questions/47484525/operator-cannot-be-applied-to-types-number-and-1\
+* DO NOT use prop destructing. It says it was fixed in 3.5, but it caused me a ton of headaches https://vuejs.org/guide/components/props#reactive-props-destructure
 // const badArray: Array<string> = ['a', 'b', 1]
 // const anotherBadArray: Array<number> = [1,2, 'as'] 
 

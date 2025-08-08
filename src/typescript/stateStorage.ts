@@ -53,6 +53,10 @@ const stateStorageObject: StateStorageObject = {
     technologies: {},
 }
 
-window.stateStorageObject = stateStorageObject;
+// Making for easier debugging --------
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const global:any = globalThis
+global.stateStorageObject = stateStorageObject;
+// -----------
 
 export const stateStorage = reactive(stateStorageObject)
