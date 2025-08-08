@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import { stateStorage } from '@/typescript/stateStorage';
+import { gameStateStorage } from '@/typescript/gameStateStorage';
 import GenericResourceDisplay from './GenericResourceDisplay.vue';
 
 
 const computedNonZeroAutomatons = computed(() => {
     // This might be easier with type assertions
-    const automatons = stateStorage.automatons
+    const automatons = gameStateStorage.automatons
     const automatonNames: Array<keyof typeof automatons> = Object.keys(automatons) as Array<keyof typeof automatons>;
-    const filteredNames = automatonNames.filter(automatonName => stateStorage.automatons[automatonName] > 0)
+    const filteredNames = automatonNames.filter(automatonName => gameStateStorage.automatons[automatonName] > 0)
     return filteredNames.map(name => {
         return {
             name,

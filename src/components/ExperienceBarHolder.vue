@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 import ExperienceBar from './ExperienceBar.vue';
-import { stateStorage } from '@/typescript/stateStorage';
+import { gameStateStorage } from '@/typescript/gameStateStorage';
 
 // We only want to display skills that have non zero value for either xp or level
 const computedActiveSkills = computed(() => {
-    return (Object.keys(stateStorage.skills) as Array<keyof typeof stateStorage.skills>).filter(
+    return (Object.keys(gameStateStorage.skills) as Array<keyof typeof gameStateStorage.skills>).filter(
         skillName => {
-            return stateStorage.skills[skillName].level > 0 || stateStorage.skills[skillName].experience > 0
+            return gameStateStorage.skills[skillName].level > 0 || gameStateStorage.skills[skillName].experience > 0
         })
 })
 

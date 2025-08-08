@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { stateStorage } from '@/typescript/stateStorage';
+import { gameStateStorage } from '@/typescript/gameStateStorage';
 // Hmm maybe we have a text JSON asset? 
 // What determines if we add stuff? Maybe it's computed via state storage
 // Also maybe we should frame this as a journal??
+
 
 
 

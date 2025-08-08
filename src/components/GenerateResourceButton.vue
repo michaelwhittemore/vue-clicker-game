@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { stateStorage } from '@/typescript/stateStorage';
+import { gameStateStorage } from '@/typescript/gameStateStorage';
 import type { ValidResources } from '@/typescript/gameTypes';
 const props = defineProps<{
     resourceType: ValidResources
@@ -13,15 +13,15 @@ switch (props.resourceType) {
         console.error('invalid resource type for generate button')
 }
 const onClickHandler = () => {
-    stateStorage.resources.ore++
+    gameStateStorage.resources.ore++
     // ---- This is all exp and level up logic ------
-    stateStorage.skills.mining.experience++;
-    stateStorage.skills.mining.level;
-    if (stateStorage.skills.mining.experience >= stateStorage.skills.mining.targetExperience){
-        stateStorage.skills.mining.experience = 0;
-        stateStorage.skills.mining.level++;
+    gameStateStorage.skills.mining.experience++;
+    gameStateStorage.skills.mining.level;
+    if (gameStateStorage.skills.mining.experience >= gameStateStorage.skills.mining.targetExperience){
+        gameStateStorage.skills.mining.experience = 0;
+        gameStateStorage.skills.mining.level++;
         // currently increasing by 15%
-        stateStorage.skills.mining.targetExperience = Math.trunc(stateStorage.skills.mining.targetExperience * 1.15)
+        gameStateStorage.skills.mining.targetExperience = Math.trunc(gameStateStorage.skills.mining.targetExperience * 1.15)
     }
 }
 </script>

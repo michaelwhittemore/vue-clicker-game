@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { stateStorage } from '@/typescript/stateStorage';
+import { gameStateStorage } from '@/typescript/gameStateStorage';
 import { computed, ref } from 'vue';
 import type { ValidSkills } from '@/typescript/gameTypes';
 const props = defineProps<{
@@ -8,8 +8,8 @@ const props = defineProps<{
 
 const computedPercentage = computed(() => {
     // truncates to two decimals (first 100 creates the percent, second for truncating)
-    return Math.trunc((stateStorage.skills[props.skillName].experience / 
-    stateStorage.skills[props.skillName].targetExperience) * 100 * 100) /100
+    return Math.trunc((gameStateStorage.skills[props.skillName].experience / 
+    gameStateStorage.skills[props.skillName].targetExperience) * 100 * 100) /100
     
 })
 
@@ -18,11 +18,11 @@ const computedPercentage = computed(() => {
     <!-- might want to make skill name uppercase -->
     <div class="outerBar">
         <div class="barText">
-            {{ skillName }} level: {{ stateStorage.skills[skillName].level }}
+            {{ skillName }} level: {{ gameStateStorage.skills[skillName].level }}
 
         </div>
-        <div class="barText centeredText"> {{ stateStorage.skills[skillName].experience +
-            '/' + stateStorage.skills[skillName].targetExperience }} ({{ computedPercentage + '%' }}) </div>
+        <div class="barText centeredText"> {{ gameStateStorage.skills[skillName].experience +
+            '/' + gameStateStorage.skills[skillName].targetExperience }} ({{ computedPercentage + '%' }}) </div>
         <div class="innerBar" :style="{ width: computedPercentage + '%' }"> </div>
     </div>
 </template>

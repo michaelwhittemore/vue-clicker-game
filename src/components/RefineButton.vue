@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import { stateStorage } from '@/typescript/stateStorage';
+import { gameStateStorage } from '@/typescript/gameStateStorage';
 
 const onClickHandler = () => {
-    if (stateStorage.resources.ore < 10){
+    if (gameStateStorage.resources.ore < 10){
         console.warn('whoops, need more ore')
     }
-   stateStorage.resources.ore-= 10;
-   stateStorage.resources.steel++;
+   gameStateStorage.resources.ore-= 10;
+   gameStateStorage.resources.steel++;
 }
-const notEnoughOre = computed(() => stateStorage.resources.ore < 10)
+const notEnoughOre = computed(() => gameStateStorage.resources.ore < 10)
 </script>
 
 <template>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import { stateStorage } from '@/typescript/stateStorage';
+import { gameStateStorage } from '@/typescript/gameStateStorage';
 import type { ValidAutomatons, ValidResources } from '@/typescript/gameTypes';
 
 // Conditionally render (I need to figure out when we can display them) - 
@@ -24,14 +24,14 @@ switch (props.automatonType){
         break;
 }
 const computedHasEnoughResources = computed(() => {
-    return stateStorage.resources[costResource] < costQuantity
+    return gameStateStorage.resources[costResource] < costQuantity
 })
 const onClickHandler = () => {
-    stateStorage.automatons[props.automatonType]++;
-    stateStorage.resources[costResource] -= costQuantity;
+    gameStateStorage.automatons[props.automatonType]++;
+    gameStateStorage.resources[costResource] -= costQuantity;
     // here! - adding exp for testing
     // Maybe this should reward more?
-    stateStorage.skills.electronics.experience++
+    gameStateStorage.skills.electronics.experience++
 }
 </script>
 

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { stateStorage } from './typescript/stateStorage';
+import { gameStateStorage } from './typescript/gameStateStorage';
 // -------- Component Imports
 import GenerateResourceButton from './components/GenerateResourceButton.vue';
 import ResourceDisplay from './components/ResourceDisplay.vue';

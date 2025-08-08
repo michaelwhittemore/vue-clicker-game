@@ -15,7 +15,7 @@
     ------ Need to host this on a subdomain via cloudflare ----- use wrangler and update my portfolio
 
     12. **HERE!** Move the narrative text to its own component. Have some kind of map for events to text?
-        - Ok now what? How about some text when you first get an auto miner? When you first build something. Maybe stateStorage should have an accomplishment map?
+        - Ok now what? How about some text when you first get an auto miner? When you first build something. Maybe gameStateStorage should have an accomplishment map?
         - I'd also like to give this some affects to make it look like you're reading a page?
     13. Maybe you have a random chance to get gold? Should scale with mining level?
     13. Pickaxe upgrade - maybe add a shop? - updates will require a new resource, maybe gold? - traveling merchant

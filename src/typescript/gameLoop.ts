@@ -1,17 +1,17 @@
-import type { StateStorageObject } from './stateStorage.ts'
+import type { StateStorageObject } from './gameStateStorage.ts'
 
 
-const initGameLoop = (stateStorage: StateStorageObject, interval: number = 1000) => {
+const initGameLoop = (gameStateStorage: StateStorageObject, interval: number = 1000) => {
     const executeGameTick = () => {
-        // console.log('stateStorage:', stateStorage)
+        // console.log('gameStateStorage:', gameStateStorage)
         // todo - make this fire less often, in general we will need a rate
         // Assignments make it easier to write without access three deep props - remember these
         // are read-only this way
-        const { ore, steel } = stateStorage.resources;
-        const { autoMiner, autoRefiner } = stateStorage.automatons;
+        const { ore, steel } = gameStateStorage.resources;
+        const { autoMiner, autoRefiner } = gameStateStorage.automatons;
         // Auto miners
         {
-            stateStorage.resources.ore += autoMiner;
+            gameStateStorage.resources.ore += autoMiner;
         }
         // Auto refiners
         {
@@ -19,8 +19,8 @@ const initGameLoop = (stateStorage: StateStorageObject, interval: number = 1000)
             let maxRefineFromOre = Math.floor(ore / 10)
             maxRefineFromOre = maxRefineFromOre > 0 ? maxRefineFromOre : 0;
             const amountOfSteelToRefine = Math.min(maxRefineFromOre, autoRefiner);
-            stateStorage.resources.ore -= 10 * amountOfSteelToRefine;
-            stateStorage.resources.steel += amountOfSteelToRefine;
+            gameStateStorage.resources.ore -= 10 * amountOfSteelToRefine;
+            gameStateStorage.resources.steel += amountOfSteelToRefine;
         }
 
     }

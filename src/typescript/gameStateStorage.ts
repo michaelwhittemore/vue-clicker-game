@@ -23,7 +23,7 @@ export interface StateStorageObject {
     technologies?: object,
 }
 
-const stateStorageObject: StateStorageObject = {
+const gameStateStorageObject: StateStorageObject = {
     automatons: {
         autoMiner: 1,
         autoRefiner: 0,
@@ -56,7 +56,7 @@ const stateStorageObject: StateStorageObject = {
 // Making for easier debugging --------
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const global:any = globalThis
-global.stateStorageObject = stateStorageObject;
+global.gameStateStorageObject = gameStateStorageObject;
 // -----------
 
-export const stateStorage = reactive(stateStorageObject)
+export const gameStateStorage = reactive(gameStateStorageObject)

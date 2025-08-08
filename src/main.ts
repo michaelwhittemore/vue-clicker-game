@@ -1,9 +1,9 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import initGameLoop from './typescript/gameLoop'
-import { stateStorage } from './typescript/stateStorage';
+import { gameStateStorage } from './typescript/gameStateStorage';
 
 
 createApp(App).mount('#app')
-initGameLoop(stateStorage, 1000)
+initGameLoop(gameStateStorage, 1000)
 
