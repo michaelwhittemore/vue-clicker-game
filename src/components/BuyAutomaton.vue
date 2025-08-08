@@ -29,6 +29,8 @@ const computedHasEnoughResources = computed(() => {
 const onClickHandler = () => {
     stateStorage.automatons[props.automatonType]++;
     stateStorage.resources[costResource] -= costQuantity;
+    // here! - adding exp for testing
+    stateStorage.skills.electronics.experience++
 }
 </script>
 

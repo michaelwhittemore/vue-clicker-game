@@ -7,12 +7,15 @@
     3. ~~Let's remove `DisplayProps` and `ClickButton`~~
     4. ~~Need to add the area (as in locations). Mine, refinery, lab~~
     5. ~~Refine ore to steel button - should this be different from generate resource button?~~
-    6.  ~`Add the error when clicking on an invalid button (also maybe add a style)`~
-    7. **HERE!** AutoRefiner buy button doesn't do anything right now 
-    9. Pickaxe upgrade
+    7.  ~~AutoRefiner buy button doesn't do anything right now ~~
+
     10.  ~~Add an experience bar (robotics skill allows you to build an autoRefiner)~~
-    11. Need to programmatically generate the exp components (You shouldn't show robotics/electronics until we've already built a robot)
+    11. *HERE!* Need to programmatically generate the exp components (You shouldn't show robotics/electronics until we've already built a robot)
         - Hide the auto refinery behind level
+        - currently bugged, the skillName appears to be stuck as `trading`
+            - Hmmm maybe it's only bugged when starting with the skill hard coded? That still seems like a problem
+    12. Move the flavor text to its own component. Have some kind of map for events to text?
+    9. Pickaxe upgrade - maybe add a shop? - updates will require a new resource, maybe gold? - traveling merchant
     10. Shop - will need to have some kind of good to sell (maybe you mine gold??)
     11. Eventually we will need travel. This will probably take the form of grouping locations into another container/wrapper that gets replaced
     12. Make things like exp collapsible 

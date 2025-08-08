@@ -6,14 +6,13 @@ const props = defineProps<{
     skillName: ValidSkills,
 }>()
 const { skillName } = props;
+// HERE! this may be the bug??
 const computedPercentage = computed(() => {
     // truncates to two decimals (first 100 creates the percent, second for truncating)
     return Math.trunc((stateStorage.skills[skillName].experience / 
     stateStorage.skills[skillName].targetExperience) * 100 * 100) /100
     
 })
-
-// HERE! - want to create a method for generating required exp
 
 </script>
 <template>
