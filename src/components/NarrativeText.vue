@@ -1,31 +1,13 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { gameStateStorage } from '@/typescript/gameStateStorage';
-// Hmm maybe we have a text JSON asset? 
-// What determines if we add stuff? Maybe it's computed via state storage
-// Also maybe we should frame this as a journal??
 
-/*
-1. Add Text snippets for first time:
-    - getting ore "You find that the old mine still has plenty of ore remaining. You successfully
-    extract some."
-    - refining steel
-    - Building an autominer
-    - leveling up mining - "After numerous subterranean hours,  Mining starts to feel more familiar/natural (something about 
-    the the rhythm of the pickaxe). You feel like your current instrument is your only obstacle to further riches."
-    - oh different for frist leveling up and hitting level five?
-2. These should correspond to a series of bools on the storage
-3. I think we will need a seperate map of all the text
-4. Then iterate over all of it
-5. Need to modify this not to use <p> tags and use custom divs instead - like "text entry"
-*/
-
-
+// TODOs, the ordering might get funky. May need to do insertion of some kind somewhere and use a map. 
 const narrativeTriggersToText = {
     hasMined: 'You find that the old mine still has plenty of ore remaining. You successfully extract some.',
-    hasLeveledMining: 'After numerous subterranean hours, the rhythm of your pickaxe swings begin to feel natural. You feel like your current tool is your only obstacle to further riches.',
-    hasRefinedOre: 'The machine\'s internal furnace roars and groans like a dying beast. From its molten innards emerges a single steel ingot.',
-    hasBuiltAutoMiner: 'Like an off-world Promethesus, you have birthed life. Well, not "life" per se, and all you did was follow the manual, but you did manage to get a rather sad looking robot to emerge from the fabricator. It slowly shuffles off to the mines.',
+    hasLeveledMining: 'After numerous subterranean hours, the rhythm of your pickaxe swings begin to feel natural. You believe your current tool is your only obstacle to further riches. (You can now wield the next tier of pickaxes).',
+    hasRefinedOre: 'The machine\'s internal furnace roars and groans. From its molten innards emerges a single steel ingot.',
+    hasBuiltAutoMiner: 'Like an off-world Prometheus, you have birthed life. Well, not "life" per se, and all you did was follow the manual, but you did manage to get a rather sad looking robot to emerge from the fabricator. It slowly shuffles off to the mines.',
 }
 
 // Returns an array of the text of narrativeTriggersToText where narrativeTriggers is true

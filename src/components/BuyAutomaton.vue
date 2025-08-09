@@ -10,7 +10,7 @@ const props = defineProps<{
 }>()
 let costResource: ValidResources;
 let costQuantity: number;
-switch (props.automatonType){
+switch (props.automatonType) {
     case 'autoMiner':
         costResource = 'steel';
         costQuantity = 10;
@@ -27,6 +27,7 @@ const computedHasEnoughResources = computed(() => {
     return gameStateStorage.resources[costResource] < costQuantity
 })
 const onClickHandler = () => {
+    gameStateStorage.narrativeTriggers.hasBuiltAutoMiner = true;
     gameStateStorage.automatons[props.automatonType]++;
     gameStateStorage.resources[costResource] -= costQuantity;
     // here! - adding exp for testing
@@ -36,9 +37,9 @@ const onClickHandler = () => {
 </script>
 
 <template>
-    <button @click="onClickHandler" :disabled="computedHasEnoughResources"> 
+    <button @click="onClickHandler" :disabled="computedHasEnoughResources">
         Build an {{ automatonType }} ({{ costQuantity }} {{ costResource }})</button>
-    
+
 </template>
 
 <style>

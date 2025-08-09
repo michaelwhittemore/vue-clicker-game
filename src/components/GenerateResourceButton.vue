@@ -13,6 +13,7 @@ switch (props.resourceType) {
         console.error('invalid resource type for generate button')
 }
 const onClickHandler = () => {
+    gameStateStorage.narrativeTriggers.hasMined = true;
     gameStateStorage.resources.ore++
     // ---- This is all exp and level up logic ------
     gameStateStorage.skills.mining.experience++;
@@ -20,6 +21,7 @@ const onClickHandler = () => {
     if (gameStateStorage.skills.mining.experience >= gameStateStorage.skills.mining.targetExperience){
         gameStateStorage.skills.mining.experience = 0;
         gameStateStorage.skills.mining.level++;
+        gameStateStorage.narrativeTriggers.hasLeveledMining = true;
         // currently increasing by 15%
         gameStateStorage.skills.mining.targetExperience = Math.trunc(gameStateStorage.skills.mining.targetExperience * 1.15)
     }

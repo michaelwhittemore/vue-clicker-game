@@ -35,7 +35,7 @@ export interface StateStorageObject {
 
 const gameStateStorageObject: StateStorageObject = {
     automatons: {
-        autoMiner: 1,
+        autoMiner: 0,
         autoRefiner: 0,
     },
     resources: {
@@ -62,11 +62,10 @@ const gameStateStorageObject: StateStorageObject = {
     goods: {},
     technologies: {},
     narrativeTriggers: {
-        hasMined: true,
-        hasLeveledMining: true,
-        hasRefinedOre: true,
-        hasBuiltAutoMiner: true,
-
+        hasMined: false,
+        hasLeveledMining: false,
+        hasRefinedOre: false,
+        hasBuiltAutoMiner: false,
     },
 }
 
