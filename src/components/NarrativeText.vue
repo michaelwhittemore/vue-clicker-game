@@ -28,7 +28,7 @@ const narrativeTriggersToText = {
 }
 
 // Returns an array of the text of narrativeTriggersToText where narrativeTriggers is true
-const computedTriggeredText = (() => {
+const computedTriggeredText = computed(() => {
     return (Object.keys(gameStateStorage.narrativeTriggers) as Array<keyof typeof gameStateStorage.narrativeTriggers>)
         .filter(trigger => gameStateStorage.narrativeTriggers[trigger]).map(trigger => narrativeTriggersToText[trigger])
 })
@@ -45,7 +45,6 @@ const computedTriggeredText = (() => {
             You ready your pickaxe.
         </p>
         <p v-for="narrativeText in computedTriggeredText"> {{ narrativeText }} </p>
-        {{ computedTriggeredText() }}
     </div>
 </template>
 <style>
