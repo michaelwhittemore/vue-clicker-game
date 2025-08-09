@@ -9,8 +9,9 @@ export interface Skill {
 interface NarrativeTriggers {
     hasMined: boolean,
     hasBuiltAutoMiner: boolean,
-    hasLeveledMining: boolean,
     hasRefinedOre: boolean,
+    hasLeveledMining: boolean,
+
 };
 
 export interface StateStorageObject {
@@ -62,9 +63,10 @@ const gameStateStorageObject: StateStorageObject = {
     technologies: {},
     narrativeTriggers: {
         hasMined: true,
-        hasBuiltAutoMiner: true,
-        hasLeveledMining: false,
+        hasLeveledMining: true,
         hasRefinedOre: true,
+        hasBuiltAutoMiner: true,
+
     },
 }
 

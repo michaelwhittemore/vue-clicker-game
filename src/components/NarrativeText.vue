@@ -13,18 +13,19 @@ import { gameStateStorage } from '@/typescript/gameStateStorage';
     - Building an autominer
     - leveling up mining - "After numerous subterranean hours,  Mining starts to feel more familiar/natural (something about 
     the the rhythm of the pickaxe). You feel like your current instrument is your only obstacle to further riches."
+    - oh different for frist leveling up and hitting level five?
 2. These should correspond to a series of bools on the storage
 3. I think we will need a seperate map of all the text
 4. Then iterate over all of it
-5. Need to modify this not to use <p> tags and use custom divs instead
+5. Need to modify this not to use <p> tags and use custom divs instead - like "text entry"
 */
 
 
 const narrativeTriggersToText = {
-    hasMined: 'hasMined text',
-    hasBuiltAutoMiner: 'hasBuiltAutoMiner text',
-    hasLeveledMining: ' hasLeveledMining text',
-    hasRefinedOre: 'hasRefinedOre text',
+    hasMined: 'You find that the old mine still has plenty of ore remaining. You successfully extract some.',
+    hasLeveledMining: 'After numerous subterranean hours, the rhythm of your pickaxe swings begin to feel natural. You feel like your current tool is your only obstacle to further riches.',
+    hasRefinedOre: 'The machine\'s internal furnace roars and groans like a dying beast. From its molten innards emerges a single steel ingot.',
+    hasBuiltAutoMiner: 'Like an off-world Promethesus, you have birthed life. Well, not "life" per se, and all you did was follow the manual, but you did manage to get a rather sad looking robot to emerge from the fabricator. It slowly shuffles off to the mines.',
 }
 
 // Returns an array of the text of narrativeTriggersToText where narrativeTriggers is true
@@ -35,23 +36,25 @@ const computedTriggeredText = computed(() => {
 </script>
 <template>
     <div id="narrativeWrapper">
-        <p>
+        <div class="narrativeEntry">
             You find yourself in a backwater mining settlement. The husks of abandoned buildings loom over
             rusting excavators and long dead robots. Inside one of these structures you find a grimy but still usable
-            ore
-            refiner.
+            ore refiner.
             You also find an automaton fabricator. It's primitive by modern galactic standards, with some steel you
             could probably create a simple mining robot. At the edge of town an open pit descends into the mines.
             You ready your pickaxe.
-        </p>
-        <p v-for="narrativeText in computedTriggeredText"> {{ narrativeText }} </p>
+        </div>
+        <div v-for="narrativeText in computedTriggeredText"> {{ narrativeText }} </div>
     </div>
 </template>
 <style>
+/* .narrativeEntry{
+
+} */
 #narrativeWrapper {
-    padding: .1em;
+    padding: .2em;
     border-style: double;
     background-color: #f6eee3;
-    /* // need this to scroll */
+    /* // need this to scroll, should have height or max height?*/
 }
 </style>
