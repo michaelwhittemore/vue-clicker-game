@@ -5,6 +5,14 @@ export interface Skill {
     experience: number,
     targetExperience: number,
 };
+
+interface NarrativeTriggers {
+    hasMined: boolean,
+    hasBuiltAutoMiner: boolean,
+    hasLeveledMining: boolean,
+    hasRefinedOre: boolean,
+};
+
 export interface StateStorageObject {
     automatons: {
         autoMiner: number,
@@ -21,6 +29,7 @@ export interface StateStorageObject {
     }
     goods?: object,
     technologies?: object,
+    narrativeTriggers: NarrativeTriggers,
 }
 
 const gameStateStorageObject: StateStorageObject = {
@@ -51,11 +60,17 @@ const gameStateStorageObject: StateStorageObject = {
     },
     goods: {},
     technologies: {},
+    narrativeTriggers: {
+        hasMined: true,
+        hasBuiltAutoMiner: true,
+        hasLeveledMining: false,
+        hasRefinedOre: true,
+    },
 }
 
 // Making for easier debugging --------
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const global:any = globalThis
+const global: any = globalThis
 global.gameStateStorageObject = gameStateStorageObject;
 // -----------
 
