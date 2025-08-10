@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { gameStateStorage } from '@/typescript/gameStateStorage';
+import type { NarrativeTrigger } from '@/typescript/gameTypes';
 import type { ValidAutomatons, ValidResources } from '@/typescript/gameTypes';
 
 // Conditionally render (I need to figure out when we can display them) - 
@@ -10,14 +11,17 @@ const props = defineProps<{
 }>()
 let costResource: ValidResources;
 let costQuantity: number;
+let narrativeTrigger: NarrativeTrigger;
 switch (props.automatonType) {
     case 'autoMiner':
         costResource = 'steel';
         costQuantity = 10;
+        narrativeTrigger = 'hasBuiltAutoMiner';
         break;
     case 'autoRefiner':
         costResource = 'steel';
         costQuantity = 20;
+        narrativeTrigger = 'hasBuiltAutoRefiner'
         break;
     default:
         console.error('Unknown automatonType')
@@ -27,7 +31,10 @@ const computedHasEnoughResources = computed(() => {
     return gameStateStorage.resources[costResource] < costQuantity
 })
 const onClickHandler = () => {
-    gameStateStorage.narrativeTriggers.hasBuiltAutoMiner = true;
+    if (!gameStateStorage.narrativeTriggersArray.includes(narrativeTrigger)){
+        gameStateStorage.narrativeTriggersArray.push(narrativeTrigger)
+    }
+    gameStateStorage
     gameStateStorage.automatons[props.automatonType]++;
     gameStateStorage.resources[costResource] -= costQuantity;
     // here! - adding exp for testing

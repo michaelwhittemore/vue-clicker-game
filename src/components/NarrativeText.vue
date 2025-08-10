@@ -2,18 +2,16 @@
 import { computed } from 'vue';
 import { gameStateStorage } from '@/typescript/gameStateStorage';
 
-// TODOs, the ordering might get funky. May need to do insertion of some kind somewhere and use a map. 
 const narrativeTriggersToText = {
     hasMined: 'You find that the old mine still has plenty of ore remaining. You successfully extract some.',
     hasLeveledMining: 'After numerous subterranean hours, the rhythm of your pickaxe swings begin to feel natural. You believe your current tool is your only obstacle to further riches. (You can now wield the next tier of pickaxes).',
     hasRefinedOre: 'The machine\'s internal furnace roars and groans. From its molten innards emerges a single steel ingot.',
     hasBuiltAutoMiner: 'Like an off-world Prometheus, you have birthed life. Well, not "life" per se, and all you did was follow the manual, but you did manage to get a rather sad looking robot to emerge from the fabricator. It slowly shuffles off to the mines.',
+    hasBuiltAutoRefiner: 'Yay you built an autorefiner. Now build some actuyal readable text for me.'
 }
 
-// Returns an array of the text of narrativeTriggersToText where narrativeTriggers is true
-const computedTriggeredText = computed(() => {
-    return (Object.keys(gameStateStorage.narrativeTriggers) as Array<keyof typeof gameStateStorage.narrativeTriggers>)
-        .filter(trigger => gameStateStorage.narrativeTriggers[trigger]).map(trigger => narrativeTriggersToText[trigger])
+const computedNarrativeText = computed(() => {
+    return gameStateStorage.narrativeTriggersArray.map(trigger => narrativeTriggersToText[trigger])
 })
 </script>
 <template>
@@ -26,7 +24,7 @@ const computedTriggeredText = computed(() => {
             could probably create a simple mining robot. At the edge of town an open pit descends into the mines.
             You ready your pickaxe.
         </div>
-        <div v-for="narrativeText in computedTriggeredText"> {{ narrativeText }} </div>
+        <div v-for="narrativeText in computedNarrativeText"> {{ narrativeText }} </div>
     </div>
 </template>
 <style>

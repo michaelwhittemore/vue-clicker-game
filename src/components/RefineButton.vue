@@ -3,7 +3,9 @@ import { computed } from 'vue';
 import { gameStateStorage } from '@/typescript/gameStateStorage';
 
 const onClickHandler = () => {
-    gameStateStorage.narrativeTriggers.hasRefinedOre = true;
+    if (!gameStateStorage.narrativeTriggersArray.includes('hasRefinedOre')) {
+        gameStateStorage.narrativeTriggersArray.push('hasRefinedOre')
+    }
     gameStateStorage.resources.ore -= 10;
     gameStateStorage.resources.steel++;
 }

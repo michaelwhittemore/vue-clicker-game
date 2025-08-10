@@ -1,17 +1,10 @@
-import { reactive } from 'vue'
+import { reactive } from 'vue';
+import type { NarrativeTrigger } from './gameTypes';
 
 export interface Skill {
     level: number,
     experience: number,
     targetExperience: number,
-};
-
-interface NarrativeTriggers {
-    hasMined: boolean,
-    hasBuiltAutoMiner: boolean,
-    hasRefinedOre: boolean,
-    hasLeveledMining: boolean,
-
 };
 
 export interface StateStorageObject {
@@ -31,7 +24,7 @@ export interface StateStorageObject {
     }
     goods?: object,
     technologies?: object,
-    narrativeTriggers: NarrativeTriggers,
+    narrativeTriggersArray: NarrativeTrigger[],
 }
 
 const gameStateStorageObject: StateStorageObject = {
@@ -63,12 +56,8 @@ const gameStateStorageObject: StateStorageObject = {
     },
     goods: {},
     technologies: {},
-    narrativeTriggers: {
-        hasMined: false,
-        hasLeveledMining: false,
-        hasRefinedOre: false,
-        hasBuiltAutoMiner: false,
-    },
+    // this is for preserving insertion order
+    narrativeTriggersArray: [],
 }
 
 // Making for easier debugging --------

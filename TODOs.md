@@ -22,6 +22,8 @@
     13. **HERE!**  Maybe you have a random chance to get gold? Should scale with mining level?
         - Let's add some narrative stuff for being able to get gold
         - Maybe level 1? 
+
+    * Might be worth refactoring some component logic into exported functions?
     13. Pickaxe upgrade - maybe add a shop? - updates will require a new resource, maybe gold? - traveling merchant
     10. Shop - will need to have some kind of good to sell (maybe you mine gold??)
     - ----- What resources do I want to add? I said gold, maybe some more exciting electronic components.
@@ -50,6 +52,7 @@
 * DO NOT use prop destructing. It says it was fixed in 3.5, but it caused me a ton of headaches https://vuejs.org/guide/components/props#reactive-props-destructure
 // const badArray: Array<string> = ['a', 'b', 1]
 // const anotherBadArray: Array<number> = [1,2, 'as'] 
+* Should read up on typescript best practices
 
 # Useful Vue doc links
 * https://vuejs.org/guide/introduction.html
