@@ -22,6 +22,7 @@ export interface StateStorageObject {
     resources: {
         ore: number,
         steel: number,
+        gold: number,
     },
     skills: {
         mining: Skill,
@@ -41,6 +42,7 @@ const gameStateStorageObject: StateStorageObject = {
     resources: {
         ore: 0,
         steel: 30,
+        gold: 0,
     },
     skills: {
         mining: {

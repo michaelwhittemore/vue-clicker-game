@@ -14,15 +14,17 @@
 
     ------ Need to host this on a subdomain via cloudflare ----- use wrangler and update my portfolio
 
-    12. **HERE!** ~~Move the narrative text to its own component. Have some kind of map for events to text?~~
+    12. ~~Move the narrative text to its own component. Have some kind of map for events to text?~~
         - Need to add the scroll
         - Need to have the triggers
         - Need to fix ordering issue.
         - Need to fix how hard coded the triggers are
-    13. Maybe you have a random chance to get gold? Should scale with mining level?
+    13. **HERE!**  Maybe you have a random chance to get gold? Should scale with mining level?
+        - Let's add some narrative stuff for being able to get gold
+        - Maybe level 1? 
     13. Pickaxe upgrade - maybe add a shop? - updates will require a new resource, maybe gold? - traveling merchant
     10. Shop - will need to have some kind of good to sell (maybe you mine gold??)
-
+    - ----- What resources do I want to add? I said gold, maybe some more exciting electronic components.
     11. Eventually we will need travel. This will probably take the form of grouping locations into another container/wrapper that gets replaced
     12. Make things like exp collapsible 
     8. Need to make the miners slower (need to have some kind of counter in the game loop so that it only fires every few game ticks)
