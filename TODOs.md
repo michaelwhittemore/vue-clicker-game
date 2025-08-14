@@ -9,13 +9,14 @@
     5. ~~Refine ore to steel button - should this be different from generate resource button?~~
     7.  ~~AutoRefiner buy button doesn't do anything right now ~~
     10.  ~~Add an experience bar (robotics skill allows you to build an autoRefiner)~~
-    11. ~~Need to programmatically generate the exp components (You shouldn't show robotics/electronics until we've already built a robot)~~
+    11. ~~Need to programmatically generate the exp components (You shouldn't show robotics/robotics until we've already built a robot)~~
         - Hide the auto refinery behind level
             - Within buy automaton we need a computed property that we can then tie to `v-if`
-            - So why is electronics not properly increasing?
-            - Will also need to add narrative text to this (when we level electronics)
+            - So why is robotics not properly increasing?
+            - Will also need to add narrative text to this (when we level robotics)
             - Let's create a `levelUp` helper
-
+    13. Need to have a chance to generate gold when mining with level > 1
+        - this should be within generateResource
     12. ~~Move the narrative text to its own component. Have some kind of map for events to text?~~
         - Need to add the scroll
         - Need to have the triggers

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { gameStateStorage } from '@/typescript/gameStateStorage';
 import type { ValidResources, ValidSkills, NarrativeTrigger } from '@/typescript/gameTypes';
-import { earnExperienceInSkill } from '@/typescript/gameHelpers';
+import { earnExperienceInSkill, activateNarrativeTrigger } from '@/typescript/gameHelpers';
 const props = defineProps<{
     resourceType: ValidResources
 }>()
@@ -18,9 +18,7 @@ switch (props.resourceType) {
         console.error('invalid resource type for generate button')
 }
 const onClickHandler = () => {
-    if (!gameStateStorage.narrativeTriggersArray.includes(narrativeTrigger)) {
-        gameStateStorage.narrativeTriggersArray.push(narrativeTrigger)
-    }
+    activateNarrativeTrigger(narrativeTrigger)
     gameStateStorage.resources[props.resourceType]++
     earnExperienceInSkill(relevantSkill)
 

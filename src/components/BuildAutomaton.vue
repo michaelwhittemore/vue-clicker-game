@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { gameStateStorage } from '@/typescript/gameStateStorage';
-import { earnExperienceInSkill } from '@/typescript/gameHelpers';
+import { earnExperienceInSkill, activateNarrativeTrigger } from '@/typescript/gameHelpers';
 import type { NarrativeTrigger } from '@/typescript/gameTypes';
 import type { ValidAutomatons, ValidResources } from '@/typescript/gameTypes';
 
@@ -13,7 +13,7 @@ const props = defineProps<{
 let costResource: ValidResources;
 let costQuantity: number;
 let narrativeTrigger: NarrativeTrigger;
-let computedShouldDisplay; 
+let computedShouldDisplay; // Here! add a type
 switch (props.automatonType) {
     case 'autoMiner':
         costResource = 'steel';
@@ -25,7 +25,7 @@ switch (props.automatonType) {
         costResource = 'steel';
         costQuantity = 20;
         narrativeTrigger = 'hasBuiltAutoRefiner'
-        computedShouldDisplay = computed(() => gameStateStorage.skills.electronics.level >= 1);
+        computedShouldDisplay = computed(() => gameStateStorage.skills.robotics.level >= 1);
         break;
     default:
         console.error('Unknown automatonType')
@@ -35,14 +35,12 @@ const computedHasEnoughResources = computed(() => {
     return gameStateStorage.resources[costResource] < costQuantity
 })
 const onClickHandler = () => {
-    if (!gameStateStorage.narrativeTriggersArray.includes(narrativeTrigger)){
-        gameStateStorage.narrativeTriggersArray.push(narrativeTrigger)
-    }
+    activateNarrativeTrigger(narrativeTrigger);
     gameStateStorage
     gameStateStorage.automatons[props.automatonType]++;
     gameStateStorage.resources[costResource] -= costQuantity;
     // here! - adding exp for testing
-    earnExperienceInSkill('electronics', 2)
+    earnExperienceInSkill('robotics', 2)
     
 }
 </script>

@@ -19,7 +19,7 @@ export interface StateStorageObject {
     },
     skills: {
         mining: Skill,
-        electronics: Skill,
+        robotics: Skill,
         trading: Skill,
     }
     goods?: object,
@@ -43,7 +43,7 @@ const gameStateStorageObject: StateStorageObject = {
             experience: 0,
             targetExperience: 20,
         },
-        electronics: {
+        robotics: {
             level: 0,
             experience: 0,
             targetExperience: 20,

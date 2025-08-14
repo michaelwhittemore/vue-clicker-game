@@ -1,11 +1,10 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { gameStateStorage } from '@/typescript/gameStateStorage';
+import { activateNarrativeTrigger } from '@/typescript/gameHelpers';
 
 const onClickHandler = () => {
-    if (!gameStateStorage.narrativeTriggersArray.includes('hasRefinedOre')) {
-        gameStateStorage.narrativeTriggersArray.push('hasRefinedOre')
-    }
+    activateNarrativeTrigger('hasRefinedOre');
     gameStateStorage.resources.ore -= 10;
     gameStateStorage.resources.steel++;
 }
