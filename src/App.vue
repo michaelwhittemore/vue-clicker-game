@@ -5,7 +5,7 @@ import { gameStateStorage } from './typescript/gameStateStorage';
 import GenerateResourceButton from './components/GenerateResourceButton.vue';
 import ResourceDisplay from './components/ResourceDisplay.vue';
 import AutomatonDisplay from './components/AutomatonDisplay.vue';
-import BuyAutomaton from './components/BuyAutomaton.vue';
+import BuildAutomaton from './components/BuildAutomaton.vue';
 import LocationComponent from './components/LocationComponent.vue';
 import RefineButton from './components/RefineButton.vue';
 import ExperienceBarHolder from './components/ExperienceBarHolder.vue';
@@ -31,8 +31,8 @@ import NarrativeText from './components/NarrativeText.vue';
       </LocationComponent>
 
       <LocationComponent :location-name="'Robotics Fabricator'">
-        <BuyAutomaton :automaton-type="'autoMiner'" />
-        <BuyAutomaton :automaton-type="'autoRefiner'" />
+        <BuildAutomaton :automaton-type="'autoMiner'" />
+        <BuildAutomaton :automaton-type="'autoRefiner'" />
       </LocationComponent>
     </div>
 

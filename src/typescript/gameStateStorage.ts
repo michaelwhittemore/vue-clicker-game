@@ -56,14 +56,13 @@ const gameStateStorageObject: StateStorageObject = {
     },
     goods: {},
     technologies: {},
-    // this is for preserving insertion order
     narrativeTriggersArray: [],
 }
 
-// Making for easier debugging --------
+export const gameStateStorage = reactive(gameStateStorageObject)
+
+// ---------- Exposing the state for easier debugging --------
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const global: any = globalThis
-global.gameStateStorageObject = gameStateStorageObject;
+global.gameStateStorage = gameStateStorage;
 // -----------
-
-export const gameStateStorage = reactive(gameStateStorageObject)

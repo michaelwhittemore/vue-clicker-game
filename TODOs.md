@@ -11,13 +11,15 @@
     10.  ~~Add an experience bar (robotics skill allows you to build an autoRefiner)~~
     11. ~~Need to programmatically generate the exp components (You shouldn't show robotics/electronics until we've already built a robot)~~
         - Hide the auto refinery behind level
-
-    ------ Need to host this on a subdomain via cloudflare ----- use wrangler and update my portfolio
+            - Within buy automaton we need a computed property that we can then tie to `v-if`
+            - So why is electronics not properly increasing?
+            - Will also need to add narrative text to this (when we level electronics)
+            - Let's create a `levelUp` helper
 
     12. ~~Move the narrative text to its own component. Have some kind of map for events to text?~~
         - Need to add the scroll
         - Need to have the triggers
-        - Need to fix ordering issue.
+        - ~~Need to fix ordering issue.~~
         - Need to fix how hard coded the triggers are
     13. **HERE!**  Maybe you have a random chance to get gold? Should scale with mining level?
         - Let's add some narrative stuff for being able to get gold

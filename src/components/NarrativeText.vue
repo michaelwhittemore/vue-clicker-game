@@ -7,7 +7,7 @@ const narrativeTriggersToText = {
     hasLeveledMining: 'After numerous subterranean hours, the rhythm of your pickaxe swings begin to feel natural. You believe your current tool is your only obstacle to further riches. (You can now wield the next tier of pickaxes).',
     hasRefinedOre: 'The machine\'s internal furnace roars and groans. From its molten innards emerges a single steel ingot.',
     hasBuiltAutoMiner: 'Like an off-world Prometheus, you have birthed life. Well, not "life" per se, and all you did was follow the manual, but you did manage to get a rather sad looking robot to emerge from the fabricator. It slowly shuffles off to the mines.',
-    hasBuiltAutoRefiner: 'Yay you built an autorefiner. Now build some actuyal readable text for me.'
+    hasBuiltAutoRefiner: 'You fumble a bit, but eventually you get the fabricator to output a working robotic refining assistant. It dutifully takes its place next to the ore refiners and begins to work.'
 }
 
 const computedNarrativeText = computed(() => {
