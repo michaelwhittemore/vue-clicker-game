@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
+import type { ComputedRef } from 'vue';
 import { gameStateStorage } from '@/typescript/gameStateStorage';
 import { earnExperienceInSkill, activateNarrativeTrigger } from '@/typescript/gameHelpers';
 import type { NarrativeTrigger } from '@/typescript/gameTypes';
@@ -13,7 +14,7 @@ const props = defineProps<{
 let costResource: ValidResources;
 let costQuantity: number;
 let narrativeTrigger: NarrativeTrigger;
-let computedShouldDisplay; // Here! add a type
+let computedShouldDisplay: ComputedRef<boolean>;
 switch (props.automatonType) {
     case 'autoMiner':
         costResource = 'steel';

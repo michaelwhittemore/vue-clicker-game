@@ -20,6 +20,7 @@ const levelUpSkill = (relevantSkill: ValidSkills) => {
     //     // activateNarrativeTrigger('hasUnlockedGoldMining')
     // }
     if (levelToNarrativeTriggerBreakpoints[relevantSkill]?.[newLevel]) {
+        console.log('narrative trigger: ', levelToNarrativeTriggerBreakpoints[relevantSkill][newLevel])
         activateNarrativeTrigger(levelToNarrativeTriggerBreakpoints[relevantSkill][newLevel])
     }
 
