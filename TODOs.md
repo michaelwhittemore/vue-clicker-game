@@ -10,23 +10,14 @@
     7.  ~~AutoRefiner buy button doesn't do anything right now ~~
     10.  ~~Add an experience bar (robotics skill allows you to build an autoRefiner)~~
     11. ~~Need to programmatically generate the exp components (You shouldn't show robotics/robotics until we've already built a robot)~~
-        - Hide the auto refinery behind level
-            - Within buy automaton we need a computed property that we can then tie to `v-if`
-            - So why is robotics not properly increasing?
-            - Will also need to add narrative text to this (when we level robotics)
-            - Let's create a `levelUp` helper
-    13. Need to have a chance to generate gold when mining with level > 1
+    13. **Here!** Need to have a chance to generate gold when mining with level > 1
         - this should be within generateResource
-    12. ~~Move the narrative text to its own component. Have some kind of map for events to text?~~
+    14. ~~Move the narrative text to its own component. Have some kind of map for events to text?~~
         - Need to add the scroll
-        - Need to have the triggers
+        - ~~Need to have the triggers~~
         - ~~Need to fix ordering issue.~~
-        - Need to fix how hard coded the triggers are
-    13. **HERE!**  Maybe you have a random chance to get gold? Should scale with mining level?
-        - Let's add some narrative stuff for being able to get gold
-        - Maybe level 1? 
+        - ~~Need to fix how hard coded the triggers are~~
 
-    * Might be worth refactoring some component logic into exported functions?
     13. Pickaxe upgrade - maybe add a shop? - updates will require a new resource, maybe gold? - traveling merchant
     10. Shop - will need to have some kind of good to sell (maybe you mine gold??)
     - ----- What resources do I want to add? I said gold, maybe some more exciting electronic components.

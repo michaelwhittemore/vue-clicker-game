@@ -20,6 +20,16 @@ switch (props.resourceType) {
 const onClickHandler = () => {
     activateNarrativeTrigger(narrativeTrigger)
     gameStateStorage.resources[props.resourceType]++
+    // gonna start by hard coding in gold chance - still unsure if I need to keep 
+    // this as a generic component
+    if (props.resourceType === 'ore'){ // This seems wrong, bundle into function
+        // Should probably have a probability helper for this. 
+        const didMineGold = (Math.random() * 100) <= (gameStateStorage.skills.mining.level * 5);
+        if (didMineGold){
+            gameStateStorage.resources.gold++;
+            activateNarrativeTrigger('hasMinedGold')
+        }
+    }
     earnExperienceInSkill(relevantSkill)
 
 }

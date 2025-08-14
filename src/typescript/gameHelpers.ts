@@ -12,19 +12,13 @@ const levelUpSkill = (relevantSkill: ValidSkills) => {
     gameStateStorage.skills[relevantSkill].experience = 0;
     gameStateStorage.skills[relevantSkill].level++;
     const newLevel = gameStateStorage.skills[relevantSkill].level;
-    // here! how do we make this more generic?? - maybe we have maps for levels and breakpoints?
-    // if(relevantSkill === 'mining' && newLevel === 1){
-    //     activateNarrativeTrigger('hasUnlockedGoldMining')
-    // } else if (relevantSkill === 'mining' && newLevel === 3){
-    //     // here! this should unlock the new resource - gold
-    //     // activateNarrativeTrigger('hasUnlockedGoldMining')
-    // }
+
     if (levelToNarrativeTriggerBreakpoints[relevantSkill]?.[newLevel]) {
         console.log('narrative trigger: ', levelToNarrativeTriggerBreakpoints[relevantSkill][newLevel])
         activateNarrativeTrigger(levelToNarrativeTriggerBreakpoints[relevantSkill][newLevel])
     }
 
-    // currently increasing by 15%
+    // currently increasing required experience by 15%
     gameStateStorage.skills[relevantSkill].targetExperience = Math.trunc(gameStateStorage.skills[relevantSkill].targetExperience * 1.15)
 }
 

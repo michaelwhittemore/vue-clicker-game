@@ -40,7 +40,6 @@ const onClickHandler = () => {
     gameStateStorage
     gameStateStorage.automatons[props.automatonType]++;
     gameStateStorage.resources[costResource] -= costQuantity;
-    // here! - adding exp for testing
     earnExperienceInSkill('robotics', 2)
     
 }

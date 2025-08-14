@@ -9,7 +9,8 @@ const narrativeTriggersToText = {
     hasRefinedOre: 'The machine\'s internal furnace roars and groans. From its molten innards emerges a single steel ingot.',
     hasBuiltAutoMiner: 'Like an off-world Prometheus, you have birthed life. Well, not "life" per se, and all you did was follow the manual, but you did manage to get a rather sad looking robot to emerge from the fabricator. It slowly shuffles off to the mines.',
     hasBuiltAutoRefiner: 'You fumble a bit, but eventually you get the fabricator to output a working robotic refining assistant. It dutifully takes its place next to the ore refiners and begins to work.',
-    hasUnlockedAutoRefiner: 'hasUnlockedAutoRefiner TODO need text here',
+    hasUnlockedAutoRefiner: 'You\'ve fabricated enough robots that you feel comfortable moving on to the "advanced" section of the manual. A section entitled "Automated Refining for Absolute Dumb-Dumbs" seems up your alley. (You can now build auto refiners)',
+    hasMinedGold: 'Eureka! You\'ve found a nugget of gold within the ground.',
     tradingUnlock1: 'TODO',
 }
 
