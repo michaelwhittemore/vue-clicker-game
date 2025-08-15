@@ -10,15 +10,17 @@
     7.  ~~AutoRefiner buy button doesn't do anything right now ~~
     10.  ~~Add an experience bar (robotics skill allows you to build an autoRefiner)~~
     11. ~~Need to programmatically generate the exp components (You shouldn't show robotics/robotics until we've already built a robot)~~
-    13. **Here!** Need to have a chance to generate gold when mining with level > 1
-        - this should be within generateResource
+    13. ~~ Need to have a chance to generate gold when mining with level > 1~~
     14. ~~Move the narrative text to its own component. Have some kind of map for events to text?~~
-        - Need to add the scroll
+        - Need to add the scroll **Here!** 
+            - scrolling currently bugged, I assume we're creating the new element before scrolling? it's always one element short
+            - maybe use mutation observer?? - looks like not a typical Vue pattern though
         - ~~Need to have the triggers~~
         - ~~Need to fix ordering issue.~~
         - ~~Need to fix how hard coded the triggers are~~
 
     13. Pickaxe upgrade - maybe add a shop? - updates will require a new resource, maybe gold? - traveling merchant
+        - When do we want to show the shop??
     10. Shop - will need to have some kind of good to sell (maybe you mine gold??)
     - ----- What resources do I want to add? I said gold, maybe some more exciting electronic components.
     11. Eventually we will need travel. This will probably take the form of grouping locations into another container/wrapper that gets replaced
@@ -31,8 +33,8 @@
 * Need a more distinctive font 
 * Add some kind of animation when mining or building? maybe a little `+1 ore` popup? Will need to do some research
 * Look at a mobile game or civ or something for UI inspiration for resource bar
-* maybe I should move the clicky bits (the location bar) to the top so that I don't have it keep moving down
-* I should give the narrative area scrolling and a maximum height - I will also want it to scroll down - also some spacig between text
+
+* I should give the narrative area scrolling and a maximum height - I will also want it to scroll down - also some spacing between text
 
 # General Notes
 * Will need to mention this was to learn vue and to refresh my typescript knowledge 

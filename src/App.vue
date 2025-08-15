@@ -14,14 +14,7 @@ import NarrativeText from './components/NarrativeText.vue';
 </script>
 
 <template>
-  <NarrativeText /> 
-  <div class="wrapper">
-    <div id="displayArea" class="flexUtility">
-      <ResourceDisplay />
-      <AutomatonDisplay />
-    </div>
-    <ExperienceBarHolder />
-    <div id="locationsHolder" class="flexUtility">
+      <div id="locationsHolder" class="flexUtility">
       <LocationComponent :location-name="'Mine'">
         <GenerateResourceButton :resource-type="'ore'" />
       </LocationComponent>
@@ -35,8 +28,14 @@ import NarrativeText from './components/NarrativeText.vue';
         <BuildAutomaton :automaton-type="'autoRefiner'" />
       </LocationComponent>
     </div>
+    <NarrativeText /> 
+    <div id="displayArea" class="flexUtility">
+      <ResourceDisplay />
+      <AutomatonDisplay />
+    </div>
+    <ExperienceBarHolder />
 
-  </div>
+
 
   <main>
   </main>

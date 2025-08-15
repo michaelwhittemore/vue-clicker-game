@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, watch, useTemplateRef } from 'vue';
+import { computed, watch, useTemplateRef, ref } from 'vue';
 import { gameStateStorage } from '@/typescript/gameStateStorage';
 
 const narrativeTriggersToText = {
@@ -16,9 +16,11 @@ const narrativeTriggersToText = {
 
 const narrativeWrapperRef = useTemplateRef('narrativeWrapper')
 
+// TODO - looks like this doesn't scroll all the way down? I assume we're creating the element after the changes - might be worth using a mutation observers?
 watch(
     () => gameStateStorage.narrativeTriggersArray,
     () => {
+        console.log(narrativeWrapperRef.value)
         if (narrativeWrapperRef.value){
             narrativeWrapperRef.value.scrollTop = narrativeWrapperRef.value.scrollHeight;
         }
@@ -26,9 +28,11 @@ watch(
     }, { deep: true }
 )
 
+
 const computedNarrativeText = computed(() => {
     return gameStateStorage.narrativeTriggersArray.map(trigger => narrativeTriggersToText[trigger])
 })
+
 </script>
 <template>
     <div ref="narrativeWrapper" id="narrativeWrapper">
@@ -52,6 +56,8 @@ const computedNarrativeText = computed(() => {
     border-style: double;
     background-color: #f6eee3;
     overflow: auto;
+    /* max-height: 10em; */
+        max-height: 5em;
 
     /* // need this to scroll, should have height or max height?*/
 }

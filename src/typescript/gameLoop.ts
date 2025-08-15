@@ -3,7 +3,6 @@ import type { StateStorageObject } from './gameStateStorage.ts'
 
 const initGameLoop = (gameStateStorage: StateStorageObject, interval: number = 1000) => {
     const executeGameTick = () => {
-        // console.log('gameStateStorage:', gameStateStorage)
         // todo - make this fire less often, in general we will need a rate
         // Assignments make it easier to write without access three deep props - remember these
         // are read-only this way
