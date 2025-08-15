@@ -14,7 +14,6 @@ const levelUpSkill = (relevantSkill: ValidSkills) => {
     const newLevel = gameStateStorage.skills[relevantSkill].level;
 
     if (levelToNarrativeTriggerBreakpoints[relevantSkill]?.[newLevel]) {
-        console.log('narrative trigger: ', levelToNarrativeTriggerBreakpoints[relevantSkill][newLevel])
         activateNarrativeTrigger(levelToNarrativeTriggerBreakpoints[relevantSkill][newLevel])
     }
 

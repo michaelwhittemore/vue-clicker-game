@@ -24,11 +24,15 @@
     11. Eventually we will need travel. This will probably take the form of grouping locations into another container/wrapper that gets replaced
     12. Make things like exp collapsible 
     8. Need to make the miners slower (need to have some kind of counter in the game loop so that it only fires every few game ticks)
+    12. Add saving
+    
 
 # Style Todos
 * Need a more distinctive font 
 * Add some kind of animation when mining or building? maybe a little `+1 ore` popup? Will need to do some research
 * Look at a mobile game or civ or something for UI inspiration for resource bar
+* maybe I should move the clicky bits (the location bar) to the top so that I don't have it keep moving down
+* I should give the narrative area scrolling and a maximum height - I will also want it to scroll down - also some spacig between text
 
 # General Notes
 * Will need to mention this was to learn vue and to refresh my typescript knowledge 
