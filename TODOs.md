@@ -15,25 +15,26 @@
         - Need to add the scroll **Here!** 
             - scrolling currently bugged, I assume we're creating the new element before scrolling? it's always one element short
             - maybe use mutation observer?? - looks like not a typical Vue pattern though
+            - maybe add additional scroll height? I suspect that's not the best option
+            - maybe next tick https://vueschool.io/articles/vuejs-tutorials/what-is-vue-nexttick-accessing-the-dom-after-data-updates/
         - ~~Need to have the triggers~~
         - ~~Need to fix ordering issue.~~
         - ~~Need to fix how hard coded the triggers are~~
 
-    13. Pickaxe upgrade - maybe add a shop? - updates will require a new resource, maybe gold? - traveling merchant
+    13. Pickaxe upgrade - maybe add a shop? - updates will require a new resource, maybe gold? - traveling merchant, will need to add narrative text for their arrival and also a 
         - When do we want to show the shop??
     10. Shop - will need to have some kind of good to sell (maybe you mine gold??)
     - ----- What resources do I want to add? I said gold, maybe some more exciting electronic components.
     11. Eventually we will need travel. This will probably take the form of grouping locations into another container/wrapper that gets replaced
     12. Make things like exp collapsible 
-    8. Need to make the miners slower (need to have some kind of counter in the game loop so that it only fires every few game ticks)
-    12. Add saving
+    12. Add saving - pretty sure this is just loading in gameStateStorage from local storage (will probably need the logic to be within `gameStateStorage.ts` as that's what exports the ref)
     
 
 # Style Todos
 * Need a more distinctive font 
 * Add some kind of animation when mining or building? maybe a little `+1 ore` popup? Will need to do some research
 * Look at a mobile game or civ or something for UI inspiration for resource bar
-
+* maybe switch the narrative back to the top and just hard code the height? - need to fix the scrolling first I think
 * I should give the narrative area scrolling and a maximum height - I will also want it to scroll down - also some spacing between text
 
 # General Notes

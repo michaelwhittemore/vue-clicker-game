@@ -14,26 +14,32 @@ import NarrativeText from './components/NarrativeText.vue';
 </script>
 
 <template>
-      <div id="locationsHolder" class="flexUtility">
-      <LocationComponent :location-name="'Mine'">
-        <GenerateResourceButton :resource-type="'ore'" />
-      </LocationComponent>
+  <NarrativeText />
+  <div id="locationsHolder" class="flexUtility">
+    <LocationComponent :location-name="'Mine'">
+      <GenerateResourceButton :resource-type="'ore'" />
+    </LocationComponent>
 
-      <LocationComponent :location-name="'Refinery'">
-        <RefineButton />
-      </LocationComponent>
+    <LocationComponent :location-name="'Refinery'">
+      <RefineButton />
+    </LocationComponent>
 
-      <LocationComponent :location-name="'Robotics Fabricator'">
-        <BuildAutomaton :automaton-type="'autoMiner'" />
-        <BuildAutomaton :automaton-type="'autoRefiner'" />
-      </LocationComponent>
-    </div>
-    <NarrativeText /> 
-    <div id="displayArea" class="flexUtility">
-      <ResourceDisplay />
-      <AutomatonDisplay />
-    </div>
-    <ExperienceBarHolder />
+    <LocationComponent :location-name="'Robotics Fabricator'">
+      <BuildAutomaton :automaton-type="'autoMiner'" />
+      <BuildAutomaton :automaton-type="'autoRefiner'" />
+    </LocationComponent>
+
+    <LocationComponent :location-name="'Shop'">
+      <BuildAutomaton :automaton-type="'autoMiner'" />
+      <BuildAutomaton :automaton-type="'autoRefiner'" />
+    </LocationComponent>
+  </div>
+
+  <div id="displayArea" class="flexUtility">
+    <ResourceDisplay />
+    <AutomatonDisplay />
+  </div>
+  <ExperienceBarHolder />
 
 
 
