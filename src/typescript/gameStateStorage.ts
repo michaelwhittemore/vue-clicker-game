@@ -7,6 +7,12 @@ export interface Skill {
     targetExperience: number,
 };
 
+interface Upgrade {
+    level: number,
+    price: number,
+    // may also need a resource price
+}
+
 export interface StateStorageObject {
     automatons: {
         autoMiner: number,
@@ -25,7 +31,7 @@ export interface StateStorageObject {
     goods?: object,
     technologies?: object,
     upgrades: {
-        pickaxe: number
+        pickaxe: Upgrade
     }, 
     narrativeTriggersArray: NarrativeTrigger[],
 }
@@ -36,9 +42,10 @@ const gameStateStorageObject: StateStorageObject = {
         autoRefiner: 0,
     },
     resources: {
+        // these should be zero, but this makes testing easier
         ore: 0,
-        steel: 30,
-        gold: 0,
+        steel: 100,
+        gold: 10,
     },
     skills: {
         mining: {
@@ -58,7 +65,10 @@ const gameStateStorageObject: StateStorageObject = {
         }
     },
     upgrades: {
-        pickaxe: 1
+        pickaxe: {
+            level: 1,
+            price: 10,
+        }
     },
     goods: {},
     technologies: {},
