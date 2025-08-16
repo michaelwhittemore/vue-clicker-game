@@ -24,6 +24,9 @@ export interface StateStorageObject {
     }
     goods?: object,
     technologies?: object,
+    upgrades: {
+        pickaxe: number
+    }, 
     narrativeTriggersArray: NarrativeTrigger[],
 }
 
@@ -53,6 +56,9 @@ const gameStateStorageObject: StateStorageObject = {
             experience: 0,
             targetExperience: 20,
         }
+    },
+    upgrades: {
+        pickaxe: 1
     },
     goods: {},
     technologies: {},

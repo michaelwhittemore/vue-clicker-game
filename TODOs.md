@@ -12,17 +12,11 @@
     11. ~~Need to programmatically generate the exp components (You shouldn't show robotics/robotics until we've already built a robot)~~
     13. ~~ Need to have a chance to generate gold when mining with level > 1~~
     14. ~~Move the narrative text to its own component. Have some kind of map for events to text?~~
-        - Need to add the scroll **Here!** 
-            - scrolling currently bugged, I assume we're creating the new element before scrolling? it's always one element short
-            - maybe use mutation observer?? - looks like not a typical Vue pattern though
-            - maybe add additional scroll height? I suspect that's not the best option
-            - maybe next tick https://vueschool.io/articles/vuejs-tutorials/what-is-vue-nexttick-accessing-the-dom-after-data-updates/
-        - ~~Need to have the triggers~~
-        - ~~Need to fix ordering issue.~~
-        - ~~Need to fix how hard coded the triggers are~~
 
-    13. Pickaxe upgrade - maybe add a shop? - updates will require a new resource, maybe gold? - traveling merchant, will need to add narrative text for their arrival and also a 
+    13. **Here!**  Pickaxe upgrade - maybe add a shop? - updates will require a new resource, maybe gold? - traveling merchant, will need to add narrative text for their arrival and also a 
         - When do we want to show the shop??
+    14. Refactor generate resources to use composable (instead of wierd props and conditionals
+    see https://vuejs.org/guide/reusability/composables#composables)
     10. Shop - will need to have some kind of good to sell (maybe you mine gold??)
     - ----- What resources do I want to add? I said gold, maybe some more exciting electronic components.
     11. Eventually we will need travel. This will probably take the form of grouping locations into another container/wrapper that gets replaced
@@ -64,6 +58,7 @@
 * https://stackoverflow.com/questions/42872002/in-vue-js-component-how-to-use-props-in-css, https://stackoverflow.com/questions/69102748/vue-3-get-props-in-style
 * https://vuejs.org/guide/typescript/composition-api.html#typing-component-props
 * https://vuejs.org/guide/typescript/overview
+* https://vuejs.org/guide/reusability/composables#composables
  
 
 # Stretch Goals

@@ -10,6 +10,7 @@ import LocationComponent from './components/LocationComponent.vue';
 import RefineButton from './components/RefineButton.vue';
 import ExperienceBarHolder from './components/ExperienceBarHolder.vue';
 import NarrativeText from './components/NarrativeText.vue';
+import BuyPickaxeUpgrade from './components/BuyPickaxeUpgrade.vue';
 
 </script>
 
@@ -30,8 +31,7 @@ import NarrativeText from './components/NarrativeText.vue';
     </LocationComponent>
 
     <LocationComponent :location-name="'Shop'">
-      <BuildAutomaton :automaton-type="'autoMiner'" />
-      <BuildAutomaton :automaton-type="'autoRefiner'" />
+      <BuyPickaxeUpgrade />
     </LocationComponent>
   </div>
 

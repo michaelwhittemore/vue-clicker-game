@@ -17,6 +17,7 @@ switch (props.resourceType) {
     default:
         console.error('invalid resource type for generate button')
 }
+// HERE! - should really move this to a helper, also this will need to scale with pickaxe level
 const onClickHandler = () => {
     activateNarrativeTrigger(narrativeTrigger)
     gameStateStorage.resources[props.resourceType]++

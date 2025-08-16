@@ -52,7 +52,6 @@ const onClickHandler = () => {
 </template>
 
 <style>
-button {
-    /* background-color: red */
-}
+/* button {
+} */
 </style>

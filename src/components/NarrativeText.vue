@@ -16,7 +16,6 @@ const narrativeTriggersToText = {
 
 const narrativeWrapperRef = useTemplateRef('narrativeWrapper')
 
-// TODO - looks like this doesn't scroll all the way down? I assume we're creating the element after the changes - might be worth using a mutation observers?
 const computedNarrativeText = computed(() => {
     return gameStateStorage.narrativeTriggersArray.map(trigger => narrativeTriggersToText[trigger])
 });
@@ -28,7 +27,6 @@ watch(
         if (narrativeWrapperRef.value){
             narrativeWrapperRef.value.scrollTop = narrativeWrapperRef.value.scrollHeight;
         }
-        
     },
 )
 </script>
