@@ -3,12 +3,9 @@ import { computed } from 'vue';
 import { gameStateStorage } from '@/typescript/gameStateStorage';
 import { earnExperienceInSkill, activateNarrativeTrigger } from '@/typescript/gameHelpers'; 
 // Will need to modify the price and information on level
-// maybe shop is second autorefiner?
 // Hmmm. Maybe locations use slots for logic?
 
 // HERE!
-// also need to figure out if we display the shop at all.
-//  - This will happen at an outer component 
 // would like to do the refactoring to use composables https://vuejs.org/guide/reusability/composables#composables
 // will need price to increase exponentially 
     
