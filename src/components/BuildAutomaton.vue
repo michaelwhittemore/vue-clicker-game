@@ -37,8 +37,10 @@ const computedHasEnoughResources = computed(() => {
 })
 const onClickHandler = () => {
     activateNarrativeTrigger(narrativeTrigger);
-    gameStateStorage
     gameStateStorage.automatons[props.automatonType]++;
+    if (props.automatonType === 'autoRefiner' && gameStateStorage.automatons.autoRefiner >= 2){
+        activateNarrativeTrigger('hasUnlockedShop');
+    }
     gameStateStorage.resources[costResource] -= costQuantity;
     earnExperienceInSkill('robotics', 2)
     
