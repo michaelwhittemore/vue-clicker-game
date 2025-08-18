@@ -13,6 +13,9 @@ const narrativeTriggersToText: Record<NarrativeTrigger, string> = {
     hasBuiltAutoRefiner: 'You fumble a bit, but eventually you get the fabricator to output a working robotic refining assistant. It dutifully takes its place next to the ore refiners and begins to work.',
     hasUnlockedAutoRefiner: 'You\'ve fabricated enough robots that you feel comfortable moving on to the "advanced" section of the manual. A section entitled "Automated Refining for Absolute Dumb-Dumbs" seems up your alley. (You can now build auto refiners)',
     hasMinedGold: 'Eureka! You\'ve found a nugget of gold within the ground.',
+    hasUnlockedShop: 'TODO Something about an alien merchant, creaking ship descends, seems draw my the rucus you and your automatons have casued, language barrier, maybe our alien friends is wearing a duster that clearly is not designed for its species. It throws back the doors to reveal its wares. After some crude pantomiming you manage to get a price estimate for the mining gear',
+    hasUpgradedPickaxe: 'The alien hands you the tool in exchange for your gold. It immediately feels like an improvement over your previous pickaxe. With your skills, you feel that you\'ll be able to mine far more efficiently. (You have increased the amount of ore that you get from each swing. Future pickaxe upgrades will increase this bonus further.)',
+    
     tradingUnlock1: 'TODO',
 }
 

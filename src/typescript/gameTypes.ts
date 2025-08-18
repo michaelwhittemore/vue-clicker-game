@@ -4,4 +4,4 @@ export type ValidResources = 'ore' | 'steel';
 export type ValidSkills = 'mining' | 'robotics' | 'trading';
 export type NarrativeTrigger = 'gameStart' | 'hasMined' | 'hasBuiltAutoMiner' | 'hasRefinedOre' | 'hasUnlockedGoldMining' 
 | 'hasBuiltAutoRefiner' | 'hasUnlockedPickaxeUpgrade1' | 'hasUnlockedAutoRefiner' | 'tradingUnlock1' | 
-'hasMinedGold';
+'hasMinedGold' | 'hasUnlockedShop' | 'hasUpgradedPickaxe';
