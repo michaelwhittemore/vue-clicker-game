@@ -3,16 +3,13 @@ import { computed } from 'vue';
 import { gameStateStorage } from '@/typescript/gameStateStorage';
 import { earnExperienceInSkill, activateNarrativeTrigger } from '@/typescript/gameHelpers'; 
 // Will need to modify the price and information on level
-// will need a handler for on click to include narrativeTrigger
-// oh maybe this also affects the trading xp bar??
+// maybe shop is second autorefiner?
+// Hmmm. Maybe locations use slots for logic?
 
 // HERE!
 // also need to figure out if we display the shop at all.
-// - This will happen at an outer component 
-// will also need to increase ore harvest per click somewhere - in generate resources
+//  - This will happen at an outer component 
 // would like to do the refactoring to use composables https://vuejs.org/guide/reusability/composables#composables
-// will need to store pickaxe level
-// - let's add a 'upgrades' field to the state storage
 // will need price to increase exponentially 
     
 const onClickHandler = () => {

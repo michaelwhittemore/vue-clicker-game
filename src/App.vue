@@ -6,7 +6,7 @@ import GenerateResourceButton from './components/GenerateResourceButton.vue';
 import ResourceDisplay from './components/ResourceDisplay.vue';
 import AutomatonDisplay from './components/AutomatonDisplay.vue';
 import BuildAutomaton from './components/BuildAutomaton.vue';
-import LocationComponent from './components/LocationComponent.vue';
+import LocationComponent from './components/Locations/LocationComponent.vue';
 import RefineButton from './components/RefineButton.vue';
 import ExperienceBarHolder from './components/ExperienceBarHolder.vue';
 import NarrativeText from './components/NarrativeText.vue';
