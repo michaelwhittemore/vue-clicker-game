@@ -1,5 +1,5 @@
 import { reactive } from 'vue';
-import type { NarrativeTrigger } from './gameTypes';
+import type { NarrativeTrigger, ValidResources, ValidSkills } from './gameTypes';
 
 export interface Skill {
     level: number,
@@ -10,6 +10,11 @@ export interface Skill {
 interface Upgrade {
     level: number,
     price: number,
+    resourceType: ValidResources,
+    requiredLevel?: {
+        skill: ValidSkills
+        skillLevel: number,
+    },
     // may also need a resource price
 }
 
@@ -44,7 +49,7 @@ const gameStateStorageObject: StateStorageObject = {
     resources: {
         // these should be zero, but this makes testing easier
         ore: 0,
-        steel: 100,
+        steel: 1000,
         gold: 10,
     },
     skills: {
@@ -68,6 +73,11 @@ const gameStateStorageObject: StateStorageObject = {
         pickaxe: {
             level: 1,
             price: 10,
+            resourceType: 'gold',
+            requiredLevel: {
+                skill: 'mining',
+                skillLevel: 3,
+            }    
         }
     },
     goods: {},

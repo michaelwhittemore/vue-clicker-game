@@ -19,6 +19,7 @@ const narrativeTriggersToText: Record<NarrativeTrigger, string> = {
     tradingUnlock1: 'TODO',
 }
 
+// We need the template ref in order to access the scroll behavior
 const narrativeWrapperRef = useTemplateRef('narrativeWrapper')
 
 const computedNarrativeText = computed(() => {
@@ -28,6 +29,7 @@ const computedNarrativeText = computed(() => {
 watch(
     computedNarrativeText,
     async () => {
+        // next tick is necessary otherwise we scroll before adding the next entry
         await nextTick();
         if (narrativeWrapperRef.value){
             narrativeWrapperRef.value.scrollTop = narrativeWrapperRef.value.scrollHeight;
@@ -37,13 +39,20 @@ watch(
 </script>
 <template>
     <div ref="narrativeWrapper" id="narrativeWrapper">
-        <div v-for="narrativeText in computedNarrativeText"> {{ narrativeText }} </div>
+        <div class="narrativeEntry"   v-for="narrativeText in computedNarrativeText"> {{ narrativeText }} </div>
     </div>
 </template>
 <style>
-/* .narrativeEntry{
-
-} */
+.narrativeEntry{
+    margin-top: .3em;
+    margin-bottom: .3em;
+}
+.narrativeEntry:first-child{
+    margin-top: 0;
+}
+.narrativeEntry:last-child{
+    margin-bottom: 0;
+}
 #narrativeWrapper {
     padding: .2em;
     border-style: double;

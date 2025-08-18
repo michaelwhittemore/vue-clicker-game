@@ -12,16 +12,13 @@
     11. ~~Need to programmatically generate the exp components (You shouldn't show robotics/robotics until we've already built a robot)~~
     13. ~~ Need to have a chance to generate gold when mining with level > 1~~
     14. ~~Move the narrative text to its own component. Have some kind of map for events to text?~~
-
-    13. **Here!**  Pickaxe upgrade - maybe add a shop? - updates will require a new resource, maybe gold? - traveling merchant, will need to add narrative text for their arrival and also a 
-        - When do we want to show the shop??
-        - Should the shop actually be a location?
-        - Would like to make locations inheritable/composable (maybe also refactor the folder structure if I do that)
-    14. Refactor generate resources to use composable (instead of wierd props and conditionals
+    13. ~~Pickaxe upgrade - maybe add a shop? - updates will require a new resource, maybe gold? - traveling merchant, will need to add narrative text for their arrival and also a ~~
+    14. **Here!**   Let's make a gold mining robot. Also maybe you can sell steel to the merchant??
+    14. Refactor generate resources to use composable (instead of weird props and conditionals
     see https://vuejs.org/guide/reusability/composables#composables)
     10. Shop - will need to have some kind of good to sell (maybe you mine gold??)
     - ----- What resources do I want to add? I said gold, maybe some more exciting electronic components.
-    11. Eventually we will need travel. This will probably take the form of grouping locations into another container/wrapper that gets replaced
+    11. Eventually we will need travel. This will probably take the form of grouping locations into another container/wrapper that gets replaced. Should make ships availble from the shop
     12. Make things like exp collapsible 
     12. Add saving - pretty sure this is just loading in gameStateStorage from local storage (will probably need the logic to be within `gameStateStorage.ts` as that's what exports the ref)
     
@@ -32,6 +29,7 @@
 * Look at a mobile game or civ or something for UI inspiration for resource bar
 * maybe switch the narrative back to the top and just hard code the height? - need to fix the scrolling first I think
 * I should give the narrative area scrolling and a maximum height - I will also want it to scroll down - also some spacing between text
+* have some sort of border that demands attention when a new text is added? maybe it's highlighted for a few seconds? (like for the narrative element)
 
 # General Notes
 * Will need to mention this was to learn vue and to refresh my typescript knowledge 
