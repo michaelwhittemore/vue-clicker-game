@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { gameStateStorage } from '@/typescript/gameStateStorage';
-// will need to add checks for if we should have the button enabled (probably tied to gold)
 // Will need to modify the price and information on level
 // will need a handler for on click to include narrativeTrigger
 
