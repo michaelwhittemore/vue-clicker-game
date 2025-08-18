@@ -72,7 +72,7 @@ const gameStateStorageObject: StateStorageObject = {
     },
     goods: {},
     technologies: {},
-    narrativeTriggersArray: [],
+    narrativeTriggersArray: ['gameStart'],
 }
 
 export const gameStateStorage = reactive(gameStateStorageObject)

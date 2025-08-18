@@ -15,6 +15,8 @@
 
     13. **Here!**  Pickaxe upgrade - maybe add a shop? - updates will require a new resource, maybe gold? - traveling merchant, will need to add narrative text for their arrival and also a 
         - When do we want to show the shop??
+        - Should the shop actually be a location?
+        - Would like to make locations inheritable/composable (maybe also refactor the folder structure if I do that)
     14. Refactor generate resources to use composable (instead of wierd props and conditionals
     see https://vuejs.org/guide/reusability/composables#composables)
     10. Shop - will need to have some kind of good to sell (maybe you mine gold??)
