@@ -11,6 +11,7 @@ import RefineButton from './components/RefineButton.vue';
 import ExperienceBarHolder from './components/ExperienceBarHolder.vue';
 import NarrativeText from './components/NarrativeText.vue';
 import BuyPickaxeUpgrade from './components/ShopComponents/BuyPickaxeUpgrade.vue';
+import BuyShip from './components/ShopComponents/BuyShip.vue';
 
 </script>
 
@@ -34,6 +35,8 @@ import BuyPickaxeUpgrade from './components/ShopComponents/BuyPickaxeUpgrade.vue
 
     <LocationComponent :location-name="'Shop'">
       <BuyPickaxeUpgrade />
+      <BuyShip /> 
+      <!-- Should buy a ship upgrade and also sell steel and ore --> 
       
     </LocationComponent>
   </div>

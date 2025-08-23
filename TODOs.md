@@ -20,17 +20,17 @@
         - Attach a button to the shop
         - Should display is tied to steel
         - Should be a pretty disadvantageous rate
-    * BUG!!! Mining level not affecting the pickaxe purchase
+    16. Add the abioity to buy the ship (don't need to have it working yet, also maybe you need to repair it?)
     16. Refactor locations (the primary reason is that we don't want to have the app track all the buttons)
     14. Refactor generate resources to use composable (instead of weird props and conditionals
     see https://vuejs.org/guide/reusability/composables#composables)
-    10. Shop - will need to have some kind of good to sell (maybe you mine gold??)
     - ----- What resources do I want to add? I said gold, maybe some more exciting electronic components.
     12. Perhaps the ability to build auto builders??
     11. Eventually we will need travel. This will probably take the form of grouping locations into another container/wrapper that gets replaced. Should make ships available from the shop
         - will need a cargo system of some kind?
     12. Make things like exp collapsible 
     12. Add saving - pretty sure this is just loading in gameStateStorage from local storage (will probably need the logic to be within `gameStateStorage.ts` as that's what exports the ref)
+    * Some sort of neural uplink to gain passive xp (should be able to switch between skills)
     
 
 # Style Todos

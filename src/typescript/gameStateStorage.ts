@@ -54,6 +54,9 @@ const gameStateStorageObject: StateStorageObject = {
         ore: 0,
         steel: 1000,
         gold: 10,
+        // ore: 0,
+        // steel: 0,
+        // gold: 0,
     },
     skills: {
         mining: {
