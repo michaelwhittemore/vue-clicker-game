@@ -10,7 +10,7 @@ import LocationComponent from './components/Locations/LocationComponent.vue';
 import RefineButton from './components/RefineButton.vue';
 import ExperienceBarHolder from './components/ExperienceBarHolder.vue';
 import NarrativeText from './components/NarrativeText.vue';
-import BuyPickaxeUpgrade from './components/BuyPickaxeUpgrade.vue';
+import BuyPickaxeUpgrade from './components/ShopComponents/BuyPickaxeUpgrade.vue';
 
 </script>
 
@@ -25,7 +25,7 @@ import BuyPickaxeUpgrade from './components/BuyPickaxeUpgrade.vue';
       <RefineButton />
     </LocationComponent>
 
-    <!--- TODO - refactor this to be its own componnet-->
+    <!--- TODO - refactor this to be its own component-->
     <LocationComponent :location-name="'Robotics Fabricator'">
       <BuildAutomaton :automaton-type="'autoMiner'" />
       <BuildAutomaton :automaton-type="'autoRefiner'" />
@@ -34,6 +34,7 @@ import BuyPickaxeUpgrade from './components/BuyPickaxeUpgrade.vue';
 
     <LocationComponent :location-name="'Shop'">
       <BuyPickaxeUpgrade />
+      
     </LocationComponent>
   </div>
 

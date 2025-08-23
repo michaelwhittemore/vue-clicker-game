@@ -20,13 +20,14 @@ const onClickHandler = () => {
     }
 
 }
-const computedInsufficientGold = computed(() => {
-    return gameStateStorage.resources.gold < gameStateStorage.upgrades.pickaxe.price;
-    
+const computedSufficientGoldAndLevel = computed(() => {
+    return gameStateStorage.resources.gold >= gameStateStorage.upgrades.pickaxe.price &&
+        // We use the non-null assertion (!) as we know pickaxe has a required level
+        gameStateStorage.skills.mining.level >= gameStateStorage.upgrades.pickaxe.requiredLevel!.skillLevel;
 })
 </script>
 <template>
-    <button :disabled="computedInsufficientGold" :v-if="true" @click="onClickHandler"> Upgrade pickaxe to level {{ gameStateStorage.upgrades.pickaxe.level + 1 }} 
+    <button :disabled="!computedSufficientGoldAndLevel" :v-if="true" @click="onClickHandler"> Upgrade pickaxe to level {{ gameStateStorage.upgrades.pickaxe.level + 1 }} 
         (costs {{ gameStateStorage.upgrades.pickaxe.price }} {{ gameStateStorage.upgrades.pickaxe.resourceType }},
         <span v-if="gameStateStorage.upgrades.pickaxe.requiredLevel">requires {{ gameStateStorage.upgrades.pickaxe.requiredLevel.skill }} level 
             {{ gameStateStorage.upgrades.pickaxe.requiredLevel.skillLevel }} </span>

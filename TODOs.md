@@ -13,10 +13,15 @@
     13. ~~ Need to have a chance to generate gold when mining with level > 1~~
     14. ~~Move the narrative text to its own component. Have some kind of map for events to text?~~
     13. ~~Pickaxe upgrade - maybe add a shop? - updates will require a new resource, maybe gold? - traveling merchant, will need to add narrative text for their arrival and also a ~~
-    14. **Here!**   Let's make a gold mining robot. Also maybe you can sell steel to the merchant??
-        - These are two separate tasks
-        - What triggers the ability to build the gold mining robot?
-        - May want to have the gold miner work on a slower loop?
+    14.  ~~Let's make a gold mining robot. Also ~~
+        - ~~What triggers the ability to build the gold mining robot? - electronics three~~
+        - ~~May want to have the gold miner work on a slower loop?~~
+    15. **Here!**  maybe you can sell steel to the merchant??
+        - Attach a button to the shop
+        - Should display is tied to steel
+        - Should be a pretty disadvantageous rate
+    * BUG!!! Mining level not affecting the pickaxe purchase
+    16. Refactor locations (the primary reason is that we don't want to have the app track all the buttons)
     14. Refactor generate resources to use composable (instead of weird props and conditionals
     see https://vuejs.org/guide/reusability/composables#composables)
     10. Shop - will need to have some kind of good to sell (maybe you mine gold??)

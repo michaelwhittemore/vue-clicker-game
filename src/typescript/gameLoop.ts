@@ -2,7 +2,9 @@ import type { StateStorageObject } from './gameStateStorage.ts'
 
 
 const initGameLoop = (gameStateStorage: StateStorageObject, interval: number = 1000) => {
+    let tickNumber = 0;
     const executeGameTick = () => {
+        tickNumber++;
         // todo - make this fire less often, in general we will need a rate
         // Assignments make it easier to write without access three deep props - remember these
         // are read-only this way
@@ -11,7 +13,11 @@ const initGameLoop = (gameStateStorage: StateStorageObject, interval: number = 1
         // Auto miners
         {
             gameStateStorage.resources.ore += autoMiner;
-            gameStateStorage.resources.gold += autoGoldMiner;
+            // We only want gold miners to execute every other tick
+            if ( tickNumber % 2 === 0){
+                gameStateStorage.resources.gold += autoGoldMiner;
+            }
+            
         }
         // Auto refiners
         {
