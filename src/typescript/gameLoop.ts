@@ -7,10 +7,11 @@ const initGameLoop = (gameStateStorage: StateStorageObject, interval: number = 1
         // Assignments make it easier to write without access three deep props - remember these
         // are read-only this way
         const { ore, steel } = gameStateStorage.resources;
-        const { autoMiner, autoRefiner } = gameStateStorage.automatons;
+        const { autoMiner, autoRefiner, autoGoldMiner } = gameStateStorage.automatons;
         // Auto miners
         {
             gameStateStorage.resources.ore += autoMiner;
+            gameStateStorage.resources.gold += autoGoldMiner;
         }
         // Auto refiners
         {

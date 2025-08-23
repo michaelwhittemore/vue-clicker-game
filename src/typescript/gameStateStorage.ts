@@ -1,5 +1,5 @@
 import { reactive } from 'vue';
-import type { NarrativeTrigger, ValidResources, ValidSkills } from './gameTypes';
+import type { NarrativeTrigger, ValidAutomatons, ValidResources, ValidSkills } from './gameTypes';
 
 export interface Skill {
     level: number,
@@ -19,9 +19,11 @@ interface Upgrade {
 }
 
 export interface StateStorageObject {
+    // automatons: Record<ValidAutomatons, number>,
     automatons: {
         autoMiner: number,
         autoRefiner: number,
+        autoGoldMiner: number,
     },
     resources: {
         ore: number,
@@ -45,6 +47,7 @@ const gameStateStorageObject: StateStorageObject = {
     automatons: {
         autoMiner: 0,
         autoRefiner: 0,
+        autoGoldMiner: 0,
     },
     resources: {
         // these should be zero, but this makes testing easier

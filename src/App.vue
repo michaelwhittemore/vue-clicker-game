@@ -25,9 +25,11 @@ import BuyPickaxeUpgrade from './components/BuyPickaxeUpgrade.vue';
       <RefineButton />
     </LocationComponent>
 
+    <!--- TODO - refactor this to be its own componnet-->
     <LocationComponent :location-name="'Robotics Fabricator'">
       <BuildAutomaton :automaton-type="'autoMiner'" />
       <BuildAutomaton :automaton-type="'autoRefiner'" />
+      <BuildAutomaton :automaton-type="'autoGoldMiner'" />
     </LocationComponent>
 
     <LocationComponent :location-name="'Shop'">

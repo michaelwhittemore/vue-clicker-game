@@ -15,7 +15,8 @@ const narrativeTriggersToText: Record<NarrativeTrigger, string> = {
     hasMinedGold: 'Eureka! You\'ve found a nugget of gold within the ground.',
     hasUnlockedShop: 'A rusted and beaten shuttle descends from the skies. Its landing gear creaks as it settles into the center of town. An alien - presumably drawn by the smoke of your refineries- emerges and wearily looks around. It\'s wearing a leather duster and ten gallon hat, both of which look comically oversized on the lithe species which you don\'t recognize. The alien throws up a door on its ship to reveal an array of mining equipment. After some crude pantomiming you manage to get a price estimate for the gear. ',
     hasUpgradedPickaxe: 'The alien hands you the tool in exchange for your gold. It immediately feels like an improvement over your previous pickaxe. With your skills, you feel that you\'ll be able to mine far more efficiently. (You have increased the amount of ore that you get from each swing. Future pickaxe upgrades will increase this bonus further.)',
-    
+    hasUnlockedAutoGoldMiner: 'TODO, has unlocked auto gold miner, something to the effect of ',
+    hasBuiltAutoGoldMiner: 'TODO hasBuiltAutoGoldMiner (not unlocked) ',
     tradingUnlock1: 'TODO',
 }
 

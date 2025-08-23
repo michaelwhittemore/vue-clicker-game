@@ -17,7 +17,8 @@ export const levelToNarrativeTriggerBreakpoints: LevelToNarrativeTriggerBreakpoi
         3: 'hasUnlockedPickaxeUpgrade1',
     },
     robotics: {
-        1: 'hasUnlockedAutoRefiner'
+        1: 'hasUnlockedAutoRefiner',
+        3: 'hasUnlockedAutoGoldMiner',
     },
     trading: {
         1: 'tradingUnlock1'

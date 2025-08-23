@@ -14,11 +14,16 @@
     14. ~~Move the narrative text to its own component. Have some kind of map for events to text?~~
     13. ~~Pickaxe upgrade - maybe add a shop? - updates will require a new resource, maybe gold? - traveling merchant, will need to add narrative text for their arrival and also a ~~
     14. **Here!**   Let's make a gold mining robot. Also maybe you can sell steel to the merchant??
+        - These are two separate tasks
+        - What triggers the ability to build the gold mining robot?
+        - May want to have the gold miner work on a slower loop?
     14. Refactor generate resources to use composable (instead of weird props and conditionals
     see https://vuejs.org/guide/reusability/composables#composables)
     10. Shop - will need to have some kind of good to sell (maybe you mine gold??)
     - ----- What resources do I want to add? I said gold, maybe some more exciting electronic components.
-    11. Eventually we will need travel. This will probably take the form of grouping locations into another container/wrapper that gets replaced. Should make ships availble from the shop
+    12. Perhaps the ability to build auto builders??
+    11. Eventually we will need travel. This will probably take the form of grouping locations into another container/wrapper that gets replaced. Should make ships available from the shop
+        - will need a cargo system of some kind?
     12. Make things like exp collapsible 
     12. Add saving - pretty sure this is just loading in gameStateStorage from local storage (will probably need the logic to be within `gameStateStorage.ts` as that's what exports the ref)
     
@@ -48,6 +53,7 @@
 // const badArray: Array<string> = ['a', 'b', 1]
 // const anotherBadArray: Array<number> = [1,2, 'as'] 
 * Should read up on typescript best practices
+* read about css animations
 
 # Useful Vue doc links
 * https://vuejs.org/guide/introduction.html
@@ -65,6 +71,4 @@
 * achievements
 * saving
 * consider https://pinia.vuejs.org/ pinia for state management
-* Add some flavor! Maybe some intro text at the very least?
 * Eventually locations will need to be generated with Vue components
-* basic pickaxe system (affects your basic clicker)

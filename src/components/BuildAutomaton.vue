@@ -28,6 +28,12 @@ switch (props.automatonType) {
         narrativeTrigger = 'hasBuiltAutoRefiner'
         computedShouldDisplay = computed(() => gameStateStorage.skills.robotics.level >= 1);
         break;
+    case 'autoGoldMiner':
+        costResource = 'steel';
+        costQuantity = 40;
+        narrativeTrigger = 'hasBuiltAutoGoldMiner',
+        computedShouldDisplay = computed(() => gameStateStorage.skills.robotics.level >= 3);
+        break;
     default:
         console.error('Unknown automatonType')
         break;
@@ -38,12 +44,12 @@ const computedHasEnoughResources = computed(() => {
 const onClickHandler = () => {
     activateNarrativeTrigger(narrativeTrigger);
     gameStateStorage.automatons[props.automatonType]++;
-    if (props.automatonType === 'autoRefiner' && gameStateStorage.automatons.autoRefiner >= 2){
+    if (props.automatonType === 'autoRefiner' && gameStateStorage.automatons.autoRefiner >= 2) {
         activateNarrativeTrigger('hasUnlockedShop');
     }
     gameStateStorage.resources[costResource] -= costQuantity;
     earnExperienceInSkill('robotics', 2)
-    
+
 }
 </script>
 

@@ -2,8 +2,6 @@
 import { computed } from 'vue';
 import { gameStateStorage } from '@/typescript/gameStateStorage';
 import { earnExperienceInSkill, activateNarrativeTrigger } from '@/typescript/gameHelpers'; 
-// Will need to modify the price and information on level
-// Hmmm. Maybe locations use slots for logic?
 
 // HERE!
 // would like to do the refactoring to use composables https://vuejs.org/guide/reusability/composables#composables
