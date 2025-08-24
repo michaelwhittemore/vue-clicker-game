@@ -20,7 +20,8 @@
         - Attach a button to the shop
         - Should display is tied to steel
         - Should be a pretty disadvantageous rate
-    16. Add the abioity to buy the ship (don't need to have it working yet, also maybe you need to repair it?)
+    15. Want to do the animation bit that I mentioned (where the text pops up)
+    16. Add the ability to buy the ship (don't need to have it working yet, also maybe you need to repair it?)
     16. Refactor locations (the primary reason is that we don't want to have the app track all the buttons)
     14. Refactor generate resources to use composable (instead of weird props and conditionals
     see https://vuejs.org/guide/reusability/composables#composables)
@@ -59,6 +60,11 @@
 // const anotherBadArray: Array<number> = [1,2, 'as'] 
 * Should read up on typescript best practices
 * read about css animations
+
+# Rebalancing notes
+* should be viable to sell, right now the rate seems punishing
+* gold should be rarer
+* in general, remember that this should be a long term game
 
 # Useful Vue doc links
 * https://vuejs.org/guide/introduction.html
