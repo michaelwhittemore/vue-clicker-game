@@ -20,5 +20,5 @@ const onClickSell = () => {
 const computedEnoughToEnable = computed(() => gameStateStorage.resources.steel >= steelPrice)
 </script>
 <template>
-    <button  @click="onClickSell" :disabled="!computedEnoughToEnable">Sell {{ steelPrice }} steel for gold</button>
+    <button  @click="onClickSell" :disabled="!computedEnoughToEnable">Sell {{ steelPrice }} steel for one gold</button>
 </template>

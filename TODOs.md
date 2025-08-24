@@ -17,10 +17,16 @@
         - ~~What triggers the ability to build the gold mining robot? - electronics three~~
         - ~~May want to have the gold miner work on a slower loop?~~
     15. **Here!**  maybe you can sell steel to the merchant??
-        - Attach a button to the shop
-        - Should display is tied to steel
         - Should be a pretty disadvantageous rate
+        - need to have rate tied to trading
+        - need to add to ore as well
+
     15. Want to do the animation bit that I mentioned (where the text pops up)
+        - Let's start with the text popup, and then we can do the animation part
+        - Maybe we add a slot for animation component
+        - The animation component will need to take in a string props to render
+        - Will need to figure out how long to display it, and also what triggers it
+    16. Refactor the components into related folders
     16. Add the ability to buy the ship (don't need to have it working yet, also maybe you need to repair it?)
     16. Refactor locations (the primary reason is that we don't want to have the app track all the buttons)
     14. Refactor generate resources to use composable (instead of weird props and conditionals

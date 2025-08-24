@@ -3,6 +3,7 @@ import { ref } from 'vue';
 import { gameStateStorage } from '@/typescript/gameStateStorage';
 import type { ValidResources, ValidSkills, NarrativeTrigger } from '@/typescript/gameTypes';
 import { earnExperienceInSkill, activateNarrativeTrigger } from '@/typescript/gameHelpers';
+import PopUpText from './PopUpText.vue';
 const props = defineProps<{
     resourceType: ValidResources
 }>()
@@ -45,7 +46,10 @@ const onClickHandler = () => {
 </script>
 
 <template>
-    <button @click="onClickHandler"> {{ buttonText }} </button>
+    <button @click="onClickHandler"> {{ buttonText }} 
+        <PopUpText />
+    </button>
+
 </template>
 
 <style>
