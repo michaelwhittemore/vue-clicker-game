@@ -43,46 +43,67 @@ watch(() => props.garbageTrigger, () => {
 .popUpContainer {
     position: relative;
 }
+
 /* animation ---------------- */
 .animatedPopUp {
-  animation-duration: 2s;
-  /* animation-name: slide-in fade-in; */
+    animation-duration: 5s;
+    animation-name: rotateAway;
+    animation-fill-mode: forwards;
+    /* animation-name: slide-in; */
     /* animation-name: slide-in, fade-in; */
-    animation-name: fade-out;
-    
+    /* animation-name: fade-out; */
+    /* may need to add ` animation-fill-mode` */
 
+}
+
+@keyframes rotateAway {
+    0% {
+        opacity: 1;
+        transform: translateX(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateX(50px) translateY(-50px)rotate(45deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(100px) translateY(0px) rotate(90deg);
+    }
 }
 
 @keyframes slide-in {
-  from {
-    translate: 150vw 0;
-    scale: 200% 1;
-  }
+    from {
+        translate: 150vw 0;
+        scale: 200% 1;
+    }
 
-  to {
-    translate: 0 0;
-    scale: 100% 1;
-  }
+    to {
+        translate: 0 0;
+        scale: 100% 1;
+    }
 }
 
 @keyframes fade-in {
-   0% {
-    opacity: 0; /* Start completely transparent */
-  }
-  100%{
-    opacity: 1;
-  } 
+    0% {
+        opacity: 0;
+        /* Start completely transparent */
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 @keyframes fade-out {
-   0% {
-    opacity: 1; /* Start completely transparent */
-  }
-  100%{
-    opacity: 0;
-    /* display: none; */
-  } 
+    0% {
+        opacity: 1;
+        /* Start completely transparent */
+    }
+
+    100% {
+        opacity: 0;
+        /* display: none; */
+    }
 }
-
-
 </style>
