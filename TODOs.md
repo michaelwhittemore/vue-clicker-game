@@ -87,6 +87,7 @@
 * https://vuejs.org/guide/typescript/composition-api.html#typing-component-props
 * https://vuejs.org/guide/typescript/overview
 * https://vuejs.org/guide/reusability/composables#composables
+* https://blog.logrocket.com/using-event-bus-vue-js-pass-data-between-components/
  
 
 # Stretch Goals
