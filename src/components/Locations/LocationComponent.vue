@@ -25,6 +25,7 @@ const computedShouldDisplay = computed(()=> {
 <template>
     <div class="locationWrapper" v-if="computedShouldDisplay">
         <div class="locationName">{{ props.locationName }}</div>
+        <!-- The slotted component is passed in from app.vue -->
         <slot></slot>
     </div>
     

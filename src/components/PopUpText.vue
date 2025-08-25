@@ -1,5 +1,12 @@
 <script setup lang="ts">
-const text = '+1'
+// defineProps(<{
+//   text: string,
+// }>)
+const text = '+1 ore';
+// We will need to get the text from the props. We will also need to manage the state
+// Either by eventing or maybe by having a timer? I'm unsure exactly how this will work.
+// Let's start by just trying to trigger it once, this may be worth reddit/discord
+// HERE!
 // I want the text to be fairly bold and block. 
 </script>
 <template>

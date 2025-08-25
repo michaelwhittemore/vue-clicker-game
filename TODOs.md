@@ -27,11 +27,16 @@
         - The animation component will need to take in a string props to render
         - Will need to figure out how long to display it, and also what triggers it
     16. Refactor the components into related folders
-    16. Add the ability to buy the ship (don't need to have it working yet, also maybe you need to repair it?)
+    17. Add the ability to buy schematic for gold (which trigger both narrative and buttons to appear)
+        - Let's start with an upgrade
+        - also an advanced ore miner (maybe three at a time?)
+    16. Add the ability to buy the ship (don't need to have it working yet, also maybe you need to repair it?) 
+        - repair should cost a hefty amount of steel
     16. Refactor locations (the primary reason is that we don't want to have the app track all the buttons)
     14. Refactor generate resources to use composable (instead of weird props and conditionals
     see https://vuejs.org/guide/reusability/composables#composables)
     - ----- What resources do I want to add? I said gold, maybe some more exciting electronic components.
+    15. Might be worth some sort of flow document (i.e. the resources and expected order of accrual)
     12. Perhaps the ability to build auto builders??
     11. Eventually we will need travel. This will probably take the form of grouping locations into another container/wrapper that gets replaced. Should make ships available from the shop
         - will need a cargo system of some kind?

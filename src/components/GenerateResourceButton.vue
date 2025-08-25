@@ -41,6 +41,8 @@ const onClickHandler = () => {
     // the little popup, like +1 ore)
     gameStateStorage.resources[props.resourceType]+= (1 * resourceModifier)
 
+    // Will need to have the props change dynamically 
+    
 
 }
 </script>
