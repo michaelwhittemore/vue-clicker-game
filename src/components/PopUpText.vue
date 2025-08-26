@@ -3,13 +3,10 @@ import { watch, ref, nextTick } from 'vue';
 // Note that define props takes in the constructor hence 'String' vs 'string'
 const props = defineProps({
     textForPopUp: String,
-    garbageTrigger: Boolean
+    wasClickedTrigger: Boolean
 })
 let animatedClassBool = ref(false)
-watch(() => props.garbageTrigger, async () => {
-    console.log(props.garbageTrigger)
-    // maybe we try using nextTick
-    // https://vuejs.org/guide/extras/animation
+watch(() => props.wasClickedTrigger, async () => {
     animatedClassBool.value = false;
     await nextTick();
     animatedClassBool.value = true;
@@ -18,21 +15,17 @@ watch(() => props.garbageTrigger, async () => {
 
 // --------------animation thoughts --------------
 // maybe we start with opacity?
-// It would be nice for the popup to start at slightly different palces, look into randomization
+// It would be nice for the popup to start at slightly different places, look into randomization
 // different colors? maybe gold is gold?? - passed in via props??
 </script>
 <template>
     <!-- The relative container is necessary for the element to have an ancestor but not reserved space-->
     <div class="popUpContainer">
-        <!-- <div v-if="props.garbageTrigger" class="popUp outlinedText"> {{ props.textForPopUp }} </div> -->
-        <!-- previously had animatedPopUp hard coded i -->
-        <!-- <div class="popUp outlinedText" :class="{ animatedPopUp: animatedClassBool}">  -->
-        <div class="popUp outlinedText animatedPopUp" v-if="animatedClassBool"> 
+        <div class="popUp outlinedText animatedPopUp" v-if="animatedClassBool">
             {{ props.textForPopUp }} </div>
     </div>
-
-
 </template>
+
 <style scoped>
 .popUp {
     color: green;

@@ -27,6 +27,10 @@
         - The animation component will need to take in a string props to render
         - Will need to figure out how long to display it, and also what triggers it
         - Note that gold will be different 
+        * **HERE!** Now that everything is working for the animation I should pass in string and color
+        - a new resource (just pick something, maybe silica or clay? can be pretty random), unubtatium
+        - should also add for refining
+    16. OH. I should have a more efficient refiner
     16. Refactor the components into related folders
         - I think `generateResource` is too generic
     17. Add the ability to buy schematic for gold (which trigger both narrative and buttons to appear)

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import { gameStateStorage } from '@/typescript/gameStateStorage';
 import type { ValidResources, ValidSkills, NarrativeTrigger } from '@/typescript/gameTypes';
 import { earnExperienceInSkill, activateNarrativeTrigger } from '@/typescript/gameHelpers';
@@ -21,13 +21,16 @@ switch (props.resourceType) {
     default:
         console.error('invalid resource type for generate button')
 }
-let garbageTrigger = ref(false) // DELETE THIS
-const textForPopUp = ref('+1 Ore'); // THIS SHOULD BE MODIFIED
+const wasClickedTrigger = ref(false);
 
+const computedTextForPopUp = computed(() => {
+    // This should be more generic and work with gold
+    return `+${gameStateStorage.upgrades.pickaxe.level} Ore`
+})
 
-// HERE! - should really move this to a helper, also this will need to scale with pickaxe level
+// HERE! - should really move this to a helper
 const onClickHandler = () => {
-    garbageTrigger.value = !garbageTrigger.value;
+    wasClickedTrigger.value = !wasClickedTrigger.value;
     let resourceModifier = 1
     activateNarrativeTrigger(narrativeTrigger)
     // gonna start by hard coding in gold chance - still unsure if I need to keep 
@@ -42,25 +45,18 @@ const onClickHandler = () => {
         }
     }
     earnExperienceInSkill(relevantSkill)
-    // might need to break this into a value for the UI that I want to make (
-    // the little popup, like +1 ore)
-    gameStateStorage.resources[props.resourceType] += (1 * resourceModifier)
 
-    // Will need to have the props change dynamically 
-    // maybe we will have a bool that flips?
+    gameStateStorage.resources[props.resourceType] += (1 * resourceModifier)
 }
 
 </script>
 
 <template>
     <button @click="onClickHandler"> {{ buttonText }}
-        <PopUpText :textForPopUp="textForPopUp" :garbageTrigger="garbageTrigger"/>
+        <PopUpText :textForPopUp="computedTextForPopUp" :wasClickedTrigger="wasClickedTrigger"/>
     </button>
 
 </template>
 
 <style>
-button {
-    /* background-color: red */
-}
 </style>
