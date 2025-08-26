@@ -26,7 +26,9 @@
         - Maybe we add a slot for animation component
         - The animation component will need to take in a string props to render
         - Will need to figure out how long to display it, and also what triggers it
+        - Note that gold will be different 
     16. Refactor the components into related folders
+        - I think `generateResource` is too generic
     17. Add the ability to buy schematic for gold (which trigger both narrative and buttons to appear)
         - Let's start with an upgrade
         - also an advanced ore miner (maybe three at a time?)
@@ -88,6 +90,7 @@
 * https://vuejs.org/guide/typescript/overview
 * https://vuejs.org/guide/reusability/composables#composables
 * https://blog.logrocket.com/using-event-bus-vue-js-pass-data-between-components/
+* https://vuejs.org/guide/extras/animation
  
 
 # Stretch Goals

@@ -1,31 +1,34 @@
 <script setup lang="ts">
-import { watch } from 'vue';
+import { watch, ref, nextTick } from 'vue';
 // Note that define props takes in the constructor hence 'String' vs 'string'
 const props = defineProps({
     textForPopUp: String,
     garbageTrigger: Boolean
 })
-watch(() => props.garbageTrigger, () => {
+let animatedClassBool = ref(false)
+watch(() => props.garbageTrigger, async () => {
     console.log(props.garbageTrigger)
+    // maybe we try using nextTick
+    // https://vuejs.org/guide/extras/animation
+    animatedClassBool.value = false;
+    await nextTick();
+    animatedClassBool.value = true;
+
 })
-// We will need to get the text from the props. We will also need to manage the state
-// Either by eventing or maybe by having a timer? I'm unsure exactly how this will work.
-// Let's start by just trying to trigger it once, this may be worth reddit/discord
-// I could handle the event/onclick at the button level,but that seems like an issue of separation of
-// concerns
-// Oh! Maybe I can emit back to the parent?? - hmmm but then i still have the same issue of seperation
-// of concerns?
-// Hmmm maybe the button has the PopUpText? Like we do it here?
-// HERE!
+
 // --------------animation thoughts --------------
 // maybe we start with opacity?
 // It would be nice for the popup to start at slightly different palces, look into randomization
+// different colors? maybe gold is gold?? - passed in via props??
 </script>
 <template>
     <!-- The relative container is necessary for the element to have an ancestor but not reserved space-->
     <div class="popUpContainer">
         <!-- <div v-if="props.garbageTrigger" class="popUp outlinedText"> {{ props.textForPopUp }} </div> -->
-        <div class="popUp animatedPopUp outlinedText"> {{ props.textForPopUp }} </div>
+        <!-- previously had animatedPopUp hard coded i -->
+        <!-- <div class="popUp outlinedText" :class="{ animatedPopUp: animatedClassBool}">  -->
+        <div class="popUp outlinedText animatedPopUp" v-if="animatedClassBool"> 
+            {{ props.textForPopUp }} </div>
     </div>
 
 
@@ -46,64 +49,20 @@ watch(() => props.garbageTrigger, () => {
 
 /* animation ---------------- */
 .animatedPopUp {
-    animation-duration: 5s;
-    animation-name: rotateAway;
-    animation-fill-mode: forwards;
-    /* animation-name: slide-in; */
-    /* animation-name: slide-in, fade-in; */
-    /* animation-name: fade-out; */
-    /* may need to add ` animation-fill-mode` */
-
+    animation-duration: 2s;
+    animation-name: rotateAndFadeAway;
+    animation-fill-mode: forwards
 }
 
-@keyframes rotateAway {
+@keyframes rotateAndFadeAway {
     0% {
         opacity: 1;
         transform: translateX(0) rotate(0deg);
     }
 
-    50% {
+    100% {
         transform: translateX(50px) translateY(-50px)rotate(45deg);
-    }
-
-    100% {
         opacity: 0;
-        transform: translateX(100px) translateY(0px) rotate(90deg);
-    }
-}
-
-@keyframes slide-in {
-    from {
-        translate: 150vw 0;
-        scale: 200% 1;
-    }
-
-    to {
-        translate: 0 0;
-        scale: 100% 1;
-    }
-}
-
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-        /* Start completely transparent */
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes fade-out {
-    0% {
-        opacity: 1;
-        /* Start completely transparent */
-    }
-
-    100% {
-        opacity: 0;
-        /* display: none; */
     }
 }
 </style>
