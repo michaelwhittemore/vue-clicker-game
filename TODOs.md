@@ -22,15 +22,11 @@
         - need to add to ore as well
 
     15. Want to do the animation bit that I mentioned (where the text pops up)
-        - Let's start with the text popup, and then we can do the animation part
-        - Maybe we add a slot for animation component
-        - The animation component will need to take in a string props to render
-        - Will need to figure out how long to display it, and also what triggers it
         - Note that gold will be different 
         * **HERE!** Now that everything is working for the animation I should pass in string and color
-        - a new resource (just pick something, maybe silica or clay? can be pretty random), unubtatium
+        - a new resource (just pick something, maybe silica or clay? can be pretty random), unobtanium, living steel, sentient calcium - in general humorous resources are good
         - should also add for refining
-    16. OH. I should have a more efficient refiner
+    16. OH. I should have a more efficient refiner as an upgrade
     16. Refactor the components into related folders
         - I think `generateResource` is too generic
     17. Add the ability to buy schematic for gold (which trigger both narrative and buttons to appear)
