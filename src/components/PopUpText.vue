@@ -3,7 +3,7 @@ import { watch, ref, nextTick } from 'vue';
 // Note that define props takes in the constructor hence 'String' vs 'string'
 const props = defineProps({
     textForPopUp: String,
-    wasClickedTrigger: Boolean
+    wasClickedTrigger: Boolean,
 })
 let animatedClassBool = ref(false)
 watch(() => props.wasClickedTrigger, async () => {

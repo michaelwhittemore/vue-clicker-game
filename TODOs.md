@@ -8,7 +8,7 @@
         * Ore will be at a worse rate
         * Both will need to be affected by trading and also have popup text
     2. popUpText animation
-        * **HERE!** Now that everything is working for the animation I should pass in string and color
+        * **HERE!** Now that everything is working for the animation I should pass in color
         - a new resource (just pick something, maybe silica or clay? can be pretty random), unobtanium, living steel, sentient calcium - in general humorous resources are good
     3. REFACTOR: I'm thinking a lot about the upcoming refactor. I wonder if it makes sense to have an object on state storage that's not quite `gameState`, but more like `gameData`. Stuff like current prices?
         - may not need the `LocationComponent` 
