@@ -3,11 +3,11 @@ import { ref } from 'vue';
 import { gameStateStorage } from './typescript/gameStateStorage';
 // -------- Component Imports
 import GenerateResourceButton from './components/GenerateResourceButton.vue';
-import ResourceDisplay from './components/ResourceDisplay.vue';
-import AutomatonDisplay from './components/AutomatonDisplay.vue';
+import ResourceDisplay from './components/GeneralDisplayComponents/ResourceDisplay.vue';
+import AutomatonDisplay from './components/GeneralDisplayComponents/AutomatonDisplay.vue';
 import LocationComponent from './components/Locations/LocationComponent.vue';
 import RefineButton from './components/RefineButton.vue';
-import ExperienceBarHolder from './components/ExperienceBarHolder.vue';
+import ExperienceBarHolder from './components/GeneralDisplayComponents/ExperienceBarHolder.vue';
 import NarrativeText from './components/NarrativeText.vue';
 import ShopLocation from './components/Locations/ShopLocation.vue';
 import RoboticsFabricator from './components/Locations/RoboticsFabricator.vue';
