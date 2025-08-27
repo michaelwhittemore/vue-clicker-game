@@ -11,7 +11,6 @@ import { earnExperienceInSkill } from '@/typescript/gameHelpers';
 // ore price should be worse than the refined value i.e. if steel is 100, ore should be greater than 1000
 const steelPrice = 100;
 const onClickSell = () => {
-    console.log('clicked sell')
     gameStateStorage.resources.steel -= steelPrice
     gameStateStorage.resources.gold++;
     // need to get trade experience

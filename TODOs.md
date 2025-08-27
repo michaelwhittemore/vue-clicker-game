@@ -3,7 +3,7 @@
 # Things to work on immediately 
 * Current Tasks: 
     1. **Here!**  
-        - I guess we should start by moving all the slots into the shop component
+        - ~~I guess we should start by moving all the slots into the shop component~~
         * I've added selling steel, now let's sell Ore
         * Ore will be at a worse rate
         * Both will need to be affected by trading and also have popup text
@@ -12,7 +12,8 @@
         - a new resource (just pick something, maybe silica or clay? can be pretty random), unobtanium, living steel, sentient calcium - in general humorous resources are good
     3. REFACTOR: I'm thinking a lot about the upcoming refactor. I wonder if it makes sense to have an object on state storage that's not quite `gameState`, but more like `gameData`. Stuff like current prices?
         - may not need the `LocationComponent` 
-        - Will want to move stuff like xp bars and resource display into their own folders
+        - ~~Will want to move stuff like xp bars and resource display into their own folders~~
+        - `GenerateResourceButton` -> `MineResourceButton`
     3. Add an upgrades section to the store, possibly also make somewhere where I can build the upgrades (i.e. schematic vs upgrade)
         * Add the ability to buy schematic for gold (which trigger both narrative and buttons to appear)
         - Let's start with an upgrade
@@ -84,7 +85,7 @@ see https://vuejs.org/guide/reusability/composables#composables)
 * https://vuejs.org/guide/reusability/composables#composables
 * https://blog.logrocket.com/using-event-bus-vue-js-pass-data-between-components/
 * https://vuejs.org/guide/extras/animation
- 
+* https://vuejs.org/guide/essentials/component-basics#dynamic-components specifically using tabs and `is`
 
 # Stretch Goals
 * achievements

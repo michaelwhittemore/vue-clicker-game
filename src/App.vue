@@ -2,29 +2,23 @@
 import { ref } from 'vue';
 import { gameStateStorage } from './typescript/gameStateStorage';
 // -------- Component Imports
-import GenerateResourceButton from './components/GenerateResourceButton.vue';
 import ResourceDisplay from './components/GeneralDisplayComponents/ResourceDisplay.vue';
 import AutomatonDisplay from './components/GeneralDisplayComponents/AutomatonDisplay.vue';
-import LocationComponent from './components/Locations/LocationComponent.vue';
-import RefineButton from './components/RefineButton.vue';
 import ExperienceBarHolder from './components/GeneralDisplayComponents/ExperienceBarHolder.vue';
 import NarrativeText from './components/NarrativeText.vue';
 import ShopLocation from './components/Locations/ShopLocation.vue';
 import RoboticsFabricator from './components/Locations/RoboticsFabricator.vue';
+import MineLocation from './components/Locations/MineLocation.vue';
+import RefineryLocation from './components/Locations/RefineryLocation.vue';
 
 </script>
 
 <template>
   <NarrativeText />
+  <!-- The locations holder will likely be where we need to use the `is` keyword and dynamic tabs -->
   <div id="locationsHolder" class="flexUtility">
-    <LocationComponent :location-name="'Mine'">
-      <GenerateResourceButton :resource-type="'ore'" />
-    </LocationComponent>
-
-    <LocationComponent :location-name="'Refinery'">
-      <RefineButton />
-    </LocationComponent>
-
+    <MineLocation />
+    <RefineryLocation />
     <RoboticsFabricator />
     <ShopLocation />
   </div>
