@@ -1,3 +1,15 @@
 <script setup lang="ts">
-// If I do use this it should probably use slotting 
+import LocationComponent from './LocationComponent.vue';
+import BuyPickaxeUpgrade from '../ShopComponents/BuyPickaxeUpgrade.vue';
+import BuyShip from '../ShopComponents/BuyShip.vue';
+import SellSteelForGold from '../ShopComponents/SellSteelForGold.vue';
 </script>
+
+<template>
+    <LocationComponent :location-name="'Shop'">
+      <BuyPickaxeUpgrade />
+      <BuyShip /> 
+      <SellSteelForGold />
+      
+    </LocationComponent>
+</template>

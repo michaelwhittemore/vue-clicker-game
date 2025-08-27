@@ -1,57 +1,50 @@
 # Todos
 
 # Things to work on immediately 
-* here! 
-    1.  ~~Let's make the resource display use data from the storageState~~
-    2. ~~Let's implement the ability to buy auto-clickers~~
-    3. ~~Let's remove `DisplayProps` and `ClickButton`~~
-    4. ~~Need to add the area (as in locations). Mine, refinery, lab~~
-    5. ~~Refine ore to steel button - should this be different from generate resource button?~~
-    7.  ~~AutoRefiner buy button doesn't do anything right now ~~
-    10.  ~~Add an experience bar (robotics skill allows you to build an autoRefiner)~~
-    11. ~~Need to programmatically generate the exp components (You shouldn't show robotics/robotics until we've already built a robot)~~
-    13. ~~ Need to have a chance to generate gold when mining with level > 1~~
-    14. ~~Move the narrative text to its own component. Have some kind of map for events to text?~~
-    13. ~~Pickaxe upgrade - maybe add a shop? - updates will require a new resource, maybe gold? - traveling merchant, will need to add narrative text for their arrival and also a ~~
-    14.  ~~Let's make a gold mining robot. Also ~~
-        - ~~What triggers the ability to build the gold mining robot? - electronics three~~
-        - ~~May want to have the gold miner work on a slower loop?~~
-    15. **Here!**  maybe you can sell steel to the merchant??
-        - Should be a pretty disadvantageous rate
-        - need to have rate tied to trading
-        - need to add to ore as well
-
-    15. Want to do the animation bit that I mentioned (where the text pops up)
-        - Note that gold will be different 
+* Current Tasks: 
+    1. **Here!**  
+        - I guess we should start by moving all the slots into the shop component
+        * I've added selling steel, now let's sell Ore
+        * Ore will be at a worse rate
+        * Both will need to be affected by trading and also have popup text
+    2. popUpText animation
         * **HERE!** Now that everything is working for the animation I should pass in string and color
         - a new resource (just pick something, maybe silica or clay? can be pretty random), unobtanium, living steel, sentient calcium - in general humorous resources are good
-        - should also add for refining
-    16. OH. I should have a more efficient refiner as an upgrade
-    16. Refactor the components into related folders
-        - I think `generateResource` is too generic
-    17. Add the ability to buy schematic for gold (which trigger both narrative and buttons to appear)
+    3. REFACTOR: I'm thinking a lot about the upcoming refactor. I wonder if it makes sense to have an object on state storage that's not quite `gameState`, but more like `gameData`. Stuff like current prices?
+        - may not need the `LocationComponent` 
+        - Will want to move stuff like xp bars and resource display into their own folders
+    3. Add an upgrades section to the store, possibly also make somewhere where I can build the upgrades (i.e. schematic vs upgrade)
+        * Add the ability to buy schematic for gold (which trigger both narrative and buttons to appear)
         - Let's start with an upgrade
         - also an advanced ore miner (maybe three at a time?)
-    16. Add the ability to buy the ship (don't need to have it working yet, also maybe you need to repair it?) 
+    4. I should have a more efficient refiner as an upgrade
+        * Two different parts to this
+            - less ore
+            - better output
+    5. Refactor the components into related folders
+        - I think `generateResource` is too generic
+    6. Now that I have the ship you should be able to repair it
+        - will need to add the ship to game storage
         - repair should cost a hefty amount of steel
-    16. Refactor locations (the primary reason is that we don't want to have the app track all the buttons)
-    14. Refactor generate resources to use composable (instead of weird props and conditionals
-    see https://vuejs.org/guide/reusability/composables#composables)
-    - ----- What resources do I want to add? I said gold, maybe some more exciting electronic components.
-    15. Might be worth some sort of flow document (i.e. the resources and expected order of accrual)
-    12. Perhaps the ability to build auto builders??
-    11. Eventually we will need travel. This will probably take the form of grouping locations into another container/wrapper that gets replaced. Should make ships available from the shop
-        - will need a cargo system of some kind?
-    12. Make things like exp collapsible 
-    12. Add saving - pretty sure this is just loading in gameStateStorage from local storage (will probably need the logic to be within `gameStateStorage.ts` as that's what exports the ref)
-    * Some sort of neural uplink to gain passive xp (should be able to switch between skills)
+        - 
+# Immediate future tasks
+* Refactor locations (the primary reason is that we don't want to have the app track all the buttons)
+* Refactor generate resources to use composable (instead of weird props and conditionals
+see https://vuejs.org/guide/reusability/composables#composables)
+* Might be worth some sort of game flow document (i.e. the resources and expected order of accrual) and what unlocks what - i keep forgetting two refiners for the shop
+* Perhaps the ability to build auto builders??
+* Eventually we will need travel. This will probably take the form of grouping locations into another container/wrapper that gets replaced. Should make ships available from the shop
+    - will need a cargo system of some kind? (only if I end up doing trading)
+*  Make things like exp collapsible 
+* Add saving - pretty sure this is just loading in gameStateStorage from local storage (will probably need the logic to be within `gameStateStorage.ts` as that's what exports the ref)
+* Some sort of neural uplink to gain passive xp (should be able to switch between skills)
     
 
 # Style Todos
 * Need a more distinctive font 
-* Add some kind of animation when mining or building? maybe a little `+1 ore` popup? Will need to do some research
+* ~~Add some kind of animation when mining or building? maybe a little `+1 ore` popup? Will need to do some research~~
 * Look at a mobile game or civ or something for UI inspiration for resource bar
-* maybe switch the narrative back to the top and just hard code the height? - need to fix the scrolling first I think
+* ~~maybe switch the narrative back to the top and just hard code the height? - need to fix the scrolling first I think~~
 * I should give the narrative area scrolling and a maximum height - I will also want it to scroll down - also some spacing between text
 * have some sort of border that demands attention when a new text is added? maybe it's highlighted for a few seconds? (like for the narrative element)
 

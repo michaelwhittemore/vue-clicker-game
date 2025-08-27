@@ -5,14 +5,12 @@ import { gameStateStorage } from './typescript/gameStateStorage';
 import GenerateResourceButton from './components/GenerateResourceButton.vue';
 import ResourceDisplay from './components/ResourceDisplay.vue';
 import AutomatonDisplay from './components/AutomatonDisplay.vue';
-import BuildAutomaton from './components/BuildAutomaton.vue';
 import LocationComponent from './components/Locations/LocationComponent.vue';
 import RefineButton from './components/RefineButton.vue';
 import ExperienceBarHolder from './components/ExperienceBarHolder.vue';
 import NarrativeText from './components/NarrativeText.vue';
-import BuyPickaxeUpgrade from './components/ShopComponents/BuyPickaxeUpgrade.vue';
-import BuyShip from './components/ShopComponents/BuyShip.vue';
-import SellSteelForGold from './components/ShopComponents/SellSteelForGold.vue';
+import ShopLocation from './components/Locations/ShopLocation.vue';
+import RoboticsFabricator from './components/Locations/RoboticsFabricator.vue';
 
 </script>
 
@@ -27,20 +25,8 @@ import SellSteelForGold from './components/ShopComponents/SellSteelForGold.vue';
       <RefineButton />
     </LocationComponent>
 
-    <!--- TODO - refactor this to be its own component-->
-    <LocationComponent :location-name="'Robotics Fabricator'">
-      <BuildAutomaton :automaton-type="'autoMiner'" />
-      <BuildAutomaton :automaton-type="'autoRefiner'" />
-      <BuildAutomaton :automaton-type="'autoGoldMiner'" />
-    </LocationComponent>
-
-    <LocationComponent :location-name="'Shop'">
-      <BuyPickaxeUpgrade />
-      <BuyShip /> 
-      <SellSteelForGold />
-      
-      
-    </LocationComponent>
+    <RoboticsFabricator />
+    <ShopLocation />
   </div>
 
   <div id="displayArea" class="flexUtility">
