@@ -29,6 +29,7 @@ switch (props.automatonType) {
         computedShouldDisplay = computed(() => gameStateStorage.skills.robotics.level >= 1);
         break;
     case 'autoGoldMiner':
+        // TODO - maybe lock this behind a schematic?
         costResource = 'steel';
         costQuantity = 40;
         narrativeTrigger = 'hasBuiltAutoGoldMiner',

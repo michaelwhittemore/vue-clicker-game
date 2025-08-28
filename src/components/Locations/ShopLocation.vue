@@ -2,14 +2,15 @@
 import LocationComponent from './LocationComponent.vue';
 import BuyPickaxeUpgrade from '../ShopComponents/BuyPickaxeUpgrade.vue';
 import BuyShip from '../ShopComponents/BuyShip.vue';
-import SellSteelForGold from '../ShopComponents/SellSteelForGold.vue';
+import SellResourceForGold from '../ShopComponents/SellResourceForGold.vue';
 </script>
 
 <template>
     <LocationComponent :location-name="'Shop'">
       <BuyPickaxeUpgrade />
       <BuyShip /> 
-      <SellSteelForGold />
+      <SellResourceForGold resource-type="ore"/>
+      <SellResourceForGold resource-type="steel"/>
       
     </LocationComponent>
 </template>

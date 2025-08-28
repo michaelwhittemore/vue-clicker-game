@@ -1,5 +1,5 @@
 // maybe this should be JSON??
-import type { NarrativeTrigger, ValidSkills } from "./gameTypes"
+import type { NarrativeTrigger, ValidSkills } from "../gameTypes"
 
 // hmmm maybe if I make a specific type? 
 type LevelToTrigger = { 

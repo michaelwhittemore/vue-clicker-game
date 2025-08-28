@@ -1,6 +1,6 @@
 import { gameStateStorage } from "./gameStateStorage"
 import type { ValidSkills, NarrativeTrigger } from "./gameTypes"
-import { levelToNarrativeTriggerBreakpoints } from "./levelToNarrativeTriggerBreakpoints";
+import { levelToNarrativeTriggerBreakpoints } from "./gameConstants/levelToNarrativeTriggerBreakpoints";
 export const earnExperienceInSkill = (relevantSkill: ValidSkills, experienceAmount: number = 1) => {
     gameStateStorage.skills[relevantSkill].experience += experienceAmount;
     if (gameStateStorage.skills[relevantSkill].experience >= gameStateStorage.skills[relevantSkill].targetExperience) {
