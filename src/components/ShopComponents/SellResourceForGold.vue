@@ -34,6 +34,6 @@ const computedEnoughToEnable = computed(() => gameStateStorage.resources[resourc
 <template>
     <button @click="onClickSell" :disabled="!computedEnoughToEnable">
         Sell {{ computedExchangeRate }} {{ resourceType }} for one gold
-        <PopUpText :textForPopUp="computedTextForPopUp" :wasClickedTrigger="wasClickedTrigger" />
+        <PopUpText :textForPopUp="computedTextForPopUp" :wasClickedTrigger="wasClickedTrigger" :color="'gold'"/>
     </button>
 </template>

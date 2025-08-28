@@ -2,29 +2,28 @@
 
 # Things to work on immediately 
 * Current Tasks: 
-    1. **Here!**  
+    1. ~~Shop selling resources~~
         - ~~I guess we should start by moving all the slots into the shop component~~
-        * I've added selling steel, now let's sell Ore
-        * Ore will be at a worse rate
-        * Both will need to be affected by trading and also have popup text
-    2. popUpText animation
-        * **HERE!** Now that everything is working for the animation I should pass in color
-        - a new resource (just pick something, maybe silica or clay? can be pretty random), unobtanium, living steel, sentient calcium - in general humorous resources are good
-    3. REFACTOR: I'm thinking a lot about the upcoming refactor. I wonder if it makes sense to have an object on state storage that's not quite `gameState`, but more like `gameData`. Stuff like current prices?
+        * ~~I've added selling steel, now let's sell Ore~~
+        * ~~Ore will be at a worse rate~~
+        * ~~Both will need to be affected by trading and also have popup text~~
+        * ~~Still need to add a narrative trigger to trading level~~
+    2. ~~popUpText animation~~
+    3. ~~Add the highlight to recent entry in narrative log~~
+    4. REFACTOR: I'm thinking a lot about the upcoming refactor. I wonder if it makes sense to have an object on state storage that's not quite `gameState`, but more like `gameData`. Stuff like current prices?
         - may not need the `LocationComponent` 
         - ~~Will want to move stuff like xp bars and resource display into their own folders~~
         - `GenerateResourceButton` -> `MineResourceButton`
-    3. Add an upgrades section to the store, possibly also make somewhere where I can build the upgrades (i.e. schematic vs upgrade)
+    5. Add an upgrades section to the store, possibly also make somewhere where I can build the upgrades (i.e. schematic vs upgrade)
         * Add the ability to buy schematic for gold (which trigger both narrative and buttons to appear)
         - Let's start with an upgrade
         - also an advanced ore miner (maybe three at a time?)
-    4. I should have a more efficient refiner as an upgrade
+    6. a new resource (just pick something, maybe silica or clay? can be pretty random), unobtanium, living steel, sentient calcium - in general humorous resources are good
+    6. I should have a more efficient refiner as an upgrade
         * Two different parts to this
             - less ore
             - better output
-    5. Refactor the components into related folders
-        - I think `generateResource` is too generic
-    6. Now that I have the ship you should be able to repair it
+    7. Now that I have the ship you should be able to repair it
         - will need to add the ship to game storage
         - repair should cost a hefty amount of steel
         - 
@@ -39,6 +38,7 @@ see https://vuejs.org/guide/reusability/composables#composables)
 *  Make things like exp collapsible 
 * Add saving - pretty sure this is just loading in gameStateStorage from local storage (will probably need the logic to be within `gameStateStorage.ts` as that's what exports the ref)
 * Some sort of neural uplink to gain passive xp (should be able to switch between skills)
+* add the ability to prospect to find new minerals??
     
 
 # Style Todos
@@ -48,6 +48,7 @@ see https://vuejs.org/guide/reusability/composables#composables)
 * ~~maybe switch the narrative back to the top and just hard code the height? - need to fix the scrolling first I think~~
 * I should give the narrative area scrolling and a maximum height - I will also want it to scroll down - also some spacing between text
 * have some sort of border that demands attention when a new text is added? maybe it's highlighted for a few seconds? (like for the narrative element)
+* Should I try with randomness in location - like a 10px difference?
 
 # General Notes
 * Will need to mention this was to learn vue and to refresh my typescript knowledge 

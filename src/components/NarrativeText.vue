@@ -17,7 +17,7 @@ const narrativeTriggersToText: Record<NarrativeTrigger, string> = {
     hasUpgradedPickaxe: 'The alien hands you the tool in exchange for your gold. It immediately feels like an improvement over your previous pickaxe. With your skills, you feel that you\'ll be able to mine far more efficiently. (You have increased the amount of ore that you get from each swing. Future pickaxe upgrades will increase this bonus further.)',
     hasUnlockedAutoGoldMiner: 'TODO, has unlocked auto gold miner, something to the effect of ',
     hasBuiltAutoGoldMiner: 'TODO hasBuiltAutoGoldMiner (not unlocked) ',
-    tradingUnlock1: 'TODO',
+    tradingUnlock1: 'You have done a fair deal of buying and selling. Your haggling skills now allow you to sell resources at a better rate. (Leveling trading further will increase this bonus)',
 }
 
 // We need the template ref in order to access the scroll behavior
@@ -45,6 +45,8 @@ watch(
 </template>
 <style>
 .narrativeEntry{
+    animation-duration: 1.5s;
+    animation-name: animate-pop;
     margin-top: .3em;
     margin-bottom: .3em;
 }
@@ -60,5 +62,16 @@ watch(
     background-color: #f6eee3;
     overflow: auto;
     height: 7em;    
+}
+@keyframes animate-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.9, 0.9);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
 }
 </style>

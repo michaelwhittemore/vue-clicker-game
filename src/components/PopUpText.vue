@@ -1,34 +1,34 @@
 <script setup lang="ts">
-import { watch, ref, nextTick } from 'vue';
+import { watch, ref, nextTick, reactive } from 'vue';
 // Note that define props takes in the constructor hence 'String' vs 'string'
-const props = defineProps({
-    textForPopUp: String,
-    wasClickedTrigger: Boolean,
-})
+const props = defineProps<{
+    textForPopUp: string,
+    wasClickedTrigger: boolean,
+    color?: string,
+}>()
 let animatedClassBool = ref(false)
 watch(() => props.wasClickedTrigger, async () => {
+    // TODO - the RNG position part goes here?
     animatedClassBool.value = false;
     await nextTick();
     animatedClassBool.value = true;
 
 })
+const styleObject = reactive({
+  color: props.color || 'green',
+})
 
-// --------------animation thoughts --------------
-// maybe we start with opacity?
-// It would be nice for the popup to start at slightly different places, look into randomization
-// different colors? maybe gold is gold?? - passed in via props??
 </script>
 <template>
     <!-- The relative container is necessary for the element to have an ancestor but not reserved space-->
     <div class="popUpContainer">
-        <div class="popUp outlinedText animatedPopUp" v-if="animatedClassBool">
+        <div class="popUp outlinedText animatedPopUp" v-if="animatedClassBool" :style="styleObject">
             {{ props.textForPopUp }} </div>
     </div>
 </template>
 
 <style scoped>
 .popUp {
-    color: green;
     font-weight: bold;
     position: absolute;
     font-size: 150%;

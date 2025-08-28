@@ -7,7 +7,7 @@ import PopUpText from './PopUpText.vue';
 const props = defineProps<{
     resourceType: ValidResources
 }>()
-// TODO - this should be factored to have different logic, maybe a helper file function?
+// TODO - this should be refactored to have different logic, maybe a helper file function?
 // right now my attempt to be generic feels like an anti-pattern
 let buttonText: string;
 let narrativeTrigger: NarrativeTrigger;
@@ -22,13 +22,16 @@ switch (props.resourceType) {
         console.error('invalid resource type for generate button')
 }
 const wasClickedTrigger = ref(false);
+const wasClickedTriggerGold = ref(false);
+
 
 const computedTextForPopUp = computed(() => {
-    // This should be more generic and work with gold
     return `+${gameStateStorage.upgrades.pickaxe.level} Ore`
 })
+const computedTextForPopUpGold = computed(() => {
+    return `+1 Gold`
+})
 
-// HERE! - should really move this to a helper
 const onClickHandler = () => {
     wasClickedTrigger.value = !wasClickedTrigger.value;
     let resourceModifier = 1
@@ -42,6 +45,7 @@ const onClickHandler = () => {
         if (didMineGold) {
             gameStateStorage.resources.gold++;
             activateNarrativeTrigger('hasMinedGold')
+            wasClickedTriggerGold.value = !wasClickedTriggerGold.value;
         }
     }
     earnExperienceInSkill(relevantSkill)
@@ -54,6 +58,7 @@ const onClickHandler = () => {
 <template>
     <button @click="onClickHandler"> {{ buttonText }}
         <PopUpText :textForPopUp="computedTextForPopUp" :wasClickedTrigger="wasClickedTrigger"/>
+        <PopUpText :textForPopUp="computedTextForPopUpGold" :wasClickedTrigger="wasClickedTriggerGold" :color="'gold'"/>
     </button>
 
 </template>
