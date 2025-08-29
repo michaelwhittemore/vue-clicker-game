@@ -14,13 +14,14 @@ const props = defineProps<{
     
 </template>
 
-<style scoped>
+<style>
 .locationName{
     text-align: center;
 }
 .locationWrapper{
-    height: 10em;
-    width: 10em;
+    height: 15em;
+    width: 12em;
+    /* EM might not be good practice here, maybe pixels instead */
     padding: .2em;
     background-color: #a26769;
     border-style: dashed;

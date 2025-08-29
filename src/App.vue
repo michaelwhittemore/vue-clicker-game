@@ -10,7 +10,6 @@ import ShopLocation from './components/Locations/ShopLocation.vue';
 import RoboticsFabricator from './components/Locations/RoboticsFabricator.vue';
 import MineLocation from './components/Locations/MineLocation.vue';
 import RefineryLocation from './components/Locations/RefineryLocation.vue';
-
 </script>
 
 <template>
@@ -28,7 +27,6 @@ import RefineryLocation from './components/Locations/RefineryLocation.vue';
     <AutomatonDisplay />
   </div>
   <ExperienceBarHolder />
-
 
 
   <main>

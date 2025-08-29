@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import LocationComponent from './LocationComponent.vue';
-import MineOreButton from '../MineOreButton.vue';
+import MineResourceButton from '../MineResourceButton.vue';
 </script>
 <template>
     <LocationComponent :location-name="'Mine'">
-        <MineOreButton :resource-type="'ore'" />
+        <MineResourceButton :resource-type="'ore'" />
     </LocationComponent>
 </template>

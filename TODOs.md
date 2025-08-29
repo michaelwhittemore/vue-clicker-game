@@ -10,13 +10,14 @@
         * ~~Still need to add a narrative trigger to trading level~~
     2. ~~popUpText animation~~
     3. ~~Add the highlight to recent entry in narrative log~~
-    4. REFACTOR: I'm thinking a lot about the upcoming refactor. I wonder if it makes sense to have an object on state storage that's not quite `gameState`, but more like `gameData`. Stuff like current prices?
-        - may not need the `LocationComponent`
-            - I think the `LocationComponent` is ok, however it makes sense to move the `shouldDisplay` logic into each component instead of having the switch statement in `LocationComponent`
-        - ~~Will want to move stuff like xp bars and resource display into their own folders~~
-        - `GenerateResourceButton` -> `MineResourceButton`
-    5. Need to psychically allow the store to scroll. 
+    4. ~~Need to psychically allow the store to scroll. ~~
+        - may need to resize
+        - on mobile maybe 2x2? Also less space in between
+        - may need to modify css for `locationsHolder`
     5. Add an upgrades section to the store, possibly also make somewhere where I can build the upgrades (i.e. schematic vs upgrade)
+        * maybe break the store into ITEMS and schematics??
+            - use `:is` https://vuejs.org/guide/essentials/component-basics#dynamic-components
+            - Will need a button to swicth between the 2
         * Add the ability to buy schematic for gold (which trigger both narrative and buttons to appear)
         - Let's start with an upgrade
         - also an advanced ore miner (maybe three at a time?)
@@ -45,6 +46,7 @@ see https://vuejs.org/guide/reusability/composables#composables)
 
 # Style Todos
 * Need a more distinctive font 
+* The buttons look ugly and like forms, should at the very least change the color and maybe center them?
 * ~~Add some kind of animation when mining or building? maybe a little `+1 ore` popup? Will need to do some research~~
 * Look at a mobile game or civ or something for UI inspiration for resource bar
 * ~~maybe switch the narrative back to the top and just hard code the height? - need to fix the scrolling first I think~~
