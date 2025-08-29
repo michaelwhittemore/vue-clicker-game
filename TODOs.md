@@ -17,7 +17,10 @@
     5. Add an upgrades section to the store, possibly also make somewhere where I can build the upgrades (i.e. schematic vs upgrade)
         * maybe break the store into ITEMS and schematics??
             - use `:is` https://vuejs.org/guide/essentials/component-basics#dynamic-components
-            - Will need a button to swicth between the 2
+            - Will need a button to switch between the 2
+            - I think we need a `shopSectionWrapper` for the color
+            - maybe a border of top, right, and left of the buttons
+            - maybe zero padding for the shop locationContainer
         * Add the ability to buy schematic for gold (which trigger both narrative and buttons to appear)
         - Let's start with an upgrade
         - also an advanced ore miner (maybe three at a time?)

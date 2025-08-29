@@ -32,3 +32,12 @@ body{
 .schematicsColor {
     background-color: #e8d2ae;
 }
+
+/* --------------- Shared Classes ------------------ */
+.shopTab{
+    height: stretch;
+    padding: 3px;
+    border-style: solid;
+    border-top-style: none;
+    
+}

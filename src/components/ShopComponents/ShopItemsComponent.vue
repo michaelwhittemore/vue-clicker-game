@@ -4,7 +4,7 @@ import BuyShip from './BuyShip.vue';
 import SellResourceForGold from './SellResourceForGold.vue';
 </script>
 <template>
-    <div class="itemsColor">
+    <div class="itemsColor shopTab">
         <BuyPickaxeUpgrade />
         <BuyShip />
         <SellResourceForGold resource-type="ore" />

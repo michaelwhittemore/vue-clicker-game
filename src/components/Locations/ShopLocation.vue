@@ -39,5 +39,8 @@ const shopTab = ref('items')
 .tabSelector {
   text-align: center;
   width: 50%;
+  margin-bottom: 0px;
+  border-style: solid;
+  border-bottom-style: none;
 }
 </style>
