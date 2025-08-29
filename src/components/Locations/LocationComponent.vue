@@ -1,31 +1,14 @@
 <script setup lang="ts">
-import { computed } from 'vue';
-import { gameStateStorage } from '@/typescript/gameStateStorage';
+
 const props = defineProps<{
     locationName: string,
-    // colorScheme: string,
 }>()
-const computedShouldDisplay = computed(()=> {
-    switch (props.locationName){
-        case 'Mine': 
-            return true
-        case 'Refinery':
-            return true
-        case 'Robotics Fabricator':
-            return true
-        case 'Shop':
-            return gameStateStorage.automatons.autoRefiner >= 2;
-        default:
-            console.error('unknown location')
-            return false
-    }
-})
 </script>
 
 <template>
-    <div class="locationWrapper" v-if="computedShouldDisplay">
+    <div class="locationWrapper">
         <div class="locationName">{{ props.locationName }}</div>
-        <!-- The slotted component is passed in from app.vue -->
+        <!-- The slotted component is passed in from the individual location -->
         <slot></slot>
     </div>
     
@@ -42,5 +25,6 @@ const computedShouldDisplay = computed(()=> {
     background-color: #a26769;
     border-style: dashed;
     margin: .5em;
+    overflow: auto;
 }
 </style>

@@ -11,9 +11,11 @@
     2. ~~popUpText animation~~
     3. ~~Add the highlight to recent entry in narrative log~~
     4. REFACTOR: I'm thinking a lot about the upcoming refactor. I wonder if it makes sense to have an object on state storage that's not quite `gameState`, but more like `gameData`. Stuff like current prices?
-        - may not need the `LocationComponent` 
+        - may not need the `LocationComponent`
+            - I think the `LocationComponent` is ok, however it makes sense to move the `shouldDisplay` logic into each component instead of having the switch statement in `LocationComponent`
         - ~~Will want to move stuff like xp bars and resource display into their own folders~~
         - `GenerateResourceButton` -> `MineResourceButton`
+    5. Need to psychically allow the store to scroll. 
     5. Add an upgrades section to the store, possibly also make somewhere where I can build the upgrades (i.e. schematic vs upgrade)
         * Add the ability to buy schematic for gold (which trigger both narrative and buttons to appear)
         - Let's start with an upgrade
@@ -28,13 +30,13 @@
         - repair should cost a hefty amount of steel
         - 
 # Immediate future tasks
-* Refactor locations (the primary reason is that we don't want to have the app track all the buttons)
 * Refactor generate resources to use composable (instead of weird props and conditionals
 see https://vuejs.org/guide/reusability/composables#composables)
 * Might be worth some sort of game flow document (i.e. the resources and expected order of accrual) and what unlocks what - i keep forgetting two refiners for the shop
 * Perhaps the ability to build auto builders??
 * Eventually we will need travel. This will probably take the form of grouping locations into another container/wrapper that gets replaced. Should make ships available from the shop
     - will need a cargo system of some kind? (only if I end up doing trading)
+    - I think we use the `is` system of Vue
 *  Make things like exp collapsible 
 * Add saving - pretty sure this is just loading in gameStateStorage from local storage (will probably need the logic to be within `gameStateStorage.ts` as that's what exports the ref)
 * Some sort of neural uplink to gain passive xp (should be able to switch between skills)
@@ -70,6 +72,7 @@ see https://vuejs.org/guide/reusability/composables#composables)
 * read about css animations
 
 # Rebalancing notes
+* maybe have gold come in at level 2 or 3?
 * should be viable to sell, right now the rate seems punishing
 * gold should be rarer
 * in general, remember that this should be a long term game
