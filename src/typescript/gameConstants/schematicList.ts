@@ -1,0 +1,1 @@
+export const schematicList = ['autoGoldMiner'] as const;

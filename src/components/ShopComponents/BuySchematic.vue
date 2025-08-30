@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import { gameStateStorage } from '@/typescript/gameStateStorage';
+import { schematicList } from '@/typescript/gameConstants/schematicList';
+const props = defineProps<{
+    schematicName: typeof schematicList[number],
+}>()
 // 1. Should add to the gameStateStorage
     // Maybe we go form one array to another? like unlocks vs unlocked? or is that excessive?
     // Just one I think
