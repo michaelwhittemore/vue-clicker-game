@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import BuySchematic from './BuySchematic.vue';
-import { schematicList } from '@/typescript/gameConstants/schematicList';
+import { schematicsData } from '@/typescript/gameConstants/schematicsData';
 // Will need to import list of schematics and iterate over them
+// Will need to add the price to button.
+
+// Maybe all the logic should be in here and not in the separate TS file??
 </script>
 <template>
     <div class="shopTab schematicsColor">
-        <BuySchematic v-for="schematic in schematicList" :schematicName="schematic" />
+        <BuySchematic v-for="(value, key) in schematicsData" :schematicName="key"/>
     </div>
 
 </template>
