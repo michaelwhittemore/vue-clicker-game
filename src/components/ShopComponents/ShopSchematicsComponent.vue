@@ -5,7 +5,6 @@ import { schematicList } from '@/typescript/gameConstants/schematicList';
 </script>
 <template>
     <div class="shopTab schematicsColor">
-        <!-- <BuySchematic /> -->
         <BuySchematic v-for="schematic in schematicList" :schematicName="schematic" />
     </div>
 

@@ -29,6 +29,7 @@
         - will need to add the ship to game storage
         - repair should cost a hefty amount of steel
     8. We should add a class to replace 'button', or style the buttons a lot more?
+    9. Add a the map of key names to readable names (i.e. `autoGoldMiner` -> `Automatic Gold Miner`)
 
 # Immediate future tasks
 * Refactor generate resources to use composable (instead of weird props and conditionals
@@ -42,6 +43,7 @@ see https://vuejs.org/guide/reusability/composables#composables)
 * Add saving - pretty sure this is just loading in gameStateStorage from local storage (will probably need the logic to be within `gameStateStorage.ts` as that's what exports the ref)
 * Some sort of neural uplink to gain passive xp (should be able to switch between skills)
 * add the ability to prospect to find new minerals??
+* It may be worth using https://stackoverflow.com/questions/45251664/derive-union-type-from-tuple-array-values and const assertions https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-4.html#const-assertions in the place of my types file. This would allow me to use the array as a type
     
 
 # Style Todos

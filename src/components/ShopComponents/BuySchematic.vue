@@ -19,6 +19,6 @@ const props = defineProps<{
     
 </script>
 <template>
-    <button> Buy me</button>
+    <button> {{props.schematicName}}</button>
 
 </template>

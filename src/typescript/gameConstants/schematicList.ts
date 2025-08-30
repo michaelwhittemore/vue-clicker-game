@@ -1,1 +1,11 @@
-export const schematicList = ['autoGoldMiner'] as const;
+export const schematicList = [
+    'autoGoldMiner',
+    'upgradeRefinerInput',
+    'upgradeRefinerOutput',
+    'advancedAutoMiner',
+    'nueroUplink',
+    'prospectingTool',
+    'shipCargo',
+    'shipDistance'
+
+] as const;

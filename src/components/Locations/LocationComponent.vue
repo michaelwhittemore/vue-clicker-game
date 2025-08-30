@@ -26,6 +26,7 @@ const props = defineProps<{
     background-color: #a26769;
     border-style: dashed;
     margin: .5em;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 </style>

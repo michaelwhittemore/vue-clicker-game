@@ -3,7 +3,7 @@ const getOreRateFromTradingLevel = (level: number) => {
     // looks like `if` statements are more efficient than switch statements, 
     // see https://stackoverflow.com/questions/5619832/switch-on-ranges-of-integers-in-javascript
     if (level < 2){
-        return 300
+        return 350
     } else if (level < 5){
         return 250
     } else {
@@ -13,13 +13,13 @@ const getOreRateFromTradingLevel = (level: number) => {
 
 const getSteelRateFromTradingLevel = (level: number) => {
     if (level < 1){
-        return 27
+        return 30
     } else if (level < 3){
-        return 22
+        return 25
     } else if (level < 5){
-        return 20
+        return 22
     } else {
-        return 18
+        return 19
     }
 }
 
