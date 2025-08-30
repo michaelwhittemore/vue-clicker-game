@@ -8,6 +8,9 @@
 // }
 
 export const schematicsData= {
+    advancedAutoGoldMiner: {
+        price: 75,
+    },
     autoGoldMiner: {
         price: 75,
     },

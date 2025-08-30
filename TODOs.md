@@ -18,9 +18,12 @@
         * ~~maybe break the store into items and schematics~~
         * Add the ability to buy schematic for gold (which trigger both narrative and buttons to appear)
             - How about the AutoGoldMiner?
+        - **HERE!** trouble deciding on the unlock conditions
+            - We need to then tie the schematic to actually unlocking items in the refinery and robotics
+            - maybe that means we should actually use the levels?
         - Let's start with an upgrade
         - also an advanced ore miner (maybe three at a time?)
-        - Let's try and move away from `schematicsData.ts`, just store all that in `ShopSchematicsComponent.vue`
+        - Let's try and move away from `schematicsData.ts`, just store all that in `ShopSchematicsComponent.vue` - ran into issues as we then can't export the data from the setup script
     6. a new resource (just pick something, maybe silica or clay? can be pretty random), unobtanium, living steel, sentient calcium - in general humorous resources are good
     6. I should have a more efficient refiner as an upgrade
         * Two different parts to this

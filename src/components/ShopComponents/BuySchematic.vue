@@ -38,6 +38,8 @@ const clickHandler = (schematicName: keyof typeof schematicsData) => {
 
 const computedIsUnlocked = computed(() => {
     switch (props.schematicName){
+        case 'advancedAutoGoldMiner':
+            return true
         case 'autoGoldMiner':
             return true;
         default:
@@ -50,6 +52,6 @@ const computedIsUnlocked = computed(() => {
 <template>
     <button
         v-if="!gameStateStorage.unlockedSchematics.includes(schematicName) && computedIsUnlocked" @click="clickHandler(schematicName)">
-        {{ schematicName }} ({{ schematicsData[schematicName].price }})</button>
+        {{ schematicName }} ({{ schematicsData[schematicName].price }} gold)</button>
 
 </template>
