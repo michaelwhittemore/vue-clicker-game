@@ -25,8 +25,10 @@ const shopTab = ref('items')
   <template v-if="true">
     <LocationComponent :location-name="'Shop'">
       <div class="flexUtility">
-        <div class="tabSelector itemsColor" @click="shopTab = 'items'">Items</div>
-        <div class="tabSelector schematicsColor" @click="shopTab = 'schematics'">Schematics</div>
+        <div :class="{selectedTab: shopTab === 'items'}"  class="tabSelector itemsColor" 
+        @click="shopTab = 'items'">Items</div>
+        <div :class="{selectedTab: shopTab === 'schematics'}"  class="tabSelector schematicsColor" 
+        @click="shopTab = 'schematics'">Schematics</div>
       </div>
 
       <component :is="shopTabs[shopTab]"></component>
@@ -36,11 +38,15 @@ const shopTab = ref('items')
 </template>
 
 <style>
+.selectedTab {
+  border-bottom-style: none !important;
+}
+
 .tabSelector {
   text-align: center;
   width: 50%;
   margin-bottom: 0px;
   border-style: solid;
-  border-bottom-style: none;
+
 }
 </style>

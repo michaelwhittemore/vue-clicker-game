@@ -1,8 +1,9 @@
 <script setup lang="ts">
+import BuySchematic from './BuySchematic.vue';
 </script>
 <template>
     <div class="shopTab schematicsColor">
-        <div>schematics</div>
+        <BuySchematic />
     </div>
 
 </template>

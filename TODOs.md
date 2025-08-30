@@ -15,13 +15,9 @@
         - on mobile maybe 2x2? Also less space in between
         - may need to modify css for `locationsHolder`
     5. Add an upgrades section to the store, possibly also make somewhere where I can build the upgrades (i.e. schematic vs upgrade)
-        * maybe break the store into ITEMS and schematics??
-            - use `:is` https://vuejs.org/guide/essentials/component-basics#dynamic-components
-            - Will need a button to switch between the 2
-            - I think we need a `shopSectionWrapper` for the color
-            - maybe a border of top, right, and left of the buttons
-            - maybe zero padding for the shop locationContainer
+        * ~~maybe break the store into items and schematics~~
         * Add the ability to buy schematic for gold (which trigger both narrative and buttons to appear)
+            - How about the AutoGoldMiner?
         - Let's start with an upgrade
         - also an advanced ore miner (maybe three at a time?)
     6. a new resource (just pick something, maybe silica or clay? can be pretty random), unobtanium, living steel, sentient calcium - in general humorous resources are good
@@ -32,7 +28,8 @@
     7. Now that I have the ship you should be able to repair it
         - will need to add the ship to game storage
         - repair should cost a hefty amount of steel
-        - 
+    8. We should add a class to replace 'button', or style the buttons a lot more?
+
 # Immediate future tasks
 * Refactor generate resources to use composable (instead of weird props and conditionals
 see https://vuejs.org/guide/reusability/composables#composables)
@@ -55,7 +52,8 @@ see https://vuejs.org/guide/reusability/composables#composables)
 * ~~maybe switch the narrative back to the top and just hard code the height? - need to fix the scrolling first I think~~
 * I should give the narrative area scrolling and a maximum height - I will also want it to scroll down - also some spacing between text
 * have some sort of border that demands attention when a new text is added? maybe it's highlighted for a few seconds? (like for the narrative element)
-* Should I try with randomness in location - like a 10px difference?
+* Should I try with randomness in location - like a 10px difference? (for animations)
+* Maybe we have a notification badge when new schematics are available?
 
 # General Notes
 * Will need to mention this was to learn vue and to refresh my typescript knowledge 

@@ -35,11 +35,10 @@ export interface StateStorageObject {
         robotics: Skill,
         trading: Skill,
     }
-    goods?: object,
-    technologies?: object,
     upgrades: {
         pickaxe: Upgrade
-    }, 
+    },
+    unlockedSchematics: Array<string>,
     narrativeTriggersArray: NarrativeTrigger[],
 }
 
@@ -86,8 +85,7 @@ const gameStateStorageObject: StateStorageObject = {
             }    
         }
     },
-    goods: {},
-    technologies: {},
+    unlockedSchematics: [],
     narrativeTriggersArray: ['gameStart'],
 }
 
