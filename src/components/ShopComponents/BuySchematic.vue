@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from 'vue';
 import { gameStateStorage } from '@/typescript/gameStateStorage';
 import { schematicsData } from '@/typescript/gameConstants/schematicsData';
 
@@ -31,15 +32,24 @@ const props = defineProps<{
     - Prospecting tool (unlocks new resources in the mines)
 */
 const clickHandler = (schematicName: keyof typeof schematicsData) => {
-    console.warn(schematicName)
-    console.log(schematicsData[schematicName].price)
     gameStateStorage.unlockedSchematics.push(schematicName);
-    gameStateStorage.resources.gold-= schematicsData[schematicName].price;
+    gameStateStorage.resources.gold -= schematicsData[schematicName].price;
 }
+
+const computedIsUnlocked = computed(() => {
+    switch (props.schematicName){
+        case 'autoGoldMiner':
+            return true;
+        default:
+            console.error('Unknown Schematic')
+            return false;
+    }
+})
 
 </script>
 <template>
-    <button v-if="!gameStateStorage.unlockedSchematics.includes(schematicName)" @click="clickHandler(schematicName)"> 
+    <button
+        v-if="!gameStateStorage.unlockedSchematics.includes(schematicName) && computedIsUnlocked" @click="clickHandler(schematicName)">
         {{ schematicName }} ({{ schematicsData[schematicName].price }})</button>
 
 </template>

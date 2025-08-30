@@ -7,12 +7,9 @@
 //     buyHandler: () => void;
 // }
 
-/// hmmmm should all buyHandlers just involving add it to unlock array
-
 export const schematicsData= {
     autoGoldMiner: {
         price: 75,
-        isUnlocked: () => true, // TODO - change this
     },
 }
 

@@ -20,6 +20,7 @@
             - How about the AutoGoldMiner?
         - Let's start with an upgrade
         - also an advanced ore miner (maybe three at a time?)
+        - Let's try and move away from `schematicsData.ts`, just store all that in `ShopSchematicsComponent.vue`
     6. a new resource (just pick something, maybe silica or clay? can be pretty random), unobtanium, living steel, sentient calcium - in general humorous resources are good
     6. I should have a more efficient refiner as an upgrade
         * Two different parts to this
