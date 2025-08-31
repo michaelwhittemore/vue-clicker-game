@@ -3,11 +3,12 @@ import { computed } from 'vue';
 import type { ComputedRef } from 'vue';
 import { gameStateStorage } from '@/typescript/gameStateStorage';
 import { earnExperienceInSkill, activateNarrativeTrigger } from '@/typescript/gameHelpers';
+import { automatonsData } from '@/typescript/gameConstants/automatonsData';
 import type { NarrativeTrigger } from '@/typescript/gameTypes';
-import type { ValidAutomatons, ValidResources } from '@/typescript/gameTypes';
-
+import type { ValidResources } from '@/typescript/gameTypes';
+//  HERE! NEED TO COMPLETELY REMOVE THe VALID AUTOMATONS TYPE
 const props = defineProps<{
-    automatonType: ValidAutomatons,
+    automatonType: keyof typeof automatonsData,
 }>()
 let costResource: ValidResources;
 let costQuantity: number;

@@ -1,5 +1,6 @@
 import { reactive } from 'vue';
-import type { NarrativeTrigger, ValidAutomatons, ValidResources, ValidSkills } from './gameTypes';
+import type { NarrativeTrigger, ValidResources, ValidSkills } from './gameTypes';
+import { automatonsData } from './gameConstants/automatonsData';
 
 export interface Skill {
     level: number,
@@ -19,12 +20,8 @@ interface Upgrade {
 }
 
 export interface StateStorageObject {
-    // automatons: Record<ValidAutomatons, number>,
-    automatons: {
-        autoMiner: number,
-        autoRefiner: number,
-        autoGoldMiner: number,
-    },
+    automatons: Record<keyof typeof automatonsData, number>,
+
     resources: {
         ore: number,
         steel: number,
