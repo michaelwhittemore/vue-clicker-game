@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import { gameStateStorage } from '@/typescript/gameStateStorage';
-import type { ValidResources, ValidSkills, NarrativeTrigger } from '@/typescript/gameTypes';
+import { narrativeTriggersToText } from '@/typescript/gameConstants/narrativeTriggersToText';
+import type { ValidResources, ValidSkills } from '@/typescript/gameTypes';
 import { earnExperienceInSkill, activateNarrativeTrigger } from '@/typescript/gameHelpers';
 import PopUpText from './PopUpText.vue';
 const props = defineProps<{
@@ -10,7 +11,7 @@ const props = defineProps<{
 // TODO - this should be refactored to have different logic, maybe a helper file function?
 // right now my attempt to be generic feels like an anti-pattern
 let buttonText: string;
-let narrativeTrigger: NarrativeTrigger;
+let narrativeTrigger: keyof typeof narrativeTriggersToText;
 let relevantSkill: ValidSkills;
 switch (props.resourceType) {
     case 'ore':

@@ -1,6 +1,7 @@
 import { reactive } from 'vue';
-import type { NarrativeTrigger, ValidResources, ValidSkills } from './gameTypes';
+import type { ValidResources, ValidSkills } from './gameTypes';
 import { automatonsData } from './gameConstants/automatonsData';
+import { narrativeTriggersToText } from './gameConstants/narrativeTriggersToText';
 
 export interface Skill {
     level: number,
@@ -36,7 +37,7 @@ export interface StateStorageObject {
         pickaxe: Upgrade
     },
     unlockedSchematics: Array<string>,
-    narrativeTriggersArray: NarrativeTrigger[],
+    narrativeTriggersArray: Array<keyof typeof narrativeTriggersToText>,
 }
 
 const gameStateStorageObject: StateStorageObject = {

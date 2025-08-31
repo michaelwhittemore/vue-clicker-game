@@ -4,7 +4,7 @@ import type { ComputedRef } from 'vue';
 import { gameStateStorage } from '@/typescript/gameStateStorage';
 import { earnExperienceInSkill, activateNarrativeTrigger } from '@/typescript/gameHelpers';
 import { automatonsData } from '@/typescript/gameConstants/automatonsData';
-import type { NarrativeTrigger } from '@/typescript/gameTypes';
+import { narrativeTriggersToText } from '@/typescript/gameConstants/narrativeTriggersToText';
 import type { ValidResources } from '@/typescript/gameTypes';
 const props = defineProps<{
     automatonType: keyof typeof automatonsData,
@@ -13,7 +13,7 @@ const { automatonType } = props; // can safely destructure as this is never chan
 
 let costResource: ValidResources = automatonsData[automatonType].costResource;
 let costQuantity: number = automatonsData[automatonType].price;
-let narrativeTrigger: NarrativeTrigger = automatonsData[automatonType].narrativeTrigger;
+let narrativeTrigger: keyof typeof narrativeTriggersToText = automatonsData[automatonType].narrativeTrigger;
 
 let computedShouldDisplay: ComputedRef<boolean> = computed(() => {
     if (!automatonsData[automatonType].requiresSchematic) {
