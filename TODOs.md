@@ -2,22 +2,8 @@
 
 # Things to work on immediately 
 * Current Tasks: 
-    1. ~~Shop selling resources~~
-        - ~~I guess we should start by moving all the slots into the shop component~~
-        * ~~I've added selling steel, now let's sell Ore~~
-        * ~~Ore will be at a worse rate~~
-        * ~~Both will need to be affected by trading and also have popup text~~
-        * ~~Still need to add a narrative trigger to trading level~~
-    2. ~~popUpText animation~~
-    3. ~~Add the highlight to recent entry in narrative log~~
-    4. ~~Need to psychically allow the store to scroll. ~~
-        - may need to resize
-        - on mobile maybe 2x2? Also less space in between
-        - may need to modify css for `locationsHolder`
     5. Add an upgrades section to the store, possibly also make somewhere where I can build the upgrades (i.e. schematic vs upgrade)
-        - **HERE!**  also an advanced ore miner (maybe five at a time?)
-        - Let's try and move away from `schematicsData.ts`, just store all that in `ShopSchematicsComponent.vue` - ran into issues as we then can't export the data from the setup script
-        - Do we actually need to export it though? Maybe I'm trying to solve a non-problem
+        
     5. Switch narrativeTriggers out of type and into a game data file. use `typeof keyof` instead
     6. a new resource (just pick something, maybe silica or clay? can be pretty random), unobtanium, living steel, sentient calcium - in general humorous resources are good
     6. I should have a more efficient refiner as an upgrade
@@ -29,6 +15,10 @@
         - repair should cost a hefty amount of steel
     8. We should add a class to replace 'button', or style the buttons a lot more?
     9. Add a the map of key names to readable names (i.e. `autoGoldMiner` -> `Automatic Gold Miner`)
+    10. Make the locations more mobile responsive 
+        - may need to resize
+        - on mobile maybe 2x2? Also less space in between
+        - may need to modify css for `locationsHolder`
 
 # Immediate future tasks
 * Refactor generate resources to use composable (instead of weird props and conditionals

@@ -7,6 +7,7 @@ import { schematicsData } from '@/typescript/gameConstants/schematicsData';
 const props = defineProps<{
     schematicName: keyof typeof schematicsData,
 }>()
+const { schematicName } = props;
 
 /* Possible schematics include:
     - Auto gold miner AutoGoldMiner
@@ -19,23 +20,7 @@ const clickHandler = (schematicName: keyof typeof schematicsData) => {
     gameStateStorage.unlockedSchematics.push(schematicName);
     gameStateStorage.resources.gold -= schematicsData[schematicName].price;
 }
-// Maybe I can have a method which then gets passed into computed? I think that would work?
-let computedShouldDisplay;
-let computedIsUnlocked: ComputedRef<boolean>;;
-
-switch (props.schematicName) {
-    case 'advancedAutoMiner':
-        computedIsUnlocked = computed(() => true);
-        break;
-    case 'autoGoldMiner':
-        computedIsUnlocked = computed(() => true);
-        break;
-    default:
-        console.error('Unknown Schematic')
-        computedIsUnlocked = computed(() => false);
-        break;
-}
-
+const computedIsUnlocked: ComputedRef<boolean> = computed(schematicsData[schematicName].shouldDisplay);
 
 </script>
 <template>
