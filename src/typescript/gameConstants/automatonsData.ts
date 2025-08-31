@@ -20,11 +20,13 @@ export const automatonsData: Record<string, AutomatonData> = {
         costResource: 'steel',
         narrativeTrigger: 'hasBuiltAutoRefiner',
         requiresSchematic: false,
+        levelRequirement: 1,
     },
     'autoGoldMiner': {
         price: 40,
         costResource: 'steel',
         narrativeTrigger: 'hasBuiltAutoGoldMiner',
         requiresSchematic: true,
+        levelRequirement: 3,
     },
 }

@@ -19,7 +19,6 @@
         * Add the ability to buy schematic for gold (which trigger both narrative and buttons to appear)
             - How about the AutoGoldMiner?
         - **HERE!** trouble deciding on the unlock conditions
-            - need to move `ValidAutomatons` out of the types file and into a automatons data file which includes price and level requirements
             - We need to then tie the schematic to actually unlocking items in the refinery and robotics
             - maybe that means we should actually use the levels?
         - Let's start with an upgrade

@@ -4,12 +4,6 @@ import type { ComputedRef } from 'vue';
 import { gameStateStorage } from '@/typescript/gameStateStorage';
 import { schematicsData } from '@/typescript/gameConstants/schematicsData';
 
-// import { schematicList } from '@/typescript/gameConstants/schematicsData';
-// const props = defineProps<{
-//     schematicName: typeof schematicList[number],
-// }>()
-// const { schematicName } = props; // We can use destructuring as this is constant. 
-
 const props = defineProps<{
     schematicName: keyof typeof schematicsData,
 }>()
