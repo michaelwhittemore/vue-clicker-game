@@ -3,7 +3,6 @@ import { computed } from 'vue';
 import { gameStateStorage } from '@/typescript/gameStateStorage';
 import { earnExperienceInSkill, activateNarrativeTrigger } from '@/typescript/gameHelpers'; 
 
-// HERE!
 // would like to do the refactoring to use composables https://vuejs.org/guide/reusability/composables#composables
 // will need price to increase exponentially 
     

@@ -1,14 +1,5 @@
-// What should the shape be?
-// Maybe price, unlock condition isUnlocked? ,and buyHandler
-
-// interface SchematicEntry {
-//     price: number;
-//     isUnlocked: () => boolean;
-//     buyHandler: () => void;
-// }
-
 export const schematicsData= {
-    advancedAutoGoldMiner: {
+    advancedAutoMiner: {
         price: 75,
     },
     autoGoldMiner: {

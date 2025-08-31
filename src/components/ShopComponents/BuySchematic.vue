@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
+import type { ComputedRef } from 'vue';
 import { gameStateStorage } from '@/typescript/gameStateStorage';
 import { schematicsData } from '@/typescript/gameConstants/schematicsData';
 
@@ -14,7 +15,6 @@ const props = defineProps<{
 }>()
 
 
-// HERE!
 // Within schematicList we will need to have the prices and unlock conditions
 // Will need a computed `shouldDisplay` prop and a `canPurchaseProp`\
 // Will need to add the price to the button
@@ -36,22 +36,40 @@ const clickHandler = (schematicName: keyof typeof schematicsData) => {
     gameStateStorage.resources.gold -= schematicsData[schematicName].price;
 }
 
-const computedIsUnlocked = computed(() => {
-    switch (props.schematicName){
-        case 'advancedAutoGoldMiner':
-            return true
-        case 'autoGoldMiner':
-            return true;
-        default:
-            console.error('Unknown Schematic')
-            return false;
-    }
-})
+//computedShouldDisplay = computed(() => gameStateStorage.skills.robotics.level >= 3);
+// HERE!
+let computedShouldDisplay;
+let computedIsUnlocked: ComputedRef<boolean>;;
+
+// const computedIsUnlocked = computed(() => {
+//     switch (props.schematicName){
+//         case 'advancedAutoMiner':
+//             return true
+//         case 'autoGoldMiner':
+//             return true;
+//         default:
+//             console.error('Unknown Schematic')
+//             return false;
+//     }
+// })
+switch (props.schematicName) {
+    case 'advancedAutoMiner':
+        computedIsUnlocked = computed(() => true);
+        break;
+    case 'autoGoldMiner':
+        computedIsUnlocked = computed(() => true);
+        break;
+    default:
+        console.error('Unknown Schematic')
+        computedIsUnlocked = computed(() => false);
+        break;
+}
+
 
 </script>
 <template>
-    <button
-        v-if="!gameStateStorage.unlockedSchematics.includes(schematicName) && computedIsUnlocked" @click="clickHandler(schematicName)">
+    <button v-if="!gameStateStorage.unlockedSchematics.includes(schematicName) && computedIsUnlocked"
+        @click="clickHandler(schematicName)">
         {{ schematicName }} ({{ schematicsData[schematicName].price }} gold)</button>
 
 </template>
