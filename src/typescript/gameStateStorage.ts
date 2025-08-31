@@ -44,6 +44,7 @@ const gameStateStorageObject: StateStorageObject = {
         autoMiner: 0,
         autoRefiner: 0,
         autoGoldMiner: 0,
+        advancedAutoMiner: 0,
     },
     resources: {
         // these should be zero, but this makes testing easier

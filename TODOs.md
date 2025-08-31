@@ -15,16 +15,10 @@
         - on mobile maybe 2x2? Also less space in between
         - may need to modify css for `locationsHolder`
     5. Add an upgrades section to the store, possibly also make somewhere where I can build the upgrades (i.e. schematic vs upgrade)
-        * ~~maybe break the store into items and schematics~~
-        * Add the ability to buy schematic for gold (which trigger both narrative and buttons to appear)
-            - How about the AutoGoldMiner?
-        - **HERE!** trouble deciding on the unlock conditions
-            - We need to then tie the schematic to actually unlocking items in the refinery and robotics
-            - maybe that means we should actually use the levels?
-        - Let's start with an upgrade
-        - also an advanced ore miner (maybe three at a time?)
+        - **HERE!**  also an advanced ore miner (maybe five at a time?)
         - Let's try and move away from `schematicsData.ts`, just store all that in `ShopSchematicsComponent.vue` - ran into issues as we then can't export the data from the setup script
         - Do we actually need to export it though? Maybe I'm trying to solve a non-problem
+    5. Switch narrativeTriggers out of type and into a game data file. use `typeof keyof` instead
     6. a new resource (just pick something, maybe silica or clay? can be pretty random), unobtanium, living steel, sentient calcium - in general humorous resources are good
     6. I should have a more efficient refiner as an upgrade
         * Two different parts to this

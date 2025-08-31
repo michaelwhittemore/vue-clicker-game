@@ -8,16 +8,6 @@ const props = defineProps<{
     schematicName: keyof typeof schematicsData,
 }>()
 
-
-// Within schematicList we will need to have the prices and unlock conditions
-// Will need a computed `shouldDisplay` prop and a `canPurchaseProp`\
-// Will need to add the price to the button
-// Will also need a trigger for each?
-
-// Should only show until you purchase it
-// Should these cause a narrative trigger? Or only when building something new?
-
-
 /* Possible schematics include:
     - Auto gold miner AutoGoldMiner
     - upgraded refiner (The button will be in the refinery)
@@ -29,23 +19,10 @@ const clickHandler = (schematicName: keyof typeof schematicsData) => {
     gameStateStorage.unlockedSchematics.push(schematicName);
     gameStateStorage.resources.gold -= schematicsData[schematicName].price;
 }
-
-//computedShouldDisplay = computed(() => gameStateStorage.skills.robotics.level >= 3);
-// HERE!
+// Maybe I can have a method which then gets passed into computed? I think that would work?
 let computedShouldDisplay;
 let computedIsUnlocked: ComputedRef<boolean>;;
 
-// const computedIsUnlocked = computed(() => {
-//     switch (props.schematicName){
-//         case 'advancedAutoMiner':
-//             return true
-//         case 'autoGoldMiner':
-//             return true;
-//         default:
-//             console.error('Unknown Schematic')
-//             return false;
-//     }
-// })
 switch (props.schematicName) {
     case 'advancedAutoMiner':
         computedIsUnlocked = computed(() => true);

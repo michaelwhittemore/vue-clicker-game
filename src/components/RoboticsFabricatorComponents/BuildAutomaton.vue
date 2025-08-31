@@ -47,7 +47,7 @@ const onClickHandler = () => {
         activateNarrativeTrigger('hasUnlockedShop');
     }
     gameStateStorage.resources[costResource] -= costQuantity;
-    earnExperienceInSkill('robotics', 2)
+    earnExperienceInSkill('robotics', automatonsData[automatonType].earnedExperience)
 
 }
 </script>
@@ -56,5 +56,4 @@ const onClickHandler = () => {
     <button @click="onClickHandler" :disabled="!(computedHasEnoughResources && computedHasLevelRequirement)"
         v-if="computedShouldDisplay">
         Build an {{ automatonType }} ({{ costQuantity }} {{ costResource }} {{ levelRequirementText }})</button>
-
 </template>
