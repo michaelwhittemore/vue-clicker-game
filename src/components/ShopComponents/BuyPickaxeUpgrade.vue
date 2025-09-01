@@ -27,7 +27,7 @@ const computedSufficientGoldAndLevel = computed(() => {
 </script>
 <template>
     <button :disabled="!computedSufficientGoldAndLevel" :v-if="true" @click="onClickHandler"> Upgrade pickaxe to level {{ gameStateStorage.upgrades.pickaxe.level + 1 }} 
-        (costs {{ gameStateStorage.upgrades.pickaxe.price }} {{ gameStateStorage.upgrades.pickaxe.resourceType }},
+        ({{ gameStateStorage.upgrades.pickaxe.price }} {{ gameStateStorage.upgrades.pickaxe.resourceType }},
         <span v-if="gameStateStorage.upgrades.pickaxe.requiredLevel">requires {{ gameStateStorage.upgrades.pickaxe.requiredLevel.skill }} level 
             {{ gameStateStorage.upgrades.pickaxe.requiredLevel.skillLevel }} </span>
         )</button>

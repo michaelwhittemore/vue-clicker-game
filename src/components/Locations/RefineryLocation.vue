@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import RefineButton from '../RefineButton.vue';
+import RefineButton from '../RefineryComponents/RefineButton.vue';
+import UpgradeRefineryButton from '../RefineryComponents/UpgradeRefineryButton.vue';
 import LocationComponent from './LocationComponent.vue';
 // HERE! - I think we should iterate over the schematics? and display them if they are in unlocked
 // schematics but not refineryUpgrades. Will need a list of possible refinery upgrades? just an array - 
@@ -8,5 +9,7 @@ import LocationComponent from './LocationComponent.vue';
 <template> 
     <LocationComponent :location-name="'Refinery'">
       <RefineButton />
+      <UpgradeRefineryButton :upgradeName="'improvedRefineryHopper'"/> 
+      <UpgradeRefineryButton :upgradeName="'improvedRefineryFurnace'"/> 
     </LocationComponent>
 </template>

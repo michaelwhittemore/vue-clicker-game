@@ -1,8 +1,9 @@
-import type { NarrativeTrigger, ValidResources } from "../gameTypes";
+import type { ValidResources } from "../gameTypes";
+import { narrativeTriggersToText } from "./narrativeTriggersToText";
 interface AutomatonData {
     price: number,
     costResource: ValidResources,
-    narrativeTrigger: NarrativeTrigger,
+    narrativeTrigger: keyof typeof narrativeTriggersToText,
     requiresSchematic: boolean,
     earnedExperience: number,
     levelRequirement?: number,

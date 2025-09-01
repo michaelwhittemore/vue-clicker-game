@@ -15,6 +15,7 @@
         - repair should cost a hefty amount of steel
     8. We should add a class to replace 'button', or style the buttons a lot more?
     9. Add a the map of key names to readable names (i.e. `autoGoldMiner` -> `Automatic Gold Miner`)
+        - don't forget the automaton holder!
     10. Make the locations more mobile responsive 
         - may need to resize
         - on mobile maybe 2x2? Also less space in between
@@ -37,6 +38,7 @@ see https://vuejs.org/guide/reusability/composables#composables)
 
 # Style Todos
 * Need a more distinctive font 
+* different color for buttons for upgrades, actions, building (especially on something like the refinery)
 * The buttons look ugly and like forms, should at the very least change the color and maybe center them?
 * ~~Add some kind of animation when mining or building? maybe a little `+1 ore` popup? Will need to do some research~~
 * Look at a mobile game or civ or something for UI inspiration for resource bar

@@ -5,6 +5,7 @@ import { gameStateStorage } from '@/typescript/gameStateStorage';
 import { earnExperienceInSkill, activateNarrativeTrigger } from '@/typescript/gameHelpers';
 import { automatonsData } from '@/typescript/gameConstants/automatonsData';
 import { narrativeTriggersToText } from '@/typescript/gameConstants/narrativeTriggersToText';
+import { readableTextMap } from '@/typescript/gameConstants/readableTextMap';
 import type { ValidResources } from '@/typescript/gameTypes';
 const props = defineProps<{
     automatonType: keyof typeof automatonsData,
@@ -55,5 +56,5 @@ const onClickHandler = () => {
 <template>
     <button @click="onClickHandler" :disabled="!(computedHasEnoughResources && computedHasLevelRequirement)"
         v-if="computedShouldDisplay">
-        Build an {{ automatonType }} ({{ costQuantity }} {{ costResource }} {{ levelRequirementText }})</button>
+        Build an {{ readableTextMap[automatonType] }} ({{ costQuantity }} {{ costResource }} {{ levelRequirementText }})</button>
 </template>

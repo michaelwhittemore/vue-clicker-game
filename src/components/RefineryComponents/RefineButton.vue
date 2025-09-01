@@ -2,7 +2,7 @@
 import { computed, ref } from 'vue';
 import { gameStateStorage } from '@/typescript/gameStateStorage';
 import { activateNarrativeTrigger } from '@/typescript/gameHelpers';
-import PopUpText from './PopUpText.vue';
+import PopUpText from '../PopUpText.vue';
 
 const wasClickedTrigger = ref(false);
 

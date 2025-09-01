@@ -1,7 +1,7 @@
 import { gameStateStorage } from "../gameStateStorage"
 // should I add any narrative triggers? or maybe something else?, maybe readable name
 interface SchematicData {
-    price: number,
+    price: number, // Price to UNLOCK the schematic, not to build the end result
     shouldDisplay: () => boolean,
     buildLocation: 'refinery' | 'fabricator' | 'ship',
 }
@@ -18,13 +18,13 @@ export const schematicsData: Record<string, SchematicData> = {
         buildLocation: 'fabricator'
     },
     // Refinery Input
-    improvedRefinerHopper: {
+    improvedRefineryHopper: {
         price: 100,
         shouldDisplay: () => gameStateStorage.automatons.autoGoldMiner > 2,
         buildLocation: 'refinery'
     },
     // Refinery Output
-    // improvedRefinerFurnace: { 
+    // improvedRefineryFurnace: { 
         // maybe tie this to buying and building the hopper upgrade?
     //     price: 100,
     //     shouldDisplay: () => gameStateStorage.automatons.autoGoldMiner > 2,
