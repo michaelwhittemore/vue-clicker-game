@@ -11,7 +11,7 @@ export const narrativeTriggersToText: Record<string, string> = {
     hasUnlockedShop: 'A rusted and beaten shuttle descends from the skies. Its landing gear creaks as it settles into the center of town. An alien - presumably drawn by the smoke of your refineries- emerges and wearily looks around. It\'s wearing a leather duster and ten gallon hat, both of which look comically oversized on the lithe species which you don\'t recognize. The alien throws up a door on its ship to reveal an array of mining equipment. After some crude pantomiming you manage to get a price estimate for the gear. ',
     hasUpgradedPickaxe: 'The alien hands you the tool in exchange for your gold. It immediately feels like an improvement over your previous pickaxe. With your skills, you feel that you\'ll be able to mine far more efficiently. (You have increased the amount of ore that you get from each swing. Future pickaxe upgrades will increase this bonus further.)',
     hasUnlockedAutoGoldMiner: 'TODO, has unlocked auto gold miner, something to the effect of ',
-    hasBuiltAutoGoldMiner: 'TODO hasBuiltAutoGoldMiner (not unlocked) ',
+    hasBuiltAutoGoldMiner: 'TODO hasBuiltAutoGoldMiner need to mention that it is slow ',
     hasBuiltAdvancedAutoMiner: 'TODO (Something about far sleeker, maybe even approaching graceful. It will mine five ore at a time)',
     tradingUnlock1: 'You have done a fair deal of buying and selling. Your haggling skills now allow you to sell resources at a better rate. (Leveling trading further will increase this bonus)',
 }

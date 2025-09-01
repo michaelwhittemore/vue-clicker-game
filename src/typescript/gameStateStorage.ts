@@ -36,6 +36,7 @@ export interface StateStorageObject {
     upgrades: {
         pickaxe: Upgrade
     },
+    refineryUpgrades: Array<string>,
     unlockedSchematics: Array<string>,
     narrativeTriggersArray: Array<keyof typeof narrativeTriggersToText>,
 }
@@ -48,7 +49,7 @@ const gameStateStorageObject: StateStorageObject = {
         advancedAutoMiner: 0,
     },
     resources: {
-        // these should be zero, but this makes testing easier
+        // these should be zero, but this makes testing easier - DEV
         ore: 0,
         steel: 1000,
         gold: 10,
@@ -84,6 +85,7 @@ const gameStateStorageObject: StateStorageObject = {
             }    
         }
     },
+    refineryUpgrades: [],
     unlockedSchematics: [],
     narrativeTriggersArray: ['gameStart'],
 }

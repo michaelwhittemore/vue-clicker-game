@@ -2,15 +2,15 @@
 
 # Things to work on immediately 
 * Current Tasks: 
-    5. Add an upgrades section to the store, possibly also make somewhere where I can build the upgrades (i.e. schematic vs upgrade)
-        
-    5. Switch narrativeTriggers out of type and into a game data file. use `typeof keyof` instead
+    5. Add the refiner upgrades
+        - Where will this be stored? upgrades? 
     6. a new resource (just pick something, maybe silica or clay? can be pretty random), unobtanium, living steel, sentient calcium - in general humorous resources are good
-    6. I should have a more efficient refiner as an upgrade
+    6. **HERE!** I should have a more efficient refiner as an upgrade
         * Two different parts to this
             - less ore
             - better output
     7. Now that I have the ship you should be able to repair it
+        - Ship might need its own location tab
         - will need to add the ship to game storage
         - repair should cost a hefty amount of steel
     8. We should add a class to replace 'button', or style the buttons a lot more?
@@ -66,10 +66,12 @@ see https://vuejs.org/guide/reusability/composables#composables)
 * read about css animations
 
 # Rebalancing notes
+* Maybe shop should appear after refining a certain amount of steel?
 * maybe have gold come in at level 2 or 3?
 * should be viable to sell, right now the rate seems punishing
 * gold should be rarer
 * in general, remember that this should be a long term game
+* maybe pickaxe higher level requirements?
 
 # Useful Vue doc links
 * https://vuejs.org/guide/introduction.html
