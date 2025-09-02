@@ -36,7 +36,12 @@ export interface StateStorageObject {
     upgrades: {
         pickaxe: Upgrade
     },
-    refineryUpgrades: Array<string>,
+    refineryState: {
+        refineryUpgrades: Array<string>,
+        oreInput: number,
+        steelOutput: number,
+    },
+
     unlockedSchematics: Array<string>,
     narrativeTriggersArray: Array<keyof typeof narrativeTriggersToText>,
 }
@@ -82,10 +87,14 @@ const gameStateStorageObject: StateStorageObject = {
             requiredLevel: {
                 skill: 'mining',
                 skillLevel: 3,
-            }    
+            }
         }
     },
-    refineryUpgrades: [],
+    refineryState: {
+        refineryUpgrades: [],
+        oreInput: 10,
+        steelOutput: 1,
+    },
     unlockedSchematics: [],
     narrativeTriggersArray: ['gameStart'],
 }

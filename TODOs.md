@@ -6,6 +6,14 @@
         - Where will this be stored? upgrades? 
     6. a new resource (just pick something, maybe silica or clay? can be pretty random), unobtanium, living steel, sentient calcium - in general humorous resources are good
     6. **HERE!** I should have a more efficient refiner as an upgrade
+        * Need to move this to schematic
+        * and then actually implement the onclick handler
+            - add a disabled check and a display check
+            - ~~have it consume the steel~~
+            -~~ add to the gameStorage (maybe a refiner data object? About to use plus amount to output)~~
+            - ~~have refiner onclick have the correct effects~~
+            - ~~update the refine button text~~
+        * then implement the refine button
         * Two different parts to this
             - less ore
             - better output
@@ -76,6 +84,7 @@ see https://vuejs.org/guide/reusability/composables#composables)
 * maybe pickaxe higher level requirements?
 
 # Useful Vue doc links
+* https://vuejs.org/guide/extras/reactivity-in-depth.html Seems really useful
 * https://vuejs.org/guide/introduction.html
 * https://vuejs.org/examples/#hello-world
 * https://vuejs.org/tutorial/#step-1https://vuejs.org/tutorial/#step-1

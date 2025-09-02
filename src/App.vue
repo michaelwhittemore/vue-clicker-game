@@ -9,7 +9,7 @@ import NarrativeText from './components/NarrativeText.vue';
 import ShopLocation from './components/Locations/ShopLocation.vue';
 import RoboticsFabricator from './components/Locations/RoboticsFabricator.vue';
 import MineLocation from './components/Locations/MineLocation.vue';
-import RefineryLocation from './components/Locations/RefineryLocation.vue';
+import RefineryLocation from './components/RefineryComponents/RefineryLocation.vue';
 </script>
 
 <template>
