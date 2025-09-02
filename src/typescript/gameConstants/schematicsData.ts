@@ -17,25 +17,27 @@ export const schematicsData: Record<string, SchematicData> = {
         shouldDisplay: () => true,
         buildLocation: 'fabricator'
     },
-    // Refinery Input
+    // Refinery Input, unlocks after the second automatic gold miner
     improvedRefineryHopper: {
         price: 100,
-        shouldDisplay: () => gameStateStorage.automatons.autoGoldMiner > 2,
+        // shouldDisplay: () => true, // just for testing
+        shouldDisplay: () => gameStateStorage.automatons.autoGoldMiner >= 2,
         buildLocation: 'refinery'
     },
-    // Refinery Output
-    // improvedRefineryFurnace: { 
-        // maybe tie this to buying and building the hopper upgrade?
-    //     price: 100,
-    //     shouldDisplay: () => gameStateStorage.automatons.autoGoldMiner > 2,
-    // },
+    // Refinery Output, unlocks after building the hopper
+    improvedRefineryFurnace: {
+        price: 125,
+        // shouldDisplay: () => true, // just for testing
+        shouldDisplay: () => gameStateStorage.refineryState.refineryUpgrades.includes('improvedRefineryHopper'),
+        buildLocation: 'refinery'
+    },
     // neuronUplink: { 
-        // What should I tie this to? maybe a certain total level value?
+    // What should I tie this to? maybe a certain total level value?
     //     price: 200,
     //     shouldDisplay: () =>TODO,
     // },
     // prospectingTool: { 
-        // What should I tie this to? maybe pickaxe upgrade?
+    // What should I tie this to? maybe pickaxe upgrade?
     //     price: 200,
     //     shouldDisplay: () =>TODO,
     // },

@@ -6,17 +6,15 @@
         - Where will this be stored? upgrades? 
     6. a new resource (just pick something, maybe silica or clay? can be pretty random), unobtanium, living steel, sentient calcium - in general humorous resources are good
     6. **HERE!** I should have a more efficient refiner as an upgrade
-        * Need to move this to schematic
+        * Need to move this to Sschematic
         * and then actually implement the onclick handler
             - add a disabled check and a display check
+            - STILL NEED TO DISABLE BOTH SCHEMATICS AND REFINERY WHEN INSUFFIECNET RESOURCES
             - ~~have it consume the steel~~
             -~~ add to the gameStorage (maybe a refiner data object? About to use plus amount to output)~~
             - ~~have refiner onclick have the correct effects~~
             - ~~update the refine button text~~
         * then implement the refine button
-        * Two different parts to this
-            - less ore
-            - better output
     7. Now that I have the ship you should be able to repair it
         - Ship might need its own location tab
         - will need to add the ship to game storage
@@ -28,6 +26,7 @@
         - may need to resize
         - on mobile maybe 2x2? Also less space in between
         - may need to modify css for `locationsHolder`
+    11. Allow the refinery to be upgraded multiple times
 
 # Immediate future tasks
 * Refactor generate resources to use composable (instead of weird props and conditionals

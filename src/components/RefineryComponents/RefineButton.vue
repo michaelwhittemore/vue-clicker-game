@@ -12,14 +12,11 @@ const steelOutput = toRef(() => gameStateStorage.refineryState.steelOutput)
 const onClickHandler = () => {
     activateNarrativeTrigger('hasRefinedOre');
     wasClickedTrigger.value = !wasClickedTrigger.value;
-    // This should eventually be tied to an upgrade (maybe both are different upgrades?)
-    // This will also mean the text needs to be changed in the template
     gameStateStorage.resources.ore -= oreInput.value;
     gameStateStorage.resources.steel+= steelOutput.value;
 }
 const notEnoughOre = computed(() => gameStateStorage.resources.ore < oreInput.value)
 const computedTextForPopUp = computed(() => {
-    // This will need different values when we add upgrades
     return `+${steelOutput.value} Steel`;
 })
 </script>
