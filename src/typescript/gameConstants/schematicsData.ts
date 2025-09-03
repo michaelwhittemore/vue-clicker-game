@@ -5,6 +5,8 @@ interface SchematicData {
     shouldDisplay: () => boolean,
     buildLocation: 'refinery' | 'fabricator' | 'ship',
 }
+const { isDevTesting } = gameStateStorage
+const testingReturnTrue = () => true;
 
 export const schematicsData: Record<string, SchematicData> = {
     advancedAutoMiner: {
@@ -20,15 +22,16 @@ export const schematicsData: Record<string, SchematicData> = {
     // Refinery Input, unlocks after the second automatic gold miner
     improvedRefineryHopper: {
         price: 100,
-        // shouldDisplay: () => true, // just for testing
-        shouldDisplay: () => gameStateStorage.automatons.autoGoldMiner >= 2,
+        shouldDisplay: (isDevTesting ? testingReturnTrue : 
+            () => gameStateStorage.automatons.autoGoldMiner >= 2),
         buildLocation: 'refinery'
     },
     // Refinery Output, unlocks after building the hopper
     improvedRefineryFurnace: {
         price: 125,
-        // shouldDisplay: () => true, // just for testing
-        shouldDisplay: () => gameStateStorage.refineryState.refineryUpgrades.includes('improvedRefineryHopper'),
+        shouldDisplay: (isDevTesting ? testingReturnTrue : 
+            () => gameStateStorage.refineryState.refineryUpgrades.includes('improvedRefineryHopper')),
+        // shouldDisplay: () => 
         buildLocation: 'refinery'
     },
     // neuronUplink: { 

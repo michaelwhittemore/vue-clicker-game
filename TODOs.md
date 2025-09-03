@@ -6,7 +6,7 @@
         - Where will this be stored? upgrades? 
     6. a new resource (just pick something, maybe silica or clay? can be pretty random), unobtanium, living steel, sentient calcium - in general humorous resources are good
     6. **HERE!** I should have a more efficient refiner as an upgrade
-        * Need to move this to Sschematic
+        * Need to move this to Schematic
         * and then actually implement the onclick handler
             - add a disabled check and a display check
             - STILL NEED TO DISABLE BOTH SCHEMATICS AND REFINERY WHEN INSUFFIECNET RESOURCES
@@ -15,6 +15,7 @@
             - ~~have refiner onclick have the correct effects~~
             - ~~update the refine button text~~
         * then implement the refine button
+    7. Should add a `DEV` tag to unlock everything, have it on game state storage
     7. Now that I have the ship you should be able to repair it
         - Ship might need its own location tab
         - will need to add the ship to game storage

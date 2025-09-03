@@ -21,8 +21,8 @@ interface Upgrade {
 }
 
 export interface StateStorageObject {
+    isDevTesting: boolean,
     automatons: Record<keyof typeof automatonsData, number>,
-
     resources: {
         ore: number,
         steel: number,
@@ -46,7 +46,9 @@ export interface StateStorageObject {
     narrativeTriggersArray: Array<keyof typeof narrativeTriggersToText>,
 }
 
+const isDevTesting = false // MUST BE SET HERE, ISN'T REACTIVE
 const gameStateStorageObject: StateStorageObject = {
+    isDevTesting, 
     automatons: {
         autoMiner: 0,
         autoRefiner: 0,
@@ -54,13 +56,9 @@ const gameStateStorageObject: StateStorageObject = {
         advancedAutoMiner: 0,
     },
     resources: {
-        // these should be zero, but this makes testing easier - DEV
-        ore: 0,
-        steel: 1000,
-        gold: 10,
-        // ore: 0,
-        // steel: 0,
-        // gold: 0,
+        ore: (isDevTesting ? 1000 :  0),
+        steel: (isDevTesting ? 1000 :  0),
+        gold: (isDevTesting ? 100 :  0),
     },
     skills: {
         mining: {
