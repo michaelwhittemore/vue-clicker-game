@@ -37,9 +37,14 @@ const computedShouldDisplay = computed(() => {
     return gameStateStorage.unlockedSchematics.includes(upgradeName) &&
         !gameStateStorage.refineryState.refineryUpgrades.includes(upgradeName)
 })
+
+const computedSufficientSteel = computed(() => {
+    return gameStateStorage.resources.steel >= upgradeCost;
+})
 </script>
 <template>
     <template v-if="computedShouldDisplay">
-        <button @click="onClickHandler"> {{ readableTextMap[upgradeName] }} ({{ upgradeCost }} steel)</button>
+        <button :disabled="!computedSufficientSteel" @click="onClickHandler"> 
+            {{ readableTextMap[upgradeName] }} ({{ upgradeCost }} steel)</button>
     </template>
 </template>

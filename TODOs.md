@@ -15,7 +15,8 @@
             - ~~have refiner onclick have the correct effects~~
             - ~~update the refine button text~~
         * then implement the refine button
-    7. Should add a `DEV` tag to unlock everything, have it on game state storage
+    7. ~~Should add a `DEV` tag to unlock everything, have it on game state storage~~
+        - possibly easier to attach it to `shouldDisplay` in `BuySchematic.vue` than have multiple instances of it in `schematicData`
     7. Now that I have the ship you should be able to repair it
         - Ship might need its own location tab
         - will need to add the ship to game storage

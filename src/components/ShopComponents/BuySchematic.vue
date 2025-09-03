@@ -16,11 +16,15 @@ const clickHandler = (schematicName: keyof typeof schematicsData) => {
 }
 // shouldDisplay is itself a function
 const computedIsUnlocked: ComputedRef<boolean> = computed(schematicsData[schematicName].shouldDisplay);
+const computedSufficientGold = computed(() => {
+    return gameStateStorage.resources.gold >= schematicsData[schematicName].price;
+})
+
 
 </script>
 <template>
     <button v-if="!gameStateStorage.unlockedSchematics.includes(schematicName) && computedIsUnlocked"
-        @click="clickHandler(schematicName)">
+        @click="clickHandler(schematicName)" :disabled="!computedSufficientGold">
         {{ readableTextMap[schematicName] }} ({{ schematicsData[schematicName].price }} gold)</button>
 
 </template>
