@@ -1,13 +1,15 @@
 <script setup lang="ts">
 import { computed, ref, type Component } from 'vue';
 import { gameStateStorage } from '@/typescript/gameStateStorage';
-import LocationComponent from './LocationComponent.vue';
+import LocationComponent from '../Locations/LocationComponent.vue';
 import ShopSchematicsComponent from '../ShopComponents/ShopSchematicsComponent.vue';
 import ShopItemsComponent from '../ShopComponents/ShopItemsComponent.vue';
 
+const { isDevTesting } = gameStateStorage // Used for testing
+
 const computedShouldDisplay = computed(() => {
-  return true // DEV
-  // return gameStateStorage.automatons.autoRefiner >= 2;
+  return (isDevTesting ? true :
+    gameStateStorage.automatons.autoRefiner >= 2);
 })
 interface ShopTabsInterface {
   [key: string]: Component,
@@ -24,10 +26,10 @@ const shopTab = ref('items')
   <template v-if="computedShouldDisplay">
     <LocationComponent :location-name="'Shop'">
       <div class="flexUtility">
-        <div :class="{selectedTab: shopTab === 'items'}"  class="tabSelector itemsColor" 
-        @click="shopTab = 'items'">Items</div>
-        <div :class="{selectedTab: shopTab === 'schematics'}"  class="tabSelector schematicsColor" 
-        @click="shopTab = 'schematics'">Schematics</div>
+        <div :class="{ selectedTab: shopTab === 'items' }" class="tabSelector itemsColor" @click="shopTab = 'items'">Items
+        </div>
+        <div :class="{ selectedTab: shopTab === 'schematics' }" class="tabSelector schematicsColor"
+          @click="shopTab = 'schematics'">Schematics</div>
       </div>
 
       <component :is="shopTabs[shopTab]"></component>
