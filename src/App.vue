@@ -6,6 +6,8 @@ import ResourceDisplay from './components/GeneralDisplayComponents/ResourceDispl
 import AutomatonDisplay from './components/GeneralDisplayComponents/AutomatonDisplay.vue';
 import ExperienceBarHolder from './components/GeneralDisplayComponents/ExperienceBarHolder.vue';
 import NarrativeText from './components/NarrativeText.vue';
+import NeuronUplinkComponent from './components/NeuronUplinkComponent.vue';
+// Locations
 import ShopLocation from './components/ShopComponents/ShopLocation.vue'
 import RoboticsFabricator from './components/Locations/RoboticsFabricator.vue';
 import MineLocation from './components/Locations/MineLocation.vue';
@@ -26,6 +28,7 @@ import RefineryLocation from './components/RefineryComponents/RefineryLocation.v
     <ResourceDisplay />
     <AutomatonDisplay />
   </div>
+  <NeuronUplinkComponent />
   <ExperienceBarHolder />
 
 
