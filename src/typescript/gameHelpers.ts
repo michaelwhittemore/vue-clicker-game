@@ -1,5 +1,6 @@
 import { gameStateStorage } from "./gameStateStorage"
-import type { ValidSkills, NarrativeTrigger } from "./gameTypes"
+import type { ValidSkills } from "./gameTypes"
+import { narrativeTriggersToText } from "./gameConstants/narrativeTriggersToText";
 import { levelToNarrativeTriggerBreakpoints } from "./gameConstants/levelToNarrativeTriggerBreakpoints";
 export const earnExperienceInSkill = (relevantSkill: ValidSkills, experienceAmount: number = 1) => {
     gameStateStorage.skills[relevantSkill].experience += experienceAmount;
@@ -21,7 +22,7 @@ const levelUpSkill = (relevantSkill: ValidSkills) => {
     gameStateStorage.skills[relevantSkill].targetExperience = Math.trunc(gameStateStorage.skills[relevantSkill].targetExperience * 1.15)
 }
 
-export const activateNarrativeTrigger = (narrativeTrigger: NarrativeTrigger) => {
+export const activateNarrativeTrigger = (narrativeTrigger: keyof typeof narrativeTriggersToText) => {
     if (!gameStateStorage.narrativeTriggersArray.includes(narrativeTrigger)) {
         gameStateStorage.narrativeTriggersArray.push(narrativeTrigger)
     }

@@ -7,5 +7,6 @@ export const readableTextMap: Record<string, string> = {
     // Refinery Upgrades
     improvedRefineryHopper: 'Improved Refinery Hopper',
     improvedRefineryFurnace: 'Improved Refinery Furnace',
-
+    // Shop upgrades
+    neuronUplink: 'Neuron Uplink',
 }

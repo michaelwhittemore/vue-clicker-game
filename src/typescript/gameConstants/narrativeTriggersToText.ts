@@ -14,5 +14,5 @@ export const narrativeTriggersToText: Record<string, string> = {
     hasBuiltAutoGoldMiner: 'TODO hasBuiltAutoGoldMiner need to mention that it is slow ',
     hasBuiltAdvancedAutoMiner: 'TODO (Something about far sleeker, maybe even approaching graceful. It will mine five ore at a time)',
     tradingUnlock1: 'You have done a fair deal of buying and selling. Your haggling skills now allow you to sell resources at a better rate. (Leveling trading further will increase this bonus)',
-    builtNeuronUplink: 'TODO, something about feeling a tad uncomfortable about installing a jury rigged computer in your head but you\'ve done worse'
+    hasBuiltNeuronUplink: 'TODO, something about feeling a tad uncomfortable about installing a jury rigged computer in your head but you\'ve done worse. (You\'ll now passively gain a trickle of experience in the selected skill)'
 }

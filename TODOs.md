@@ -2,28 +2,21 @@
 
 # Things to work on immediately 
 * Current Tasks: 
-    5. Add the refiner upgrades
-        - Where will this be stored? upgrades? 
-    6. a new resource (just pick something, maybe silica or clay? can be pretty random), unobtanium, living steel, sentient calcium - in general humorous resources are good
-    6. **HERE!** I should have a more efficient refiner as an upgrade
-        * Need to move this to Schematic
-        * and then actually implement the onclick handler
-            - add a disabled check and a display check
-            - STILL NEED TO DISABLE BOTH SCHEMATICS AND REFINERY WHEN INSUFFIECNET RESOURCES
-            - ~~have it consume the steel~~
-            -~~ add to the gameStorage (maybe a refiner data object? About to use plus amount to output)~~
-            - ~~have refiner onclick have the correct effects~~
-            - ~~update the refine button text~~
-        * then implement the refine button
-    7. ~~Should add a `DEV` tag to unlock everything, have it on game state storage~~
-        - possibly easier to attach it to `shouldDisplay` in `BuySchematic.vue` than have multiple instances of it in `schematicData`
+
+    6. **HERE!** a new resource (just pick something, maybe silica or clay? can be pretty random), unobtanium, living steel, sentient calcium, oil, coal - in general humorous resources are good
+    7. Let's do the neuron uplink! 
+        - how about an area above the experience bars with drop down?
+        - when we add it to the shop it will need to check your total level for should display
+        - it will eventually be upgradeable
+            - maybe add an electronics section to the automaton fabricator? call it the electronics lab?
+            - use the same `vue is` as the shop
+            - We can potentially have the upgrades as requiring schematics while the initial purchase doesn't
     7. Now that I have the ship you should be able to repair it
         - Ship might need its own location tab
         - will need to add the ship to game storage
         - repair should cost a hefty amount of steel
     8. We should add a class to replace 'button', or style the buttons a lot more?
-    9. Add a the map of key names to readable names (i.e. `autoGoldMiner` -> `Automatic Gold Miner`)
-        - don't forget the automaton holder!
+    9. ~~Add a the map of key names to readable names (i.e. `autoGoldMiner` -> `Automatic Gold Miner`)~~
     10. Make the locations more mobile responsive 
         - may need to resize
         - on mobile maybe 2x2? Also less space in between
@@ -43,7 +36,7 @@ see https://vuejs.org/guide/reusability/composables#composables)
 * Some sort of neural uplink to gain passive xp (should be able to switch between skills)
 * add the ability to prospect to find new minerals??
 * It may be worth using https://stackoverflow.com/questions/45251664/derive-union-type-from-tuple-array-values and const assertions https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-4.html#const-assertions in the place of my types file. This would allow me to use the array as a type
-    
+* maybe an `innovation` skill? Allows you to randomly unlock upgrades?
 
 # Style Todos
 * Need a more distinctive font 

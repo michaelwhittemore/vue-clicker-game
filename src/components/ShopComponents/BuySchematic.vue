@@ -14,12 +14,11 @@ const clickHandler = (schematicName: keyof typeof schematicsData) => {
     gameStateStorage.unlockedSchematics.push(schematicName);
     gameStateStorage.resources.gold -= schematicsData[schematicName].price;
 }
-// shouldDisplay is itself a function
+// `shouldDisplay` is itself a function
 const computedIsUnlocked: ComputedRef<boolean> = computed(schematicsData[schematicName].shouldDisplay);
 const computedSufficientGold = computed(() => {
     return gameStateStorage.resources.gold >= schematicsData[schematicName].price;
 })
-
 
 </script>
 <template>

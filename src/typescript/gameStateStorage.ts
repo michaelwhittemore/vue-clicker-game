@@ -35,7 +35,12 @@ export interface StateStorageObject {
     }
     upgrades: {
         pickaxe: Upgrade
+
     },
+    neuronUplink: {
+        isPurchased: boolean,
+        selectedSkill: ValidSkills | null,
+    }// It's possible this should be an outer property? 
     refineryState: {
         refineryUpgrades: Array<string>,
         oreInput: number,
@@ -46,9 +51,9 @@ export interface StateStorageObject {
     narrativeTriggersArray: Array<keyof typeof narrativeTriggersToText>,
 }
 
-const isDevTesting = false // MUST BE SET HERE, ISN'T REACTIVE
+const isDevTesting = true // MUST BE SET HERE, ISN'T REACTIVE
 const gameStateStorageObject: StateStorageObject = {
-    isDevTesting, 
+    isDevTesting,
     automatons: {
         autoMiner: 0,
         autoRefiner: 0,
@@ -56,9 +61,9 @@ const gameStateStorageObject: StateStorageObject = {
         advancedAutoMiner: 0,
     },
     resources: {
-        ore: (isDevTesting ? 1000 :  0),
-        steel: (isDevTesting ? 1000 :  0),
-        gold: (isDevTesting ? 100 :  0),
+        ore: (isDevTesting ? 1000 : 0),
+        steel: (isDevTesting ? 1000 : 0),
+        gold: (isDevTesting ? 100 : 0),
     },
     skills: {
         mining: {
@@ -86,7 +91,11 @@ const gameStateStorageObject: StateStorageObject = {
                 skill: 'mining',
                 skillLevel: 3,
             }
-        }
+        },
+    },
+    neuronUplink: {
+        isPurchased: false,
+        selectedSkill: null,
     },
     refineryState: {
         refineryUpgrades: [],
