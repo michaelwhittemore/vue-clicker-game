@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { gameStateStorage } from '@/typescript/gameStateStorage';
-import { computed, ref } from 'vue';
+import { computed } from 'vue';
 import { activateNarrativeTrigger, getTotalLevel } from '@/typescript/gameHelpers';
 
 // Should we treat this the same way we do gold miners where it's a trickle?
@@ -13,19 +13,21 @@ import { activateNarrativeTrigger, getTotalLevel } from '@/typescript/gameHelper
 const onClickHandler = () => {
     gameStateStorage.neuronUplink.isPurchased = true;
     // Will need to subtract the cost
+    
     activateNarrativeTrigger('hasBuiltNeuronUplink')
 }
-const goldCost = ref(100)
-const requiredTotalLevel = ref(10)
+const goldCost = 100
+const requiredTotalLevel = 10
 const computedSufficientTotalLevel = computed(() => {
     return getTotalLevel() >= 10; 
     // return true; // This should actually be the sum of levels
 })
 const computedSufficientGold = computed(() => {
-    return true; // TODO
+    return gameStateStorage.resources.gold >= goldCost;
 })
 </script>
 <template>
-    <button @click="onClickHandler">Buy Neuron Uplink ({{ goldCost }} Gold, requires {{ requiredTotalLevel }} total level)</button>
+    <button  :disabled="!(computedSufficientTotalLevel && computedSufficientGold)" @click="onClickHandler">
+    Buy Neuron Uplink ({{ goldCost }} Gold, requires {{ requiredTotalLevel }} total level)</button>
     
 </template>
