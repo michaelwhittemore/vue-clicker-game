@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed, ref, watch } from 'vue';
 import { gameStateStorage } from '@/typescript/gameStateStorage';
 
 // Will need to check all skills that have > 0 exp or level (maybe a helper? I use that somewhere 
@@ -12,15 +12,20 @@ const computedActiveSkills = computed(() => {
             return gameStateStorage.skills[skillName].level > 0 || gameStateStorage.skills[skillName].experience > 0
         })
 })
+const selectedSkill = ref(null)
+watch(selectedSkill, (skill) => {
+    gameStateStorage.neuronUplink.selectedSkill = skill;
+})
 </script>
 <template>
-    <template v-if="true">
-        Neuron Uplink: No skill selected
+    <template v-if="gameStateStorage.neuronUplink.isPurchased">
+        Neuron Uplink: {{selectedSkill || 'No skill selected' }} +
+        {{ gameStateStorage.neuronUplink.experienceIncrease }} experience per second.
         <br>
         <label for="skills">Choose a skill to automatically gain experience:</label>
 
-        <select name="skills" id="skills">
-            <option v-for="skillName in computedActiveSkills" :skill-name="skillName"> 
+        <select v-model="selectedSkill" name="skills" id="skills">
+            <option v-for="skillName in computedActiveSkills" :skill-name="skillName" > 
                 {{ skillName }}
             </option>
         </select>

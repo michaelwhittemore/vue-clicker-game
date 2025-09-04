@@ -17,7 +17,6 @@ interface Upgrade {
         skill: ValidSkills
         skillLevel: number,
     },
-    // may also need a resource price
 }
 
 export interface StateStorageObject {
@@ -34,13 +33,14 @@ export interface StateStorageObject {
         trading: Skill,
     }
     upgrades: {
-        pickaxe: Upgrade
-
+        pickaxe: Upgrade,
+        neuronUplink: Upgrade,
     },
     neuronUplink: {
         isPurchased: boolean,
         selectedSkill: ValidSkills | null,
-    }// It's possible this should be an outer property? 
+        experienceIncrease: number,
+    }
     refineryState: {
         refineryUpgrades: Array<string>,
         oreInput: number,
@@ -92,10 +92,16 @@ const gameStateStorageObject: StateStorageObject = {
                 skillLevel: 3,
             }
         },
+        neuronUplink: {
+            level: 1,
+            price: 100,
+            resourceType: 'gold',
+        },
     },
     neuronUplink: {
         isPurchased: false,
         selectedSkill: null,
+        experienceIncrease: 0.5,
     },
     refineryState: {
         refineryUpgrades: [],

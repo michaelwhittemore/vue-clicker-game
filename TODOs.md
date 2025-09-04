@@ -5,12 +5,14 @@
 
     6. **HERE!** a new resource (just pick something, maybe silica or clay? can be pretty random), unobtanium, living steel, sentient calcium, oil, coal - in general humorous resources are good
     7. Let's do the neuron uplink! 
-        - how about an area above the experience bars with drop down?
+        * Upgrading the uplink is a separate task entirely
+        - ~~how about an area above the experience bars with drop down?~~
         - when we add it to the shop it will need to check your total level for should display
         - it will eventually be upgradeable
             - maybe add an electronics section to the automaton fabricator? call it the electronics lab?
             - use the same `vue is` as the shop
             - We can potentially have the upgrades as requiring schematics while the initial purchase doesn't
+        - maybe move it so the drop down is where the skill would be and automatically set to mining?
     7. Now that I have the ship you should be able to repair it
         - Ship might need its own location tab
         - will need to add the ship to game storage

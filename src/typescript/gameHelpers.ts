@@ -27,3 +27,12 @@ export const activateNarrativeTrigger = (narrativeTrigger: keyof typeof narrativ
         gameStateStorage.narrativeTriggersArray.push(narrativeTrigger)
     }
 }
+
+export const getTotalLevel = () => {
+    let total = 0;
+    const skillKeys = Object.keys(gameStateStorage.skills) as Array<keyof typeof gameStateStorage.skills>;
+    for (const skill of skillKeys){
+        total += gameStateStorage.skills[skill].level;
+    }
+    return total
+}

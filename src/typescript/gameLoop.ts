@@ -1,4 +1,5 @@
 import type { StateStorageObject } from './gameStateStorage.ts'
+import { earnExperienceInSkill } from './gameHelpers.ts';
 
 
 const initGameLoop = (gameStateStorage: StateStorageObject, interval: number = 1000) => {
@@ -29,10 +30,15 @@ const initGameLoop = (gameStateStorage: StateStorageObject, interval: number = 1
             gameStateStorage.resources.ore -= 10 * amountOfSteelToRefine;
             gameStateStorage.resources.steel += amountOfSteelToRefine;
         }
-
+        // Neuron Uplink
+        {
+            const {isPurchased, selectedSkill, experienceIncrease} = gameStateStorage.neuronUplink
+            if (isPurchased && selectedSkill){
+                earnExperienceInSkill(selectedSkill, experienceIncrease)
+            }
+        }
     }
     setInterval(executeGameTick, interval)
 }
-
 
 export default initGameLoop
