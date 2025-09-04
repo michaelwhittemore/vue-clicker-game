@@ -6,6 +6,7 @@
     6. **HERE!** a new resource (just pick something, maybe silica or clay? can be pretty random), unobtanium, living steel, sentient calcium, oil, coal - in general humorous resources are good
     7. Let's do the neuron uplink! 
         * Upgrading the uplink is a separate task entirely
+            * should we have a different component for buy vs upgrade?
         - ~~how about an area above the experience bars with drop down?~~
         - when we add it to the shop it will need to check your total level for should display
         - it will eventually be upgradeable

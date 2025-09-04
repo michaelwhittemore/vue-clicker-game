@@ -34,5 +34,5 @@ export const getTotalLevel = () => {
     for (const skill of skillKeys){
         total += gameStateStorage.skills[skill].level;
     }
-    return total
+    return total;
 }

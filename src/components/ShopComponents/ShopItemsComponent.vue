@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import BuyPickaxeUpgrade from './BuyPickaxeUpgrade.vue';
+import UpgradePickaxe from './UpgradePickaxe.vue';
 import BuyShip from './BuyShip.vue';
 import SellResourceForGold from './SellResourceForGold.vue';
-import BuyNeuronUplink from './BuyNeuronUplink.vue';
+import NeuronUplinkShop from './NeuronUplinkShop.vue';
 </script>
 <template>
     <div class="itemsColor shopTab">
-        <BuyPickaxeUpgrade />
+        <UpgradePickaxe />
+        <NeuronUplinkShop />
         <BuyShip />
-        <BuyNeuronUplink />
         <SellResourceForGold resource-type="ore" />
         <SellResourceForGold resource-type="steel" />
     </div>
