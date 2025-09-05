@@ -3,17 +3,10 @@
 # Things to work on immediately 
 * Current Tasks: 
 
-    6. **HERE!** a new resource (just pick something, maybe silica or clay? can be pretty random), unobtanium, living steel, sentient calcium, oil, coal - in general humorous resources are good
+    6. a new resource (just pick something, maybe silica or clay? can be pretty random), unobtanium, living steel, sentient calcium, oil, coal - in general humorous resources are good
     7. Let's do the neuron uplink! 
-        * Upgrading the uplink is a separate task entirely
-            * should we have a different component for buy vs upgrade?
-        - ~~how about an area above the experience bars with drop down?~~
-        - when we add it to the shop it will need to check your total level for should display
-        - it will eventually be upgradeable
-            - maybe add an electronics section to the automaton fabricator? call it the electronics lab?
-            - use the same `vue is` as the shop
-            - We can potentially have the upgrades as requiring schematics while the initial purchase doesn't
-        - maybe move it so the drop down is where the skill would be and automatically set to mining?
+        *  **HERE!**  Upgrading the uplink is a separate task entirely
+            * Need to follow the example of the pickaxe. but use increaing total level
     7. Now that I have the ship you should be able to repair it
         - Ship might need its own location tab
         - will need to add the ship to game storage
@@ -25,6 +18,11 @@
         - on mobile maybe 2x2? Also less space in between
         - may need to modify css for `locationsHolder`
     11. Allow the refinery to be upgraded multiple times
+    12. For some automatons increase the price after certain intervals (i.e. after 10 miners)
+        - Call it something like ('signal interference,') add a tech to remove the associated cost - call the tech something like 'improvedAutoPath'?
+        - Also make the automatons cheaper by default
+    13. Maybe add a UI to the current resources to show the per second rate??
+    14. Add narrative to the refinery upgrades ( make it clear that they don't apply bots, add an upgrade so that they do)
 
 # Immediate future tasks
 * Refactor generate resources to use composable (instead of weird props and conditionals
@@ -71,6 +69,7 @@ see https://vuejs.org/guide/reusability/composables#composables)
 // const anotherBadArray: Array<number> = [1,2, 'as'] 
 * Should read up on typescript best practices
 * read about css animations
+* I don't like that `targetExperience` is done this way, maybe use a getter instead?
 
 # Rebalancing notes
 * Maybe shop should appear after refining a certain amount of steel?

@@ -3,12 +3,7 @@ import { gameStateStorage } from '@/typescript/gameStateStorage';
 import { computed } from 'vue';
 import { activateNarrativeTrigger, getTotalLevel } from '@/typescript/gameHelpers';
 
-// Should we treat this the same way we do gold miners where it's a trickle?
-// Will need to add an upgrade
 // Do we still need the upgrade interface? - maybe that's too specific?
-
-// TODO - need to add to the game loop
-    // - we will need to store which skill is currently selected - let's start with mining
 
 const onClickHandler = () => {
     gameStateStorage.neuronUplink.isPurchased = true;
@@ -27,7 +22,7 @@ const computedSufficientGold = computed(() => {
 })
 </script>
 <template>
-    <button  :disabled="!(computedSufficientTotalLevel && computedSufficientGold)" @click="onClickHandler">
+    <button :disabled="!(computedSufficientTotalLevel && computedSufficientGold)" @click="onClickHandler">
     Buy Neuron Uplink ({{ goldCost }} Gold, requires {{ requiredTotalLevel }} total level)</button>
     
 </template>

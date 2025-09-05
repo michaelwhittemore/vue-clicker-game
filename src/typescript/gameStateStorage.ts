@@ -61,9 +61,9 @@ const gameStateStorageObject: StateStorageObject = {
         advancedAutoMiner: 0,
     },
     resources: {
-        ore: (isDevTesting ? 1000 : 0),
-        steel: (isDevTesting ? 1000 : 0),
-        gold: (isDevTesting ? 100 : 0),
+        ore: 0,
+        steel: 0,
+        gold: 0    
     },
     skills: {
         mining: {
@@ -112,10 +112,71 @@ const gameStateStorageObject: StateStorageObject = {
     narrativeTriggersArray: ['gameStart'],
 }
 
-export const gameStateStorage = reactive(gameStateStorageObject)
+const TESTgameStateStorageObject: StateStorageObject = {
+    isDevTesting,
+    automatons: {
+        autoMiner: 1,
+        autoRefiner: 1,
+        autoGoldMiner: 1,
+        advancedAutoMiner: 1,
+    },
+    resources: {
+        ore: 1000, 
+        steel: 1000, 
+        gold: 100, 
+    },
+    skills: {
+        mining: {
+            level: 3,
+            experience: 0,
+            targetExperience: 29,
+        },
+        robotics: {
+            level: 3,
+            experience: 0,
+            targetExperience: 29,
+        },
+        trading: {
+            level: 3,
+            experience: 0,
+            targetExperience: 29,
+        }
+    },
+    upgrades: {
+        pickaxe: {
+            level: 1,
+            price: 10,
+            resourceType: 'gold',
+            requiredLevel: {
+                skill: 'mining',
+                skillLevel: 3,
+            }
+        },
+        neuronUplink: {
+            level: 1,
+            price: 100,
+            resourceType: 'gold',
+        },
+    },
+    neuronUplink: {
+        isPurchased: false,
+        selectedSkill: null,
+        experienceIncrease: 0.5,
+    },
+    refineryState: {
+        refineryUpgrades: [],
+        oreInput: 10,
+        steelOutput: 1,
+    },
+    unlockedSchematics: [],
+    narrativeTriggersArray: ['gameStart'],
+}
+
+export const gameStateStorage = reactive(isDevTesting ? TESTgameStateStorageObject : gameStateStorageObject)
 
 // ---------- Exposing the state for easier debugging --------
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const global: any = globalThis
 global.gameStateStorage = gameStateStorage;
 // -----------
+
