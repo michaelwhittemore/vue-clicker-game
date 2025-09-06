@@ -29,6 +29,7 @@ const styleObject = reactive({
 
 <style scoped>
 .popUp {
+    user-select: none; /* Should not accidentally click text */ 
     font-weight: bold;
     position: absolute;
     font-size: 150%;

@@ -1,4 +1,4 @@
-export const narrativeTriggersToText: Record<string, string> = {
+export const narrativeTriggersToText = {
     gameStart:'You find yourself in a backwater mining settlement. The husks of abandoned buildings loom over rusting excavators and long dead robots. Inside one of these structures you find a grimy but still usable ore refiner. You also find an automaton fabricator. It\'s primitive by modern galactic standards, with some steel you could probably create a simple mining robot. At the edge of town an open pit descends into the mines. You ready your pickaxe.',
     hasMined: 'You find that the old mine still has plenty of ore remaining. You successfully extract some.',
     hasUnlockedPickaxeUpgrade1: 'After numerous subterranean hours, the rhythm of your pickaxe swings begin to feel natural. You believe your current tool is your only obstacle to further riches. (You can now wield the next tier of pickaxes).',
@@ -14,5 +14,6 @@ export const narrativeTriggersToText: Record<string, string> = {
     hasBuiltAutoGoldMiner: 'TODO hasBuiltAutoGoldMiner need to mention that it is slow ',
     hasBuiltAdvancedAutoMiner: 'TODO (Something about far sleeker, maybe even approaching graceful. It will mine five ore at a time)',
     tradingUnlock1: 'You have done a fair deal of buying and selling. Your haggling skills now allow you to sell resources at a better rate. (Leveling trading further will increase this bonus)',
-    hasBuiltNeuronUplink: 'TODO, something about feeling a tad uncomfortable about installing a jury rigged computer in your head but you\'ve done worse. (You\'ll now passively gain a trickle of experience in the selected skill)'
+    hasBuiltNeuronUplink: 'TODO, something about feeling a tad uncomfortable about installing a jury rigged computer in your head but you\'ve done worse. (You\'ll now passively gain a trickle of experience in the selected skill)',
+    hasUpgradedNeuronUplink: 'TODO, with this new firmware update, you can learn even faster without having to get up. (You gain passive experience at an improved rate)',
 }

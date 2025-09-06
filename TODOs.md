@@ -7,6 +7,7 @@
     7. Let's do the neuron uplink! 
         *  **HERE!**  Upgrading the uplink is a separate task entirely
             * Need to follow the example of the pickaxe. but use increaing total level
+            * now I need to do the game loop (also add a narrative trigger?)
     7. Now that I have the ship you should be able to repair it
         - Ship might need its own location tab
         - will need to add the ship to game storage

@@ -7,6 +7,7 @@ import { activateNarrativeTrigger, earnExperienceInSkill, getTotalLevel } from '
 
 // We will also need to then update the gameLoop to increase the XP earned
 const onClickHandler = () => {
+    gameStateStorage.neuronUplink.experienceIncrease += .5;
     gameStateStorage.resources.gold -= gameStateStorage.upgrades.neuronUplink.price;
     gameStateStorage.upgrades.neuronUplink.level++;
     activateNarrativeTrigger('hasUpgradedNeuronUplink');
