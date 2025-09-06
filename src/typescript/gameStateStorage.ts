@@ -14,7 +14,7 @@ interface Upgrade {
     price: number,
     resourceType: ValidResources,
     requiredLevel?: {
-        skill: ValidSkills
+        skill: ValidSkills | 'total',
         skillLevel: number,
     },
 }
@@ -96,6 +96,10 @@ const gameStateStorageObject: StateStorageObject = {
             level: 1,
             price: 100,
             resourceType: 'gold',
+            requiredLevel: {
+                skill: 'total',
+                skillLevel: 13,
+            }
         },
     },
     neuronUplink: {
@@ -156,6 +160,10 @@ const TESTgameStateStorageObject: StateStorageObject = {
             level: 1,
             price: 100,
             resourceType: 'gold',
+            requiredLevel: {
+                skill: 'total',
+                skillLevel: 13,
+            }
         },
     },
     neuronUplink: {
