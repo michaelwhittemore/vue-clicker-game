@@ -2,12 +2,13 @@
 
 # Things to work on immediately 
 * Current Tasks: 
-
+    1. Move the gold popup text over
+    2. Move the test data object so that it just modifies the existing one
+    3. Refactor so that all components are in relevant location folders 
     6. a new resource (just pick something, maybe silica or clay? can be pretty random), unobtanium, living steel, sentient calcium, oil, coal - in general humorous resources are good
-    7. Let's do the neuron uplink! 
-        *  **HERE!**  Upgrading the uplink is a separate task entirely
-            * Need to follow the example of the pickaxe. but use increaing total level
-            * now I need to do the game loop (also add a narrative trigger?)
+        - maybe we start being able to mine the second resource at level 2?
+    7. ~~Let's do the neuron uplink! ~~
+
     7. Now that I have the ship you should be able to repair it
         - Ship might need its own location tab
         - will need to add the ship to game storage
@@ -24,6 +25,14 @@
         - Also make the automatons cheaper by default
     13. Maybe add a UI to the current resources to show the per second rate??
     14. Add narrative to the refinery upgrades ( make it clear that they don't apply bots, add an upgrade so that they do)
+    15. Add a stupidly expensive, "gold statue"
+    16. Add a manufactory. I guess you buy construction materials from the shop and then can restore it
+        - This should have it's own component with a changing color scheme depending on whether it's fixed or not
+        - manufacturing should add a new skill
+        - can sell at much better rates, but also create circuits or other useful building materials
+        - Maybe we can then add other buildings? Attract other characters to the town?? (To fit the vibes they could all be robots)
+        - Maybe tourism? Need to balance industrial resource (like ore and steel) acquisition vs gold from a game balance perspective
+        - Some buildings apply temporary boosts - or maybe can build consumables to do the same
 
 # Immediate future tasks
 * Refactor generate resources to use composable (instead of weird props and conditionals

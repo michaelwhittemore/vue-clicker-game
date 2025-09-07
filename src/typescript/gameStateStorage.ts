@@ -1,3 +1,5 @@
+const isDevTesting = true // MUST BE SET HERE, ISN'T REACTIVE
+
 import { reactive } from 'vue';
 import type { ValidResources, ValidSkills } from './gameTypes';
 import { automatonsData } from './gameConstants/automatonsData';
@@ -51,7 +53,7 @@ export interface StateStorageObject {
     narrativeTriggersArray: Array<keyof typeof narrativeTriggersToText>,
 }
 
-const isDevTesting = true // MUST BE SET HERE, ISN'T REACTIVE
+// It might make more sense to just modify the state store when isDevTesting is True
 const gameStateStorageObject: StateStorageObject = {
     isDevTesting,
     automatons: {
@@ -127,7 +129,7 @@ const TESTgameStateStorageObject: StateStorageObject = {
     resources: {
         ore: 1000, 
         steel: 1000, 
-        gold: 100, 
+        gold: 1000, 
     },
     skills: {
         mining: {

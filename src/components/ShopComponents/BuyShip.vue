@@ -1,11 +1,15 @@
 <script setup lang="ts">
-import { gameStateStorage } from '@/typescript/gameStateStorage';
 import { computed } from 'vue';
+import { gameStateStorage } from '@/typescript/gameStateStorage';
+
+import { activateNarrativeTrigger } from '@/typescript/gameHelpers';
 
 const goldCost = 1500
 
 const onClickHandler = () => {
-    console.warn('You Are Winner')
+    gameStateStorage.resources.gold -= goldCost;
+    console.warn('You Are Winner!') 
+    activateNarrativeTrigger('hasBoughtShip')
 }
 const computedSufficientGold = computed(() => gameStateStorage.resources.gold >= goldCost)
 </script>

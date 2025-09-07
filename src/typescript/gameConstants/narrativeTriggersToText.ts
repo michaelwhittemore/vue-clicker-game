@@ -16,4 +16,5 @@ export const narrativeTriggersToText = {
     tradingUnlock1: 'You have done a fair deal of buying and selling. Your haggling skills now allow you to sell resources at a better rate. (Leveling trading further will increase this bonus)',
     hasBuiltNeuronUplink: 'TODO, something about feeling a tad uncomfortable about installing a jury rigged computer in your head but you\'ve done worse. (You\'ll now passively gain a trickle of experience in the selected skill)',
     hasUpgradedNeuronUplink: 'TODO, with this new firmware update, you can learn even faster without having to get up. (You gain passive experience at an improved rate)',
+    hasBoughtShip: 'TODO, To call this ship fixer-upper would be an understatement, but this small craft will eventually be able to take you across the planet\'s surface.'
 }
