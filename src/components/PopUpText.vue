@@ -5,6 +5,7 @@ const props = defineProps<{
     textForPopUp: string,
     wasClickedTrigger: boolean,
     color?: string,
+    shift?: boolean,
 }>()
 let animatedClassBool = ref(false)
 watch(() => props.wasClickedTrigger, async () => {
@@ -14,8 +15,10 @@ watch(() => props.wasClickedTrigger, async () => {
     animatedClassBool.value = true;
 
 })
+// HERE! - I think we will need to apply a transform
 const styleObject = reactive({
   color: props.color || 'green',
+  left: props.shift ? '50px' : '0px',
 })
 
 </script>

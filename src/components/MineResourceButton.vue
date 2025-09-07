@@ -59,7 +59,7 @@ const onClickHandler = () => {
 <template>
     <button @click="onClickHandler"> {{ buttonText }}
         <PopUpText :textForPopUp="computedTextForPopUp" :wasClickedTrigger="wasClickedTrigger"/>
-        <PopUpText :textForPopUp="computedTextForPopUpGold" :wasClickedTrigger="wasClickedTriggerGold" :color="'gold'"/>
+        <PopUpText :textForPopUp="computedTextForPopUpGold" :wasClickedTrigger="wasClickedTriggerGold" :color="'gold'" :shift="true"/>
     </button>
 
 </template>
