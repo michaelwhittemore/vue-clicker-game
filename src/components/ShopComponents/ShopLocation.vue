@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref, type Component } from 'vue';
 import { gameStateStorage } from '@/typescript/gameStateStorage';
-import LocationComponent from '../Locations/LocationComponent.vue';
+import LocationComponent from '../LocationComponent.vue';
 import ShopSchematicsComponent from '../ShopComponents/ShopSchematicsComponent.vue';
 import ShopItemsComponent from '../ShopComponents/ShopItemsComponent.vue';
 

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import LocationComponent from './LocationComponent.vue';
-import MineResourceButton from '../MineResourceButton.vue';
+import LocationComponent from '../LocationComponent.vue';
+import MineResourceButton from './MineResourceButton.vue';
 </script>
 <template>
     <LocationComponent :location-name="'Mine'">

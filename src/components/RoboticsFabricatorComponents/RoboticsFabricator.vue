@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import LocationComponent from './LocationComponent.vue';
+import LocationComponent from '../LocationComponent.vue';
 import BuildAutomaton from '../RoboticsFabricatorComponents/BuildAutomaton.vue';
 import { automatonsData } from '@/typescript/gameConstants/automatonsData';
 </script>

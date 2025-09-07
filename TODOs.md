@@ -3,7 +3,7 @@
 # Things to work on immediately 
 * Current Tasks: 
 
-    2. Move the test data object so that it just modifies the existing one
+    2. ~~Move the test data object so that it just modifies the existing one~~
     3. Refactor so that all components are in relevant location folders 
     4. Slight rebalancing for early game - decrease price to build automatons and refine ore?
     6. a new resource (just pick something, maybe silica or clay? can be pretty random), unobtanium, living steel, sentient calcium, oil, coal - in general humorous resources are good

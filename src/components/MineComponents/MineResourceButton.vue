@@ -4,7 +4,7 @@ import { gameStateStorage } from '@/typescript/gameStateStorage';
 import { narrativeTriggersToText } from '@/typescript/gameConstants/narrativeTriggersToText';
 import type { ValidResources, ValidSkills } from '@/typescript/gameTypes';
 import { earnExperienceInSkill, activateNarrativeTrigger } from '@/typescript/gameHelpers';
-import PopUpText from './PopUpText.vue';
+import PopUpText from '../PopUpText.vue';
 const props = defineProps<{
     resourceType: ValidResources
 }>()
