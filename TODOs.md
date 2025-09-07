@@ -4,18 +4,18 @@
 * Current Tasks: 
 
     2. ~~Move the test data object so that it just modifies the existing one~~
-    3. Refactor so that all components are in relevant location folders 
+    3. ~~Refactor so that all components are in relevant location folders ~~
     4. Slight rebalancing for early game - decrease price to build automatons and refine ore?
+        - currently it takes 100 ore for a single miner
+        - maybe nine steel to build and nine ore to refine steel? This will also need changing the refinery upgrades
     6. a new resource (just pick something, maybe silica or clay? can be pretty random), unobtanium, living steel, sentient calcium, oil, coal - in general humorous resources are good
         - maybe we start being able to mine the second resource at level 2?
-    7. ~~Let's do the neuron uplink! ~~
 
     7. Now that I have the ship you should be able to repair it
         - Ship might need its own location tab
         - will need to add the ship to game storage
         - repair should cost a hefty amount of steel
     8. We should add a class to replace 'button', or style the buttons a lot more?
-    9. ~~Add a the map of key names to readable names (i.e. `autoGoldMiner` -> `Automatic Gold Miner`)~~
     10. Make the locations more mobile responsive 
         - may need to resize
         - on mobile maybe 2x2? Also less space in between
@@ -41,8 +41,6 @@
         - We will need point values for achievements
 
 # Immediate future tasks
-* Refactor generate resources to use composable (instead of weird props and conditionals
-see https://vuejs.org/guide/reusability/composables#composables)
 * Might be worth some sort of game flow document (i.e. the resources and expected order of accrual) and what unlocks what - i keep forgetting two refiners for the shop
 * Perhaps the ability to build auto builders??
 * Eventually we will need travel. This will probably take the form of grouping locations into another container/wrapper that gets replaced. Should make ships available from the shop
