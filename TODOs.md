@@ -2,9 +2,10 @@
 
 # Things to work on immediately 
 * Current Tasks: 
-    1. Move the gold popup text over
+
     2. Move the test data object so that it just modifies the existing one
     3. Refactor so that all components are in relevant location folders 
+    4. Slight rebalancing for early game - decrease price to build automatons and refine ore?
     6. a new resource (just pick something, maybe silica or clay? can be pretty random), unobtanium, living steel, sentient calcium, oil, coal - in general humorous resources are good
         - maybe we start being able to mine the second resource at level 2?
     7. ~~Let's do the neuron uplink! ~~
@@ -30,9 +31,14 @@
         - This should have it's own component with a changing color scheme depending on whether it's fixed or not
         - manufacturing should add a new skill
         - can sell at much better rates, but also create circuits or other useful building materials
-        - Maybe we can then add other buildings? Attract other characters to the town?? (To fit the vibes they could all be robots)
+        - Maybe we can then add other buildings? Attract other characters to the town?? (To fit the vibes they could all be robots) 
+            - maybe add a 'charisma' or 'charm' or 'social skills'
         - Maybe tourism? Need to balance industrial resource (like ore and steel) acquisition vs gold from a game balance perspective
         - Some buildings apply temporary boosts - or maybe can build consumables to do the same
+    17. At level 20 mining you should get a chance for double gold
+    18. Maybe the narrative area eventually gets the split treatment for achievements? - like it shows the achievement tab? Name the primary narrative one as "journal"
+        - maybe achievements are tied to certain amounts of automatons? getting 50, 100 ect... 
+        - We will need point values for achievements
 
 # Immediate future tasks
 * Refactor generate resources to use composable (instead of weird props and conditionals

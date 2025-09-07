@@ -118,8 +118,7 @@ const gameStateStorageObject: StateStorageObject = {
     narrativeTriggersArray: ['gameStart'],
 }
 
-const TESTgameStateStorageObject: StateStorageObject = {
-    isDevTesting,
+const TESTgameStateStorageObject = {
     automatons: {
         autoMiner: 1,
         autoRefiner: 1,
@@ -148,41 +147,15 @@ const TESTgameStateStorageObject: StateStorageObject = {
             targetExperience: 29,
         }
     },
-    upgrades: {
-        pickaxe: {
-            level: 1,
-            price: 10,
-            resourceType: 'gold',
-            requiredLevel: {
-                skill: 'mining',
-                skillLevel: 3,
-            }
-        },
-        neuronUplink: {
-            level: 1,
-            price: 100,
-            resourceType: 'gold',
-            requiredLevel: {
-                skill: 'total',
-                skillLevel: 13,
-            }
-        },
-    },
-    neuronUplink: {
-        isPurchased: false,
-        selectedSkill: null,
-        experienceIncrease: 0.5,
-    },
-    refineryState: {
-        refineryUpgrades: [],
-        oreInput: 10,
-        steelOutput: 1,
-    },
-    unlockedSchematics: [],
-    narrativeTriggersArray: ['gameStart'],
 }
 
-export const gameStateStorage = reactive(isDevTesting ? TESTgameStateStorageObject : gameStateStorageObject)
+if (isDevTesting){
+    // dop the object assignment
+    console.warn('Using test values, this should not occur in production')
+    Object.assign(gameStateStorageObject, TESTgameStateStorageObject)
+}
+
+export const gameStateStorage = reactive(gameStateStorageObject)
 
 // ---------- Exposing the state for easier debugging --------
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
