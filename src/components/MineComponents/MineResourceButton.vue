@@ -42,7 +42,8 @@ const onClickHandler = () => {
     if (props.resourceType === 'ore') { // This seems wrong, bundle into function
         resourceModifier = gameStateStorage.upgrades.pickaxe.level;
         // Should probably have a probability helper for this. 
-        const didMineGold = (Math.random() * 100) <= (gameStateStorage.skills.mining.level * 3);
+    const basePercentChanceForGold = 3
+        const didMineGold = (Math.random() * 100) <= (gameStateStorage.skills.mining.level * basePercentChanceForGold);
         if (didMineGold) {
             gameStateStorage.resources.gold++;
             activateNarrativeTrigger('hasMinedGold')

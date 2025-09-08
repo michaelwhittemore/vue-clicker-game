@@ -7,7 +7,9 @@
     3. ~~Refactor so that all components are in relevant location folders ~~
     4. ~~Slight rebalancing for early game ~~
     5. Getters for the experience required for the levels. Maybe these shouldn't be on the state storage?
-        - Also would like to double check if excess XP gets rolled over
+        - Also would like to double check if excess XP gets rolled over 
+            - it does not, need to modify `earnExperienceInSkill`
+        - targetExperience is what I should be searching for
     7. Now that I have the ship you should be able to repair it
         - Ship might need its own location tab
         - will need to add the ship to game storage
@@ -43,6 +45,8 @@
 * Skills   
     * Piloting - affects ship speed, cargo carried?
     * Innovation? - randomly roll to get some schematics? How do we get it? 
+        - also maybe gives so schematics for free
+        - I think XP will be tied to building (not buying) upgrades, like from the refinery
     * Manufacturing - affects refining (or maybe just get the xp from it)
 * Resources
     * Building materials - maybe purchased and scavenged
