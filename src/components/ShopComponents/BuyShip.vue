@@ -2,14 +2,15 @@
 import { computed } from 'vue';
 import { gameStateStorage } from '@/typescript/gameStateStorage';
 
-import { activateNarrativeTrigger } from '@/typescript/gameHelpers';
+import { activateNarrativeTrigger, earnExperienceInSkill } from '@/typescript/gameHelpers';
 
 const goldCost = 1500
 
 const onClickHandler = () => {
     gameStateStorage.resources.gold -= goldCost;
-    console.warn('You Are Winner!') 
     activateNarrativeTrigger('hasBoughtShip')
+    earnExperienceInSkill('trading', 10)
+    // HERE! need to add the ship to the gameStateStorage and stop displaying it in the shop
 }
 const computedSufficientGold = computed(() => gameStateStorage.resources.gold >= goldCost)
 </script>

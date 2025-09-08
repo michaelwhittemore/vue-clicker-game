@@ -1,4 +1,4 @@
-const isDevTesting = true // MUST BE SET HERE, ISN'T REACTIVE
+const isDevTesting = false // MUST BE SET HERE, ISN'T REACTIVE
 
 import { reactive } from 'vue';
 import type { ValidResources, ValidSkills } from './gameTypes';
@@ -111,7 +111,7 @@ const gameStateStorageObject: StateStorageObject = {
     },
     refineryState: {
         refineryUpgrades: [],
-        oreInput: 10,
+        oreInput: 9,
         steelOutput: 1,
     },
     unlockedSchematics: [],

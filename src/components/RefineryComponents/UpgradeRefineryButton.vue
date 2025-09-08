@@ -15,7 +15,7 @@ switch (upgradeName) {
     case 'improvedRefineryHopper':
         upgradeCost = 100;
         onClickHandler = () => {
-            gameStateStorage.refineryState.oreInput = 9;
+            gameStateStorage.refineryState.oreInput = 8;
             gameStateStorage.refineryState.refineryUpgrades.push('improvedRefineryHopper')
             gameStateStorage.resources.steel -= upgradeCost;
         }

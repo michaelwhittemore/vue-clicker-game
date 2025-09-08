@@ -11,14 +11,14 @@ interface AutomatonData {
 
 export const automatonsData: Record<string, AutomatonData> = {
     'autoMiner': {
-        price: 10,
+        price: 9,
         costResource: 'steel',
         narrativeTrigger: 'hasBuiltAutoMiner',
         earnedExperience: 2,
         requiresSchematic: false,
     },
     'autoRefiner': {
-        price: 20,
+        price: 15,
         costResource: 'steel',
         narrativeTrigger: 'hasBuiltAutoRefiner',
         earnedExperience: 2,

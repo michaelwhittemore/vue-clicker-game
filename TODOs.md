@@ -5,17 +5,15 @@
 
     2. ~~Move the test data object so that it just modifies the existing one~~
     3. ~~Refactor so that all components are in relevant location folders ~~
-    4. Slight rebalancing for early game - decrease price to build automatons and refine ore?
-        - currently it takes 100 ore for a single miner
-        - maybe nine steel to build and nine ore to refine steel? This will also need changing the refinery upgrades
-    6. a new resource (just pick something, maybe silica or clay? can be pretty random), unobtanium, living steel, sentient calcium, oil, coal - in general humorous resources are good
-        - maybe we start being able to mine the second resource at level 2?
-
+    4. ~~Slight rebalancing for early game ~~
+    5. Getters for the experience required for the levels. Maybe these shouldn't be on the state storage?
+        - Also would like to double check if excess XP gets rolled over
     7. Now that I have the ship you should be able to repair it
         - Ship might need its own location tab
         - will need to add the ship to game storage
         - repair should cost a hefty amount of steel
     8. We should add a class to replace 'button', or style the buttons a lot more?
+    9. Maybe instead of using `isDevTesting` in the code base, we just have everything computed so that they should be unlocked??
     10. Make the locations more mobile responsive 
         - may need to resize
         - on mobile maybe 2x2? Also less space in between
@@ -39,6 +37,17 @@
     18. Maybe the narrative area eventually gets the split treatment for achievements? - like it shows the achievement tab? Name the primary narrative one as "journal"
         - maybe achievements are tied to certain amounts of automatons? getting 50, 100 ect... 
         - We will need point values for achievements
+    19. Collapsible skill menu? 
+
+# Possible Skills, upgrades, tools, ect... 
+* Skills   
+    * Piloting - affects ship speed, cargo carried?
+    * Innovation? - randomly roll to get some schematics? How do we get it? 
+    * Manufacturing - affects refining (or maybe just get the xp from it)
+* Resources
+    * Building materials - maybe purchased and scavenged
+    
+
 
 # Immediate future tasks
 * Might be worth some sort of game flow document (i.e. the resources and expected order of accrual) and what unlocks what - i keep forgetting two refiners for the shop
