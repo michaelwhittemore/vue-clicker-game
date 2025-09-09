@@ -12,6 +12,7 @@ import ShopLocation from './components/ShopComponents/ShopLocation.vue'
 import RoboticsFabricator from './components/RoboticsFabricatorComponents/RoboticsFabricator.vue';
 import MineLocation from './components/MineComponents/MineLocation.vue';
 import RefineryLocation from './components/RefineryComponents/RefineryLocation.vue';
+import ShipLocation from './components/ShipComponents/ShipLocation.vue';
 </script>
 
 <template>
@@ -22,6 +23,7 @@ import RefineryLocation from './components/RefineryComponents/RefineryLocation.v
     <RefineryLocation />
     <RoboticsFabricator />
     <ShopLocation />
+    <ShipLocation />
   </div>
 
   <div id="displayArea" class="flexUtility">

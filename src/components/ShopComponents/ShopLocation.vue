@@ -5,12 +5,8 @@ import LocationComponent from '../LocationComponent.vue';
 import ShopSchematicsComponent from '../ShopComponents/ShopSchematicsComponent.vue';
 import ShopItemsComponent from '../ShopComponents/ShopItemsComponent.vue';
 
-const { isDevTesting } = gameStateStorage // Used for testing
+const computedShouldDisplay = computed(() => gameStateStorage.automatons.autoRefiner >= 2);
 
-const computedShouldDisplay = computed(() => {
-  return (isDevTesting ? true :
-    gameStateStorage.automatons.autoRefiner >= 2);
-})
 interface ShopTabsInterface {
   [key: string]: Component,
 }

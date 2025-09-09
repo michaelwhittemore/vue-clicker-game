@@ -7,11 +7,7 @@
     3. ~~Refactor so that all components are in relevant location folders ~~
     4. ~~Slight rebalancing for early game ~~
     *Bug* looks like auto gold miner narrative text is wrong (triggered by level?)
-    5. Getters for the experience required for the levels. Maybe these shouldn't be on the state storage?
-        - Also would like to double check if excess XP gets rolled over 
-            - it does not, need to modify `earnExperienceInSkill` & `levelUpSkill`
-        - targetExperience is what I should be searching for
-        - This may cause issues with object assign for the dev testing (yep, it breaks them)
+    5. ~~Getters for the experience required for the levels. Maybe these shouldn't be on the state storage~~
     7. Now that I have the ship you should be able to repair it
         - Ship might need its own location tab
         - will need to add the ship to game storage

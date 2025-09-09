@@ -1,4 +1,4 @@
-const isDevTesting = false // MUST BE SET HERE, ISN'T REACTIVE
+const isDevTesting = true // MUST BE SET HERE, ISN'T REACTIVE
 
 import { reactive } from 'vue';
 import type { ValidResources, ValidSkills } from './gameTypes';
@@ -23,7 +23,6 @@ interface Upgrade {
 }
 
 export interface StateStorageObject {
-    isDevTesting: boolean,
     automatons: Record<keyof typeof automatonsData, number>,
     resources: {
         ore: number,
@@ -51,6 +50,9 @@ export interface StateStorageObject {
     },
 
     unlockedSchematics: Array<string>,
+    ship: {
+        isPurchased: boolean,
+    }
     narrativeTriggersArray: Array<keyof typeof narrativeTriggersToText>,
 }
 
@@ -68,9 +70,7 @@ const initSkill = () => {
     return skill;
 }
 
-// It might make more sense to just modify the state store when isDevTesting is True
 const gameStateStorageObject: StateStorageObject = {
-    isDevTesting,
     automatons: {
         autoMiner: 0,
         autoRefiner: 0,
@@ -118,39 +118,41 @@ const gameStateStorageObject: StateStorageObject = {
         steelOutput: 1,
     },
     unlockedSchematics: [],
+    ship: {
+        isPurchased: false,
+    },
     narrativeTriggersArray: ['gameStart'],
 }
 
 const TESTgameStateStorageObject = {
     automatons: {
-        autoMiner: 1,
-        autoRefiner: 1,
-        autoGoldMiner: 1,
-        advancedAutoMiner: 1,
+        autoMiner: 2,
+        autoRefiner: 2,
+        autoGoldMiner: 2,
+        advancedAutoMiner: 2,
     },
     resources: {
         ore: 1000,
         steel: 1000,
-        gold: 1000,
+        gold: 10000,
     },
     skills: {
         mining: {
-            level: 3,
-            experience: 0,
+            level: 4,
         },
         robotics: {
-            level: 3,
-            experience: 0,
+            level: 4,
         },
         trading: {
-            level: 3,
-            experience: 0,
+            level: 4,
         }
     },
+    // ship: {
+    //     isPurchased: true,
+    // }
 }
 
 if (isDevTesting) {
-    // do the object assignment
     console.warn('Using test values, this should not occur in production')
     recursiveObjectAssign(gameStateStorageObject, TESTgameStateStorageObject)
 }

@@ -11,9 +11,10 @@ const onClickHandler = () => {
     activateNarrativeTrigger('hasBoughtShip')
     earnExperienceInSkill('trading', 10)
     // HERE! need to add the ship to the gameStateStorage and stop displaying it in the shop
+    gameStateStorage.ship.isPurchased = true;
 }
 const computedSufficientGold = computed(() => gameStateStorage.resources.gold >= goldCost)
 </script>
 <template> 
-    <button :disabled="!computedSufficientGold" @click="onClickHandler"> Buy Ship ({{goldCost}} Gold)</button>
+    <button v-if="!gameStateStorage.ship.isPurchased" :disabled="!computedSufficientGold" @click="onClickHandler"> Buy Ship ({{goldCost}} Gold)</button>
 </template>
