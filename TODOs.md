@@ -6,7 +6,7 @@
     2. ~~Move the test data object so that it just modifies the existing one~~
     3. ~~Refactor so that all components are in relevant location folders ~~
     4. ~~Slight rebalancing for early game ~~
-    *Bug* looks like auto goldminer narrative text is wrong (triggered by level?)
+    *Bug* looks like auto gold miner narrative text is wrong (triggered by level?)
     5. Getters for the experience required for the levels. Maybe these shouldn't be on the state storage?
         - Also would like to double check if excess XP gets rolled over 
             - it does not, need to modify `earnExperienceInSkill` & `levelUpSkill`

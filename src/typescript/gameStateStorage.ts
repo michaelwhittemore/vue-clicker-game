@@ -54,6 +54,20 @@ export interface StateStorageObject {
     narrativeTriggersArray: Array<keyof typeof narrativeTriggersToText>,
 }
 
+const baseTargetExperience = 20;
+const experienceMultiplierPerLevel = 1.15;
+const initSkill = () => {
+    const skill: Skill = {
+        level: 0,
+        experience: 0,
+        get targetExperience(){
+            // currently increases the target by 15% every new level
+            return Math.trunc((experienceMultiplierPerLevel ** this.level) * baseTargetExperience)
+        },
+    }
+    return skill;
+}
+
 // It might make more sense to just modify the state store when isDevTesting is True
 const gameStateStorageObject: StateStorageObject = {
     isDevTesting,
@@ -66,24 +80,12 @@ const gameStateStorageObject: StateStorageObject = {
     resources: {
         ore: 0,
         steel: 0,
-        gold: 0    
+        gold: 0
     },
     skills: {
-        mining: {
-            level: 0,
-            experience: 0,
-            targetExperience: 20,
-        },
-        robotics: {
-            level: 0,
-            experience: 0,
-            targetExperience: 20,
-        },
-        trading: {
-            level: 0,
-            experience: 0,
-            targetExperience: 20,
-        }
+        mining: initSkill(),
+        robotics: initSkill(),
+        trading: initSkill(),
     },
     upgrades: {
         pickaxe: {
@@ -127,9 +129,9 @@ const TESTgameStateStorageObject = {
         advancedAutoMiner: 1,
     },
     resources: {
-        ore: 1000, 
-        steel: 1000, 
-        gold: 1000, 
+        ore: 1000,
+        steel: 1000,
+        gold: 1000,
     },
     skills: {
         mining: {
@@ -147,7 +149,7 @@ const TESTgameStateStorageObject = {
     },
 }
 
-if (isDevTesting){
+if (isDevTesting) {
     // do the object assignment
     console.warn('Using test values, this should not occur in production')
     recursiveObjectAssign(gameStateStorageObject, TESTgameStateStorageObject)

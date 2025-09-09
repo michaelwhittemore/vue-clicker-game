@@ -10,16 +10,13 @@ export const earnExperienceInSkill = (relevantSkill: ValidSkills, experienceAmou
 }
 
 const levelUpSkill = (relevantSkill: ValidSkills) => {
-    gameStateStorage.skills[relevantSkill].experience = 0;
+    gameStateStorage.skills[relevantSkill].experience -= gameStateStorage.skills[relevantSkill].targetExperience;
     gameStateStorage.skills[relevantSkill].level++;
     const newLevel = gameStateStorage.skills[relevantSkill].level;
 
     if (levelToNarrativeTriggerBreakpoints[relevantSkill]?.[newLevel]) {
         activateNarrativeTrigger(levelToNarrativeTriggerBreakpoints[relevantSkill][newLevel])
     }
-
-    // currently increasing required experience by 15%
-    gameStateStorage.skills[relevantSkill].targetExperience = Math.trunc(gameStateStorage.skills[relevantSkill].targetExperience * 1.15)
 }
 
 export const activateNarrativeTrigger = (narrativeTrigger: keyof typeof narrativeTriggersToText) => {
