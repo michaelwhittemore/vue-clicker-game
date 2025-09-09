@@ -4,6 +4,7 @@ import { reactive } from 'vue';
 import type { ValidResources, ValidSkills } from './gameTypes';
 import { automatonsData } from './gameConstants/automatonsData';
 import { narrativeTriggersToText } from './gameConstants/narrativeTriggersToText';
+import { recursiveObjectAssign } from './gameHelpers';
 
 export interface Skill {
     level: number,
@@ -134,25 +135,22 @@ const TESTgameStateStorageObject = {
         mining: {
             level: 3,
             experience: 0,
-            targetExperience: 29,
         },
         robotics: {
             level: 3,
             experience: 0,
-            targetExperience: 29,
         },
         trading: {
             level: 3,
             experience: 0,
-            targetExperience: 29,
         }
     },
 }
 
 if (isDevTesting){
-    // dop the object assignment
+    // do the object assignment
     console.warn('Using test values, this should not occur in production')
-    Object.assign(gameStateStorageObject, TESTgameStateStorageObject)
+    recursiveObjectAssign(gameStateStorageObject, TESTgameStateStorageObject)
 }
 
 export const gameStateStorage = reactive(gameStateStorageObject)

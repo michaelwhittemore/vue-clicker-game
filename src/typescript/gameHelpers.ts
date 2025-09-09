@@ -31,8 +31,20 @@ export const activateNarrativeTrigger = (narrativeTrigger: keyof typeof narrativ
 export const getTotalLevel = () => {
     let total = 0;
     const skillKeys = Object.keys(gameStateStorage.skills) as Array<keyof typeof gameStateStorage.skills>;
-    for (const skill of skillKeys){
+    for (const skill of skillKeys) {
         total += gameStateStorage.skills[skill].level;
     }
     return total;
+}
+
+export const recursiveObjectAssign = (targetObject: object, sourceObject: object) => {
+    // iterate over all properties for each that is an object recursively call this function
+    // Not sure if behavior might be incorrect with an array of objects. 
+    (Object.keys(sourceObject) as Array<keyof typeof sourceObject>).forEach(key => {
+        if (typeof sourceObject[key] !== 'object') {
+            targetObject[key] = sourceObject[key];
+        } else {
+            recursiveObjectAssign(targetObject[key], sourceObject[key])
+        }
+    })
 }
