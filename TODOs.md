@@ -9,9 +9,10 @@
     *Bug* looks like auto gold miner narrative text is wrong (triggered by level?)
     5. ~~Getters for the experience required for the levels. Maybe these shouldn't be on the state storage~~
     7. Now that I have the ship you should be able to repair it
-        - Ship might need its own location tab
-        - will need to add the ship to game storage
+        - ~~Ship might need its own location tab~~
+        - ~~will need to add the ship to game storage~~
         - repair should cost a hefty amount of steel
+        - Need several things to repair
     8. We should add a class to replace 'button', or style the buttons a lot more?
     9. Maybe instead of using `isDevTesting` in the code base, we just have everything computed so that they should be unlocked??
     10. Make the locations more mobile responsive 
