@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { gameStateStorage } from '@/typescript/gameStateStorage';
-// import GenericResourceDisplay from './GenericResourceDisplay.vue';
 import AutomatonDisplayComponent from './AutomatonDisplayComponent.vue';
 import { readableTextMap } from '@/typescript/gameConstants/readableTextMap';
 
