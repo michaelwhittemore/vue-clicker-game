@@ -1,4 +1,4 @@
-const isDevTesting = true // MUST BE SET HERE, ISN'T REACTIVE
+const isDevTesting = false // MUST BE SET HERE, ISN'T REACTIVE
 
 import { reactive } from 'vue';
 import type { ValidResources, ValidSkills } from './gameTypes';
@@ -33,6 +33,7 @@ export interface StateStorageObject {
         mining: Skill,
         robotics: Skill,
         trading: Skill,
+        manufacturing: Skill,
     }
     upgrades: {
         pickaxe: Upgrade,
@@ -86,6 +87,7 @@ const gameStateStorageObject: StateStorageObject = {
         mining: initSkill(),
         robotics: initSkill(),
         trading: initSkill(),
+        manufacturing: initSkill(),
     },
     upgrades: {
         pickaxe: {
@@ -145,6 +147,10 @@ const TESTgameStateStorageObject = {
         },
         trading: {
             level: 4,
+        },
+        manufacturing: {
+            level: 2,
+            experience: 10,
         }
     },
     // ship: {

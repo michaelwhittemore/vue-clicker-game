@@ -5,7 +5,10 @@
     1. rewrite todos again
     2. hover over text on resources
         - might be nice to add some coloration to it 
-    3. manufacturing skill - right now just get xp for refining
+    3. manufacturing skill
+        - right now just get xp for refining
+        - will want to add the manufactory (maybe find a better word)
+        
 ---------
 * immediate future tasks 
     2. ~~Move the test data object so that it just modifies the existing one~~

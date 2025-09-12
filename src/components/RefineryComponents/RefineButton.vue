@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref, toRef } from 'vue';
 import { gameStateStorage } from '@/typescript/gameStateStorage';
-import { activateNarrativeTrigger } from '@/typescript/gameHelpers';
+import { activateNarrativeTrigger, earnExperienceInSkill } from '@/typescript/gameHelpers';
 import PopUpText from '../PopUpText.vue';
 
 const wasClickedTrigger = ref(false);
@@ -14,6 +14,7 @@ const onClickHandler = () => {
     wasClickedTrigger.value = !wasClickedTrigger.value;
     gameStateStorage.resources.ore -= oreInput.value;
     gameStateStorage.resources.steel+= steelOutput.value;
+    earnExperienceInSkill('manufacturing', 1)
 }
 const notEnoughOre = computed(() => gameStateStorage.resources.ore < oreInput.value)
 const computedTextForPopUp = computed(() => {
