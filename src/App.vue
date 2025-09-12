@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { gameStateStorage } from './typescript/gameStateStorage';
 // -------- Component Imports
-import ResourceDisplay from './components/GeneralDisplayComponents/ResourceDisplay.vue';
+import ResourceDisplayAreaArea from './components/GeneralDisplayComponents/ResourceDisplayAreaArea.vue';
 import AutomatonDisplay from './components/GeneralDisplayComponents/AutomatonDisplay.vue';
 import ExperienceBarHolder from './components/GeneralDisplayComponents/ExperienceBarHolder.vue';
 import NarrativeText from './components/NarrativeText.vue';
@@ -27,7 +27,7 @@ import ShipLocation from './components/ShipComponents/ShipLocation.vue';
   </div>
 
   <div id="displayArea" class="flexUtility">
-    <ResourceDisplay />
+    <ResourceDisplayAreaArea />
     <AutomatonDisplay />
   </div>
   <NeuronUplinkComponent />

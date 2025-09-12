@@ -1,24 +1,18 @@
 import type { StateStorageObject } from './gameStateStorage.ts'
-import { earnExperienceInSkill } from './gameHelpers.ts';
+import { earnExperienceInSkill, calculateResourceIncomeFactory } from './gameHelpers.ts';
+
 
 
 const initGameLoop = (gameStateStorage: StateStorageObject, interval: number = 1000) => {
-    let tickNumber = 0;
+    const calculateOreIncome = calculateResourceIncomeFactory('ore') as () => number;
+    const calculateSteelIncome = calculateResourceIncomeFactory('steel') as () => number;
+    const calculateGoldIncome = calculateResourceIncomeFactory('gold') as () => number;
     const executeGameTick = () => {
-        tickNumber++;
-        // todo - make this fire less often, in general we will need a rate
-
-
         const { autoMiner, autoRefiner, autoGoldMiner, advancedAutoMiner } = gameStateStorage.automatons;
         // Auto miners
         {
-            gameStateStorage.resources.ore += autoMiner;
-            gameStateStorage.resources.ore += advancedAutoMiner * 5;
-            // We only want gold miners to execute every other tick
-            if (tickNumber % 2 === 0) {
-                gameStateStorage.resources.gold += autoGoldMiner;
-            }
-
+            gameStateStorage.resources.ore += calculateOreIncome()            
+            gameStateStorage.resources.gold += calculateGoldIncome();   
         }
         // Auto refiners
         {

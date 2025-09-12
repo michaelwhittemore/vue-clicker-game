@@ -1,5 +1,6 @@
+// It's possible these might be more accurately called 'utilities'
 import { gameStateStorage } from "./gameStateStorage"
-import type { ValidSkills } from "./gameTypes"
+import type { ValidSkills, ValidResources } from "./gameTypes"
 import { narrativeTriggersToText } from "./gameConstants/narrativeTriggersToText";
 import { levelToNarrativeTriggerBreakpoints } from "./gameConstants/levelToNarrativeTriggerBreakpoints";
 export const earnExperienceInSkill = (relevantSkill: ValidSkills, experienceAmount: number = 1) => {
@@ -45,3 +46,30 @@ export const recursiveObjectAssign = (targetObject: object, sourceObject: object
         }
     })
 }
+
+// Maybe this should use a factory pattern?
+export const calculateResourceIncomeFactory = (resourceType: ValidResources) => {
+    // uses automatons to calculate the rate per second
+    // TODO - in the future the automatons may become upgradeable
+    console.warn('sadsadsadsadsadsa',resourceType )
+    switch (resourceType) {
+        case 'ore':
+            return () => {
+                return (gameStateStorage.automatons.autoMiner * 1) +
+                    (gameStateStorage.automatons.advancedAutoMiner * 5)
+            }
+        case 'gold':
+            return () => {
+                return (gameStateStorage.automatons.autoGoldMiner * 0.5)
+            }
+        case 'steel':
+            return () => {
+                return (gameStateStorage.automatons.autoRefiner * 1)
+            }
+        default:
+            debugger;
+            console.error('invalid resource type in getResourceIncomeFactory')
+            break;
+    }
+
+} 

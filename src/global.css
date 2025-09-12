@@ -1,19 +1,26 @@
 /* ---------------- Utilities ----------------------*/
-.flexUtility{
+.flexUtility {
     display: flex;
 }
-.centeredText{
+
+.centeredText {
     text-align: center;
 }
-.outlinedText{
+
+.outlinedText {
     text-shadow:
-    -1px -1px 0 black,  /* Top-left shadow */
-     1px -1px 0 black,  /* Top-right shadow */
-    -1px  1px 0 black,  /* Bottom-left shadow */
-     1px  1px 0 black;  /* Bottom-right shadow */
+        -1px -1px 0 black,
+        /* Top-left shadow */
+        1px -1px 0 black,
+        /* Top-right shadow */
+        -1px 1px 0 black,
+        /* Bottom-left shadow */
+        1px 1px 0 black;
+    /* Bottom-right shadow */
 }
+
 /* ------------------- Color Schemes ----------------- */
-body{
+body {
     background-color: #eae0cc;
 }
 
@@ -34,10 +41,32 @@ body{
 }
 
 /* --------------- Shared Classes ------------------ */
-.shopTab{
+.shopTab {
     height: stretch;
     padding: 3px;
     border-style: solid;
     border-top-style: none;
-    
+}
+
+.tooltipContainer {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltipText {
+    visibility: hidden;
+    background-color: #e8d2ae;
+    color: black;
+    text-align: center;
+    border-style: solid;
+    padding: 3px 3px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 15px;
+
+}
+
+.tooltipContainer:hover .tooltipText {
+    visibility: visible;
 }

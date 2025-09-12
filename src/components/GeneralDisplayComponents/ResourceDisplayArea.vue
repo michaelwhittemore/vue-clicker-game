@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { gameStateStorage } from '@/typescript/gameStateStorage';
-import GenericResourceDisplay from './GenericResourceDisplay.vue';
+import GenericAssetDisplay from './GenericAssetDisplay.vue';
 // Might make sense to have reusable display for each kind 
 // Also do something when they're zero? Maybe change color based on scale?
 </script>
@@ -11,8 +11,8 @@ import GenericResourceDisplay from './GenericResourceDisplay.vue';
         <div>Current Resources</div>
         <div id="resourceDisplay">
             <!-- // might need to add a key, see the dos?? -->
-            <GenericResourceDisplay v-for="(value, key) in gameStateStorage.resources" :resource-name="key"
-                :resource-amount="value" />
+            <GenericAssetDisplay v-for="(value, key) in gameStateStorage.resources" :resource-name="key"
+                :resource-amount="value" :is-resource="true"/>
         </div>
     </div>
 

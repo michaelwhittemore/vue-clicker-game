@@ -2,7 +2,17 @@
 
 # Things to work on immediately 
 * Current Tasks: 
-
+    1. rewrite todos again
+    2. hover over text on resources
+        - where does the calculation occur?
+        - it will need the game state (specifically automatons)
+        - I guess it's the same number we will be using in game loop? so maybe they should share logic?
+        - add the income helper to the game loop
+        - we will need to do something about ore and steel maybe maybe steel is max that can be produced
+        - and add a string/span for ore like, "15 - 9 = 6" with income in green and loss in red
+    3. manufacturing skill - right now just get xp for refining
+---------
+* immediate future tasks 
     2. ~~Move the test data object so that it just modifies the existing one~~
     3. ~~Refactor so that all components are in relevant location folders ~~
     4. ~~Slight rebalancing for early game ~~
@@ -13,6 +23,7 @@
         - ~~will need to add the ship to game storage~~
         - repair should cost a hefty amount of steel
         - Need several things to repair
+        - make it clear via narrative text that the ship still needs to be repaired
     8. We should add a class to replace 'button', or style the buttons a lot more?
     9. Maybe instead of using `isDevTesting` in the code base, we just have everything computed so that they should be unlocked??
     10. Make the locations more mobile responsive 
@@ -34,11 +45,13 @@
             - maybe add a 'charisma' or 'charm' or 'social skills'
         - Maybe tourism? Need to balance industrial resource (like ore and steel) acquisition vs gold from a game balance perspective
         - Some buildings apply temporary boosts - or maybe can build consumables to do the same
+        - these will also require some automatons of their own
     17. At level 20 mining you should get a chance for double gold
     18. Maybe the narrative area eventually gets the split treatment for achievements? - like it shows the achievement tab? Name the primary narrative one as "journal"
         - maybe achievements are tied to certain amounts of automatons? getting 50, 100 ect... 
         - We will need point values for achievements
     19. Collapsible skill menu? 
+    20. Auto builder (select an automaton to build)
 
 # Possible Skills, upgrades, tools, ect... 
 * Skills   
@@ -53,6 +66,7 @@
 
 
 # Immediate future tasks
+* I should probably switch the helpers to composables - actually I'm not sure that's even correct, it looks like composables have their own state?
 * Might be worth some sort of game flow document (i.e. the resources and expected order of accrual) and what unlocks what - i keep forgetting two refiners for the shop
 * Perhaps the ability to build auto builders??
 * Eventually we will need travel. This will probably take the form of grouping locations into another container/wrapper that gets replaced. Should make ships available from the shop
@@ -66,16 +80,17 @@
 * maybe an `innovation` skill? Allows you to randomly unlock upgrades?
 
 # Style Todos
-* Need a more distinctive font 
+* Need a more distinctive font(s)
 * different color for buttons for upgrades, actions, building (especially on something like the refinery)
 * The buttons look ugly and like forms, should at the very least change the color and maybe center them?
 * ~~Add some kind of animation when mining or building? maybe a little `+1 ore` popup? Will need to do some research~~
 * Look at a mobile game or civ or something for UI inspiration for resource bar
 * ~~maybe switch the narrative back to the top and just hard code the height? - need to fix the scrolling first I think~~
 * I should give the narrative area scrolling and a maximum height - I will also want it to scroll down - also some spacing between text
-* have some sort of border that demands attention when a new text is added? maybe it's highlighted for a few seconds? (like for the narrative element)
+* add a new schematic thing? Like a badge when one is available
 * Should I try with randomness in location - like a 10px difference? (for animations)
 * Maybe we have a notification badge when new schematics are available?
+* different colors for resources depending on amount (like red when zero)
 
 # General Notes
 * Will need to mention this was to learn vue and to refresh my typescript knowledge 
@@ -95,7 +110,6 @@
 // const anotherBadArray: Array<number> = [1,2, 'as'] 
 * Should read up on typescript best practices
 * read about css animations
-* I don't like that `targetExperience` is done this way, maybe use a getter instead?
 
 # Rebalancing notes
 * Maybe shop should appear after refining a certain amount of steel?
@@ -104,6 +118,7 @@
 * gold should be rarer
 * in general, remember that this should be a long term game
 * maybe pickaxe higher level requirements?
+* Have refinery upgrades available sooner (maybe first tier schematics don't need to be locked)
 
 # Useful Vue doc links
 * https://vuejs.org/guide/extras/reactivity-in-depth.html Seems really useful

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { gameStateStorage } from '@/typescript/gameStateStorage';
-import GenericResourceDisplay from './GenericResourceDisplay.vue';
+import GenericAssetDisplay from './GenericAssetDisplay.vue';
 import { readableTextMap } from '@/typescript/gameConstants/readableTextMap';
 
 
@@ -24,8 +24,8 @@ const computedNonZeroAutomatons = computed(() => {
         <div>Your Automatons</div>
         <div id="resourceDisplay">
             <!-- // might need to add a key, see the dos?? -->
-            <GenericResourceDisplay v-for="automatonObject in computedNonZeroAutomatons" :resource-name="readableTextMap[automatonObject.name]"
-                :resource-amount="automatonObject.amount" />
+            <GenericAssetDisplay v-for="automatonObject in computedNonZeroAutomatons" :resource-name="readableTextMap[automatonObject.name]"
+                :resource-amount="automatonObject.amount" is-resource="false"/>
         </div>
     </div>
 
