@@ -5,10 +5,12 @@ import { earnExperienceInSkill, calculateResourceIncomeFactory } from './gameHel
 
 const initGameLoop = (gameStateStorage: StateStorageObject, interval: number = 1000) => {
     const calculateOreIncome = calculateResourceIncomeFactory('ore') as () => number;
-    const calculateSteelIncome = calculateResourceIncomeFactory('steel') as () => number;
+    // const calculateSteelIncome = calculateResourceIncomeFactory('steel') as () => number;
     const calculateGoldIncome = calculateResourceIncomeFactory('gold') as () => number;
     const executeGameTick = () => {
-        const { autoMiner, autoRefiner, autoGoldMiner, advancedAutoMiner } = gameStateStorage.automatons;
+        // const { autoMiner, autoRefiner, autoGoldMiner, advancedAutoMiner } = gameStateStorage.automatons;
+        const { autoRefiner, } = gameStateStorage.automatons;
+
         // Auto miners
         {
             gameStateStorage.resources.ore += calculateOreIncome()            

@@ -67,7 +67,7 @@ export const calculateResourceIncomeFactory = (resourceType: ValidResources) => 
                 return (gameStateStorage.automatons.autoRefiner * 1)
             }
         default:
-            debugger;
+            // debugger;
             console.error('invalid resource type in getResourceIncomeFactory')
             break;
     }

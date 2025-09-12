@@ -4,18 +4,16 @@ import type { ValidResources } from '@/typescript/gameTypes';
 import TooltipText from '../TooltipText.vue';
 import { calculateResourceIncomeFactory } from '@/typescript/gameHelpers';
 const props = defineProps<{
-    assetName: string,
+    resourceName: ValidResources,
     resourceAmount: number,
-    isResource: boolean,
-    
 }>()
-const calculateResourceIncome = calculateResourceIncomeFactory(props.assetName) as () => number;
+const calculateResourceIncome = calculateResourceIncomeFactory(props.resourceName) as () => number;
 const tooltipText = computed(() => calculateResourceIncome())
 </script>
 
 <template>
     <!-- Will need to change color based on the numeric value -->
-    <div class="resourceDisplayContainer color1 tooltipContainer">{{ assetName + ': ' + resourceAmount}}
+    <div class="resourceDisplayContainer color1 tooltipContainer">{{ resourceName + ': ' + resourceAmount}}
         <TooltipText :tooltip-text="tooltipText"/>
     </div>
 </template>
