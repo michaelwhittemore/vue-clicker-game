@@ -48,6 +48,7 @@ body {
     border-top-style: none;
 }
 
+/* ------------------------ Tooltip Classes ------------------------------- */
 .tooltipContainer {
     position: relative;
     display: inline-block;
@@ -64,9 +65,12 @@ body {
     z-index: 1;
     bottom: 125%;
     left: 15px;
-
+    /* max-content causes overflow, but only one should be visible at a time */
+    width: max-content;
 }
 
 .tooltipContainer:hover .tooltipText {
     visibility: visible;
 }
+
+/* ------------------------------------------------------------------ */

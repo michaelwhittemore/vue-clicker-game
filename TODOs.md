@@ -4,12 +4,7 @@
 * Current Tasks: 
     1. rewrite todos again
     2. hover over text on resources
-        - where does the calculation occur?
-        - it will need the game state (specifically automatons)
-        - I guess it's the same number we will be using in game loop? so maybe they should share logic?
-        - add the income helper to the game loop
-        - we will need to do something about ore and steel maybe maybe steel is max that can be produced
-        - and add a string/span for ore like, "15 - 9 = 6" with income in green and loss in red
+        - might be nice to add some coloration to it 
     3. manufacturing skill - right now just get xp for refining
 ---------
 * immediate future tasks 
