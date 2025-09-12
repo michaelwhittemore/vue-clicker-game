@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
+import { gameStateStorage } from '@/typescript/gameStateStorage';
 import type { ValidResources } from '@/typescript/gameTypes';
 import TooltipText from '../TooltipText.vue';
 import { calculateResourceIncomeFactory } from '@/typescript/gameHelpers';
@@ -8,18 +9,29 @@ const props = defineProps<{
     resourceAmount: number,
 }>()
 const calculateResourceIncome = calculateResourceIncomeFactory(props.resourceName) as () => number;
-const tooltipText = computed(() => calculateResourceIncome())
+const tooltipText = computed(() => {
+    let tooltipString = '';
+    if (props.resourceName == 'ore'){
+        const oreIn = calculateResourceIncome()
+        const oreOut = gameStateStorage.automatons.autoRefiner * 9 // This may change
+        tooltipString =  `${oreIn} - ${oreOut} = ${oreIn - oreOut}`
+    } else {
+        tooltipString = calculateResourceIncome().toString()
+    }
+    tooltipString = tooltipString + ' ' + props.resourceName + ' per second';
+    return tooltipString
+})
 </script>
 
 <template>
     <!-- Will need to change color based on the numeric value -->
-    <div class="resourceDisplayContainer color1 tooltipContainer">{{ resourceName + ': ' + resourceAmount}}
-        <TooltipText :tooltip-text="tooltipText"/>
+    <div class="resourceDisplayContainer color1 tooltipContainer">{{ resourceName + ': ' + resourceAmount }}
+        <TooltipText :tooltip-text="tooltipText" />
     </div>
 </template>
 
 <style scoped>
-.resourceDisplayContainer{
+.resourceDisplayContainer {
     border-style: solid;
     margin: .2em;
     padding: .1em .2em .1em .2em
