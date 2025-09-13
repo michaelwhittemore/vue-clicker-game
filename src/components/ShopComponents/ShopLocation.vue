@@ -1,27 +1,25 @@
 <script setup lang="ts">
-import { computed, ref, type Component } from 'vue';
+import { computed } from 'vue';
 import { gameStateStorage } from '@/typescript/gameStateStorage';
 import LocationComponent from '../UtilityComponents/LocationComponent.vue';
 import ShopSchematicsComponent from '../ShopComponents/ShopSchematicsComponent.vue';
 import ShopItemsComponent from '../ShopComponents/ShopItemsComponent.vue';
+import type { TabsInterface, TabInformation } from '@/typescript/gameTypes';
 
 import SelectableTab from '../UtilityComponents/SelectableTab.vue'
 
 const computedShouldDisplay = computed(() => gameStateStorage.automatons.autoRefiner >= 2);
 
-interface ShopTabsInterface {
-  [key: string]: Component,
-}
-const shopTabs: ShopTabsInterface = {
+const shopTabs: TabsInterface = {
   'Items': ShopItemsComponent,
   'Schematics': ShopSchematicsComponent,
 }
-const shopTabNames = [
+const shopTabNames: Array<TabInformation> = [
   {
     tabName: 'Items',
     tabColorClass: 'itemsColor'
   },
-    {
+  {
     tabName: 'Schematics',
     tabColorClass: 'schematicsColor'
   }

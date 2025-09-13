@@ -1,14 +1,7 @@
 <script setup lang="ts">
-
 import { computed, ref, type Component } from 'vue';
+import type { TabsInterface, TabInformation } from '@/typescript/gameTypes';
 
-interface TabsInterface {
-  [key: string]: Component,
-}
-interface TabInformation {
-    tabName: string,
-    tabColorClass: string,
-}
 const props = defineProps<{
     tabsMap: TabsInterface,
     startingTab: string,
