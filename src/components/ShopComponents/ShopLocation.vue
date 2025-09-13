@@ -16,7 +16,16 @@ const shopTabs: ShopTabsInterface = {
   'Items': ShopItemsComponent,
   'Schematics': ShopSchematicsComponent,
 }
-const shopTabNames = ['Items', 'Schematics']
+const shopTabNames = [
+  {
+    tabName: 'Items',
+    tabColorClass: 'itemsColor'
+  },
+    {
+    tabName: 'Schematics',
+    tabColorClass: 'schematicsColor'
+  }
+]
 
 </script>
 
