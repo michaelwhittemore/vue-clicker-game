@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import LocationComponent from '../LocationComponent.vue';
+import LocationComponent from '../UtilityComponents/LocationComponent.vue';
 import MineResourceButton from './MineResourceButton.vue';
 </script>
 <template>

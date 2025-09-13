@@ -3,7 +3,7 @@ import { computed, ref } from 'vue';
 import { gameStateStorage } from '@/typescript/gameStateStorage';
 import { earnExperienceInSkill } from '@/typescript/gameHelpers';
 import { tradingLevelsToResourceMap } from '@/typescript/gameConstants/resourceExchangeRateGetters';
-import PopUpText from '../PopUpText.vue';
+import PopUpText from '../UtilityComponents/PopUpText.vue';
 
 // We don't use ValidResourceType as we don't need this for gold
 const props = defineProps<{

@@ -16,6 +16,7 @@
     2. Add the manufactory and the ability to repair it
     3. **HERE!** Look into refactoring tabs like I have in the shop
         - So we'd have a reusable component that works for either
+        - Maybe test it on `ship`
     8. We should add a class to replace 'button', or style the buttons a lot more?
     10. Make the locations more mobile responsive 
         - may need to resize

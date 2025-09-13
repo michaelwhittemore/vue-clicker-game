@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import RefineButton from '../RefineryComponents/RefineButton.vue';
 import UpgradeRefineryButton from '../RefineryComponents/UpgradeRefineryButton.vue';
-import LocationComponent from '../LocationComponent.vue';
+import LocationComponent from '../UtilityComponents/LocationComponent.vue';
 
 </script>
 <template> 

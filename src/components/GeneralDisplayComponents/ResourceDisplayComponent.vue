@@ -2,7 +2,7 @@
 import { computed } from 'vue';
 import { gameStateStorage } from '@/typescript/gameStateStorage';
 import type { ValidResources } from '@/typescript/gameTypes';
-import TooltipText from '../TooltipText.vue';
+import TooltipText from '../UtilityComponents/TooltipText.vue';
 import { calculateResourceIncomeFactory } from '@/typescript/gameHelpers';
 const props = defineProps<{
     resourceName: ValidResources,
