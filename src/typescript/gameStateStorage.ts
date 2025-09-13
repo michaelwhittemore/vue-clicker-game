@@ -53,6 +53,8 @@ export interface StateStorageObject {
     unlockedSchematics: Array<string>,
     ship: {
         isPurchased: boolean,
+        requiredRepairs: Array<string>,
+        isFixed: boolean,
     }
     narrativeTriggersArray: Array<keyof typeof narrativeTriggersToText>,
 }
@@ -122,6 +124,10 @@ const gameStateStorageObject: StateStorageObject = {
     unlockedSchematics: [],
     ship: {
         isPurchased: false,
+        get isFixed(){
+            return this.requiredRepairs.length == 0 // Maybe it will be an object instead?
+        },
+        requiredRepairs: []
     },
     narrativeTriggersArray: ['gameStart'],
 }
@@ -153,9 +159,10 @@ const TESTgameStateStorageObject = {
             experience: 10,
         }
     },
-    // ship: {
-    //     isPurchased: true,
-    // }
+    ship: {
+        isPurchased: true,
+
+    }
 }
 
 if (isDevTesting) {

@@ -2,9 +2,16 @@
 
 # Things to work on immediately 
 * 
+    2. For the ship:
+        - make the wrapper work on upgrade/repair
+        - Eventually travel will be tied to repair, but let's just let you do it right now
+        - add a simple `launch` button to the travel section
+            - possibly have a SciFi-y launch animation? Like some screen shake? 
+        - maybe we have an array or objects of repairs needed? once the thing is empty we can declare that it's fixed
     3. manufacturing skill
         - right now just get xp for refining
         - will want to add the manufactory (maybe find a better word)
+    4. Currently, automaton values are hard coded (i.e. autoMiner output, autoRefiner costs), it would be nice if we placed it in `gameStateStorage`. Once all the values are being used instead of the hard coded values, we can start looking into upgrades for our automatons
         
 ---------
 * Current Tasks: 

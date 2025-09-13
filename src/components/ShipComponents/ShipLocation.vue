@@ -21,8 +21,6 @@ const shipTabNames: Array<TabInformation> = [
     tabColorClass: 'schematicsColor'
   }
 ]
-
-// HERE! need to add the selectable tab (will need to create the sub components)
 </script>
 <template>
     <template v-if="gameStateStorage.ship.isPurchased">
