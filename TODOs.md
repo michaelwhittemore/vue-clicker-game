@@ -1,29 +1,22 @@
 # Todos
 
 # Things to work on immediately 
-* Current Tasks: 
-    1. rewrite todos again
-    2. hover over text on resources
-        - might be nice to add some coloration to it 
+* 
     3. manufacturing skill
         - right now just get xp for refining
         - will want to add the manufactory (maybe find a better word)
         
 ---------
-* immediate future tasks 
-    2. ~~Move the test data object so that it just modifies the existing one~~
-    3. ~~Refactor so that all components are in relevant location folders ~~
-    4. ~~Slight rebalancing for early game ~~
-    *Bug* looks like auto gold miner narrative text is wrong (triggered by level?)
-    5. ~~Getters for the experience required for the levels. Maybe these shouldn't be on the state storage~~
-    7. Now that I have the ship you should be able to repair it
-        - ~~Ship might need its own location tab~~
-        - ~~will need to add the ship to game storage~~
+* Current Tasks: 
+    1. Now that I have the ship you should be able to repair it
         - repair should cost a hefty amount of steel
         - Need several things to repair
         - make it clear via narrative text that the ship still needs to be repaired
+        - Maybe we do the component for selectable tab first?
+    2. Add the manufactory and the ability to repair it
+    3. **HERE!** Look into refactoring tabs like I have in the shop
+        - So we'd have a reusable component that works for either
     8. We should add a class to replace 'button', or style the buttons a lot more?
-    9. Maybe instead of using `isDevTesting` in the code base, we just have everything computed so that they should be unlocked??
     10. Make the locations more mobile responsive 
         - may need to resize
         - on mobile maybe 2x2? Also less space in between
@@ -32,7 +25,7 @@
     12. For some automatons increase the price after certain intervals (i.e. after 10 miners)
         - Call it something like ('signal interference,') add a tech to remove the associated cost - call the tech something like 'improvedAutoPath'?
         - Also make the automatons cheaper by default
-    13. Maybe add a UI to the current resources to show the per second rate??
+    13. ~~Maybe add a UI to the current resources to show the per second rate??~~
     14. Add narrative to the refinery upgrades ( make it clear that they don't apply bots, add an upgrade so that they do)
     15. Add a stupidly expensive, "gold statue"
     16. Add a manufactory. I guess you buy construction materials from the shop and then can restore it
@@ -60,7 +53,6 @@
     * Manufacturing - affects refining (or maybe just get the xp from it)
 * Resources
     * Building materials - maybe purchased and scavenged
-    
 
 
 # Immediate future tasks
@@ -78,6 +70,7 @@
 * maybe an `innovation` skill? Allows you to randomly unlock upgrades?
 
 # Style Todos
+* add coloration to the rate tooltips (i.e. income)
 * Need a more distinctive font(s)
 * different color for buttons for upgrades, actions, building (especially on something like the refinery)
 * The buttons look ugly and like forms, should at the very least change the color and maybe center them?
@@ -132,6 +125,7 @@
 * https://blog.logrocket.com/using-event-bus-vue-js-pass-data-between-components/
 * https://vuejs.org/guide/extras/animation
 * https://vuejs.org/guide/essentials/component-basics#dynamic-components specifically using tabs and `is`
+* https://dev.to/jacobandrewsky/good-practices-and-design-patterns-for-vue-composables-24lk
 
 # Stretch Goals
 * achievements

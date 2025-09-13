@@ -1,4 +1,4 @@
-const isDevTesting = false // MUST BE SET HERE, ISN'T REACTIVE
+const isDevTesting = true // MUST BE SET HERE, ISN'T REACTIVE
 
 import { reactive } from 'vue';
 import type { ValidResources, ValidSkills } from './gameTypes';

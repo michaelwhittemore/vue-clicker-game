@@ -15,7 +15,6 @@ watch(() => props.wasClickedTrigger, async () => {
     animatedClassBool.value = true;
 
 })
-// HERE! - I think we will need to apply a transform
 const styleObject = reactive({
   color: props.color || 'green',
   left: props.shift ? '50px' : '0px',

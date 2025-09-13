@@ -10,7 +10,6 @@ const onClickHandler = () => {
     gameStateStorage.resources.gold -= goldCost;
     activateNarrativeTrigger('hasBoughtShip')
     earnExperienceInSkill('trading', 10)
-    // HERE! need to add the ship to the gameStateStorage and stop displaying it in the shop
     gameStateStorage.ship.isPurchased = true;
 }
 const computedSufficientGold = computed(() => gameStateStorage.resources.gold >= goldCost)
