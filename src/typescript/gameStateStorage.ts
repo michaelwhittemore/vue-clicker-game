@@ -161,7 +161,7 @@ const TESTgameStateStorageObject = {
     },
     ship: {
         isPurchased: true,
-
+        // requiredRepairs: ['test']
     }
 }
 

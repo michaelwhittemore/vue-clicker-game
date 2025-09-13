@@ -47,11 +47,10 @@ export const recursiveObjectAssign = (targetObject: object, sourceObject: object
     })
 }
 
-// Maybe this should use a factory pattern?
+
 export const calculateResourceIncomeFactory = (resourceType: ValidResources) => {
     // uses automatons to calculate the rate per second
     // TODO - in the future the automatons may become upgradeable
-    console.warn('sadsadsadsadsadsa',resourceType )
     switch (resourceType) {
         case 'ore':
             return () => {

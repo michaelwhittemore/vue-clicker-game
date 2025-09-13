@@ -17,7 +17,6 @@ import ShipLocation from './components/ShipComponents/ShipLocation.vue';
 
 <template>
   <NarrativeText />
-  <!-- The locations holder will likely be where we need to use the `is` keyword and dynamic tabs -->
   <div id="locationsHolder" class="flexUtility">
     <MineLocation />
     <RefineryLocation />

@@ -3,15 +3,18 @@
 # Things to work on immediately 
 * 
     2. For the ship:
+        - need to add ship repairs to a file within 'gameConstants'
+            - Will populate the needed repairs from that
         - make the wrapper work on upgrade/repair
         - Eventually travel will be tied to repair, but let's just let you do it right now
         - add a simple `launch` button to the travel section
             - possibly have a SciFi-y launch animation? Like some screen shake? 
         - maybe we have an array or objects of repairs needed? once the thing is empty we can declare that it's fixed
     3. manufacturing skill
-        - right now just get xp for refining
+        - ~~right now just get xp for refining~~
         - will want to add the manufactory (maybe find a better word)
     4. Currently, automaton values are hard coded (i.e. autoMiner output, autoRefiner costs), it would be nice if we placed it in `gameStateStorage`. Once all the values are being used instead of the hard coded values, we can start looking into upgrades for our automatons
+        - calculateResourceIncomeFactory is one place to touch
         
 ---------
 * Current Tasks: 
@@ -92,21 +95,8 @@
 * different colors for resources depending on amount (like red when zero)
 
 # General Notes
-* Will need to mention this was to learn vue and to refresh my typescript knowledge 
-    - mention cookie clicker explicitly and the incremental genre 
-* `env.d.ts` need to make sure all my types are here
-    - if not `env` then at least some kind of typescript definition files - https://www.typescriptlang.org/docs/handbook/2/type-declarations.html 
 * look into a typescript guide, feel like I'm missing some stuff
-* typescript eslint
 * I should read more about the virtual DOM https://vuejs.org/guide/extras/rendering-mechanism 
-* Looks like maybe .d.ts is only for JS files?? 
-* Should we have a generic for buttons? (both buy and generate)
-* Issue with `has no default export.` seems like possibly due to script missing the `setup` tag?
-    - Yep! `setup` fixes it!
-* `String` & `string` are NOT the same, see https://stackoverflow.com/questions/47484525/operator-cannot-be-applied-to-types-number-and-1\
-* DO NOT use prop destructing. It says it was fixed in 3.5, but it caused me a ton of headaches https://vuejs.org/guide/components/props#reactive-props-destructure
-// const badArray: Array<string> = ['a', 'b', 1]
-// const anotherBadArray: Array<number> = [1,2, 'as'] 
 * Should read up on typescript best practices
 * read about css animations
 
@@ -134,9 +124,9 @@
 * https://vuejs.org/guide/extras/animation
 * https://vuejs.org/guide/essentials/component-basics#dynamic-components specifically using tabs and `is`
 * https://dev.to/jacobandrewsky/good-practices-and-design-patterns-for-vue-composables-24lk
+* https://www.cerbos.dev/blog/productivity-paradox-of-ai-coding-assistants
 
 # Stretch Goals
 * achievements
 * saving
 * consider https://pinia.vuejs.org/ pinia for state management
-* Eventually locations will need to be generated with Vue components

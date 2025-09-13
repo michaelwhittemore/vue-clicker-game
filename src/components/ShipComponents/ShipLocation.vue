@@ -21,6 +21,7 @@ const shipTabNames: Array<TabInformation> = [
     tabColorClass: 'schematicsColor'
   }
 ]
+// TODO should pass something reactive for tabName maybe? - it can be either upgrade or repair
 </script>
 <template>
     <template v-if="gameStateStorage.ship.isPurchased">
