@@ -13,41 +13,19 @@ interface ShopTabsInterface {
   [key: string]: Component,
 }
 const shopTabs: ShopTabsInterface = {
-  'schematics': ShopSchematicsComponent,
-  'items': ShopItemsComponent,
+  'Items': ShopItemsComponent,
+  'Schematics': ShopSchematicsComponent,
 }
-const shopTab = ref('items')
+const shopTabNames = ['Items', 'Schematics']
+
 </script>
 
 <template>
   <!-- the inner template tag is used to determine if we display the element -->
   <template v-if="computedShouldDisplay">
     <LocationComponent :location-name="'Shop'">
-      <SelectableTab :tabs-map="shopTabs" :starting-tab="shopTab" > 
+      <SelectableTab :tabs-map="shopTabs" :starting-tab="'Items'" :tab-names="shopTabNames">
       </SelectableTab>
-      <!-- <div class="flexUtility">
-        <div :class="{ selectedTab: shopTab === 'items' }" class="tabSelector itemsColor" @click="shopTab = 'items'">Items
-        </div>
-        <div :class="{ selectedTab: shopTab === 'schematics' }" class="tabSelector schematicsColor"
-          @click="shopTab = 'schematics'">Schematics</div>
-      </div>
-
-      <component :is="shopTabs[shopTab]"></component> -->
-
     </LocationComponent>
   </template>
 </template>
-
-<!-- <style>
-.selectedTab {
-  border-bottom-style: none !important;
-}
-
-.tabSelector {
-  text-align: center;
-  width: 50%;
-  margin-bottom: 0px;
-  border-style: solid;
-
-}
-</style> -->
