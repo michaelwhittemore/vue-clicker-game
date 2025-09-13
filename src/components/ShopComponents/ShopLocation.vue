@@ -5,6 +5,8 @@ import LocationComponent from '../UtilityComponents/LocationComponent.vue';
 import ShopSchematicsComponent from '../ShopComponents/ShopSchematicsComponent.vue';
 import ShopItemsComponent from '../ShopComponents/ShopItemsComponent.vue';
 
+import SelectableTab from '../UtilityComponents/SelectableTab.vue'
+
 const computedShouldDisplay = computed(() => gameStateStorage.automatons.autoRefiner >= 2);
 
 interface ShopTabsInterface {
@@ -21,20 +23,22 @@ const shopTab = ref('items')
   <!-- the inner template tag is used to determine if we display the element -->
   <template v-if="computedShouldDisplay">
     <LocationComponent :location-name="'Shop'">
-      <div class="flexUtility">
+      <SelectableTab :tabs-map="shopTabs" :starting-tab="shopTab" > 
+      </SelectableTab>
+      <!-- <div class="flexUtility">
         <div :class="{ selectedTab: shopTab === 'items' }" class="tabSelector itemsColor" @click="shopTab = 'items'">Items
         </div>
         <div :class="{ selectedTab: shopTab === 'schematics' }" class="tabSelector schematicsColor"
           @click="shopTab = 'schematics'">Schematics</div>
       </div>
 
-      <component :is="shopTabs[shopTab]"></component>
+      <component :is="shopTabs[shopTab]"></component> -->
 
     </LocationComponent>
   </template>
 </template>
 
-<style>
+<!-- <style>
 .selectedTab {
   border-bottom-style: none !important;
 }
@@ -46,4 +50,4 @@ const shopTab = ref('items')
   border-style: solid;
 
 }
-</style>
+</style> -->
