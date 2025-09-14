@@ -1,6 +1,6 @@
 // Maybe add narrative triggers to all of these?
 import type { ValidNarrativeTrigger } from "../gameTypes"
-interface RepairInformation {
+export interface RepairInformation {
     displayText: string,
     amountNeeded: number,
     amountBuilt: number,
@@ -9,7 +9,7 @@ interface RepairInformation {
 }
 // When displaying should have a x/amount i.e. 0/4
 // Eventually we maybe have multiple resources needed? 
-export const shipRepairsData = {
+export const shipRepairsData: Record<string, RepairInformation>  = {
     'thruster': {
         displayText: 'Repair Thruster',
         amountNeeded: 4,
@@ -46,4 +46,3 @@ export const shipRepairsData = {
         narrativeTrigger: 'hasRepairedWings',
     },
 } as const
-

@@ -5,7 +5,7 @@ import type { ValidResources, ValidSkills } from './gameTypes';
 import { automatonsData } from './gameConstants/automatonsData';
 import { narrativeTriggersToText } from './gameConstants/narrativeTriggersToText';
 import { recursiveObjectAssign } from './gameHelpers';
-import { shipRepairsData } from './gameConstants/shipRepairsData';
+import { shipRepairsData} from './gameConstants/shipRepairsData';
 
 export interface Skill {
     level: number,
