@@ -56,6 +56,7 @@ export interface StateStorageObject {
         isPurchased: boolean,
         requiredRepairs: object,
         isFixed: boolean,
+        completedRepairs: Array<string>
     }
     narrativeTriggersArray: Array<keyof typeof narrativeTriggersToText>,
 }
@@ -126,8 +127,9 @@ const gameStateStorageObject: StateStorageObject = {
     ship: {
         isPurchased: false,
         get isFixed(){
-            return Object.keys(this.requiredRepairs).length == 0;
+            return this.completedRepairs.length === Object.keys(shipRepairsData).length
         },
+        completedRepairs: [],
         requiredRepairs: structuredClone(shipRepairsData),
     },
     narrativeTriggersArray: ['gameStart'],
@@ -141,8 +143,8 @@ const TESTgameStateStorageObject = {
         advancedAutoMiner: 2,
     },
     resources: {
-        ore: 1000,
-        steel: 1000,
+        ore: 10000,
+        steel: 10000,
         gold: 10000,
     },
     skills: {

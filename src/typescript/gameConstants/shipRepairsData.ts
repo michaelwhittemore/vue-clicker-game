@@ -9,7 +9,7 @@ export interface RepairInformation {
 }
 // When displaying should have a x/amount i.e. 0/4
 // Eventually we maybe have multiple resources needed? 
-export const shipRepairsData: Record<string, RepairInformation>  = {
+export const shipRepairsData: Record<string, RepairInformation> = {
     'thruster': {
         displayText: 'Repair Thruster',
         amountNeeded: 4,
