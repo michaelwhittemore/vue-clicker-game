@@ -5,6 +5,7 @@ import type { ValidResources, ValidSkills } from './gameTypes';
 import { automatonsData } from './gameConstants/automatonsData';
 import { narrativeTriggersToText } from './gameConstants/narrativeTriggersToText';
 import { recursiveObjectAssign } from './gameHelpers';
+import { shipRepairsData } from './gameConstants/shipRepairsData';
 
 export interface Skill {
     level: number,
@@ -53,7 +54,7 @@ export interface StateStorageObject {
     unlockedSchematics: Array<string>,
     ship: {
         isPurchased: boolean,
-        requiredRepairs: Array<string>,
+        requiredRepairs: object,
         isFixed: boolean,
     }
     narrativeTriggersArray: Array<keyof typeof narrativeTriggersToText>,
@@ -125,9 +126,9 @@ const gameStateStorageObject: StateStorageObject = {
     ship: {
         isPurchased: false,
         get isFixed(){
-            return this.requiredRepairs.length == 0 // Maybe it will be an object instead?
+            return Object.keys(this.requiredRepairs).length == 0;
         },
-        requiredRepairs: []
+        requiredRepairs: structuredClone(shipRepairsData),
     },
     narrativeTriggersArray: ['gameStart'],
 }

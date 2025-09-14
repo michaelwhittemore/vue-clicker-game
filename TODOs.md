@@ -10,19 +10,19 @@
         - add a simple `launch` button to the travel section
             - possibly have a SciFi-y launch animation? Like some screen shake? 
         - maybe we have an array or objects of repairs needed? once the thing is empty we can declare that it's fixed
+        - is it possible the ship can get damaged again in the future?
     3. manufacturing skill
         - ~~right now just get xp for refining~~
         - will want to add the manufactory (maybe find a better word)
     4. Currently, automaton values are hard coded (i.e. autoMiner output, autoRefiner costs), it would be nice if we placed it in `gameStateStorage`. Once all the values are being used instead of the hard coded values, we can start looking into upgrades for our automatons
         - calculateResourceIncomeFactory is one place to touch
+    5. Add the prospecting tool then start new resources. 
+        - I'm thinking plastic nuggets? - narrative character express mild bewilderment
+        - the ability to extract oil? maybe use as fuel for your ship - can also buy from trader for outrageous cost?
         
 ---------
 * Current Tasks: 
-    1. Now that I have the ship you should be able to repair it
-        - repair should cost a hefty amount of steel
-        - Need several things to repair
-        - make it clear via narrative text that the ship still needs to be repaired
-        - Maybe we do the component for selectable tab first?
+
     2. Add the manufactory and the ability to repair it
     3. **HERE!** Look into refactoring tabs like I have in the shop
         - ~~So we'd have a reusable component that works for either~~
@@ -99,6 +99,8 @@
 * I should read more about the virtual DOM https://vuejs.org/guide/extras/rendering-mechanism 
 * Should read up on typescript best practices
 * read about css animations
+* I think part of my issue here is my attempt to have everything as a "derived" state. i.e. normally if I was building as I would in previous projects i'd have a more imperative? focus, like on certain actions I'd just manually push to the narrative, here's I'm trying to do more declarative stuff and relying on getters and states that are based upon other states as opposed to flags that I'm setting with conditionals
+* TS non-null assertion operator is a single bang 
 
 # Rebalancing notes
 * Maybe shop should appear after refining a certain amount of steel?

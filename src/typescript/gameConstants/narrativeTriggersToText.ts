@@ -16,5 +16,10 @@ export const narrativeTriggersToText = {
     tradingUnlock1: 'You have done a fair deal of buying and selling. Your haggling skills now allow you to sell resources at a better rate. (Leveling trading further will increase this bonus)',
     hasBuiltNeuronUplink: 'TODO, something about feeling a tad uncomfortable about installing a jury rigged computer in your head but you\'ve done worse. (You\'ll now passively gain a trickle of experience in the selected skill)',
     hasUpgradedNeuronUplink: 'TODO, with this new firmware update, you can learn even faster without having to get up. (You gain passive experience at an improved rate)',
-    hasBoughtShip: 'TODO, To call this ship fixer-upper would be an understatement, but this small craft will eventually be able to take you across the planet\'s surface.'
+    hasBoughtShip: 'TODO, To call this ship fixer-upper would be an understatement, but this small craft will eventually be able to take you across the planet\'s surface.',
+    hasRepairedThrusters: 'TODO. You\'ve fixed all four thrusters of your craft. Now it can actually move.',
+    hasRepairedLandingGear: 'TODO, The landing gear has been fixed. Your chance of dying in a fiery crash is now slightly below 100%. Whoopee.',
+    hasRepairedHull: 'TODO. Your ship no longer has gaping holes through its structure. It\'s a shame, you\'ll miss the breeze.',
+    hasRepairedCockpit: 'TODO. You\' reattached the joy stick and replaced the missing switches and dials. Technically, you can  pilot your ship now. Whether you should is a whole different matter.',
+    hasRepairedWings: 'TODO, repaired wings',
 }
