@@ -40,6 +40,14 @@ body {
     background-color: #e8d2ae;
 }
 
+.shipTravelColor {
+    background-color: #d7b29d;
+}
+
+.shipUpgradeColor {
+    background-color: #e8d2ae;
+}
+
 /* --------------- Shared Classes ------------------ */
 .shopTab {
     height: stretch;

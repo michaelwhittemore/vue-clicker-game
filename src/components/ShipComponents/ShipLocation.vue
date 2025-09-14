@@ -14,11 +14,11 @@ const shipTabs: TabsInterface = {
 const shipTabNames: Array<TabInformation> = [
   {
     tabName: 'Travel',
-    tabColorClass: 'itemsColor'
+    tabColorClass: 'shipTravelColor'
   },
   {
     tabName: 'Upgrade',
-    tabColorClass: 'schematicsColor'
+    tabColorClass: 'shipUpgradeColor'
   }
 ]
 

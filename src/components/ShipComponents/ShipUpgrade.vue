@@ -1,5 +1,8 @@
 <script setup lang="ts">
 </script>
 <template>
-    Upgrade
+    <div class="shipUpgradeColor shopTab">
+Upgrade
+    </div>
+    
 </template>

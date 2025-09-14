@@ -6,5 +6,7 @@ import ShipRepairButton from './ShipRepairButton.vue';
 // 
 </script>
 <template>
-    <ShipRepairButton v-for="(value, key) in gameStateStorage.ship.requiredRepairs" :repair-type="key" />
+    <div class="shipUpgradeColor shopTab">
+        <ShipRepairButton v-for="(value, key) in gameStateStorage.ship.requiredRepairs" :repair-type="key" />
+    </div>
 </template>
