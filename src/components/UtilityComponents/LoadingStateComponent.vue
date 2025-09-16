@@ -69,10 +69,9 @@ const animationDurationString = `${props.duration}s`
    
 }
 .animatedLoad {
-     /* animation: progressBar 3s ease-in-out; */
      animation-name: progressBar;
      animation-duration: v-bind(animationDurationString);
-     animation-timing-function: ease-in-out;
+     animation-timing-function: linear;
 
 }
 @keyframes progressBar {

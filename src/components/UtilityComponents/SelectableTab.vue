@@ -19,8 +19,9 @@ const tabSelector = ref(props.startingTab)
     <div :class="[tabNames[1].tabColorClass, { selectedTab: tabSelector === tabNames[1].tabName }]" class="tabSelector"
       @click="tabSelector = tabNames[1].tabName">{{ optionalSecondTabName || tabNames[1].tabName }}</div>
   </div>
-
-  <component :is="tabsMap[tabSelector]"></component>
+  <KeepAlive>
+    <component :is="tabsMap[tabSelector]"></component>
+  </KeepAlive>
 </template>
 
 <style>

@@ -9,6 +9,7 @@
         - the ability to extract oil? maybe use as fuel for your ship - can also buy from trader for outrageous cost?
         - maybe construction material? phrase it as "salvage rubble" or something to that effect? I'm a little iffy, but salvaging in general might make sense?
         - I should probably rename this? `quantum Dowsing rod` - narrative mention something about adding quantum makes it no longer a pseudoscience
+        - **BUG** The loading animation doesn't persist when switching tabs? maybe we will need to do manual calculations for it instead of an animation??
     3. manufacturing skill
         - ~~right now just get xp for refining~~
         - will want to add the manufactory (maybe find a better word)
