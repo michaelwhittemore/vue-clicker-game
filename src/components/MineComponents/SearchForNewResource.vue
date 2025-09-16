@@ -14,5 +14,5 @@ const duration = ref(10); // duration may change?
 </script>
 
 <template> 
-    <LoadingStateComponent :duration="10" :button-text="buttonText"/> 
+    <LoadingStateComponent :duration="duration" :button-text="buttonText"/> 
 </template>
