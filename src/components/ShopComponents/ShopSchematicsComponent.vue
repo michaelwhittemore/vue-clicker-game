@@ -7,7 +7,7 @@ import { schematicsData } from '@/typescript/gameConstants/schematicsData';
 // Maybe all the logic should be in here and not in the separate TS file??
 </script>
 <template>
-    <div class="shopTab schematicsColor">
+    <div class="selectableTab schematicsColor">
         <BuySchematic v-for="(value, key) in schematicsData" :schematicName="key"/>
     </div>
 

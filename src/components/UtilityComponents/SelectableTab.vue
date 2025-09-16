@@ -1,26 +1,26 @@
 <script setup lang="ts">
-import { computed, ref, type Component } from 'vue';
+import { ref } from 'vue';
 import type { TabsInterface, TabInformation } from '@/typescript/gameTypes';
 
 const props = defineProps<{
-    tabsMap: TabsInterface,
-    startingTab: string,
-    tabNames: Array<TabInformation>,
-    optionalFirstTabName?: string,
-    optionalSecondTabName?: string,
+  tabsMap: TabsInterface,
+  startingTab: string,
+  tabNames: Array<TabInformation>,
+  optionalFirstTabName?: string,
+  optionalSecondTabName?: string,
 }>()
 const tabSelector = ref(props.startingTab)
 </script>
 <template>
-      <div class="flexUtility">
-        <div :class="[tabNames[0].tabColorClass, { selectedTab: tabSelector === tabNames[0].tabName }]" 
-        class="tabSelector" @click="tabSelector = tabNames[0].tabName">{{optionalFirstTabName || tabNames[0].tabName}}
-        </div>
-        <div :class="[tabNames[1].tabColorClass, { selectedTab: tabSelector === tabNames[1].tabName }]" 
-        class="tabSelector" @click="tabSelector = tabNames[1].tabName">{{ optionalSecondTabName || tabNames[1].tabName }}</div>
-      </div>
+  <div class="flexUtility">
+    <div :class="[tabNames[0].tabColorClass, { selectedTab: tabSelector === tabNames[0].tabName }]" class="tabSelector"
+      @click="tabSelector = tabNames[0].tabName">{{ optionalFirstTabName || tabNames[0].tabName }}
+    </div>
+    <div :class="[tabNames[1].tabColorClass, { selectedTab: tabSelector === tabNames[1].tabName }]" class="tabSelector"
+      @click="tabSelector = tabNames[1].tabName">{{ optionalSecondTabName || tabNames[1].tabName }}</div>
+  </div>
 
-      <component :is="tabsMap[tabSelector]"></component>
+  <component :is="tabsMap[tabSelector]"></component>
 </template>
 
 <style>

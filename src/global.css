@@ -31,7 +31,7 @@ body {
 .color2 {
     background-color: #ece2d0
 }
-
+/* ------------- Tab Colors --------------------- */
 .itemsColor {
     background-color: #d7b29d;
 }
@@ -48,8 +48,17 @@ body {
     background-color: #e8d2ae;
 }
 
+.miningColor {
+    background-color: #d7b29d;
+}
+
+.prospectingColor {
+    background-color: #e8d2ae;
+}
+
+
 /* --------------- Shared Classes ------------------ */
-.shopTab {
+.selectableTab {
     height: stretch;
     padding: 3px;
     border-style: solid;

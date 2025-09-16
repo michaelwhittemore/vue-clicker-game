@@ -2,8 +2,7 @@
 
 # Things to work on immediately 
 * 
-    1. Let's add the split tabs to the mine?
-        - maybe it doesn't start split? 
+
     2. Add the prospecting tool then start new resources. 
         - Where will this fit into the game flow from a balance perspective? like maybe before the ship?
         - I'm thinking plastic nuggets? - narrative character express mild bewilderment - also remember that this isn't hard SciFi in the slightest, can add whatever crystallized silliness I'd like

@@ -6,7 +6,7 @@ import NeuronUplinkShop from './NeuronUplinkShop.vue';
 import BuyProspectingTool from './BuyProspectingTool.vue';
 </script>
 <template>
-    <div class="itemsColor shopTab">
+    <div class="itemsColor selectableTab">
         <UpgradePickaxe />
         <NeuronUplinkShop />
         <BuyShip />
