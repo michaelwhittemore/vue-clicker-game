@@ -4,28 +4,29 @@ const props = defineProps<{
     duration: number, // in ms
     buttonText: string,
 }>()
-const isDisabled = ref(false);
+const isLoading = ref(false);
 
 const onClick = () => {
-    isDisabled.value = true;
+    isLoading.value = true;
 
     console.warn('clicked')
     setTimeout(() => {
         // need to dispatch the event
-        isDisabled.value = false
-    }, props.duration)
+        isLoading.value = false
+    }, props.duration * 1000)
     // will need to set the disabled flag 
 }
 
-// Will need to do something about it looking different on hover and disabled 
-// maybe grey out text and border??
-
+const animationDurationString = `${props.duration}s`
+// Will need to take in a level based disabled ref from parent component
+// Need to line up times (have a different one in the onclick timeout and the animation)
 </script>
-<template> 
-    <button @click="onClick" class="outerBar" :disabled="isDisabled">
+<template>
+    <button @click="onClick" class="outerBar" :disabled="isLoading" >
         <div class="barText">
             {{ buttonText }}
         </div>
+        <div class="innerBar" :class="{animatedLoad: isLoading}"> </div>
         <!-- <div class="barText centeredText"> {{ gameStateStorage.skills[skillName].experience +
             '/' + gameStateStorage.skills[skillName].targetExperience }} ({{ computedPercentage + '%' }}) </div>
         <div class="innerBar" :style="{ width: computedPercentage + '%' }"> </div> -->
@@ -36,8 +37,6 @@ const onClick = () => {
 .barText {
     width: 100%;
     padding: 2px;
-    /* position: absolute; */
-    /* top: 0px; */
     z-index: 1;
 }
 
@@ -49,19 +48,40 @@ const onClick = () => {
     background-color: blanchedalmond;
     border-style: solid;
     border-color: black;
+    padding: 0px
 }
+
 .outerBar:disabled {
     color: dimgray
 }
 
- .outerBar:hover {
+.outerBar:hover {
     border-color: dimgray;
 }
 
 .innerBar {
+    opacity: 50%;
     position: absolute;
+    width: 0%;
     top: 0px;
     height: 100%;
-    background-color: #b2d2e3;
+    background-color: red;
+   
 }
- </style>
+.animatedLoad {
+     /* animation: progressBar 3s ease-in-out; */
+     animation-name: progressBar;
+     animation-duration: v-bind(animationDurationString);
+     animation-timing-function: ease-in-out;
+
+}
+@keyframes progressBar {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+</style>

@@ -12,5 +12,5 @@ const buttonText = 'search for new resource (requires mining 5)'
 </script>
 
 <template> 
-    <LoadingStateComponent :duration="1000" :button-text="buttonText"/> 
+    <LoadingStateComponent :duration="5" :button-text="buttonText"/> 
 </template>

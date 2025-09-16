@@ -9,7 +9,6 @@ const mineTabs: TabsInterface = {
   'Prospecting': ProspectingTab,
 }
 const mineTabNames: Array<TabInformation> = [
-    // TODO colors
   {
     tabName: 'Mining',
     tabColorClass: 'miningColor'
