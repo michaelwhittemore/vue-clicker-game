@@ -1,3 +1,4 @@
+
 export const readableTextMap: Record<string, string> = {
     // Automatons
     autoMiner: 'Automatic Miner',
@@ -9,4 +10,5 @@ export const readableTextMap: Record<string, string> = {
     improvedRefineryFurnace: 'Improved Refinery Furnace',
     // Shop upgrades
     neuronUplink: 'Neuron Uplink',
+    prospectingTool: 'Quantum Dowsing Rod',
 }

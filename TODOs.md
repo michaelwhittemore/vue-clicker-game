@@ -2,25 +2,28 @@
 
 # Things to work on immediately 
 * 
+    2. Add the prospecting tool then start new resources. 
+        - Where will this fit into the game flow from a balance perspective? like maybe before the ship?
+        - I'm thinking plastic nuggets? - narrative character express mild bewilderment - also remember that this isn't hard SciFi in the slightest, can add whatever crystallized silliness I'd like
+        - the ability to extract oil? maybe use as fuel for your ship - can also buy from trader for outrageous cost?
+        - maybe construction material? phrase it as "salvage rubble" or something to that effect? I'm a little iffy, but salvaging in general might make sense?
+        - I should probably rename this? `quantum Dowsing rod` - narrative mention something about adding quantum makes it no longer a pseudo-science
+    3. manufacturing skill
+        - ~~right now just get xp for refining~~
+        - will want to add the manufactory (maybe find a better word)
+        - we might need to start doing something about the UI being way too big (the locations I mean)
+    4. Currently, automaton values are hard coded (i.e. autoMiner output, autoRefiner costs), it would be nice if we placed it in `gameStateStorage`. Once all the values are being used instead of the hard coded values, we can start looking into upgrades for our automatons
+        - calculateResourceIncomeFactory is one place to touch
+        - need to look at `automatonData` - but how to deal with the `AutomatonData` interface? - maybe some optional properties 
+    5. Rebalance the refinery upgrades to preempt the advancedAutoRefiner and goldMiner. maybe switch so the refinery upgrades trigger the automaton schematics??
+        
+---------
+* Current Tasks: 
     2. For the ship:
-        - make the wrapper work on upgrade/repair
         - Eventually travel will be tied to repair, but let's just let you do it right now
         - add a simple `launch` button to the travel section
             - possibly have a SciFi-y launch animation? Like some screen shake? 
         - is it possible the ship can get damaged again in the future?
-        - fix the ship colors
-    3. manufacturing skill
-        - ~~right now just get xp for refining~~
-        - will want to add the manufactory (maybe find a better word)
-    4. Currently, automaton values are hard coded (i.e. autoMiner output, autoRefiner costs), it would be nice if we placed it in `gameStateStorage`. Once all the values are being used instead of the hard coded values, we can start looking into upgrades for our automatons
-        - calculateResourceIncomeFactory is one place to touch
-    5. Add the prospecting tool then start new resources. 
-        - I'm thinking plastic nuggets? - narrative character express mild bewilderment
-        - the ability to extract oil? maybe use as fuel for your ship - can also buy from trader for outrageous cost?
-        
----------
-* Current Tasks: 
-
     2. Add the manufactory and the ability to repair it
     3. **HERE!** Look into refactoring tabs like I have in the shop
         - ~~So we'd have a reusable component that works for either~~
@@ -56,12 +59,16 @@
 # Possible Skills, upgrades, tools, ect... 
 * Skills   
     * Piloting - affects ship speed, cargo carried?
+        - maybe you have a chance to crash and damage your ship?
+        - maybe decreases fuel cost if I chose to implement fuel?
     * Innovation? - randomly roll to get some schematics? How do we get it? 
         - also maybe gives so schematics for free
         - I think XP will be tied to building (not buying) upgrades, like from the refinery
+        - maybe also get XP from using the prospecting tool??
     * Manufacturing - affects refining (or maybe just get the xp from it)
 * Resources
     * Building materials - maybe purchased and scavenged
+    * possibly salvaged?
 
 
 # Immediate future tasks
@@ -130,3 +137,4 @@
 * achievements
 * saving
 * consider https://pinia.vuejs.org/ pinia for state management
+* have a dynamic illustration of the ship based on components and maybe in flight??

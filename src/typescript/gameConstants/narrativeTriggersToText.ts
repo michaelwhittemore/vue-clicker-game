@@ -23,4 +23,5 @@ export const narrativeTriggersToText = {
     hasRepairedCockpit: 'TODO. You\' reattached the joy stick and replaced the missing switches and dials. Technically, you can  pilot your ship now. Whether you should is a whole different matter.',
     hasRepairedWings: 'TODO, repaired wings',
     hasFullyRepairedShip: 'TODO, You fully fixed your ship and can now use it to travel! It\'s slightly safer and more comfortable than being launched to your destination out of cannon.',
+    hasPurchasedProspectingTool: 'TODO It\'s not pseudoscientific malarkey, it\'s got "quantum" in the name! This "totally legitimate" device will allow you to find new resources beneath the ground.'
 }

@@ -50,6 +50,9 @@ export interface StateStorageObject {
         oreInput: number,
         steelOutput: number,
     },
+    prospectingTool: {
+        isPurchased: boolean,
+    },
 
     unlockedSchematics: Array<string>,
     ship: {
@@ -123,6 +126,9 @@ const gameStateStorageObject: StateStorageObject = {
         oreInput: 9,
         steelOutput: 1,
     },
+    prospectingTool: {
+        isPurchased: false,
+    },
     unlockedSchematics: [],
     ship: {
         isPurchased: false,
@@ -162,10 +168,9 @@ const TESTgameStateStorageObject = {
             experience: 10,
         }
     },
-    ship: {
-        isPurchased: true,
-        // requiredRepairs: ['test']
-    }
+    // ship: {
+    //     isPurchased: true,
+    // }
 }
 
 if (isDevTesting) {
