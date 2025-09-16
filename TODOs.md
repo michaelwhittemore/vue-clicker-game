@@ -8,7 +8,7 @@
         - I'm thinking plastic nuggets? - narrative character express mild bewilderment - also remember that this isn't hard SciFi in the slightest, can add whatever crystallized silliness I'd like
         - the ability to extract oil? maybe use as fuel for your ship - can also buy from trader for outrageous cost?
         - maybe construction material? phrase it as "salvage rubble" or something to that effect? I'm a little iffy, but salvaging in general might make sense?
-        - I should probably rename this? `quantum Dowsing rod` - narrative mention something about adding quantum makes it no longer a pseudo-science
+        - I should probably rename this? `quantum Dowsing rod` - narrative mention something about adding quantum makes it no longer a pseudoscience
     3. manufacturing skill
         - ~~right now just get xp for refining~~
         - will want to add the manufactory (maybe find a better word)

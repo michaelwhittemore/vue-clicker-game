@@ -168,9 +168,10 @@ const TESTgameStateStorageObject = {
             experience: 10,
         }
     },
-    // ship: {
-    //     isPurchased: true,
-    // }
+    prospectingTool: {
+        isPurchased: true,
+    },
+
 }
 
 if (isDevTesting) {

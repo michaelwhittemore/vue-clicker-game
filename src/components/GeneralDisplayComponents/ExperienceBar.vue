@@ -26,7 +26,7 @@ const computedPercentage = computed(() => {
         <div class="innerBar" :style="{ width: computedPercentage + '%' }"> </div>
     </div>
 </template>
-<style>
+<style scoped>
 .barText {
     width: 100%;
     position: absolute;
