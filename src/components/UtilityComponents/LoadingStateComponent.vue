@@ -4,6 +4,7 @@ const props = defineProps<{
     duration: number, // in ms
     buttonText: string,
 }>()
+const emit = defineEmits(['finishedLoading'])
 const isLoading = ref(false);
 
 const onClick = () => {
@@ -11,10 +12,9 @@ const onClick = () => {
 
     console.warn('clicked')
     setTimeout(() => {
-        // need to dispatch the event
         isLoading.value = false
+        emit('finishedLoading')
     }, props.duration * 1000)
-    // will need to set the disabled flag 
 }
 
 const animationDurationString = `${props.duration}s`
@@ -27,9 +27,6 @@ const animationDurationString = `${props.duration}s`
             {{ buttonText }}
         </div>
         <div class="innerBar" :class="{animatedLoad: isLoading}"> </div>
-        <!-- <div class="barText centeredText"> {{ gameStateStorage.skills[skillName].experience +
-            '/' + gameStateStorage.skills[skillName].targetExperience }} ({{ computedPercentage + '%' }}) </div>
-        <div class="innerBar" :style="{ width: computedPercentage + '%' }"> </div> -->
     </button>
 </template>
 
