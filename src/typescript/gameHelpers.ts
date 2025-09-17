@@ -49,7 +49,6 @@ export const recursiveObjectAssign = (targetObject: object, sourceObject: object
 
 
 export const calculateResourceIncomeFactory = (resourceType: ValidResources) => {
-    // uses automatons to calculate the rate per second
     // TODO - in the future the automatons may become upgradeable
     switch (resourceType) {
         case 'ore':
@@ -66,7 +65,6 @@ export const calculateResourceIncomeFactory = (resourceType: ValidResources) => 
                 return (gameStateStorage.automatons.autoRefiner * 1)
             }
         default:
-            // debugger;
             console.error('invalid resource type in getResourceIncomeFactory')
             break;
     }

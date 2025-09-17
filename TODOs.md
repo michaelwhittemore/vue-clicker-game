@@ -4,16 +4,7 @@
 * 
     2. Add the prospecting tool then start new resources. 
         * # HERE! 
-        * Now I'm doing the loading bar
-            - still need to dispatch event to parent
-                - The end result will be called at the parent level (in this case, unlocking the new resource)
-            - Need to disable when the level requirement isn't met 
-            - May want to communicate how long the search will take
-        - Where will this fit into the game flow from a balance perspective? like maybe before the ship?
-        - I'm thinking plastic nuggets? - narrative character express mild bewilderment - also remember that this isn't hard SciFi in the slightest, can add whatever crystallized silliness I'd like
-        - the ability to extract oil? maybe use as fuel for your ship - can also buy from trader for outrageous cost?
-        - maybe construction material? phrase it as "salvage rubble" or something to that effect? I'm a little iffy, but salvaging in general might make sense?
-        - I should probably rename this? `quantum Dowsing rod` - narrative mention something about adding quantum makes it no longer a pseudoscience
+            * maybe this will be a chance to succeed
         - **BUG** The loading animation doesn't persist when switching tabs? maybe we will need to do manual calculations for it instead of an animation?? - This might be worth discord
     3. manufacturing skill
         - ~~right now just get xp for refining~~
@@ -77,8 +68,8 @@
     * Building materials - maybe purchased and scavenged
     * possibly salvaged?
     * Silicon - used for advanced electronics
-    * Plastic - used for manufacturing
-    * Oil - used for ship travel
+    * Plastic - used for manufacturing - plastic nuggets? - narrative character express mild bewilderment - also remember that this isn't hard SciFi in the slightest, can add whatever crystallized silliness I'd like
+    * Oil - used for ship travel - "extract oil"? maybe use as fuel for your ship - can also buy from trader for outrageous cost?
 
 
 # Immediate future tasks

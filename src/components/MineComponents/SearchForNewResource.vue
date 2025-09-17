@@ -21,13 +21,9 @@ const computedText = computed(() => {
 
 const onEvent = () => {
     gameStateStorage.resources.silicon = 0;
-    // HERE! will need to do something about actually unlocking the resource? 
-        // Probably add to the gameStateStorage
     // Will probably have a new mining button in the miningTab
     // Will have a v-if dependant on if it exists on gameStateStorage
     // If it succeeds, we will need to update requiredTime and requiredLevel
-    // Still need to add the externalDisable prop to the loading State component
-    console.warn('event')
 } 
 
 </script>
