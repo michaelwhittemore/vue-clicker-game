@@ -2,7 +2,7 @@
 import { narrativeTriggersToText } from "./gameConstants/narrativeTriggersToText";
 
 import type { Component } from "vue";
-export type ValidResources = 'ore' | 'steel' | 'gold';
+export type ValidResources = 'ore' | 'steel' | 'gold' | 'silicon' | 'oil' | 'plastic'; 
 export type ValidSkills = 'mining' | 'robotics' | 'trading' | 'manufacturing';
 export interface TabsInterface {
   [key: string]: Component,

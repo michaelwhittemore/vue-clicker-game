@@ -2,7 +2,6 @@
 
 # Things to work on immediately 
 * 
-
     2. Add the prospecting tool then start new resources. 
         * # HERE! 
         * Now I'm doing the loading bar
@@ -77,6 +76,9 @@
 * Resources
     * Building materials - maybe purchased and scavenged
     * possibly salvaged?
+    * Silicon - used for advanced electronics
+    * Plastic - used for manufacturing
+    * Oil - used for ship travel
 
 
 # Immediate future tasks

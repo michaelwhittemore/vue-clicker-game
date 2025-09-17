@@ -10,12 +10,12 @@ const props = defineProps<{
 }>()
 const calculateResourceIncome = calculateResourceIncomeFactory(props.resourceName) as () => number;
 const tooltipText = computed(() => {
-    let tooltipString = '';
+    let tooltipString = '0';
     if (props.resourceName == 'ore'){
         const oreIn = calculateResourceIncome()
         const oreOut = gameStateStorage.automatons.autoRefiner * 9 // This may change
         tooltipString =  `${oreIn} - ${oreOut} = ${oreIn - oreOut}`
-    } else {
+    } else if (gameStateStorage.resources[props.resourceName]){
         tooltipString = calculateResourceIncome().toString()
     }
     tooltipString = tooltipString + ' ' + props.resourceName + ' per second';

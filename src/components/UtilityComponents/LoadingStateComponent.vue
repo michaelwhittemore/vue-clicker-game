@@ -3,6 +3,7 @@ import { ref } from 'vue';
 const props = defineProps<{
     duration: number, // in ms
     buttonText: string,
+    shouldDisable: boolean,
 }>()
 const emit = defineEmits(['finishedLoading'])
 const isLoading = ref(false);
@@ -22,7 +23,7 @@ const animationDurationString = `${props.duration}s`
 // Need to line up times (have a different one in the onclick timeout and the animation)
 </script>
 <template>
-    <button @click="onClick" class="outerBar" :disabled="isLoading" >
+    <button @click="onClick" class="outerBar" :disabled="isLoading || shouldDisable" >
         <div class="barText">
             {{ buttonText }}
         </div>

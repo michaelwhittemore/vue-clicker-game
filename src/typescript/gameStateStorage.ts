@@ -29,6 +29,9 @@ export interface StateStorageObject {
         ore: number,
         steel: number,
         gold: number,
+        silicon?: number,
+        oil?: number,
+        plastic?: number,
     },
     skills: {
         mining: Skill,
