@@ -1,9 +1,9 @@
 // maybe this should be JSON??
-import type { NarrativeTrigger, ValidSkills } from "../gameTypes"
+import type { ValidNarrativeTrigger, ValidSkills } from "../gameTypes"
 
-// hmmm maybe if I make a specific type? 
-type LevelToTrigger = { 
-    [key: number]: NarrativeTrigger,
+// hmmm maybe if I make a specific type?
+type LevelToTrigger = {
+    [key: number]: ValidNarrativeTrigger,
 }
 
 type LevelToNarrativeTriggerBreakpoints = {
@@ -22,5 +22,9 @@ export const levelToNarrativeTriggerBreakpoints: LevelToNarrativeTriggerBreakpoi
     },
     trading: {
         1: 'tradingUnlock1'
+    },
+    manufacturing: {
+        2: 'manufacturingUnlockTest'
     }
+
 }

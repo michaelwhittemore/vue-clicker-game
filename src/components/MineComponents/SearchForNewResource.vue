@@ -8,6 +8,16 @@ import LoadingStateComponent from '../UtilityComponents/LoadingStateComponent.vu
 // will want to pass in should be enabled and handle the resolutions in this component
 
 //Maybe future resources have a percent change of succeeding? - maybe it scales with something?
+// Might want a map for all this data - like 
+/*
+{
+    resourceName
+    requiredLevel
+    searchDuration
+    baseSuccessChance
+    narrativeTriggerOnSuccess
+}
+*/
 const startingLevel = 3;
 const startingDuration = 3; // In seconds
 const requiredTime = ref(startingDuration);
