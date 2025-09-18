@@ -1,9 +1,9 @@
-// Might want to rename this file 
+// Might want to rename this file
 import { narrativeTriggersToText } from "./gameConstants/narrativeTriggersToText";
 
 import type { Component } from "vue";
-export type ValidResources = 'ore' | 'steel' | 'gold' | 'silicon' | 'oil' | 'plastic'; 
-export type ValidSkills = 'mining' | 'robotics' | 'trading' | 'manufacturing';
+export type ValidResources = 'ore' | 'steel' | 'gold' | 'silicon' | 'oil' | 'plastic';
+export type ValidSkills = 'mining' | 'robotics' | 'trading' | 'manufacturing' | 'prospecting';
 export interface TabsInterface {
   [key: string]: Component,
 }

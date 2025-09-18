@@ -1,31 +1,37 @@
 import type { ValidNarrativeTrigger, ValidResources } from "../gameTypes"
 
 interface ResourceData {
+  name: ValidResources,
   requiredLevel: number, // mining Level
   searchDuration: number, // Time to find
   baseSuccessChance: number,
   narrativeTriggerOnSuccess: ValidNarrativeTrigger,
+  experienceValue: number,
 }
-// TODO - this is broken, can use bad keys which aren't member of ValidResources
-export const newResourcesData:{ [key: ValidResources]: ResourceData }  = {
-  'oil': {
-    requiredLevel: 1,
-    searchDuration: 10,
+// TODO - all the values are wrong!
+export const newResourcesData: Array<ResourceData> = [
+  {
+    name: "oil",
+    requiredLevel: 4,
+    searchDuration: 3,
     baseSuccessChance: 100,
     narrativeTriggerOnSuccess: 'discoveredOil',
+    experienceValue: 2,
   },
-  'plastic': {
-    requiredLevel: 1,
+  {
+    name: "plastic",
+    requiredLevel: 7,
     searchDuration: 10,
-    baseSuccessChance: 100,
-    narrativeTriggerOnSuccess: 'discoveredOil',
+    baseSuccessChance: 80,
+    narrativeTriggerOnSuccess: 'discoveredPlastic',
+    experienceValue: 4,
   },
-  'badKey': {
-    requiredLevel: 1,
-    searchDuration: 10,
-    baseSuccessChance: 100,
-    narrativeTriggerOnSuccess: 'discoveredOil',
+  {
+    name: "silicon",
+    requiredLevel: 10,
+    searchDuration: 30,
+    baseSuccessChance: 50,
+    narrativeTriggerOnSuccess: 'discoveredSilicon',
+    experienceValue: 10,
   }
-}
-
-// Maybe we export an array
+] as const;

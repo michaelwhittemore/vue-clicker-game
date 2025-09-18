@@ -25,6 +25,7 @@ interface Upgrade {
 
 export interface StateStorageObject {
     automatons: Record<keyof typeof automatonsData, number>,
+    // TODO - for both resources and skills, figure out how to specify keys for TS
     resources: {
         ore: number,
         steel: number,
@@ -38,6 +39,7 @@ export interface StateStorageObject {
         robotics: Skill,
         trading: Skill,
         manufacturing: Skill,
+        prospecting: Skill,
     }
     upgrades: {
         pickaxe: Upgrade,
@@ -98,6 +100,7 @@ const gameStateStorageObject: StateStorageObject = {
         robotics: initSkill(),
         trading: initSkill(),
         manufacturing: initSkill(),
+        prospecting: initSkill(),
     },
     upgrades: {
         pickaxe: {

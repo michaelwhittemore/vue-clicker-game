@@ -25,5 +25,7 @@ export const narrativeTriggersToText = {
     hasFullyRepairedShip: 'TODO, You fully fixed your ship and can now use it to travel! It\'s slightly safer and more comfortable than being launched to your destination out of cannon.',
     hasPurchasedProspectingTool: 'TODO It\'s not pseudoscientific malarkey, it\'s got "quantum" in the name! This "totally legitimate" device will allow you to find new resources beneath the ground.',
     manufacturingUnlockTest: 'TODO manufacturingUnlockTest , not even sure if this is the level I want',
-    discoveredOil: 'TODO, You can now extract oil. Say something witty.'
+    discoveredOil: 'TODO, You can now extract oil. Say something witty. You already found gold-gold, why not black gold?',
+    discoveredPlastic: 'TODO, discoveredPlastic express bewilderment at plastic nuggets',
+    discoveredSilicon: 'TODO, discoveredSilicon'
 }

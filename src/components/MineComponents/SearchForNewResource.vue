@@ -1,44 +1,50 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { computed } from 'vue';
 import { gameStateStorage } from '@/typescript/gameStateStorage';
-import { activateNarrativeTrigger } from '@/typescript/gameHelpers';
+import { activateNarrativeTrigger, earnExperienceInSkill } from '@/typescript/gameHelpers';
+import { newResourcesData } from '@/typescript/gameConstants/newResourcesData';
 import LoadingStateComponent from '../UtilityComponents/LoadingStateComponent.vue';
-// Will need a narrative for both before and after. 
-// Will need to be disabled when it's loading and based on level
-// will want to pass in should be enabled and handle the resolutions in this component
 
-//Maybe future resources have a percent change of succeeding? - maybe it scales with something?
-// Might want a map for all this data - like 
-/*
-{
-    resourceName
-    requiredLevel
-    searchDuration
-    baseSuccessChance
-    narrativeTriggerOnSuccess
-}
-*/
-const startingLevel = 3;
-const startingDuration = 3; // In seconds
-const requiredTime = ref(startingDuration);
-const requiredLevel = ref(startingLevel)
+// What happens if there are no mores resources left? Need to destroy the button if indexOfSearchResource
+// is greater than the length
+
+let indexOfSearchResource = 0;
+// Required time is in seconds
+const computedRequiredTime = computed(() => newResourcesData[indexOfSearchResource].searchDuration);
+const computedRequiredLevel = computed(() => newResourcesData[indexOfSearchResource].requiredLevel);
+// computedSuccessChance should also involve mining and prospecting level
+const computedSuccessChance = computed(() => newResourcesData[indexOfSearchResource].baseSuccessChance)
 const computedHasSufficientLevel = computed(() => {
-    return gameStateStorage.skills.mining.level >= requiredLevel.value;
+  return gameStateStorage.skills.mining.level >= computedRequiredLevel.value;
 })
+// TODO - Need to add the chance for success to the text
 const computedText = computed(() => {
-    return `Search for new resources (mining ${requiredLevel.value}, takes ${requiredTime.value} seconds)`
+  return `Search for new resources (mining ${computedRequiredLevel.value}, takes ${computedRequiredTime.value} seconds)`
 })
 
 const onEvent = () => {
-    gameStateStorage.resources.silicon = 0;
-    // Will probably have a new mining button in the miningTab
-    // Will have a v-if dependant on if it exists on gameStateStorage
-    // If it succeeds, we will need to update requiredTime and requiredLevel
-} 
+  // Gain xp regardless of the success or failure
+  earnExperienceInSkill('prospecting', newResourcesData[indexOfSearchResource].experienceValue)
+  // need to check for success, if so increment indexOfSearchResource (else pop up found nothing)
+  // maybe both mining and prospecting count towards this?
+  const didSucceed = true; // should look for the same helper as gold mining
+  if (didSucceed){
+    gameStateStorage.resources[newResourcesData[indexOfSearchResource].name] = 0;
+    activateNarrativeTrigger(newResourcesData[indexOfSearchResource].narrativeTriggerOnSuccess);
+    indexOfSearchResource++;
+  } else {
+    // TODO - popup a nothing icon
+    console.warn('You found nothing. Better luck next time ')
+  }
+  // need to add the narrative triggers
+  // Will probably have a new mining button in the miningTab
+  // Will have a v-if dependant on if it exists on gameStateStorage
+  // If it succeeds, we will need to update requiredTime and requiredLevel
+}
 
 </script>
 
-<template> 
-    <LoadingStateComponent @finished-loading="onEvent"
-     :duration="requiredTime" :button-text="computedText" :should-disable="!computedHasSufficientLevel"/> 
+<template>
+  <LoadingStateComponent @finished-loading="onEvent" :duration="computedRequiredTime" :button-text="computedText"
+    :should-disable="!computedHasSufficientLevel" />
 </template>
