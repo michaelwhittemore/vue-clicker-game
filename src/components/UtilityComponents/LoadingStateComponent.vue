@@ -28,6 +28,7 @@ const animationDurationString = `${props.duration}s`
             {{ buttonText }}
         </div>
         <div class="innerBar" :class="{animatedLoad: isLoading}"> </div>
+        <slot></slot>
     </button>
 </template>
 
@@ -64,7 +65,7 @@ const animationDurationString = `${props.duration}s`
     top: 0px;
     height: 100%;
     background-color: red;
-   
+
 }
 .animatedLoad {
      animation-name: progressBar;

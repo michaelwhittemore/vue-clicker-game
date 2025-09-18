@@ -2,19 +2,9 @@
 
 # Things to work on immediately 
 * 
-    2. Add the prospecting tool then start new resources. 
-        * OH! - temporarily find gold veins using oil! this will be a a source of prospecting xp and a resource sink for oil (let's make this pretty early on) - also maybe find different sizes of veins?
-            - Like higher mining/prospecting gives better odds for big veins which have better yeild per click
-        * Let's do the above after finishing search 
-        * adding the data 
-            - `An index signature parameter type cannot be a literal type or generic type. Consider using a mapped object type instead`
-        * gain the ability to mine gold directly! - actually see above
-        * still need to deal with the dice roll
-        * # HERE! 
-            * still need to add the narrative trigger
-            * maybe this will be a chance to succeed
-                - maybe a failure popup if we don't find anything?
-        - **BUG** The loading animation doesn't persist when switching tabs? maybe we will need to do manual calculations for it instead of an animation?? - This might be worth discord
+    2. to the prospecting tab, temporarily find gold veins using oil! this will be a a source of prospecting xp and a resource sink for oil (let's make this pretty early on) - also maybe find different sizes of veins? (maybe reference Mr. Pocket from Tom Waits' character)
+
+
     3. manufacturing skill
         - ~~right now just get xp for refining~~
         - will want to add the manufactory (maybe find a better word)

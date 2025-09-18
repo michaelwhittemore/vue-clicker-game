@@ -27,5 +27,6 @@ export const narrativeTriggersToText = {
     manufacturingUnlockTest: 'TODO manufacturingUnlockTest , not even sure if this is the level I want',
     discoveredOil: 'TODO, You can now extract oil. Say something witty. You already found gold-gold, why not black gold?',
     discoveredPlastic: 'TODO, discoveredPlastic express bewilderment at plastic nuggets',
-    discoveredSilicon: 'TODO, discoveredSilicon'
+    discoveredSilicon: 'TODO, discoveredSilicon',
+    nothingFoundWhenProspecting: 'TODO,(mention that increasing your prospecting skill will improve these odds)'
 }
