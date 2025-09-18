@@ -13,7 +13,7 @@ export const newResourcesData: Array<ResourceData> = [
   {
     name: "oil",
     requiredLevel: 4,
-    searchDuration: 3,
+    searchDuration: 1,
     baseSuccessChance: 100,
     narrativeTriggerOnSuccess: 'discoveredOil',
     experienceValue: 2,

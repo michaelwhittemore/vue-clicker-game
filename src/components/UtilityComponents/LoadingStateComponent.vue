@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 const props = defineProps<{
     duration: number, // in ms
     buttonText: string,
@@ -18,7 +18,7 @@ const onClick = () => {
     }, props.duration * 1000)
 }
 
-const animationDurationString = `${props.duration}s`
+const animationDurationString = computed(() => `${props.duration}s`)
 // Will need to take in a level based disabled ref from parent component
 // Need to line up times (have a different one in the onclick timeout and the animation)
 </script>

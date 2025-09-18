@@ -14,30 +14,33 @@ let indexOfSearchResource = ref(0);
 const computedRequiredTime = computed(() => newResourcesData[indexOfSearchResource.value].searchDuration);
 const computedRequiredLevel = computed(() => newResourcesData[indexOfSearchResource.value].requiredLevel);
 // computedSuccessChance should also involve mining and prospecting level
-const computedSuccessChance = computed(() => newResourcesData[indexOfSearchResource.value].baseSuccessChance)
+const computedSuccessChance = computed(() => {
+  // Odds = base + (prospecting * 2) + (mining * 1)
+  return Math.min(newResourcesData[indexOfSearchResource.value].baseSuccessChance
+    + (gameStateStorage.skills.prospecting.level * 2) + (gameStateStorage.skills.mining.level * 1), 100)
+})
 const computedHasSufficientLevel = computed(() => {
   return gameStateStorage.skills.mining.level >= computedRequiredLevel.value;
 })
 // TODO - Need to add the chance for success to the text
 const computedText = computed(() => {
-  return `Search for new resources (mining ${computedRequiredLevel.value}, takes ${computedRequiredTime.value} seconds)`
+  return `Search for new resources (mining ${computedRequiredLevel.value},
+   takes ${computedRequiredTime.value} seconds, ${computedSuccessChance.value}% to succeed)`
 })
 
 const onEvent = () => {
   // Gain xp regardless of the success or failure
   earnExperienceInSkill('prospecting', newResourcesData[indexOfSearchResource.value].experienceValue)
-  // need to check for success, if so increment indexOfSearchResource.value (else pop up found nothing)
-  // maybe both mining and prospecting count towards this?
-  const didSucceed = false; // should look for the same helper as gold mining
+
+  const didSucceed = (Math.random() * 100) <= computedSuccessChance.value;
   if (didSucceed) {
     gameStateStorage.resources[newResourcesData[indexOfSearchResource.value].name] = 0;
     activateNarrativeTrigger(newResourcesData[indexOfSearchResource.value].narrativeTriggerOnSuccess);
     indexOfSearchResource.value++;
   } else {
     displayFailurePopup.value = !displayFailurePopup.value
-    // TODO - popup a nothing icon
+
     activateNarrativeTrigger('nothingFoundWhenProspecting')
-    console.warn('You found nothing. Better luck next time ')
   }
   // Will probably have a new mining button in the miningTab
   // Will have a v-if dependant on if it exists on gameStateStorage
@@ -49,6 +52,6 @@ const onEvent = () => {
 <template>
   <LoadingStateComponent @finished-loading="onEvent" :duration="computedRequiredTime" :button-text="computedText"
     :should-disable="!computedHasSufficientLevel">
-    <PopUpText PopUpText :textForPopUp="'Nothing found'" :wasClickedTrigger="displayFailurePopup" :color="'red'"/>
+    <PopUpText PopUpText :textForPopUp="'Nothing found'" :wasClickedTrigger="displayFailurePopup" :color="'red'" />
   </LoadingStateComponent>
 </template>
