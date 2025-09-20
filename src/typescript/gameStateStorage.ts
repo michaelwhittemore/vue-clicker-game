@@ -186,7 +186,7 @@ const TESTgameStateStorageObject = {
     },
     goldVeinInfo: {
       isActive: true,
-      amountLeft: 100,
+      amountLeft: 10,
     },
 
 }

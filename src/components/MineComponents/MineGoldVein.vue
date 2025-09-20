@@ -3,22 +3,20 @@ import { computed, ref } from 'vue';
 import { gameStateStorage } from '@/typescript/gameStateStorage';
 import { earnExperienceInSkill, activateNarrativeTrigger } from '@/typescript/gameHelpers';
 import PopUpText from '../UtilityComponents/PopUpText.vue';
-// We will need to wrap this in a v-if
-// I think we get all the data on the vein from gameStateStorage
-// HERE!
+
 const wasClickedTriggerGold = ref(false);
 const amountMined = ref(0);
 const computedTextForPopUpGold = computed(() => {
-  return `+${amountMined.value} Gold`; // TODO - this will scale with pickaxe
+  return `+${amountMined.value} Gold`;
 })
 const onClickHandler = () => {
-  // add mining xp
   earnExperienceInSkill('mining', 1)
   if (gameStateStorage.upgrades.pickaxe.level > gameStateStorage.goldVeinInfo.amountLeft) {
     amountMined.value = gameStateStorage.goldVeinInfo.amountLeft;
   } else {
     amountMined.value = gameStateStorage.upgrades.pickaxe.level;
   }
+  // WasClicked triggers the popup animation
   wasClickedTriggerGold.value = !wasClickedTriggerGold.value;
 
   gameStateStorage.resources.gold += amountMined.value;
