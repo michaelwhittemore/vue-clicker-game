@@ -3,9 +3,7 @@
 # Things to work on immediately 
 * 
     1. In `search for new resource `
-        - need to have the percent change calculated
-        - then place it in the text
-        - add helper to calculate it? Look at mine gold
+        - Still need to fix the loading animation going away
     2. to the prospecting tab, temporarily find gold veins using oil! this will be a a source of prospecting xp and a resource sink for oil (let's make this pretty early on) - also maybe find different sizes of veins? (maybe reference Mr. Pocket from Tom Waits' character)
     3. manufacturing skill
         - ~~right now just get xp for refining~~
