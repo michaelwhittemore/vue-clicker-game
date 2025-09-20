@@ -28,5 +28,6 @@ export const narrativeTriggersToText = {
     discoveredOil: 'TODO, You can now extract oil. Say something witty. You already found gold-gold, why not black gold?',
     discoveredPlastic: 'TODO, discoveredPlastic express bewilderment at plastic nuggets',
     discoveredSilicon: 'TODO, discoveredSilicon',
-    nothingFoundWhenProspecting: 'TODO,(mention that increasing your prospecting skill will improve these odds)'
+    nothingFoundWhenProspecting: 'TODO,(mention that increasing your prospecting skill will improve these odds)',
+    minedOutGoldVein: 'TODO, all good things must come to an end. There is no more gold in this vein.'
 }

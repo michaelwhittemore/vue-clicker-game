@@ -18,10 +18,10 @@ const mineTabNames: Array<TabInformation> = [
     tabColorClass: 'prospectingColor'
   }
 ]
-//       <SelectableTab :tabs-map="mineTabs" :starting-tab="'Mining'" :tab-names="mineTabNames">
+      // <SelectableTab :tabs-map="mineTabs" :starting-tab="'Prospecting'" :tab-names="mineTabNames">
 
 </script>
 <template>
-      <SelectableTab :tabs-map="mineTabs" :starting-tab="'Prospecting'" :tab-names="mineTabNames">
+      <SelectableTab :tabs-map="mineTabs" :starting-tab="'Mining'" :tab-names="mineTabNames">
       </SelectableTab>
 </template>

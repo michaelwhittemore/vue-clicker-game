@@ -9,9 +9,18 @@ import LoadingStateComponent from '../UtilityComponents/LoadingStateComponent.vu
 // it needs to give xp
 // We will use loadingStateComponent again
 // need to have the button appear in the miningTab
+// Will need to track gold vein in the gameStateStorage
+// Maybe we should start with the mineVeinButton?
+const onEvent = () => {
+  console.log('done!')
+  //
+}
 const myString = "i'm the gold prospecting button, I don't require any oil at the moment"
+const shouldDisable = false; // has resources plus doesn't have active vein
+const duration = 3;
 </script>
 <template>
-<LoadingStateComponent :button-text="myString" :duration="10" :should-disable="false"/>
+<LoadingStateComponent :button-text="myString" :duration="duration" :should-disable="shouldDisable"
+@finished-loading="onEvent"/>
 
 </template>

@@ -58,7 +58,10 @@ export interface StateStorageObject {
     prospectingTool: {
         isPurchased: boolean,
     },
-
+    goldVeinInfo: {
+      isActive: boolean,
+      amountLeft: number,
+    },
     unlockedSchematics: Array<string>,
     ship: {
         isPurchased: boolean,
@@ -135,6 +138,10 @@ const gameStateStorageObject: StateStorageObject = {
     prospectingTool: {
         isPurchased: false,
     },
+    goldVeinInfo: {
+      isActive: false,
+      amountLeft: 0,
+    },
     unlockedSchematics: [],
     ship: {
         isPurchased: false,
@@ -176,6 +183,10 @@ const TESTgameStateStorageObject = {
     },
     prospectingTool: {
         isPurchased: true,
+    },
+    goldVeinInfo: {
+      isActive: true,
+      amountLeft: 100,
     },
 
 }
