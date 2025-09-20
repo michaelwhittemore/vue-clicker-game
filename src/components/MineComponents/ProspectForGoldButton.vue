@@ -2,6 +2,7 @@
 import LoadingStateComponent from '../UtilityComponents/LoadingStateComponent.vue';
 import { computed } from 'vue';
 import { earnExperienceInSkill, activateNarrativeTrigger } from '@/typescript/gameHelpers';
+import { gameStateStorage } from '@/typescript/gameStateStorage';
 // HERE!
 // I should look to SearchForNewResource for some example
 // should add popup text on success. (while we're at it, add that to the search as well)
@@ -12,19 +13,21 @@ import { earnExperienceInSkill, activateNarrativeTrigger } from '@/typescript/ga
 
 const onEvent = () => {
   earnExperienceInSkill('prospecting', 3)
-  console.log('done!')
-  // WIll need to calculate how much gold to add to the vein
-  // will then need to update the game state
-  //
+  // veinAmount = (prospecting + 1) * 5 * random multiplier between 50% - 100% rounded up
+  const veinAmount = Math.ceil((gameStateStorage.skills.prospecting.level + 1) * 5 * (Math.random() + 0.5))
+  console.log('veinAmount!', veinAmount)
+  gameStateStorage.goldVeinInfo.isActive = true
+  gameStateStorage.goldVeinInfo.amountLeft = veinAmount;
+  // Will also need to add narrative text and popup
 }
 const myString = "i'm the gold prospecting button, I don't require any oil at the moment"
 const computedShouldDisable = computed(() => {
   return false
 }); // has resources plus doesn't have active vein
-const duration = 3;
+const duration = 1;
 </script>
 <template>
-<LoadingStateComponent :button-text="myString" :duration="duration" :should-disable="computedShouldDisable"
-@finished-loading="onEvent"/>
+  <LoadingStateComponent :button-text="myString" :duration="duration" :should-disable="computedShouldDisable"
+    @finished-loading="onEvent" />
 
 </template>
