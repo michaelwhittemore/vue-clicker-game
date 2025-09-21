@@ -1,33 +1,32 @@
 <script setup lang="ts">
 import LoadingStateComponent from '../UtilityComponents/LoadingStateComponent.vue';
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 import { earnExperienceInSkill, activateNarrativeTrigger } from '@/typescript/gameHelpers';
 import { gameStateStorage } from '@/typescript/gameStateStorage';
-// HERE!
-// I should look to SearchForNewResource for some example
-// should add popup text on success. (while we're at it, add that to the search as well)
+import PopUpText from '../UtilityComponents/PopUpText.vue';
 
-// and we do amount as rng and as a function of prospectng level
-// this will need to consume oil at some point, but not yet
-// it needs to give xp
-
+const veinAmount = ref(0)
+const displayPopup = ref(false);
 const onEvent = () => {
   earnExperienceInSkill('prospecting', 3)
-  // veinAmount = (prospecting + 1) * 5 * random multiplier between 50% - 100% rounded up
-  const veinAmount = Math.ceil((gameStateStorage.skills.prospecting.level + 1) * 5 * (Math.random() + 0.5))
-  console.log('veinAmount!', veinAmount)
+  // veinAmount = (prospecting + 2) * 5 * random multiplier between 50% - 100% rounded up
+  veinAmount.value = Math.ceil((gameStateStorage.skills.prospecting.level + 2) * 5 * (Math.random() + 0.5))
   gameStateStorage.goldVeinInfo.isActive = true
-  gameStateStorage.goldVeinInfo.amountLeft = veinAmount;
-  // Will also need to add narrative text and popup
+  gameStateStorage.goldVeinInfo.amountLeft = veinAmount.value;
+  activateNarrativeTrigger('discoveredGoldVein')
+
+  displayPopup.value = !displayPopup.value
 }
 const myString = "i'm the gold prospecting button, I don't require any oil at the moment"
 const computedShouldDisable = computed(() => {
-  return false
-}); // has resources plus doesn't have active vein
+  // There may be a resource cost in the future?
+  return gameStateStorage.goldVeinInfo.isActive;
+});
 const duration = 1;
 </script>
 <template>
   <LoadingStateComponent :button-text="myString" :duration="duration" :should-disable="computedShouldDisable"
-    @finished-loading="onEvent" />
-
+    @finished-loading="onEvent" >
+    <PopUpText PopUpText :textForPopUp="veinAmount + ' gold vein'" :wasClickedTrigger="displayPopup" :color="'gold'" />
+  </LoadingStateComponent>
 </template>

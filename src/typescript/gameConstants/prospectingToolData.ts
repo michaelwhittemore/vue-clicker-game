@@ -1,3 +1,3 @@
 export const prospectingToolData = {
-    purchasePrice: 60,
+    purchasePrice: 40,
 }

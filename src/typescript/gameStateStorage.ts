@@ -184,11 +184,6 @@ const TESTgameStateStorageObject = {
     prospectingTool: {
         isPurchased: true,
     },
-    goldVeinInfo: {
-      isActive: true,
-      amountLeft: 10,
-    },
-
 }
 
 if (isDevTesting) {

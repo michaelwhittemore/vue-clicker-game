@@ -4,7 +4,8 @@
 * 
     1. In `search for new resource `
         - Still need to fix the loading animation going away
-    2. to the prospecting tab, temporarily find gold veins using oil! this will be a a source of prospecting xp and a resource sink for oil (let's make this pretty early on) - also maybe find different sizes of veins? (maybe reference Mr. Pocket from Tom Waits' character)
+    2. to the prospecting tab, temporarily find gold veins using oil! this will be a a source of prospecting xp and a resource sink for oil (let's make this pretty early on)
+    2. Maybe we will have a boost that consumes oil instead??
     3. manufacturing skill
         - ~~right now just get xp for refining~~
         - will want to add the manufactory (maybe find a better word)
