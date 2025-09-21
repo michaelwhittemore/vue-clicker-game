@@ -4,7 +4,7 @@
 * 
     1. In `search for new resource `
         - Still need to fix the loading animation going away
-    2. to the prospecting tab, temporarily find gold veins using oil! this will be a a source of prospecting xp and a resource sink for oil (let's make this pretty early on)
+        - also the bugged pop-up text reapperaing
     2. Maybe we will have a boost that consumes oil instead??
     3. manufacturing skill
         - ~~right now just get xp for refining~~
@@ -105,6 +105,7 @@
 * Should I try with randomness in location - like a 10px difference? (for animations)
 * Maybe we have a notification badge when new schematics are available?
 * different colors for resources depending on amount (like red when zero)
+* looks like pop-up animations may reappear when switching tabs? 
 
 # General Notes
 * look into a typescript guide, feel like I'm missing some stuff

@@ -6,14 +6,13 @@ import { newResourcesData } from '@/typescript/gameConstants/newResourcesData';
 import LoadingStateComponent from '../UtilityComponents/LoadingStateComponent.vue';
 import PopUpText from '../UtilityComponents/PopUpText.vue';
 
-// What happens if there are no mores resources left? Need to destroy the button if indexOfSearchResource
-// is greater than the length
+const textForPopUp = ref('')
 const displayFailurePopup = ref(false);
 let indexOfSearchResource = ref(0);
 // Required time is in seconds
 const computedRequiredTime = computed(() => newResourcesData[indexOfSearchResource.value].searchDuration);
 const computedRequiredLevel = computed(() => newResourcesData[indexOfSearchResource.value].requiredLevel);
-// computedSuccessChance should also involve mining and prospecting level
+
 const computedSuccessChance = computed(() => {
   // Odds = base + (prospecting * 2) + (mining * 1)
   return Math.min(newResourcesData[indexOfSearchResource.value].baseSuccessChance
@@ -22,7 +21,7 @@ const computedSuccessChance = computed(() => {
 const computedHasSufficientLevel = computed(() => {
   return gameStateStorage.skills.mining.level >= computedRequiredLevel.value;
 })
-// TODO - Need to add the chance for success to the text
+
 const computedText = computed(() => {
   return `Search for new resources (mining ${computedRequiredLevel.value},
    takes ${computedRequiredTime.value} seconds, ${computedSuccessChance.value}% to succeed)`
@@ -34,17 +33,18 @@ const onEvent = () => {
 
   const didSucceed = (Math.random() * 100) <= computedSuccessChance.value;
   if (didSucceed) {
+    textForPopUp.value = `Found ${newResourcesData[indexOfSearchResource.value].name}!`
+    displayFailurePopup.value = !displayFailurePopup.value
+
     gameStateStorage.resources[newResourcesData[indexOfSearchResource.value].name] = 0;
     activateNarrativeTrigger(newResourcesData[indexOfSearchResource.value].narrativeTriggerOnSuccess);
     indexOfSearchResource.value++;
   } else {
+    textForPopUp.value = 'Nothing found!'
     displayFailurePopup.value = !displayFailurePopup.value
 
     activateNarrativeTrigger('nothingFoundWhenProspecting')
   }
-  // Will probably have a new mining button in the miningTab
-  // Will have a v-if dependant on if it exists on gameStateStorage
-
 }
 
 </script>
@@ -52,6 +52,6 @@ const onEvent = () => {
 <template>
   <LoadingStateComponent @finished-loading="onEvent" :duration="computedRequiredTime" :button-text="computedText"
     :should-disable="!computedHasSufficientLevel">
-    <PopUpText PopUpText :textForPopUp="'Nothing found'" :wasClickedTrigger="displayFailurePopup" :color="'red'" />
+    <PopUpText PopUpText :textForPopUp="textForPopUp" :wasClickedTrigger="displayFailurePopup" :color="'red'" />
   </LoadingStateComponent>
 </template>

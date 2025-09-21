@@ -17,7 +17,7 @@ const onEvent = () => {
 
   displayPopup.value = !displayPopup.value
 }
-const myString = "i'm the gold prospecting button, I don't require any oil at the moment"
+const myString = "Prospect for gold"
 const computedShouldDisable = computed(() => {
   // There may be a resource cost in the future?
   return gameStateStorage.goldVeinInfo.isActive;
