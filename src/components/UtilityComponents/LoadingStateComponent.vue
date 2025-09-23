@@ -1,20 +1,31 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 const props = defineProps<{
-    duration: number, // in ms
+    duration: number, // in seconds
     buttonText: string,
     shouldDisable: boolean,
 }>()
 const emit = defineEmits(['finishedLoading'])
 const isLoading = ref(false);
 
+const loadingPercentage = ref(0)
+let timeElapsed = 0;
+const tickRate = 100 // in milliseconds
+const animationTick = (() => {
+  timeElapsed += tickRate;
+  loadingPercentage.value = (timeElapsed / (props.duration * 1000)) * 100;
+})
+
 const onClick = () => {
     isLoading.value = true;
+    timeElapsed = 0;
+    const animationInterval = setInterval(animationTick, tickRate)
 
-    console.warn('clicked')
     setTimeout(() => {
+        clearInterval(animationInterval)
         isLoading.value = false
         emit('finishedLoading')
+        loadingPercentage.value = 0;
     }, props.duration * 1000)
 }
 
@@ -27,7 +38,8 @@ const animationDurationString = computed(() => `${props.duration}s`)
         <div class="barText">
             {{ buttonText }}
         </div>
-        <div class="innerBar" :class="{animatedLoad: isLoading}"> </div>
+        <!-- <div class="innerBar" :class="{animatedLoad: isLoading}"> </div> -->
+         <div class="innerBar" :style="{ 'width': loadingPercentage + '%' }"> </div>
         <slot></slot>
     </button>
 </template>
@@ -61,25 +73,9 @@ const animationDurationString = computed(() => `${props.duration}s`)
 .innerBar {
     opacity: 50%;
     position: absolute;
-    width: 0%;
     top: 0px;
     height: 100%;
     background-color: red;
 
-}
-.animatedLoad {
-     animation-name: progressBar;
-     animation-duration: v-bind(animationDurationString);
-     animation-timing-function: linear;
-
-}
-@keyframes progressBar {
-    0% {
-        width: 0;
-    }
-
-    100% {
-        width: 100%;
-    }
 }
 </style>

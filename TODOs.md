@@ -4,6 +4,8 @@
 * 
     1. In `search for new resource `
         - Still need to fix the loading animation going away
+        - perhaps we should rename this to `progressAnimation`?
+        
     2. Now let's create the ability to extract oil?
     2. Maybe we will have a boost that consumes oil instead??
     3. manufacturing skill
