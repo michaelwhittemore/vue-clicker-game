@@ -1,5 +1,16 @@
 <script setup lang="ts">
 import { watch, ref, nextTick, reactive } from 'vue';
+import { onActivated } from 'vue'
+
+let animatedClassBool = ref(false)
+onActivated(() => {
+  // We want to star with the animatedClassBool at false,
+  // to prevent it popping up every time we come back into focus
+  // see  https://vuejs.org/guide/built-ins/keep-alive#lifecycle-of-cached-instance
+  console.log('activated')
+   animatedClassBool.value = false;
+})
+
 // Note that define props takes in the constructor hence 'String' vs 'string'
 const props = defineProps<{
     textForPopUp: string,
@@ -7,7 +18,7 @@ const props = defineProps<{
     color?: string,
     shift?: boolean,
 }>()
-let animatedClassBool = ref(false)
+
 watch(() => props.wasClickedTrigger, async () => {
     // TODO - the RNG position part goes here?
     animatedClassBool.value = false;
@@ -31,7 +42,7 @@ const styleObject = reactive({
 
 <style scoped>
 .popUp {
-    user-select: none; /* Should not accidentally click text */ 
+    user-select: none; /* Should not accidentally click text */
     font-weight: bold;
     position: absolute;
     font-size: 150%;

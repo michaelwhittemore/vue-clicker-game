@@ -4,7 +4,6 @@
 * 
     1. In `search for new resource `
         - Still need to fix the loading animation going away
-        - also the bugged pop-up text reapperaing
     2. Maybe we will have a boost that consumes oil instead??
     3. manufacturing skill
         - ~~right now just get xp for refining~~
