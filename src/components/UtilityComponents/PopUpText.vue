@@ -7,23 +7,22 @@ onActivated(() => {
   // We want to star with the animatedClassBool at false,
   // to prevent it popping up every time we come back into focus
   // see  https://vuejs.org/guide/built-ins/keep-alive#lifecycle-of-cached-instance
-  console.log('activated')
-   animatedClassBool.value = false;
+  animatedClassBool.value = false;
 })
 
 // Note that define props takes in the constructor hence 'String' vs 'string'
 const props = defineProps<{
-    textForPopUp: string,
-    wasClickedTrigger: boolean,
-    color?: string,
-    shift?: boolean,
+  textForPopUp: string,
+  wasClickedTrigger: boolean,
+  color?: string,
+  shift?: boolean,
 }>()
 
 watch(() => props.wasClickedTrigger, async () => {
-    // TODO - the RNG position part goes here?
-    animatedClassBool.value = false;
-    await nextTick();
-    animatedClassBool.value = true;
+  // TODO - the RNG position part goes here?
+  animatedClassBool.value = false;
+  await nextTick();
+  animatedClassBool.value = true;
 
 })
 const styleObject = reactive({
@@ -33,43 +32,44 @@ const styleObject = reactive({
 
 </script>
 <template>
-    <!-- The relative container is necessary for the element to have an ancestor but not reserved space-->
-    <div class="popUpContainer">
-        <div class="popUp outlinedText animatedPopUp" v-if="animatedClassBool" :style="styleObject">
-            {{ props.textForPopUp }} </div>
-    </div>
+  <!-- The relative container is necessary for the element to have an ancestor but not reserved space-->
+  <div class="popUpContainer">
+    <div class="popUp outlinedText animatedPopUp" v-if="animatedClassBool" :style="styleObject">
+      {{ props.textForPopUp }} </div>
+  </div>
 </template>
 
 <style scoped>
 .popUp {
-    user-select: none; /* Should not accidentally click text */
-    font-weight: bold;
-    position: absolute;
-    font-size: 150%;
-    bottom: 10px;
-    right: -15px;
+  user-select: none;
+  /* Should not accidentally click text */
+  font-weight: bold;
+  position: absolute;
+  font-size: 150%;
+  bottom: 10px;
+  right: -15px;
 }
 
 .popUpContainer {
-    position: relative;
+  position: relative;
 }
 
 /* animation ---------------- */
 .animatedPopUp {
-    animation-duration: 2s;
-    animation-name: rotateAndFadeAway;
-    animation-fill-mode: forwards
+  animation-duration: 2s;
+  animation-name: rotateAndFadeAway;
+  animation-fill-mode: forwards
 }
 
 @keyframes rotateAndFadeAway {
-    0% {
-        opacity: 1;
-        transform: translateX(0) rotate(0deg);
-    }
+  0% {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
 
-    100% {
-        transform: translateX(50px) translateY(-50px)rotate(45deg);
-        opacity: 0;
-    }
+  100% {
+    transform: translateX(50px) translateY(-50px)rotate(45deg);
+    opacity: 0;
+  }
 }
 </style>

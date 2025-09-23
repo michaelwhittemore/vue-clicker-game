@@ -4,12 +4,13 @@
 * 
     1. In `search for new resource `
         - Still need to fix the loading animation going away
+    2. Now let's create the ability to extract oil?
     2. Maybe we will have a boost that consumes oil instead??
     3. manufacturing skill
         - ~~right now just get xp for refining~~
         - will want to add the manufactory (maybe find a better word)
         - we might need to start doing something about the UI being way too big (the locations I mean)
-    4. Currently, automaton values are hard coded (i.e. autoMiner output, autoRefiner costs), it would be nice if we placed it in `gameStateStorage`. Once all the values are being used instead of the hard coded values, we can start looking into upgrades for our automatons
+    4. Currently, automaton values are hard coded (i.e. autoMiner output, autoRefiner costs), it would be nice if we placed it in `gameStateStorage`. Once all the values are being used instead of the hard coded values, we can start looking in to upgrades for our automatons
         - calculateResourceIncomeFactory is one place to touch
         - need to look at `automatonData` - but how to deal with the `AutomatonData` interface? - maybe some optional properties 
     5. Need to add a disable prop to selectable tab so that I can grey out travel on the ship
