@@ -2,12 +2,10 @@
 
 # Things to work on immediately 
 * 
-    1. In `search for new resource `
-        - Still need to fix the loading animation going away
-        - perhaps we should rename this to `progressAnimation`?
-        
     2. Now let's create the ability to extract oil?
+        - ~~let's rename 'MineResourceButton' while we're at it, just back to mine ore~~
     2. Maybe we will have a boost that consumes oil instead??
+    3. REBALANCING - shop should appear at a certain number of auto miners? maybe five?
     3. manufacturing skill
         - ~~right now just get xp for refining~~
         - will want to add the manufactory (maybe find a better word)
