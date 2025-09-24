@@ -25,7 +25,7 @@ const tooltipText = computed(() => {
 
 <template>
     <!-- Will need to change color based on the numeric value -->
-    <div class="resourceDisplayContainer color1 tooltipContainer">{{ resourceName + ': ' + resourceAmount }}
+    <div v-if="gameStateStorage.unlockedResources.includes(resourceName)"  class="resourceDisplayContainer color1 tooltipContainer">{{ resourceName + ': ' + resourceAmount }}
         <TooltipText :tooltip-text="tooltipText" />
     </div>
 </template>

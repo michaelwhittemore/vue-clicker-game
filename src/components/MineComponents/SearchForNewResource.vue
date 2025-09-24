@@ -33,10 +33,11 @@ const onEvent = () => {
 
   const didSucceed = (Math.random() * 100) <= computedSuccessChance.value;
   if (didSucceed) {
-    textForPopUp.value = `Found ${newResourcesData[indexOfSearchResource.value].name}!`
+    const foundResourceName = newResourcesData[indexOfSearchResource.value].name
+    textForPopUp.value = `Found ${foundResourceName}!`
     displayFailurePopup.value = !displayFailurePopup.value
 
-    gameStateStorage.resources[newResourcesData[indexOfSearchResource.value].name] = 0;
+    gameStateStorage.unlockedResources.push(foundResourceName)
     activateNarrativeTrigger(newResourcesData[indexOfSearchResource.value].narrativeTriggerOnSuccess);
     indexOfSearchResource.value++;
   } else {

@@ -30,10 +30,11 @@ export interface StateStorageObject {
         ore: number,
         steel: number,
         gold: number,
-        silicon?: number,
-        oil?: number,
-        plastic?: number,
+        silicon: number,
+        oil: number,
+        plastic: number,
     },
+    unlockedResources: Array<ValidResources>,
     skills: {
         mining: Skill,
         robotics: Skill,
@@ -96,8 +97,13 @@ const gameStateStorageObject: StateStorageObject = {
     resources: {
         ore: 0,
         steel: 0,
-        gold: 0
+        gold: 0,
+        oil: 0,
+        plastic: 0,
+        silicon: 0,
+
     },
+    unlockedResources: ['ore', 'steel', 'gold'],
     skills: {
         mining: initSkill(),
         robotics: initSkill(),

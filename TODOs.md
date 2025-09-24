@@ -2,8 +2,8 @@
 
 # Things to work on immediately 
 * 
-    2. Now let's create the ability to extract oil?
-        - ~~let's rename 'MineResourceButton' while we're at it, just back to mine ore~~
+    1. Looks like loading bar bug occurs when we've gone over the amount possible discovered resources (i.e., oil, plastic silicon)
+    2. Now let's create the ability to extract oil? - `ExtractOilButton.vue`
     2. Maybe we will have a boost that consumes oil instead??
     3. REBALANCING - shop should appear at a certain number of auto miners? maybe five?
     3. manufacturing skill
