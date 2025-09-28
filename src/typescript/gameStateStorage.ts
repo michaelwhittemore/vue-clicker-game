@@ -174,7 +174,7 @@ const TESTgameStateStorageObject = {
     },
     skills: {
         mining: {
-            level: 4,
+            level: 10,
         },
         robotics: {
             level: 4,

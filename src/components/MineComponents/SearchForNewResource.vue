@@ -7,8 +7,13 @@ import LoadingStateComponent from '../UtilityComponents/LoadingStateComponent.vu
 import PopUpText from '../UtilityComponents/PopUpText.vue';
 
 const textForPopUp = ref('')
+const existSearchableResources = computed(() => {
+
+})
 const displayFailurePopup = ref(false);
-let indexOfSearchResource = ref(0);
+let indexOfSearchResource = ref(0); // TODO, maybe tie this to game state? I'm trying
+// to avoid component based state saving for various reasons
+
 // Required time is in seconds
 const computedRequiredTime = computed(() => newResourcesData[indexOfSearchResource.value].searchDuration);
 const computedRequiredLevel = computed(() => newResourcesData[indexOfSearchResource.value].requiredLevel);
@@ -39,7 +44,19 @@ const onEvent = () => {
 
     gameStateStorage.unlockedResources.push(foundResourceName)
     activateNarrativeTrigger(newResourcesData[indexOfSearchResource.value].narrativeTriggerOnSuccess);
-    indexOfSearchResource.value++;
+    // HERE! bugged behavior, the value can go above the longest possible
+    if (indexOfSearchResource.value < newResourcesData.length - 1){
+      // TODO - update the search to make it clear you can't find anything else
+      // maybve have a v-if tied to the `existSearchableResources` ref
+      // I think instead of preventing the increment we need to change the text to make
+      // it clear that there's no more resoruces
+      indexOfSearchResource.value++;
+    } else {
+      console.warn('no more searchable resources')
+      existSearchableResources.false
+      // TODO here
+    }
+
   } else {
     textForPopUp.value = 'Nothing found!'
     displayFailurePopup.value = !displayFailurePopup.value
