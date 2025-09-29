@@ -8,7 +8,7 @@ import type { TabsInterface, TabInformation } from '@/typescript/gameTypes';
 
 import SelectableTab from '../UtilityComponents/SelectableTab.vue'
 
-const computedShouldDisplay = computed(() => gameStateStorage.automatons.autoRefiner >= 2);
+const computedShouldDisplay = computed(() => gameStateStorage.automatons.autoMiner >= 5);
 
 const shopTabs: TabsInterface = {
   'Items': ShopItemsComponent,

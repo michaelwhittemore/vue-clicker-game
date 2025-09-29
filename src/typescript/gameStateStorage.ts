@@ -1,4 +1,4 @@
-const isDevTesting = true // MUST BE SET HERE, ISN'T REACTIVE
+const isDevTesting = false // MUST BE SET HERE, ISN'T REACTIVE
 
 import { reactive } from 'vue';
 import type { ValidResources, ValidSkills } from './gameTypes';
@@ -162,7 +162,7 @@ const gameStateStorageObject: StateStorageObject = {
 
 const TESTgameStateStorageObject = {
     automatons: {
-        autoMiner: 2,
+        autoMiner: 5,
         autoRefiner: 2,
         autoGoldMiner: 2,
         advancedAutoMiner: 2,

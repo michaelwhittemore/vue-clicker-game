@@ -44,7 +44,7 @@ const computedHasEnoughResources = computed(() => {
 const onClickHandler = () => {
     activateNarrativeTrigger(narrativeTrigger);
     gameStateStorage.automatons[props.automatonType]++;
-    if (props.automatonType === 'autoRefiner' && gameStateStorage.automatons.autoRefiner >= 2) {
+    if (props.automatonType === 'autoMiner' && gameStateStorage.automatons.autoMiner == 5) {
         activateNarrativeTrigger('hasUnlockedShop');
     }
     gameStateStorage.resources[costResource] -= costQuantity;
