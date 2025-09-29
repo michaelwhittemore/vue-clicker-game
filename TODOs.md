@@ -4,14 +4,8 @@
 * 
     1. Looks like loading bar bug occurs when we've gone over the amount possible discovered resources (i.e., oil, plastic silicon)
         - probably should do a bit of refactoring, there's issues with the state being tied to the component and not the gameStateStorage
-    2. Now let's create the ability to extract oil? - `ExtractOilButton.vue`
-        - I guess it will be pretty similar to ore
     2. Maybe we will have a boost that consumes oil instead??
-    3. REBALANCING - shop should appear at a certain number of auto miners? maybe five?
-        - where do we actually unlock the shop?
-        - also let's do the earlier reinfery upgrades
     3. manufacturing skill
-        - ~~right now just get xp for refining~~
         - will want to add the manufactory (maybe find a better word)
         - we might need to start doing something about the UI being way too big (the locations I mean)
     4. Currently, automaton values are hard coded (i.e. autoMiner output, autoRefiner costs), it would be nice if we placed it in `gameStateStorage`. Once all the values are being used instead of the hard coded values, we can start looking in to upgrades for our automatons
@@ -22,6 +16,7 @@
     5. Rebalance the refinery upgrades to preempt the advancedAutoRefiner and goldMiner. maybe switch so the refinery upgrades trigger the automaton schematics??
     6. Add hover text for the automatons and skill xp bar. XP bar tells what the skill does, automatons how much each produces/consumes
     7. Put the automatons and resources on separate lines
+    8. Maybe it makes more sense to replace `unlockedResources` with `lockedResources`. In search for new resources we will need to iterate over the lockedResources array. Or perhaps have an array for both
         
 ---------
 * Current Tasks: 

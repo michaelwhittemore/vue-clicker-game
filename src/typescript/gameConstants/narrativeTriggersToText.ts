@@ -30,5 +30,6 @@ export const narrativeTriggersToText = {
     discoveredSilicon: 'TODO, discoveredSilicon',
     nothingFoundWhenProspecting: 'TODO,(mention that increasing your prospecting skill will improve these odds)',
     minedOutGoldVein: 'TODO, all good things must come to an end. There is no more gold in this vein.',
-    discoveredGoldVein: 'TODO. You have discovered a gold vein (amount will increase with prospecting level)'
+    discoveredGoldVein: 'TODO. You have discovered a gold vein (amount will increase with prospecting level)',
+    hasExtractedOil: 'TODO, you briefly muse over what ancient creatures decayed into this sticky concoction. Now you can go vroom-vroom',
 }
