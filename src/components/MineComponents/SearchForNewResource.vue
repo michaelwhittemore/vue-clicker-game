@@ -49,11 +49,11 @@ const onEvent = () => {
       // TODO - update the search to make it clear you can't find anything else
       // maybve have a v-if tied to the `existSearchableResources` ref
       // I think instead of preventing the increment we need to change the text to make
-      // it clear that there's no more resoruces
+      // it clear that there's no more resources
       indexOfSearchResource.value++;
     } else {
       console.warn('no more searchable resources')
-      existSearchableResources.false
+      // existSearchableResources.false
       // TODO here
     }
 

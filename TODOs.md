@@ -2,18 +2,21 @@
 
 # Things to work on immediately 
 * 
+    1. **HERE!** Need to add a disable prop to selectable tab so that I can grey out travel on the ship, also add to the selectable mining tab (and make it so prospecting is always there)
+        - I think we will pass in a `shouldDisable` prop which is computed 
+        - Don't forget that `MineSplitWrapper` will be basically moved over to `MineLocation` - maybe we start here?
     1. Looks like loading bar bug occurs when we've gone over the amount possible discovered resources (i.e., oil, plastic silicon)
-        - probably should do a bit of refactoring, there's issues with the state being tied to the component and not the gameStateStorage
+        - probably should do a bit of refactoring, there's issues with the state being tied to the component and not the gameStateStorage - search for new resource I mean
     2. Maybe we will have a boost that consumes oil instead??
+        - Could improve yield of onClicks or could improve automatons yield. Maybe both?
     3. manufacturing skill
         - will want to add the manufactory (maybe find a better word)
         - we might need to start doing something about the UI being way too big (the locations I mean)
+    4. *REBALANCE* - refinery upgrades need to be much cheaper (both the schematic and the upgrade)
     4. Currently, automaton values are hard coded (i.e. autoMiner output, autoRefiner costs), it would be nice if we placed it in `gameStateStorage`. Once all the values are being used instead of the hard coded values, we can start looking in to upgrades for our automatons
         - calculateResourceIncomeFactory is one place to touch
         - need to look at `automatonData` - but how to deal with the `AutomatonData` interface? - maybe some optional properties 
-    5. Need to add a disable prop to selectable tab so that I can grey out travel on the ship
-        - Maybe do a similar thing when there are no more schematics??
-    5. Rebalance the refinery upgrades to preempt the advancedAutoRefiner and goldMiner. maybe switch so the refinery upgrades trigger the automaton schematics??
+
     6. Add hover text for the automatons and skill xp bar. XP bar tells what the skill does, automatons how much each produces/consumes
     7. Put the automatons and resources on separate lines
     8. Maybe it makes more sense to replace `unlockedResources` with `lockedResources`. In search for new resources we will need to iterate over the lockedResources array. Or perhaps have an array for both
@@ -96,15 +99,13 @@
 * Need a more distinctive font(s)
 * different color for buttons for upgrades, actions, building (especially on something like the refinery)
 * The buttons look ugly and like forms, should at the very least change the color and maybe center them?
-* ~~Add some kind of animation when mining or building? maybe a little `+1 ore` popup? Will need to do some research~~
 * Look at a mobile game or civ or something for UI inspiration for resource bar
-* ~~maybe switch the narrative back to the top and just hard code the height? - need to fix the scrolling first I think~~
 * I should give the narrative area scrolling and a maximum height - I will also want it to scroll down - also some spacing between text
 * add a new schematic thing? Like a badge when one is available
 * Should I try with randomness in location - like a 10px difference? (for animations)
 * Maybe we have a notification badge when new schematics are available?
 * different colors for resources depending on amount (like red when zero)
-* looks like pop-up animations may reappear when switching tabs? 
+
 
 # General Notes
 * look into a typescript guide, feel like I'm missing some stuff
