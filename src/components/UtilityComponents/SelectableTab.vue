@@ -14,10 +14,10 @@ const props = defineProps<{
 let { optionalShouldDisableFirstTab, optionalShouldDisableSecondTab } = props;
 // hERe! need to verify that these work then use them
 if (!optionalShouldDisableFirstTab) {
-  optionalShouldDisableFirstTab = computed(() => false)
+  optionalShouldDisableFirstTab = computed(() => true)
 }
 if (!optionalShouldDisableSecondTab) {
-  optionalShouldDisableSecondTab = computed(() => false)
+  optionalShouldDisableSecondTab = computed(() => true)
 }
 // Need to add a 'disabled' given that we don't have a button.
 // Should not be clickable and should be grey-outed
@@ -26,10 +26,13 @@ const tabSelector = ref(props.startingTab)
 </script>
 <template>
   <div class="flexUtility">
-    <div :class="[tabNames[0].tabColorClass, { selectedTab: tabSelector === tabNames[0].tabName }]" class="tabSelector"
+    <div :class="[tabNames[0].tabColorClass, { selectedTab: tabSelector === tabNames[0].tabName },
+     {'disabledTabSelector': optionalShouldDisableFirstTab}]"
+    class="tabSelector"
       @click="tabSelector = tabNames[0].tabName">{{ optionalFirstTabName || tabNames[0].tabName }}
     </div>
-    <div :class="[tabNames[1].tabColorClass, { selectedTab: tabSelector === tabNames[1].tabName }]" class="tabSelector"
+    <div :class="[tabNames[1].tabColorClass, { selectedTab: tabSelector === tabNames[1].tabName },
+  {'disabledTabSelector': optionalShouldDisableSecondTab}]" class="tabSelector"
       @click="tabSelector = tabNames[1].tabName">{{ optionalSecondTabName || tabNames[1].tabName }}</div>
   </div>
   <KeepAlive>
@@ -47,6 +50,10 @@ const tabSelector = ref(props.startingTab)
   width: 50%;
   margin-bottom: 0px;
   border-style: solid;
+}
 
+.disabledTabSelector{
+  color: grey;
+  pointer-events: none;
 }
 </style>
