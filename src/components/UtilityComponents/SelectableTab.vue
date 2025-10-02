@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, computed, type ComputedRef } from 'vue';
 import type { TabsInterface, TabInformation } from '@/typescript/gameTypes';
 
 const props = defineProps<{
@@ -8,7 +8,20 @@ const props = defineProps<{
   tabNames: Array<TabInformation>,
   optionalFirstTabName?: string,
   optionalSecondTabName?: string,
+  optionalShouldDisableFirstTab?: ComputedRef<boolean>,
+  optionalShouldDisableSecondTab?: ComputedRef<boolean>,
 }>()
+let { optionalShouldDisableFirstTab, optionalShouldDisableSecondTab } = props;
+// hERe! need to verify that these work then use them
+if (!optionalShouldDisableFirstTab) {
+  optionalShouldDisableFirstTab = computed(() => false)
+}
+if (!optionalShouldDisableSecondTab) {
+  optionalShouldDisableSecondTab = computed(() => false)
+}
+// Need to add a 'disabled' given that we don't have a button.
+// Should not be clickable and should be grey-outed
+
 const tabSelector = ref(props.startingTab)
 </script>
 <template>
