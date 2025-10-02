@@ -8,16 +8,21 @@ const props = defineProps<{
   tabNames: Array<TabInformation>,
   optionalFirstTabName?: string,
   optionalSecondTabName?: string,
-  optionalShouldDisableFirstTab?: ComputedRef<boolean>,
-  optionalShouldDisableSecondTab?: ComputedRef<boolean>,
+  optionalShouldDisableFirstTab?: boolean,
+  optionalShouldDisableSecondTab?: boolean,
 }>()
-let { optionalShouldDisableFirstTab, optionalShouldDisableSecondTab } = props;
+// let { optionalShouldDisableFirstTab, optionalShouldDisableSecondTab } = props;
 // hERe! need to verify that these work then use them
-if (!optionalShouldDisableFirstTab) {
-  optionalShouldDisableFirstTab = computed(() => true)
+let shouldDisableFirstTab = false;
+if (props.optionalShouldDisableFirstTab) {
+  console.log('here 1')
+  shouldDisableFirstTab = props.optionalShouldDisableFirstTab
 }
-if (!optionalShouldDisableSecondTab) {
-  optionalShouldDisableSecondTab = computed(() => true)
+
+let shouldDisableSecondTab = false;
+if (props.optionalShouldDisableSecondTab) {
+  console.log('here 2')
+  shouldDisableSecondTab = props.optionalShouldDisableSecondTab // should be false
 }
 // Need to add a 'disabled' given that we don't have a button.
 // Should not be clickable and should be grey-outed
@@ -27,12 +32,12 @@ const tabSelector = ref(props.startingTab)
 <template>
   <div class="flexUtility">
     <div :class="[tabNames[0].tabColorClass, { selectedTab: tabSelector === tabNames[0].tabName },
-     {'disabledTabSelector': optionalShouldDisableFirstTab}]"
+     {'disabledTabSelector': shouldDisableFirstTab}]"
     class="tabSelector"
       @click="tabSelector = tabNames[0].tabName">{{ optionalFirstTabName || tabNames[0].tabName }}
     </div>
     <div :class="[tabNames[1].tabColorClass, { selectedTab: tabSelector === tabNames[1].tabName },
-  {'disabledTabSelector': optionalShouldDisableSecondTab}]" class="tabSelector"
+  {'disabledTabSelector': shouldDisableSecondTab}]" class="tabSelector"
       @click="tabSelector = tabNames[1].tabName">{{ optionalSecondTabName || tabNames[1].tabName }}</div>
   </div>
   <KeepAlive>

@@ -31,7 +31,8 @@ const mineTabNames: Array<TabInformation> = [
 <template>
   <LocationComponent :location-name="'Mine'">
       <!-- <SelectableTab :tabs-map="mineTabs" :starting-tab="'Prospecting'" :tab-names="mineTabNames"> -->
-      <SelectableTab :tabs-map="mineTabs" :starting-tab="'Mining'" :tab-names="mineTabNames">
+      <SelectableTab :tabs-map="mineTabs" :starting-tab="'Mining'" :tab-names="mineTabNames"
+      :optional-should-disable-second-tab="computedDisableProspectingTab">
       </SelectableTab>
     </LocationComponent>
 </template>
