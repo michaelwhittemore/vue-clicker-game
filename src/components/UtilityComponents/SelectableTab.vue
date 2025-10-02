@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, type ComputedRef } from 'vue';
+import { ref } from 'vue';
 import type { TabsInterface, TabInformation } from '@/typescript/gameTypes';
 
 const props = defineProps<{
@@ -11,25 +11,18 @@ const props = defineProps<{
   optionalShouldDisableFirstTab?: boolean,
   optionalShouldDisableSecondTab?: boolean,
 }>()
-// let { optionalShouldDisableFirstTab, optionalShouldDisableSecondTab } = props;
-// hERe! need to verify that these work then use them
-let shouldDisableFirstTab = props.optionalShouldDisableFirstTab || false;
-let shouldDisableSecondTab = props.optionalShouldDisableSecondTab || false;
-console.warn(shouldDisableFirstTab)
-console.warn(shouldDisableSecondTab)
-
 
 const tabSelector = ref(props.startingTab)
 </script>
 <template>
   <div class="flexUtility">
     <div :class="[tabNames[0].tabColorClass, { selectedTab: tabSelector === tabNames[0].tabName },
-     {'disabledTabSelector': shouldDisableFirstTab}]"
+     {'disabledTabSelector': optionalShouldDisableFirstTab}]"
     class="tabSelector"
       @click="tabSelector = tabNames[0].tabName">{{ optionalFirstTabName || tabNames[0].tabName }}
     </div>
     <div :class="[tabNames[1].tabColorClass, { selectedTab: tabSelector === tabNames[1].tabName },
-  {'disabledTabSelector': shouldDisableSecondTab}]" class="tabSelector"
+  {'disabledTabSelector': optionalShouldDisableSecondTab}]" class="tabSelector"
       @click="tabSelector = tabNames[1].tabName">{{ optionalSecondTabName || tabNames[1].tabName }}</div>
   </div>
   <KeepAlive>
