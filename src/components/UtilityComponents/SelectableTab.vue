@@ -13,19 +13,11 @@ const props = defineProps<{
 }>()
 // let { optionalShouldDisableFirstTab, optionalShouldDisableSecondTab } = props;
 // hERe! need to verify that these work then use them
-let shouldDisableFirstTab = false;
-if (props.optionalShouldDisableFirstTab) {
-  console.log('here 1')
-  shouldDisableFirstTab = props.optionalShouldDisableFirstTab
-}
+let shouldDisableFirstTab = props.optionalShouldDisableFirstTab || false;
+let shouldDisableSecondTab = props.optionalShouldDisableSecondTab || false;
+console.warn(shouldDisableFirstTab)
+console.warn(shouldDisableSecondTab)
 
-let shouldDisableSecondTab = false;
-if (props.optionalShouldDisableSecondTab) {
-  console.log('here 2')
-  shouldDisableSecondTab = props.optionalShouldDisableSecondTab // should be false
-}
-// Need to add a 'disabled' given that we don't have a button.
-// Should not be clickable and should be grey-outed
 
 const tabSelector = ref(props.startingTab)
 </script>
