@@ -27,7 +27,8 @@ const shipTabNames: Array<TabInformation> = [
     <template v-if="gameStateStorage.ship.isPurchased">
         <LocationComponent :location-name="'Ship'">
             <SelectableTab :tabs-map="shipTabs" :starting-tab="'Upgrade'" :tab-names="shipTabNames"
-             :optional-second-tab-name="gameStateStorage.ship.isFixed ? 'Upgrades' : 'Repairs'">
+             :optional-second-tab-name="gameStateStorage.ship.isFixed ? 'Upgrades' : 'Repairs'"
+             :optional-should-disable-first-tab="!gameStateStorage.ship.isFixed">
             </SelectableTab>
         </LocationComponent>
     </template>

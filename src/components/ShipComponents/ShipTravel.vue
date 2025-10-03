@@ -5,7 +5,7 @@ const onClick = () => {
 </script>
 <template>
     <div class="shipTravelColor selectableTab">
-        <button @click="onClick">Launch </button>
+        <button @click="onClick">Launch (need to add oil cost)</button>
     </div>
 
 </template>

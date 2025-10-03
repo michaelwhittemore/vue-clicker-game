@@ -2,7 +2,7 @@
 </script>
 <template>
     <div class="shipUpgradeColor selectableTab">
-Upgrade
+No Upgrades available yet
     </div>
-    
+
 </template>

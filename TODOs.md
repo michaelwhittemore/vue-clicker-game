@@ -2,9 +2,6 @@
 
 # Things to work on immediately 
 * 
-    1. **HERE!** Need to add a disable prop to selectable tab so that I can grey out travel on the ship, also add to the selectable mining tab (and make it so prospecting is always there)
-        - I think we will pass in a `shouldDisable` prop which is computed 
-        - Don't forget that `MineSplitWrapper` will be basically moved over to `MineLocation` - maybe we start here?
     1. Looks like loading bar bug occurs when we've gone over the amount possible discovered resources (i.e., oil, plastic silicon)
         - probably should do a bit of refactoring, there's issues with the state being tied to the component and not the gameStateStorage - search for new resource I mean
     2. Maybe we will have a boost that consumes oil instead??
@@ -13,6 +10,8 @@
         - will want to add the manufactory (maybe find a better word)
         - we might need to start doing something about the UI being way too big (the locations I mean)
     4. *REBALANCE* - refinery upgrades need to be much cheaper (both the schematic and the upgrade)
+        - also maybe we switch the gold miner and advanced auto miner? gold miner trivializes prospecting, maybe make it a few levels higher?
+        - maybe start prospecting with just gold, new resources require higher prospecting, not mining. Maybe we need a more reliable source of prospecting xp in that case?
     4. Currently, automaton values are hard coded (i.e. autoMiner output, autoRefiner costs), it would be nice if we placed it in `gameStateStorage`. Once all the values are being used instead of the hard coded values, we can start looking in to upgrades for our automatons
         - calculateResourceIncomeFactory is one place to touch
         - need to look at `automatonData` - but how to deal with the `AutomatonData` interface? - maybe some optional properties 
